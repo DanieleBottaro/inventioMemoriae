@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="MingusMadness.xsl"?>
+<?xml-model href="https://vault.tei-c.org/P5/current/xml/tei/custom/schema/relaxng/tei_all.rng" schematypens="http://relaxng.org/ns/structure/1.0" type="application/xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title type="main">Inventio Memoriae</title>
+                <title type="sub">Digital Hagiography and Semantic Modeling of the Arca di San Domenico</title>
+                <author>Daniele Bottaro</author>
+                <respStmt>
+                    <resp>Encoded and annotated by</resp>
+                    <persName>Daniele Bottaro</persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>University of Bologna</publisher>
+                <pubPlace>Bologna, Italy</pubPlace>
+                <date when="2026">2026</date>
+                <availability>
+                    <licence target="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <!-- 1. THE TWO BOOKS USED AS SOURCES -->
+                <listBibl type="sources">
+                    <biblStruct xml:id="canetti_invenzione_memoria">
+                        <monogr>
+                            <title level="m" type="main">L'invenzione della memoria</title>
+                            <title level="m" type="sub">Il culto e l'immagine di Domenico nella storia dei primi frati predicatori</title>
+                            <author>
+                                <persName>
+                                    <forename>Luigi</forename>
+                                    <surname>Canetti</surname>
+                                </persName>
+                            </author>
+                            
+                            <textLang mainLang="it" otherLangs="la">Italian with some excerpts in Latin</textLang>
+                            <imprint>
+                                <pubPlace>Spoleto</pubPlace>
+                                <publisher>Centro Italiano di Studi sull'Alto Medioevo</publisher>
+                                <date when="1996">1996</date>
+                            </imprint>
+                            <idno type="ISBN">9788879884686</idno>
+                        </monogr>
+                        
+                        <note xml:lang="it">Saggio storico-critico incentrato sulla decostruzione delle prime fonti agiografiche domenicane. L'autore analizza la congiuntura della canonizzazione (1233-1234) e la successiva produzione e riscrittura delle leggende liturgiche ufficiali dell'Ordine, svelandone la forte connotazione ideologica e pubblicistica e mostrando come la memoria e l'immagine fisionomica, ascetica e "inquisitoriale" di Domenico siano state plasmate e "inventate" in risposta alle crescenti sfide istituzionali ed ecclesiologiche dell'Ordine e al suo legame con il papato.</note>
+                        <note xml:lang="en">A historical-critical study focused on the deconstruction of early Dominican hagiographic sources. The author analyzes the context of the canonization (1233–1234) and the subsequent production and rewriting of the Order’s official liturgical *Legendae*. He reveals their strong ideological and propagandistic nature, demonstrating how the memory and the physical, ascetic, and "inquisitorial" image of Dominic were shaped and "invented" in response to the Order's growing institutional and ecclesiological challenges and its ties to the papacy.</note>
+                    </biblStruct>
+
+                    <biblStruct xml:id="moskovitz_arca_legacy">
+                        <monogr>
+                            <title level="m" type="main">Nicola Pisano's arca di San Domenico and its legacy</title>      
+                            <author>
+                                <persName>
+                                    <forename>Anita Fiderer</forename>
+                                    <surname>Moskovitz</surname>
+                                </persName>
+                            </author>
+                            <textLang mainLang="en">English</textLang>
+                                                  
+                            <imprint>
+                                <pubPlace>Pennsylvania</pubPlace>
+                                <publisher>College art association</publisher>
+                                <date when="1994">1994</date>
+                            </imprint>
+                            <idno type="ISBN">9780271009469</idno>
+                        </monogr>
+                        
+                        <note xml:lang="it">Monografia storico-artistica dedicata all'analisi formale, strutturale e iconografica del monumento sepolcrale di san Domenico a Bologna (1264-1267) scolpito da Nicola Pisano e bottega. La studiosa esamina come il programma visivo dell'Arca rispondesse sia alle esigenze apologetiche e alle controversie interne della gerarchia domenicana, sia alle istanze celebrative dell'élite civica bolognese, e ne traccia lo straordinario influsso generativo sull'arte funeraria italiana, in particolare attraverso i suoi due principali monumenti discendenti: l'Arca di San Pietro Martire a Milano e l'Arca di Sant'Agostino a Pavia.</note>
+                        <note xml:lang="en">A historical-artistic monograph dedicated to the formal, structural, and iconographic analysis of the funerary monument of Saint Dominic in Bologna (1264–1267), sculpted by Nicola Pisano and his workshop. The author examines how the visual program of the *Arca* addressed both the apologetic needs and internal controversies of the Dominican hierarchy and the celebratory aspirations of Bologna’s civic elite, while tracing its extraordinary generative influence on Italian funerary art, particularly through its two principal successors: the *Arca* of Saint Peter Martyr in Milan and the *Arca* of Saint Augustine in Pavia.</note>
+                    </biblStruct>
+                </listBibl>
+
+                <!-- 2. THE HISTORICAL/HAGIOGRAPHIC TEXTS -->
+                <listBibl type="historical_works">
+                    <bibl xml:id="historia_albigensis" type="chronicle">
+                        <idno type="viaf">176177946</idno>
+                        <!-- 2. AUTORE -->
+                        <author ref="#peter_vaux_cernay">Peter of Vaux-de-Cernay</author>
+                        <!-- 3. TITOLO e LINGUA -->
+                        <title level="m" xml:lang="la">Historia Albigensis</title>
+                        <textLang mainLang="la">Latin</textLang>
+                        
+                        <!-- 4. DATAZIONE DELLA STESURA (Cruciale!) -->
+                        <date notBefore="1212" notAfter="1218">Between 1212 and 1218</date>
+                        
+                        <!-- 5. NOTA DESCRITTIVA (Per contestualizzare) -->
+                        <note type="context" xml:lang="it">Cronaca cistercense che narra la crociata contro gli Albigesi; rappresenta l'unica testimonianza documentaria diretta dell'attività antiereticale di Domenico in Linguadoca, prima che la sua immagine venisse rielaborata dalla campagna di canonizzazione del 1233–1234. Fornisce un resoconto più "sobrio" dell'episodio miracoloso della prova del fuoco rispetto alle narrazioni iperboliche di Giordano di Sassonia e Pietro Ferrand. Proprio in virtù di tale rigore, fu utilizzata come fonte da Umberto di Romans per la stesura definitiva della *Legenda Sancti Dominici* liturgica ufficiale (1255–1260).</note>
+                        <note type="context" xml:lang="en">Cistercian chronicle recounting the Albigensian Crusade; it represents the only direct documentary evidence of Dominic's anti-heretical activity in Languedoc before his image was reshaped by the canonization campaign of 1233–1234. It provides a more "sober" account of the miracle episode of the fire ordeal compared to the hyperbolic accounts of Jordan of Saxony and Peter Ferrand. Precisely because of this rigor, it was used as a source by Humbert of Romans for the definitive drafting of the official liturgical *Legenda Sancti Dominici* (1255–1260).</note>
+                        
+                        <!-- 6. EDIZIONE MODERNA DI RIFERIMENTO (Da cui Canetti o tu traete i testi) -->
+                        <relatedItem type="modern_edition">
+                            <bibl>
+                                <title level="m">Historia Albigensis</title>
+                                <editor>Pascal Guébin</editor>
+                                <editor>Ernest Lyon</editor>
+                                <pubPlace>Paris</pubPlace>
+                                <publisher>Société de l'Histoire de France</publisher>
+                                <date>1926-1939</date>
+                                <biblScope unit="volume">I-III</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Edizione critica latina di riferimento.</note>
+                                <note xml:lang="en">Standard critical edition in Latin.</note>
+                            </bibl>
+                        </relatedItem>
+
+                        <relatedItem type="modern_edition">
+                            <bibl>
+                                <title level="m">Histoire Albigeoise</title>
+                                <editor>Pascal Guébin</editor>
+                                <editor>Henri Maisonneuve</editor>
+                                <pubPlace>Paris</pubPlace>
+                                <publisher>Vrin</publisher>
+                                <date>1951</date>
+                                <textLang mainLang="fr">French</textLang>   
+                                <note xml:lang="it">Traduzione francese moderna.</note>
+                                <note xml:lang="en">Modern French translation.</note>
+                            </bibl>
+                        </relatedItem>
+                    </bibl>
+
+                    <bibl xml:id="legenda_constantini" type="hagiography">
+                        <idno type="BHL">2218</idno>
+                        <!-- 2. AUTORE (collegato alla tua anagrafica) -->
+                        <author ref="#constantine_orvieto">Constantine of Orvieto</author>
+                        <!-- 3. TITOLO e LINGUA -->
+                        <title level="m" xml:lang="la">Legenda Sancti Dominici</title>
+                        <textLang mainLang="la">Latin</textLang>
+                        
+                        <!-- 4. DATAZIONE DELLA STESURA (Cruciale!) -->
+                        <date notBefore="1246" notAfter="1247">Between 1246 and 1247</date>
+                        
+                        <!-- 5. NOTA DESCRITTIVA (Per contestualizzare) -->
+                        <note type="context" xml:lang="it">Approvata nel 1248, la "Legenda Nova" di Costantino segna una svolta decisiva nella memoria domenicana, trasformando la vita del fondatore da cronaca storica a biografia sistematica di prodigi. Pur attingendo ampiamente a Pietro Ferrandi, Costantino omette molti dettagli locali per proiettare un'immagine di Domenico più universale e profetica. Si tratta della prima fonte ufficiale a fissare il "Miracolo dei pani" e a introdurre miti istituzionali fondamentali, come il sogno del Laterano e il mandato di Pietro e Paolo, che conferirono all'Ordine la sua definitiva legittimazione carismatica e la narrazione primaria per i suoi futuri programmi iconografici.</note>
+                        <note type="context" xml:lang="en">Approved in 1248, Constantine's "Legenda Nova" marks a decisive shift in Dominican memory, transforming the founder’s life from a historical chronicle into a systematic biography of wonders. While drawing heavily on Peter Ferrandi, Constantine omits many local details to project a more universal and prophetic image of Dominic. It is the first official source to stabilize the "Miracle of the Loaves" and to introduce pivotal institutional myths such as the Dream of the Lateran and the mandate from Peter and Paul which provided the Order with its definitive charismatic legitimacy and the primary narrative for its future iconographic programs.</note>
+                        
+                        <!-- 6. EDIZIONE MODERNA DI RIFERIMENTO (Da cui Canetti o tu traete i testi) -->
+    
+                        <relatedItem type="historical_edition">
+                            <bibl>
+                                <title level="m">Scriptores Ordinis Praedicatorum recensiti, notisque historicis et criticis illustrati</title>
+                                <title level="m" type="short"><abbr>QE</abbr></title>
+                                <editor>Jacques Quétif</editor>
+                                <editor>Jacques Échard</editor>
+                                <pubPlace>Paris</pubPlace>
+                                <publisher>Ballard &amp; Simart</publisher>
+                                <date>1719</date>
+                                <biblScope unit="volume">I</biblScope>
+                                <biblScope unit="page">pp. 25-37</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Prima importante edizione a stampa della tradizione domenicana.</note>
+                                <note xml:lang="en">First major printed edition of the Dominican tradition.</note>
+                            </bibl>
+                        </relatedItem>
+
+                        <relatedItem type="modern_edition">
+                            <bibl>
+                                <title level="j">Analecta Sacri Ordinis Fratrum Praedicatorum</title>
+                                <title level="j" type="short"><abbr>ASOP</abbr></title>
+                                <editor>Modesto Canal</editor>
+                                <pubPlace>Rome</pubPlace>
+                                <publisher>In Domo Generalitia</publisher>
+                                <date>1933-1934</date>
+                                <biblScope unit="volume">XLI</biblScope>
+                                <biblScope unit="page">pp. 541-558, 602-609, 647-658</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Edizione moderna basata sull'esame di manoscritti di area italiana.</note>
+                                <note xml:lang="en">Modern edition based on the review of manuscripts from the Italian area.</note>
+                            </bibl>
+                        </relatedItem>
+
+                        <relatedItem type="modern_edition">
+                            <bibl>
+                                <title level="m">Monumenta S. P. N. Dominici: Historia et Constitutiones</title>
+                                <biblScope unit="issue">Fasc. II</biblScope>
+                                
+                                <title level="s" type="short"><abbr>MOPH</abbr></title>
+                                <title level="s">Monumenta Ordinis Fratrum Praedicatorum Historica</title>
+                                <biblScope unit="volume">Tomus XVI</biblScope>
+
+                                <editor>Heribert Christian Scheeben</editor>
+                                <pubPlace>Rome</pubPlace>
+                                <publisher>Istituto Storico Domenicano</publisher>
+                                <date>1935</date>
+                                <biblScope unit="page">pp. 263-352</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <textLang otherLang="de">German</textLang>
+                                <note xml:lang="it">L'intervallo di pagine comprende sia il saggio introduttivo in tedesco ("Einführung", pp. 263–285) sia il testo latino della <emph>Legenda</emph> (pp. 286–352).</note>
+                                <note xml:lang="en">The page range includes both the introductory essay in German ("Einführung", pp. 263–285) and the Latin text of the <emph>Legenda</emph> (pp. 286–352).</note>
+                            </bibl>
+                        </relatedItem>
+                    </bibl>
+
+                    <bibl xml:id="legenda_petri_ferrandi" type="hagiography">
+                        <idno type="viaf">25145602481301361738</idno>
+                        <!-- 2. AUTORE -->
+                        <author ref="#peter_ferrand">Peter Ferrand</author>
+                        <!-- 3. TITOLO e LINGUA -->
+                        <title level="m" xml:lang="la">Legenda Sancti Dominici</title>
+                        <textLang mainLang="la">Latin</textLang>
+                        
+                        <!-- 4. DATAZIONE DELLA STESURA -->
+                        <date notBefore="1235" notAfter="1238">Between 1235 and 1238</date>
+                        
+                        <!-- 5. NOTA DESCRITTIVA (Per contestualizzare) -->
+                        <note type="context" xml:lang="it">Approvata per l'uso liturgico nel 1238, l'opera di Pietro Ferrandi costituisce la *prior legenda* e la prima biografia ufficiale del fondatore. Sebbene si tratti in gran parte di una compilazione letterale del *Libellus* di Giordano di Sassonia, essa introduce motivi fondamentali che hanno plasmato l'autocoscienza domenicana: l'immagine escatologica di Domenico come *vespertinus sydus* (stella della sera), inviato alla fine dei tempi, e l'influente narrazione del "Testamento" del fondatore. Associando l'eredità della povertà volontaria a una severa maledizione contro chi avesse introdotto beni temporali, Ferrandi fornì il fondamento agiografico primario per la futura identità dell'Ordine e per la sua difesa della mendicità.</note>
+                        <note type="context" xml:lang="en">Approved for liturgical use in 1238, Pietro Ferrandi’s work constitutes the "prior legenda" and the first official biography of the founder. While largely a literal compilation of Jordan of Saxony’s Libellus, it introduces pivotal motifs that shaped Dominican self-consciousness: the eschatological image of Dominic as the "vespertinus sydus" (evening star) sent at the world's end and the influential narrative of the founder’s "Testament". By pairing the legacy of voluntary poverty with a stern curse against those who would introduce temporal possessions, Ferrandi provided the primary hagiographical foundation for the Order's future identity and its defense of mendicancy.</note>
+                        
+                        <!-- 6. EDIZIONE MODERNA DI RIFERIMENTO (Da cui Canetti o tu traete i testi) -->
+                        <relatedItem type="historical_edition">
+                            <bibl>
+                                <title level="m">Sanctuarium seu Vitae sanctorum</title>
+                                <editor>Boninus Mombritius</editor>
+                                <pubPlace>Paris</pubPlace>
+                                <publisher>Fontemoing</publisher>
+                                <date>1910</date>
+                                <biblScope unit="volume">II</biblScope>
+                                <biblScope unit="page">pp. 429-443</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Nuova edizione del testo originariamente stampato a Milano nel 1479. La citazione include implicitamente la ristampa anastatica del 1978 pubblicata a Hildesheim e New York.</note>
+                                <note xml:lang="en">New edition of the text originally printed in Milan in 1479. The citation implicitly includes the 1978 facsimile reprint published in Hildesheim and New York.</note>
+                            </bibl>
+                        </relatedItem>
+
+                        <relatedItem type="modern_edition">
+                            <bibl>
+                                <title level="j">Analecta Sacri Ordinis Fratrum Praedicatorum</title>
+                                <title level="j" type="short"><abbr>ASOP</abbr></title>
+                                <biblScope unit="volume">IV</biblScope>
+                                <editor>Pierre Mothon</editor>
+                                <date>1899</date>
+                                <biblScope unit="volume">XLI</biblScope>
+                                <biblScope unit="page">pp. 296-319</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Edizione pubblicata attribuendo l'opera a un autore anonimo.</note>
+                                <note xml:lang="en">Edition published attributing the work to an anonymous author.</note>
+                            </bibl>
+                        </relatedItem>
+
+                        <relatedItem type="modern_edition">
+                            <bibl>
+                                <title level="m">Analecta Bollandiana</title>
+                                <title level="j" type="short"><abbr>An. Boll.</abbr></title>
+                                <biblScope unit="volume">XXX</biblScope>                        
+                                <editor>François Van Ortroy</editor>
+                                <date>1911</date>
+                                <biblScope unit="page">pp. 54-87</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Prima edizione della cosiddetta "recensio altera" (seconda recensione).</note>
+                                <note xml:lang="en">First edition of the so-called "recensio altera" (second recension).</note>
+                            </bibl>
+                        </relatedItem>
+
+                        <relatedItem type="modern_edition">
+                            <bibl>
+                                <title level="m">Monumenta S. P. N. Dominici: Historia et Constitutiones</title>
+                                <biblScope unit="issue">Fasc. II</biblScope>
+                                <title level="s" type="short"><abbr>MOPH</abbr></title>
+                                <title level="s">Monumenta Ordinis Fratrum Praedicatorum Historica</title>
+                                <biblScope unit="volume">Tomus XVI</biblScope>
+                                <editor>Marie-Hyacinthe Laurent</editor>
+                                <pubPlace>Rome</pubPlace>
+                                <publisher>Istituto Storico Domenicano</publisher>
+                                <date>1935</date>
+                                <biblScope unit="page">pp. 209-260</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Edizione della "recensio pristina" (recensione originale)</note>
+                                <note xml:lang="en">Edition of the "recensio pristine" (original recension)</note>
+                            </bibl>
+                        </relatedItem>
+                    </bibl>
+
+                    <bibl xml:id="legenda_humbertus" type="hagiography">
+                        <idno type="viaf">211752959</idno>
+                        <!-- 2. AUTORE (collegato alla tua anagrafica) -->
+                        <author ref="#humbert_romans">Humbert of Romans</author>
+                        <!-- 3. TITOLO e LINGUA -->
+                        <title level="m" xml:lang="la">Legenda Sancti Dominici</title>
+                        <textLang mainLang="la">Latin</textLang>
+                        
+                        <!-- 4. DATAZIONE DELLA STESURA -->
+                        <date notBefore="1255" notAfter="1260">Between 1255 and 1260</date>
+
+                        <!-- 5. NOTA DESCRITTIVA -->
+                        <note type="context" xml:lang="it">Approvata nel 1260, quest'opera segna la codificazione definitiva dell'immagine ufficiale di Domenico, concludendo la fase agiografica formativa dell'Ordine. Pur basandosi essenzialmente su una compilazione letterale dei testi di Pietro Ferrandi e Costantino di Orvieto, essa persegue una maggiore sobrietà e un più rigoroso ordine cronologico, adattando al contempo la narrazione a un uso esclusivamente liturgico e comunitario. Elemento cardine della più ampia riforma liturgica promossa da Umberto, il suo impiego fu reso obbligatorio dal Capitolo Generale di Strasburgo, soppiantando di fatto tutte le precedenti versioni agiografiche.</note>
+                        <note type="context" xml:lang="en">Approved in 1260, this work marks the final codification of Dominic’s official image, ending the Order's formative hagiographical period. Primarily a literal compilation of Peter Ferrandi and Constantine of Orvieto, it seeks greater sobriety and chronological rigor while adapting the narrative for exclusive liturgical and communal use. As a pillar of Humbert’s broader liturgical reform, its use was strictly imposed by the General Chapter of Strasbourg, effectively supplanting all previous hagiographical versions.</note>
+
+                        <relatedItem type="modern_edition">
+                            <bibl>
+                                <title level="m">Monumenta S. P. N. Dominici: Historia et Constitutiones</title>
+                                <title level="s" type="short"><abbr>MOPH</abbr></title>
+                                <biblScope unit="issue">Fasc. II</biblScope>
+                                <title level="s">Monumenta Ordinis Fratrum Praedicatorum Historica</title>
+                                <biblScope unit="volume">Tomus XVI</biblScope>
+                                <editor>Angelus Walz</editor>
+                                <pubPlace>Rome</pubPlace>
+                                <publisher>Istituto Storico Domenicano</publisher>
+                                <date>1935</date>
+                                <biblScope unit="page">pp. 369-433</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Edizione moderna, completa e definitiva della *Legenda* di Umberto all'interno della collana MOPH.</note>
+                                <note xml:lang="en">Definitive complete modern edition of Humbert's *Legenda* within the MOPH series.</note>
+                            </bibl>
+                        </relatedItem>
+                    </bibl>
+                    
+                    <bibl xml:id="libellus_principiis" type="hagiography">
+                        <idno type="viaf">7818165326352416290000</idno>
+                        <!-- 2. AUTORE (collegato alla tua anagrafica) -->
+                        <author ref="#jordan_saxony">Jordan of Saxony</author>
+                        <!-- 3. TITOLO e LINGUA -->
+                        <title level="m" xml:lang="la">Libellus de Principiis Ordinis Predicatorum</title>
+                        <textLang mainLang="la">Latin</textLang>
+                        
+                        <!-- 4. DATAZIONE DELLA STESURA -->
+                        <date notBefore="1231" notAfter="1234">Between 1231 and 1234</date>
+
+                        <!-- 5. NOTA DESCRITTIVA -->
+                        <note type="context" xml:lang="it">Il *Libellus* di Giordano di Sassonia costituisce la più antica testimonianza storica e agiografica sulle origini dell'Ordine. Esso intreccia la cronaca dell'istituzione con la vita di Domenico e le biografie dei primi frati, configurandosi come un'«agiografia collettiva» in cui l'Ordine stesso è protagonista. L'opera delinea strategicamente l'identità dell'Ordine attorno alla sua missione escatologica e al reclutamento di matrice intellettuale e universitaria. Nonostante la sua struttura composita, il testo funse da prima *legenda* liturgica ufficiale dell'Ordine (a seguito di una revisione del 1235-1236) e rimase la fonte primaria per tutte le successive tradizioni agiografiche domenicane.</note>
+                        <note type="context" xml:lang="en">Jordan of Saxony’s "Libellus" is the earliest historical and hagiographical record of the Order’s origins. It weaves a chronicle of the institution with the life of Dominic and the biographies of other early friars, functioning as a "collective hagiography" where the Order itself is a protagonist. It strategically frames the Order’s identity around its eschatological mission and its intellectual, university-based recruitment. Despite its composite structure, it served as the Order's first official liturgical "legenda" (following a 1235/36 revision) and remained the primary source for all subsequent Dominican hagiographical traditions</note>
+
+                         <relatedItem type="historical_edition">
+                            <bibl>
+                                <title level="m" type="short"><abbr>QE</abbr></title>
+                                <title level="m">Scriptores Ordinis Praedicatorum recensiti, notisque historicis et criticis illustrati</title>
+                                <editor>Jacques Quétif</editor>
+                                <editor>Jacques Échard</editor>
+                                <pubPlace>Paris</pubPlace>
+                                <publisher>Ballard &amp; Simart</publisher>
+                                <date>1719</date>
+                                <biblScope unit="volume">I</biblScope>
+                                <biblScope unit="page">pp. 2-24</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Contiene solo estratti selezionati.</note>
+                                <note xml:lang="en">Contains selected excerpts only.</note>
+                            </bibl>
+                        </relatedItem>
+
+                        <relatedItem type="historical_edition">
+                            <bibl>
+                                <title level="j" type="short"><abbr>AA. SS.</abbr></title>
+                                <title level="j">Acta Sanctorum</title>
+                                <pubPlace>Antwerp</pubPlace>
+                                <publisher>Société des Bollandistes</publisher>
+                                <date>1733</date>
+                                <biblScope unit="volume">Augusti I</biblScope>
+                                <biblScope unit="page">pp. 545-559</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Le pagine si riferiscono all'edizione originale; le pagine alternative (pp. 541-555) corrispondono alla terza edizione (ed. III).</note>
+                                <note xml:lang="en">Pages refer to the original edition; alternative pages (pp. 541-555) correspond to the third edition (ed. III).</note>
+                            </bibl>
+                        </relatedItem>
+
+                        <relatedItem type="modern_edition">
+                            <bibl>
+                                <title level="m">Beati Iordani de Saxonia altera Opera</title>
+                                <editor>Joachim-Joseph Berthier</editor>
+                                <pubPlace>Fribourg</pubPlace>
+                                <publisher>Typis Consociationis Sancti Pauli</publisher>
+                                <date>1891</date>
+                                <biblScope unit="page">pp. 1-40</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Prima raccolta delle opere di Giordano di Sassonia.</note>
+                                <note xml:lang="en">First collection of Jordan of Saxony's works.</note>
+                            </bibl>
+                        </relatedItem>
+
+                        <relatedItem type="modern_edition">
+                            <bibl>
+                                <title level="j" type="short"><abbr>ASOP</abbr></title>
+                                <title level="j">Analecta Sacri Ordinis Fratrum Praedicatorum</title>
+                                <biblScope unit="volume">XLI</biblScope>
+                                <editor>Modesto Canal</editor>
+                                <pubPlace>Rome</pubPlace>
+                                <publisher>In Domo Generalitia</publisher>
+                                <date>1933-1934</date>
+                                <biblScope unit="page">pp. 482-503</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Edizione pubblicata all'interno del periodico ufficiale domenicano.</note>
+                                <note xml:lang="en">Edition issued within the official Dominican periodical.</note>
+                            </bibl>
+                        </relatedItem>
+
+                        <relatedItem type="modern_edition">
+                            <bibl>
+                                <title level="m">Monumenta S. P. N. Dominici: Historia et Constitutiones</title>
+                                <biblScope unit="issue">Fasc. II</biblScope>
+                                <title level="s" type="short"><abbr>MOPH</abbr></title>
+                                <title level="s">Monumenta Ordinis Fratrum Praedicatorum Historica</title>
+                                <biblScope unit="volume">Tomus XVI</biblScope>
+                                <editor>Heribert Christian Scheeben</editor>
+                                <pubPlace>Rome</pubPlace>
+                                <publisher>Istituto Storico Domenicano</publisher>
+                                <date>1935</date>
+                                <biblScope unit="page">pp. 25-82</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Edizione critica moderna standard.</note>
+                                <note xml:lang="en">Standard modern critical edition.</note>
+                            </bibl>
+                        </relatedItem>
+                    </bibl>
+
+                    <bibl xml:id="acta_canonizationis" type="official_record">
+                        <title>Acta canonizationis sancti Dominici</title>
+                        <!-- 3. TITOLO e LINGUA -->
+                        <title level="m" xml:lang="la">Acta canonizationis sancti Dominici</title>
+                        <textLang mainLang="la">Latin</textLang>
+                        
+                        <!-- 4. DATAZIONE DELLA STESURA -->
+                        <date when="1233">1233</date>
+
+                        <!-- 5. NOTA DESCRITTIVA -->
+                        <note type="context" xml:lang="it">Si tratta della documentazione relativa alle inchieste ufficiali svolte a Bologna e Tolosa nel 1233. Tale documento segna un'importante svolta procedurale nella storia della canonizzazione, rappresentando uno dei primi casi di utilizzo di un elenco strutturato di *articuli interrogatorii* per orientare le deposizioni. Anziché concentrarsi sulla taumaturgia, gli *Acta* pongono l'accento sull'*amor regularitatis* (lo zelo per la Regola) e sullo *zelus animarum* del fondatore, delineando un modello di santità coerente con l'identità costituzionale dell'Ordine. Promosso strategicamente durante il movimento dell'«Alleluia», il processo conferì la legittimazione carismatica necessaria per i nuovi compiti inquisitoriali affidati all'Ordine e ne consolidò lo status istituzionale all'interno della Chiesa.</note>
+                        <note type="context" xml:lang="en">The record of the official inquiries held in Bologna and Toulouse in 1233. This document marks a significant procedural shift in the history of canonization, being one of the first instances to utilize a structured list of "articuli interrogatorii" to guide testimonies. Rather than focusing on thaumaturgy, the Acta emphasize the founder's "amor regularitatis" (zeal for the Rule) and "zelus animarum," projecting a model of sanctity that aligns with the Order's established constitutional identity. Strategically promoted during the "Alleluia" movement, the process provided the charismatic legitimacy needed for the Order’s newly assigned inquisitorial duties and secured its institutional status within the Church.</note>
+
+                        <relatedItem type="constituent">
+                            <bibl>
+                                <title level="a">Dicta testium in inquisitione de vita et miraculis</title>
+                                <idno type="BHL">2208</idno> 
+                                <date when="1233/1234">1233</date>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Raccoglie i verbali ufficiali con le deposizioni dirette dei testimoni oculari (sia i frati a Bologna sia i testimoni a Tolosa)</note>
+                                <note xml:lang="en">It compiles the official records containing the direct testimonies of eyewitnesses (both the friars in Bologna and the witnesses in Toulouse).</note>
+                            </bibl>
+                        </relatedItem>
+
+                        <relatedItem type="constituent">
+                            <bibl>
+                                <title level="a">Epistula inquisitorum Tolosanorum de virtutibus et miraculis</title>
+                                <idno type="BHL">2209</idno> 
+                                <date when="1233/1234">1233</date>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Lettera di trasmissione redatta dagli inquisitori tolosani inviata a Maestro Tancredi a Bologna per autenticare l'inchiesta svolta in Francia</note>
+                                <note xml:lang="en">Covering letter drafted by the inquisitors of Toulouse and sent to Master Tancred in Bologna to authenticate the inquiry conducted in France.</note>
+                            </bibl>
+                        </relatedItem>
+
+                        <relatedItem type="historical_edition">
+                            <bibl>                                
+                                <title level="m">Scriptores Ordinis Praedicatorum recensiti, notisque historicis et criticis illustrati</title>
+                                <title level="m" type="short"><abbr>QE</abbr></title>
+                                <editor>Jacques Quétif</editor>
+                                <editor>Jacques Échard</editor>
+                                <pubPlace>Paris</pubPlace>
+                                <publisher>Ballard &amp; Simart</publisher>
+                                <date>1719</date>
+                                <biblScope unit="volume">I</biblScope>
+                                <biblScope unit="page">pp. 44-58</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Pubblicazione storica contenuta nel primo volume della raccolta.</note>
+                                <note xml:lang="en">Historical publication within the first volume of the collection.</note>
+                            </bibl>
+                        </relatedItem>
+
+                        <relatedItem type="historical_edition">
+                            <bibl>                                
+                                <title level="j">Acta Sanctorum</title>
+                                <title level="j" type="short"><abbr>AA. SS.</abbr></title>
+                                <pubPlace>Antwerp</pubPlace>
+                                <publisher>Albertus Thieullier</publisher>
+                                <date>1733</date>
+                                <biblScope unit="volume">Augusti I</biblScope>
+                                <biblScope unit="page">pp. 632-647</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Edizione originale di Anversa.</note>
+                                <note xml:lang="en">Original Antwerp edition.</note>
+                            </bibl>
+                        </relatedItem> 
+
+                        <relatedItem type="historical_edition">
+                            <bibl>                                
+                                <title level="j">Acta Sanctorum</title>
+                                <title level="j" type="short"><abbr>AA. SS.</abbr></title>
+                                <pubPlace>Paris</pubPlace>
+                                <publisher>Victor Palmé</publisher>
+                                <date>1867</date>
+                                <biblScope unit="volume">Augusti I</biblScope>
+                                <biblScope unit="page">pp. 628-643</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Terza edizione (ed. III).</note>
+                                <note xml:lang="en">Third edition (ed. III).</note>
+                            </bibl>
+                        </relatedItem>
+
+                        <relatedItem type="modern_edition">
+                            <bibl>
+                                <title level="m">Monumenta S. P. N. Dominici: Historia et Constitutiones</title>
+                                <biblScope unit="issue">Fasc. II</biblScope>
+                                <title level="s" type="short"><abbr>MOPH</abbr></title>
+                                <title level="s">Monumenta Ordinis Fratrum Praedicatorum Historica</title>
+                                <biblScope unit="volume">Tomus XVI</biblScope>
+                                <editor>Angelus Walz</editor>
+                                <pubPlace>Rome</pubPlace>
+                                <publisher>Istituto Storico Domenicano</publisher>
+                                <date>1935</date>
+                                <biblScope unit="page">pp. 123-172, 176-187</biblScope>
+                                <textLang mainLang="la">Latin</textLang>
+                                <note xml:lang="it">Edizione critica moderna standard. Il testo comprende sia gli atti di Bologna (pp. 123-172) sia quelli di Tolosa (pp. 176-187).</note>
+                                <note xml:lang="en">Standard modern critical edition. The text includes both the Bologna acts (pp. 123-172) and the Toulouse acts (pp. 176-187).</note>
+                            </bibl>
+                        </relatedItem>
+                    </bibl> 
+                </listBibl>
+               
+            </sourceDesc>
+        </fileDesc>
+        
+        <profileDesc>
+            <particDesc>
+                <listPerson type="historical">
+                    <person xml:id="dominic_guzman">
+                        <idno type="wikidata">Q44091</idno>
+                        <idno type="viaf">17240904</idno>
+                        <persName xml:lang="en">Dominic de Guzmán</persName>
+                        <persName xml:lang="it">Domenico di Guzmán</persName>
+                        <note xml:lang="it">Canonico di Osma, predicatore antieretico in Linguadoca e fondatore dell'Ordine dei Frati Predicatori (Domenicani), vissuto in rigorosa povertà evangelica e morto a Bologna nel 1221.</note>
+                        <note xml:lang="en">Canon of Osma, preacher against heresy in Languedoc, and founder of the Order of Preachers (Dominicans); he lived in strict evangelical poverty and died in Bologna in 1221.</note>
+                    </person>
+                    <person xml:id="nicola_pisano">
+                        <idno type="wikidata">Q364413</idno>
+                        <idno type="viaf">95710492</idno>
+                        <persName>Nicola Pisano</persName>
+                        <note xml:lang="it">Celebre scultore toscano che, insieme alla sua operosa bottega di Pisa (in cui figuravano assistenti come fra Guglielmo, Arnolfo di Cambio e Lapo), progettò e scolpì intorno al 1264-1267 il monumentale sarcofago marmoreo dell'Arca di San Domenico a Bologna.</note>
+                        <note xml:lang="en">A renowned Tuscan sculptor who, together with his industrious workshop in Pisa (which included assistants such as Fra Guglielmo, Arnolfo di Cambio, and Lapo), designed and carved the monumental marble sarcophagus of the Shrine of Saint Dominic in Bologna between approximately 1264 and 1267.</note>
+                    </person>
+                    <person xml:id="pope_innocent_iii">
+                        <idno type="wikidata">Q128076</idno>
+                        <idno type="viaf">16017787</idno>
+                        <persName xml:lang="en">Pope Innocent III</persName>
+                        <persName xml:lang="it">Papa Innocenzo III</persName>
+                        <note xml:lang="it">Pontefice che nel 1215 accolse san Domenico a Roma e, colpito dal celebre sogno premonitore in cui il santo sosteneva la basilica del Laterano pericolante, concesse la prima approvazione orale e preliminare all'Ordine.</note>
+                        <note xml:lang="en">The Pontiff who welcomed Saint Dominic to Rome in 1215 and, struck by the famous prophetic dream in which the saint was seen propping up the tottering Lateran Basilica, granted the Order its initial oral and preliminary approval.</note>
+                    </person>
+                    <person xml:id="pope_gregory_ix">
+                        <idno type="wikidata">Q124831</idno>
+                        <idno type="viaf">91013639</idno>
+                        <persName xml:lang="en">Pope Gregory IX</persName>
+                        <persName xml:lang="it">Papa Gregorio IX</persName>
+                        <note xml:lang="it">Già cardinale Ugolino d'Ostia e intimo amico di Domenico; come papa promosse la solenne traslazione delle spoglie del fondatore nel 1233, avviò il regolare processo di canonizzazione bolognese, proclamò Domenico santo nel 1234 con la bolla *Fons sapientiae* e istituì formalmente l'Inquisizione domenicana.</note>
+                        <note xml:lang="en">Formerly Cardinal Ugolino of Ostia and a close friend of Dominic, as Pope he promoted the solemn translation of the founder's remains in 1233, initiated the formal canonization process in Bologna, proclaimed Dominic a saint in 1234 with the bull *Fons sapientiae*, and formally established the Dominican Inquisition.</note>
+                    </person>
+                    <person xml:id="pope_honorius_iii">
+                        <idno type="wikidata">Q160182</idno>
+                        <idno type="viaf">41848773</idno>
+                        <persName xml:id="en">Pope Honorius III</persName>
+                        <persName xml:id="it">Papa Onorio III</persName>
+                        <note xml:lang="it">Successore di Innocenzo III, promulgò la bolla di conferma solenne dell'Ordine dei Predicatori nel 1216 (*Religiosam vitam*), emanò varie bolle di raccomandazione per i frati e impose l'incorporazione delle comunità femminili romane di San Sisto e bolognesi di Sant'Agnese sotto la cura spirituale dell'Ordine.</note>
+                        <note xml:lang="en">As the successor to Innocent III, he promulgated the bull solemnly confirming the Order of Preachers in 1216 (*Religiosam vitam*), issued various bulls recommending the friars, and mandated that the female communities of San Sisto in Rome and Sant'Agnese in Bologna be placed under the spiritual care of the Order.</note>
+                    </person>
+                    <person xml:id="jordan_saxony">
+                        <idno type="wikidata">Q60790</idno>
+                        <idno type="viaf">84971788</idno>
+                        <persName xml:id="en">Jordan of Saxony</persName>
+                        <persName xml:id="it">Giordano di Sassonia</persName>
+                        <note xml:lang="it">Secondo maestro generale dell'Ordine e successore diretto di Domenico dal 1222; compose il Libellus de principiis, la prima opera storica e agiografica sulle origini domenicane, fu un formidabile reclutatore tra gli universitari, curò la traslazione dei resti del santo nel 1233 e morì in un naufragio nel 1237.</note>
+                        <note xml:lang="en">He was the second Master General of the Order and the direct successor to Dominic from 1222; he composed the *Libellus de principiis*, the first historical and hagiographical work on the origins of the Dominican Order, was a formidable recruiter among university students, oversaw the translation of the saint's remains in 1233, and died in a shipwreck in 1237.</note>
+                    </person>
+                    <person xml:id="peter_ferrand">
+                        <idno type="wikidata">Q23619886</idno>
+                        <idno type="viaf">311283097</idno>
+                        <persName xml:lang="en">Peter Ferrand</persName>
+                        <persName xml:lang="it">Pietro Ferrandi</persName>
+                        <note xml:lang="it">Agiografo spagnolo autore della prima Legenda liturgica ufficiale di san Domenico (c. 1235-1238); integrò l'opera di Giordano proiettandola in un quadro escatologico e introdusse per primo il racconto del testamento spirituale e della maledizione contro chi introducesse proprietà temporali nell'Ordine.</note>
+                        <note xml:lang="en">Spanish hagiographer and author of the first official liturgical *Legenda* of Saint Dominic (c. 1235–1238); he supplemented the work of Jordan by framing it within an eschatological context and was the first to introduce the account of the spiritual testament and the curse against anyone who introduced temporal property into the Order.</note>
+                    </person>
+                    <person xml:id="constantine_orvieto">
+                        <idno type="wikidata">Q108463017</idno>
+                        <idno type="viaf">22567337</idno>
+                        <persName xml:lang="en">Constantine of Orvieto</persName>
+                        <persName xml:lang="it">Constantine of Orvieto</persName>
+                        <note xml:lang="it">Frate domenicano e poi vescovo di Orvieto autore della Legenda nuova (c. 1246-1247); arricchì notevolmente la biografia di Domenico con miracoli in vita, vi inserì il sogno del Laterano e caratterizzò in modo marcato Domenico come inquisitore attraverso il prodigio della salvezza di Raimondo Grossi dal rogo.</note>
+                        <note xml:lang="en">A Dominican friar and later Bishop of Orvieto, he authored the *Legenda nova* (c. 1246–1247); he significantly enriched the biography of Dominic with accounts of miracles performed during the saint's lifetime, incorporated the dream of the Lateran, and strongly characterized Dominic as an inquisitor through the miraculous rescue of Raimondo Grossi from the stake.</note>
+                    </person>
+                    <person xml:id="humbert_romans">
+                        <idno type="wikidata">Q2623954</idno>
+                        <idno type="viaf">122038877</idno>
+                        <persName xml:lang="en">Humbert of Romans</persName>
+                        <persName xml:lang="it">Umberto di Romans</persName>
+                        <note xml:lang="it">Quinto maestro generale dell'Ordine (1254-1263); riordinò e unificò la liturgia domenicana redigendo il "Prototipo" liturgico (1256-1260), promosse la stesura delle *Vitae fratrum* di Gerardo di Frachet e firmò la redazione definitiva e normalizzata della Legenda liturgica di san Domenico.</note>
+                        <note xml:lang="en">Fifth Master General of the Order (1254–1263); he reorganized and unified the Dominican liturgy by compiling the liturgical "Prototype" (1256–1260), promoted the writing of the *Vitae fratrum* by Gerard of Frachet, and signed off on the definitive, standardized version of the liturgical *Legenda* of Saint Dominic.</note>
+                    </person>
+                    <person xml:id="reginald_orleans">
+                        <idno type="wikidata">Q3931864</idno>
+                        <idno type="viaf">89368066</idno>
+                        <persName xml:id="en">Reginald of Orléans</persName>
+                        <persName xml:id="it">Reginaldo d'Orléans</persName>
+                        <note xml:lang="it">Celebre docente di diritto canonico a Parigi e decano di Saint-Aignan a Orléans; unitosi a san Domenico a Roma nel 1218 dopo essere stato miracolosamente risanato dalla Vergine Maria (che nell'occasione gli mostrò l'abito dell'Ordine), fu un formidabile predicatore a Bologna e a Parigi, dove favorì il decisivo reclutamento universitario dei primi frati prima della sua precoce scomparsa nel 1220.</note>
+                        <note xml:lang="en">A renowned professor of canon law in Paris and Dean of Saint-Aignan in Orléans, he joined Saint Dominic in Rome in 1218 after being miraculously healed by the Virgin Mary (who, on that occasion, showed him the Order's habit); he was a formidable preacher in Bologna and Paris, where he facilitated the crucial recruitment of the first friars from university circles before his untimely death in 1220.</note>
+                    </person>
+                    <person xml:id="saint_paul">
+                        <idno type="wikidata">Q9200</idno>
+                        <idno type="viaf">100178828</idno>
+                        <persName xml:lang="en">Saint Paul</persName>
+                        <persName xml:lang="it">San Paolo</persName>
+                        <note xml:lang="it">Apostolo che, secondo la tradizione agiografica domenicana codificata da Costantino d'Orvieto, apparve in visione a san Domenico a Roma insieme a san Pietro, consegnandogli il libro delle Scritture e inviandolo a predicare nel mondo.</note>
+                        <note xml:lang="en">An apostle who, according to the Dominican hagiographic tradition codified by Constantine of Orvieto, appeared in a vision to Saint Dominic in Rome alongside Saint Peter, handing him the book of the Scriptures and sending him forth to preach to the world.</note>
+                    </person>
+                    <person xml:id="saint_peter">
+                        <idno type="wikidata">Q33923</idno>
+                        <idno type="viaf">13581141</idno>
+                        <persName xml:lang="en">Saint Peter</persName>
+                        <persName xml:lang="it">San Pietro</persName>
+                        <note xml:lang="it">Apostolo e primo papa che apparve nella medesima visione romana a san Domenico, consegnandogli il bastone del cammino e dell'autorità per la missione di predicazione universale.</note>
+                        <note xml:lang="en">Apostle and first pope who appeared to Saint Dominic in the same Roman vision, handing him the staff of pilgrimage and authority for the mission of universal preaching.</note>
+                    </person>
+                    <person xml:id="peter_vaux_cernay">
+                        <idno type="wikidata">Q745030</idno>
+                        <idno type="viaf">263271643</idno>
+                        <persName xml:lang="en">Peter of Vaux-de-Cernay</persName>
+                        <persName xml:lang="it">Pietro di Vaux-de-Cernay</persName>
+                        <note xml:lang="it">Monaco cistercense autore dell'*Historia Albigensis* (c. 1215); registrò la più antica e sobria testimonianza contemporanea della predicazione di Domenico in Linguadoca e del miracolo dei libri rigettati indenni dalle fiamme a Montréal.</note>
+                        <note xml:lang="en">A Cistercian monk and author of the *Historia Albigensis* (c. 1215); he recorded the earliest and most sober contemporary account of Dominic’s preaching in Languedoc and the miracle of the books rejected unharmed by the flames at Montréal.</note>
+                    </person>
+                    <person xml:id="buonviso">
+                        <persName>Buonviso da Piacenza</persName>
+                        <note xml:lang="it">Primo compagno di Domenico e fondatore del convento di Piacenza; depose come testimone al processo di canonizzazione bolognese del 1233 riferendo dell'ascesi e della preghiera di Domenico e testimoniando direttamente il miracolo bolognese della moltiplicazione dei pani.</note>
+                        <note xml:lang="en">An early companion of Dominic and founder of the convent in Piacenza; he testified at the 1233 canonization proceedings in Bologna, recounting Dominic’s asceticism and prayer and personally witnessing the miracle of the multiplication of the loaves in Bologna.</note>
+                    </person>
+                    <person xml:id="rodolfo">
+                        <persName>Rodolfo da Faenza</persName>
+                        <note xml:lang="it">Rettore di San Niccolò delle Vigne e poi procuratore del convento bolognese; testimone chiave al processo del 1233, descrisse le ultime ore del fondatore, la sua volontà di essere sepolto "sotto i piedi dei frati" e il miracolo domestico della moltiplicazione dei pani.</note>
+                        <note xml:lang="en">Rector of San Niccolò delle Vigne and later procurator of the Bolognese convent; a key witness at the 1233 trial, he described the founder's final hours, his wish to be buried "beneath the friars' feet," and the domestic miracle of the multiplication of the loaves.</note>
+                    </person>
+                    <person xml:id="napoleone_orsini">
+                        <persName>Napoleone Orsini</persName>
+                        <note xml:lang="it">Giovane conte romano, nipote del cardinale Stefano di Fossanova; morì a Roma in seguito a una rovinosa caduta da cavallo nel 1221 e fu miracolosamente risuscitato da san Domenico, evento testimoniato direttamente da suor Cecilia e scolpito sul fianco dell'Arca.</note>
+                        <note xml:lang="en">A young Roman count and nephew of Cardinal Stefano di Fossanova; he died in Rome following a disastrous fall from his horse in 1221 and was miraculously restored to life by Saint Dominic, an event carved onto the side of the Arca.</note>
+                    </person>
+                    <person xml:id="suor_cecilia_contarini">
+                        <persName>Suor Cecilia Contarini</persName>
+                        <note xml:lang="it">Monaca domenicana, fondatrice del convento di San Sisto a Roma e successivamente residente presso il convento di Sant'Agnese a Bologna negli anni in cui Nicola Pisano realizzò l'Arca (1264-1267). Avendo vissuto a San Sisto nel 1221, Cecilia fu testimone oculare diretta di alcuni importanti eventi romani di Domenico, in particolare della cosiddetta resurrezione del giovane Napoleone Orsini. Per questo motivo alcuni ipotizzano possa esser stata consultata per l'apparato iconografico del sarcofago e tradizionalmente la identificano nella figura scolpita in alto a sinistra del pannello della resurrezione: ritratta di spalle rispetto allo spettatore ma con lo sguardo rivolto al miracolo, una scelta compositiva che la isola dalla folla e la consacra, nella sua vecchiaia, come testimone oculare narrante dell'evento.</note>
+                        <note xml:lang="en">A Dominican nun, she founded the convent of San Sisto in Rome and later resided at the convent of Sant'Agnese in Bologna during the years Nicola Pisano created the *Arca* (1264–1267). Having lived at San Sisto in 1221, Cecilia was a direct eyewitness to certain significant events involving Dominic in Rome—most notably the so-called resurrection of the young Napoleone Orsini. For this reason, some hypothesize that she may have been consulted regarding the sarcophagus's iconographic program; traditionally, she is identified as the figure sculpted in the upper-left section of the resurrection panel. Depicted with her back to the viewer yet gazing toward the miracle, this compositional choice isolates her from the crowd and, in her old age, establishes her as the eyewitness recounting the event.</note>
+                    </person>
+                </listPerson>
+
+                <listOrg>
+                    <org xml:id="dominican_order" type="religiousOrder">
+                        <orgName type="official" xml:lang="la">Ordo Praedicatorum</orgName>
+                        <orgName type="standard" xml:lang="en">Order of Preachers</orgName>
+                        <orgName type="standard" xml:lang="it">Ordine dei Predicatori</orgName>
+                        
+                        <orgName type="alt" xml:lang="en">Dominican Order</orgName>
+                        <orgName type="alt" xml:lang="it">Ordine Domenicano</orgName>
+                        
+                        <orgName type="abbrev">OP</orgName>
+                        
+                        <idno type="wikidata">Q131479</idno>
+                        <idno type="viaf">140291092</idno>
+
+
+                        <note xml:lang="it">Ordine mendicante fondato a Tolosa da san Domenico nei primi anni del Duecento per contrastare la diffusione delle eresie catara e valdese attraverso la predicazione itinerante e l'esempio di una vita in povertà apostolica. Ottenne la conferma provvisoria da papa Innocenzo III nel 1215 e quella solenne da Onorio III nel 1216, adottando la regola di sant'Agostino. La sua straordinaria novità istituzionale risiedette nel diritto universale di predicazione dottrinale concesso a ciascun frate chierico (prerogativa precedentemente riservata ai soli vescovi), unito a un vigoroso orientamento intellettuale che favorì un massiccio reclutamento negli Studia universitari di Parigi e Bologna. Nel primo Capitolo Generale di Bologna (1220) l'Ordine abbracciò il principio della mendicità conventuale e della rinuncia totale alle proprietà, strutturandosi con una costituzione collegiale ed elastica incentrata sull'autorità dei Capitoli Generali e finalizzata *ex officio* allo studio, alla difesa dell'ortodossia e alla salvezza delle anime.</note>
+                        <note xml:lang="en">A mendicant order founded in Toulouse by Saint Dominic in the early 13th century to counter the spread of the Cathar and Waldensian heresies through itinerant preaching and the example of a life of apostolic poverty. It received provisional approval from Pope Innocent III in 1215 and formal confirmation from Honorius III in 1216, adopting the Rule of Saint Augustine. Its extraordinary institutional innovation lay in the universal right to preach doctrine granted to every friar in holy orders (a prerogative previously reserved solely for bishops) combined with a strong intellectual orientation that fostered massive recruitment from the university *Studia* of Paris and Bologna. At the first General Chapter in Bologna (1220), the Order embraced the principle of mendicancy and the total renunciation of property, adopting a flexible, collegial constitution centered on the authority of General Chapters and dedicated *ex officio* to study, the defense of orthodoxy, and the salvation of souls.</note>
+
+                    </org>
+                </listOrg>
+
+                <!-- LISTA DEGLI OGGETTI (L'Arca, sarcofago e pannelli) -->
+                
+                <listObject>
+                    <object xml:id="saint_dominic_arca">
+                        <objectIdentifier>
+                            <objectName type="preferred" xml:lang="en">Arca di San Domenico</objectName>
+                            <objectName type="preferred" xml:lang="it">Arca di San Domenico</objectName>
+                            <objectName type="variant" xml:lang="en">Ark of Saint Dominic</objectName>
+                            <objectName type="variant" xml:lang="en">Shrine of Saint Dominic</objectName>
+                        </objectIdentifier>
+                        
+                        <idno type="wikidata">Q2417706</idno>
+
+                        <note xml:lang="it">Monumento sepolcrale realizzato a Bologna che integra in un'unica e maestosa struttura elementi realizzati dal XIII al XVI secolo. L'insieme unisce il nucleo medievale originario progettato da Nicola Pisano (1267) alla grandiosa cimasa rinascimentale di Niccolò dell'Arca, arricchita dalle celebri sculture di Michelangelo e dai successivi interventi di Alfonso Lombardi. Questa complessa stratificazione artistica, oggi custodita nella cappella cinquecentesca della basilica, costituisce nella sua interezza monumentale il motore e il punto di riferimento per l'intera evoluzione dell'arte funeraria in Italia.</note>
+                        <note xml:lang="en">A funerary monument created in Bologna that integrates elements dating from the 13th to the 16th century into a single, majestic structure. The ensemble combines the original medieval core designed by Nicola Pisano (1267) with the magnificent Renaissance crowning section by Niccolò dell'Arca, enriched by celebrated sculptures by Michelangelo and later additions by Alfonso Lombardi. Housed today in the basilica's 16th-century chapel, this complex artistic layering stands, in its monumental entirety, as the driving force and benchmark for the evolution of funerary art in Italy.</note>
+                    </object>
+
+                    <object xml:id="sarcophagus">
+                        <objectIdentifier>
+                            <objectName xml:lang="en">Sarcophagus of the Arca di San Domenico</objectName> 
+                            <objectName xml:lang="it">Sarcofago dell'Arca di San Domenico</objectName> 
+                        </objectIdentifier>
+
+                        <idno type="wikidata">Q126766539</idno>
+
+                        <note xml:lang="it">L'unica porzione del monumento originario del 1267 a essersi conservata intatta all'interno della basilica di San Domenico a Bologna. Nella sua configurazione originale, la cassa marmorea non poggiava direttamente sul basamento ma era concepita come un sarcofago monumentale isolato (freestanding) sostenuto da un inedito e straordinario sistema figurato composto da cariatidi e telamoni, oggi rimossi dal complesso e parzialmente conservati in varie collezioni museali. Caratterizzato da una ricca trabeazione di gusto classico con fregi di acanto e uccelli, ospita i sei rilievi biografici della vita del santo intervallati ad altorilievo dalle figure della Madonna, del Redentore e dei quattro Dottori della Chiesa. Questi ultimi sono posizionati diagonalmente agli angoli del sarcofago per spezzare la rigidità geometrica del rettangolo e guidare fluidamente lo sguardo e il movimento dell'osservatore tutt'intorno alla struttura.</note>
+                        <note xml:lang="en">This is the only part of the original 1267 monument that has survived intact within the Basilica of San Domenico in Bologna. In its original configuration, the marble chest did not rest directly on the base but was conceived as a freestanding monumental sarcophagus, supported by a novel and extraordinary figurative system of caryatids and telamones (elements removed from the complex and now partially preserved in various museum collections). Featuring a rich, classically inspired entablature adorned with acanthus and bird friezes, the sarcophagus displays six biographical reliefs depicting the saint's life, interspersed with high-relief figures of the Madonna, the Redeemer, and the four Doctors of the Church. The latter are positioned diagonally at the corners of the sarcophagus to break the rectangle's geometric rigidity and fluidly guide the viewer's gaze and movement around the entire structure.</note>
+                    </object>
+                                
+                    <object xml:id="panel_burning_books">
+                        <objectIdentifier>
+                            <objectName xml:lang="en">Panel of the Burning Books</objectName> 
+                            <objectName xml:lang="it">Pannello della prova del fuoco</objectName>
+                        </objectIdentifier>
+
+                        <note xml:lang="it">Scena dell'ordalia del fuoco svoltasi durante lo scontro dottrinale contro l'eresia catara in Linguadoca. Mostra i giudici arbitri seduti in alto ad assistere alla prova, mentre in basso un giovane alimenta con un soffietto le fiamme che consumano i libri eretici, dalle quali il testo di Domenico balza miracolosamente indenne.</note>
+                        <note xml:lang="en">A scene depicting the ordeal by fire that took place during the doctrinal clash with the Cathar heresy in Languedoc. It shows the adjudicators seated above, witnessing the trial, while below, a young man uses a pair of bellows to stoke the flames consuming the heretical books from which Dominic’s text miraculously emerges unscathed.</note>
+                    </object>
+
+                    <object xml:id="panel_miraculous_supper">
+                        <objectIdentifier>
+                            <objectName xml:lang="en">Panel of the Miraculous Supper of Saint Dominic</objectName> 
+                            <objectName xml:lang="it">Panel of the Miraculous Supper of Saint Dominic</objectName> 
+                        </objectIdentifier>
+
+                        <note xml:lang="it">Raffigurazione del miracolo della moltiplicazione dei pani nel refettorio del convento romano di San Sisto. Mostra san Domenico e la comunità dei frati disposti in posizioni simmetriche e domestiche attorno a una lunga tavola, mentre in primo piano due angeli visti di spalle distribuiscono pani segnati da croci.</note>
+                        <note xml:lang="en">Depiction of the miracle of the multiplication of the loaves in the refectory of the Roman convent of San Sisto. It shows Saint Dominic and the community of friars arranged in symmetrical, informal poses around a long table, while in the foreground, two angels seen from behind distribute loaves marked with crosses.</note>
+                    </object>
+                    <object xml:id="panel_raising_orsini">
+                        <objectIdentifier>
+                            <objectName xml:lang="en">Panel of the Raising of Napoleone Orsini</objectName> 
+                            <objectName xml:lang="it">Pannello della resurrezione di Napoleone Orsini</objectName> 
+                        </objectIdentifier>
+                        <note xml:lang="it">Rilievo che descrive il miracolo romano della resurrezione del giovane Orsini, nipote del cardinale Stefano di Fossanova. Presenta a sinistra il momento drammatico della rovinosa caduta da cavallo e la preghiera di Domenico, e a destra la riconsegna del giovane risorto alla madre.</note>
+                        <note xml:lang="en">A relief depicting the Roman miracle of the resurrection of the young Orsini, nephew of Cardinal Stefano di Fossanova. On the left, it shows the dramatic moment of the disastrous fall from his horse and Dominic’s prayer; on the right, the return of the resurrected youth to his mother.</note>
+                    </object>
+                    <object xml:id="panel_saints_peter_paul">
+                        <objectIdentifier>
+                            <objectName xml:lang="en">Panel of the Saints Peter and Paul</objectName> 
+                            <objectName xml:lang="en">Pannello dei santi Pietro e Paolo</objectName>
+                        </objectIdentifier>
+                        <note xml:lang="it">Rappresentazione del conferimento del mandato di predicazione universale a Domenico. Il santo riceve solennemente il bastone del cammino da san Pietro e il libro delle Scritture da san Paolo, preludio all'immediata e fiduciosa dispersione dei primi frati missionari nel mondo.</note>
+                        <note xml:lang="en">Depiction of the commissioning of Dominic with the mandate for universal preaching. The saint solemnly receives the pilgrim's staff from Saint Peter and the Book of Scriptures from Saint Paul, a prelude to the immediate and confident dispersal of the first missionary friars throughout the world.</note>
+                    </object>
+                    <object xml:id="panel_story_reginald">
+                        <objectIdentifier>
+                            <objectName xml:lang="en">Panel of the Story of Reginald</objectName> 
+                            <objectName xml:lang="it">Pannello delle storie di Reginaldo</objectName> 
+                        </objectIdentifier>
+                        <note xml:lang="it">Scena divisa in tre momenti focalizzati sul decisivo ingresso nell'Ordine di Reginaldo d'Orléans. A sinistra il canonico parigino promette obbedienza a Domenico davanti al papa; al centro viene colto da un improvviso malore e sorretto da un chierico; a destra riceve la visita terapeutica della Vergine che gli mostra lo scapolare domenicano.</note>
+                        <note xml:lang="en">Depiction of the miracle of the multiplication of the loaves in the refectory of the Roman convent of San Sisto. The scene is divided into three moments centering on the pivotal entry of Reginald of Orléans into the Order: on the left, the Parisian canon pledges obedience to Dominic in the presence of the Pope; in the center, he is suddenly taken ill and supported by a cleric; on the right, he receives a healing visit from the Virgin, who shows him the Dominican scapular.</note>
+                    </object>
+                    <object xml:id="panel_approval_order">
+                        <objectIdentifier>
+                            <objectName xml:lang="en">Panel of the Approval of the Order</objectName> 
+                            <objectName xml:lang="en">Pannello dell'approvazione dell'Ordine</objectName>
+                        </objectIdentifier>
+                        <note xml:lang="it">Rilievo incentrato sulle tappe della legittimazione e della conferma pontificia dell'Ordine. A sinistra Domenico presenta la petizione a papa Innocenzo III; al centro il pontefice addormentato sogna il santo che sorregge con la spalla la basilica del Laterano; a destra alcuni identificano il pontefice con il successore Onorio III mentre consegna formalmente a Domenico il libro della Regola mentre altri riconoscono sempre lo stesso Innocenzo III supportando questa tesi con l'insistenza delle fonti interne dell'Ordine (le quali insistono assai più sulla prima fase dell'approvazione innocenziana).</note>
+                        <note xml:lang="en">The relief focuses on the stages of the Order's legitimation and papal confirmation. On the left, Dominic presents the petition to Pope Innocent III; in the center, the sleeping pontiff dreams of the saint propping up the Lateran Basilica with his shoulder; on the right, some identify the pontiff as Innocent's successor, Honorius III, formally handing the book of the Rule to Dominic, while others maintain it is still Innocent III, supporting this view by pointing to the emphasis placed by the Order's own sources (which focus much more heavily on the initial phase of Innocent's approval).</note>
+                    </object>
+                </listObject>
+                
+                <!-- 3. RELAZIONI (Mappatura Ontologica) -->
+
+                <listRelation>
+                    <!-- Definizione dei tipi (Classi) -->
+                    <relation active="#dominic_guzman" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#dominic_guzman" name="rdf:type" passive="rico:Person"/>
+
+                    <relation active="#nicola_pisano" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#nicola_pisano" name="rdf:type" passive="rico:Person"/>
+
+                    <relation active="#pope_innocent_iii" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#pope_innocent_iii" name="rdf:type" passive="rico:Person"/>
+
+                    <relation active="#pope_gregory_ix" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#pope_gregory_ix" name="rdf:type" passive="rico:Person"/>
+
+                    <relation active="#pope_honorius_iii" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#pope_honorius_iii" name="rdf:type" passive="rico:Person"/>
+                    
+                    <relation active="#jordan_saxony" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#jordan_saxony" name="rdf:type" passive="rico:Person"/>
+
+                    <relation active="#peter_ferrand" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#peter_ferrand" name="rdf:type" passive="rico:Person"/>
+
+                    <relation active="#constantine_orvieto" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#constantine_orvieto" name="rdf:type" passive="rico:Person"/>
+
+                    <relation active="#humbert_romans" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#humbert_romans" name="rdf:type" passive="rico:Person"/>
+                    
+                    <relation active="#reginald_orleans" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#reginald_orleans" name="rdf:type" passive="rico:Person"/>
+                    
+                    <relation active="#saint_paul" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#saint_paul" name="rdf:type" passive="rico:Person"/>
+
+                    <relation active="#saint_peter" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#saint_peter" name="rdf:type" passive="rico:Person"/>
+
+                    <relation active="#peter_vaux_cernay" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#peter_vaux_cernay" name="rdf:type" passive="rico:Person"/>
+
+                    <relation active="#buonviso" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#buonviso" name="rdf:type" passive="rico:Person"/>
+
+                    <relation active="#rodolfo" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#rodolfo" name="rdf:type" passive="rico:Person"/>
+
+                    <relation active="#napoleone_orsini" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#napoleone_orsini" name="rdf:type" passive="rico:Person"/>
+
+                    <relation active="#saint_dominic_arca" name="rdf:type" passive="arco:HistoricOrArtisticProperty"/>
+                    <relation active="#saint_dominic_arca" name="rdf:type" passive="arco:ComplexCulturalProperty"/>
+
+                    <relation active="#sarcophagus" name="rdf:type" passive="arco:HistoricOrArtisticProperty"/>
+                    <relation active="#sarcophagus" name="rdf:type" passive="crm:E22_Human-Made_Object"/>
+                    <relation active="#sarcophagus" name="rdf:type" passive="lrmoo:F5_Item"/>
+
+                    
+                    <relation active="#panel_burning_books" name="rdf:type" passive="crm:E22_Human-Made_Object"/>
+                    <relation active="#panel_burning_books" name="rdf:type" passive="lrmoo:F5_Item"/>
+                    <relation active="#panel_miraculous_supper" name="rdf:type" passive="crm:E22_Human-Made_Object"/>
+                    <relation active="#panel_miraculous_supper" name="rdf:type" passive="lrmoo:F5_Item"/>
+                    <relation active="#panel_raising_orsini" name="rdf:type" passive="crm:E22_Human-Made_Object"/>
+                    <relation active="#panel_raising_orsini" name="rdf:type" passive="lrmoo:F5_Item"/>
+                    <relation active="#panel_saints_peter_paul" name="rdf:type" passive="crm:E22_Human-Made_Object"/>
+                    <relation active="#panel_saints_peter_paul" name="rdf:type" passive="lrmoo:F5_Item"/>
+                    <relation active="#panel_story_reginald" name="rdf:type" passive="crm:E22_Human-Made_Object"/>
+                    <relation active="#panel_story_reginald" name="rdf:type" passive="lrmoo:F5_Item"/>
+                    <relation active="#panel_approval_order" name="rdf:type" passive="crm:E22_Human-Made_Object"/>
+                    <relation active="#panel_approval_order" name="rdf:type" passive="lrmoo:F5_Item"/>
+
+                    <relation active="#historia_albigensis" name="rdf:type" passive="lrmoo:F1_Work"/>
+                    <relation active="#legenda_constantini" name="rdf:type" passive="lrmoo:F1_Work"/>
+                    <relation active="#legenda_petri_ferrandi" name="rdf:type" passive="lrmoo:F1_Work"/>
+                    <relation active="#legenda_humbertus" name="rdf:type" passive="lrmoo:F1_Work"/>
+                    <relation active="#libellus_principiis" name="rdf:type" passive="lrmoo:F1_Work"/>
+                    <relation active="#acta_canonizationis" name="rdf:type" passive="crm:E31_Document"/>
+                    <relation active="#acta_canonizationis" name="rdf:type" passive="rico:Record"/>
+                    
+                    <relation active="#dominican_order" name="rdf:type" passive="crm:E74_Group"/>
+                    <relation active="#dominican_order" name="rdf:type" passive="rico:Group"/>
+
+                    <relation active="#fanjeaux" name="rdf:type" passive="crm:E53_Place"/>
+                    <relation active="#montreal" name="rdf:type" passive="crm:E53_Place"/>
+                    <relation active="#bologna" name="rdf:type" passive="crm:E53_Place"/>
+                    <relation active="#san_domenico_church" name="rdf:type" passive="crm:E53_Place"/>
+                    <relation active="#san_niccolo_church" name="rdf:type" passive="crm:E53_Place"/>
+
+                    <!-- Eventi -->
+                    <relation active="#canonization_process" name="rdf:type" passive="crm:E5_Event"/>
+                    <relation active="#approval_order" name="rdf:type" passive="crm:E5_Event"/>
+                    <relation active="#orsini_horse_fall" name="rdf:type" passive="crm:E5_Event"/>
+                    <relation active="#fanjeaux_dispute" name="rdf:type" passive="crm:E5_Event"/>
+                    <relation active="#approval_order_request" name="rdf:type" passive="crm:E5_Event"/>
+
+                    <!-- Relazioni persone -->
+                    <relation active="#dominic_guzman" name="rico:isOrWasLeaderOf" passive="#dominican_order"/>
+                    <relation active="#dominican_order" name="crm:P107_has_current_or_former_member" passive="#dominic_guzman"/>
+                    <relation active="#dominican_order" name="crm:P107_has_current_or_former_member" passive="#buonviso"/>
+                    <relation active="#dominican_order" name="crm:P107_has_current_or_former_member" passive="#rodolfo"/>
+                    <relation active="#dominican_order" name="crm:P107_has_current_or_former_member" passive="#reginald_orleans"/>
+                    <relation active="#dominican_order" name="crm:P107_has_current_or_former_member" passive="#peter_ferrand"/>
+                    <relation active="#dominican_order" name="crm:P107_has_current_or_former_member" passive="#jordan_saxony"/>
+                    <relation active="#jordan_saxony" name="rico:isOrWasLeaderOf" passive="#dominican_order"/>
+                    <relation active="#dominican_order" name="crm:P107_has_current_or_former_member" passive="#constantine_orvieto"/>
+                    <relation active="#dominican_order" name="crm:P107_has_current_or_former_member" passive="#humbert_romans"/>
+                    <relation active="#humbert_romans" name="rico:isOrWasLeaderOf" passive="#dominican_order"/>
+                    <relation active="#dominican_order" name="crm:P107_has_current_or_former_member" passive="#sister_cecilia_contarini"/>
+
+                    
+                    <!-- Relazioni eventi-->
+                    <relation active="#historia_albigensis" name="crm:P129_is_about" passive="#fanjeaux_dispute"/>
+
+                    <relation active="#orsini_horse_fall" name="crm:P11_had_participant" passive="#dominic_guzman"/>
+                    <relation active="#orsini_horse_fall" name="crm:P11_had_participant" passive="#napoleone_orsini"/>
+                    <relation active="#orsini_horse_fall" name="crm:P7_took_place_at" passive="#rome"/>
+
+                    <relation active="#fanjeaux_dispute" name="crm:P11_had_participant" passive="#dominic_guzman"/>
+                    <relation active="#fanjeaux_dispute" name="crm:P7_took_place_at" passive="#montreal"/>
+                    
+                    <relation active="#approval_order" name="crm:P11_had_participant" passive="#dominic_guzman"/>
+                    <relation active="#approval_order" name="crm:P11_had_participant" passive="#pope_honorius_iii"/>
+                    <relation active="#approval_order_request" name="crm:P11_had_participant" passive="#dominic_guzman"/>
+                    <relation active="#approval_order_request" name="crm:P11_had_participant" passive="#pope_innocent_iii"/>
+                    <relation active="#approval_order_request" name="crm:P7_took_place_at" passive="#rome"/>
+
+                    <relation active="#canonization_process" name="crm:P67_refers_to" passive="#dominic_guzman"/>
+                    <relation active="#canonization_process" name="crm:P11_had_participant" passive="#pope_gregory_ix"/>
+                    <relation active="#canonization_process" name="crm:P11_had_participant" passive="#rodolfo"/>
+                    <relation active="#canonization_process" name="crm:P11_had_participant" passive="#buonviso"/>
+                    <relation active="#canonization_process" name="crm:P94_has_created" passive="#acta_canonizationis"/>
+                    <relation active="#canonization_process" name="crm:P7_took_place_at" passive="#bologna"/>
+                    <relation active="#canonization_process" name="crm:P7_took_place_at" passive="#toulouse"/>
+
+                    <relation active="#san_domenico_church" name="crm:P89_falls_within" passive="#bologna"/>
+                    <relation active="#san_domenico_church" name="rdf:type" passive="crm:E24_Physical_human-made_thing"/>
+                    <relation active="#san_niccolo_church" name="rdf:type" passive="crm:E24_Physical_human-made_thing"/>
+
+                    <relation active="#acta_canonizationis" name="crm:P129_is_about" passive="#dominic_guzman"/>
+                    
+                    
+                    <!-- Relazioni composizionali dell'Arca -->
+                    <relation active="#saint_dominic_arca" name="arco:hasCulturalPropertyComponent" passive="#sarcophagus"/>
+                    <relation active="#sarcophagus" name="crm:P46_is_composed_of" passive="#panel_burning_books"/>
+                    <relation active="#sarcophagus" name="crm:P46_is_composed_of" passive="#panel_miraculous_supper"/>
+                    <relation active="#sarcophagus" name="crm:P46_is_composed_of" passive="#panel_raising_orsini"/>
+                    <relation active="#sarcophagus" name="crm:P46_is_composed_of" passive="#panel_saints_peter_paul"/>
+                    <relation active="#sarcophagus" name="crm:P46_is_composed_of" passive="#panel_story_reginald"/>
+                    <relation active="#sarcophagus" name="crm:P46_is_composed_of" passive="#panel_approval_order"/>
+
+                    
+                    <!-- Relazioni dell'Arca -->
+                    <relation active="#saint_dominic_arca" name="crm:P53_hasFormerOrCurrentLocation" passive="#san_domenico_church"/>
+                    <relation active="#sarcophagus" name="crm:P53_hasFormerOrCurrentLocation" passive="#san_niccolo_church"/>
+                    
+                    <!-- Relazioni opere letterarie -->
+                    <relation active="#legenda_petri_ferrandi" name="lrmoo:R68_is_inspired_by" passive="#libellus_principiis"/>
+                    <relation active="#legenda_constantini" name="lrmoo:R68_is_inspired_by" passive="#libellus_principiis"/>
+                    <relation active="#legenda_humbertus" name="lrmoo:R68_is_inspired_by" passive="#libellus_principiis"/>
+                    <relation active="#legenda_constantini" name="lrmoo:R68_is_inspired_by" passive="#legenda_petri_ferrandi"/>
+                    <relation active="#legenda_humbertus" name="lrmoo:R68_is_inspired_by" passive="#legenda_constantini"/>
+                    <relation active="#legenda_humbertus" name="lrmoo:R68_is_inspired_by" passive="#legenda_petri_ferrandi"/>
+                    <relation active="#legenda_petri_ferrandi" name="lrmoo:R1_is_logical_successor_of" passive="#libellus_principiis"/>
+                    <relation active="#legenda_constantini" name="lrmoo:R1_is_logical_successor_of" passive="#legenda_petri_ferrandi"/>
+                    <relation active="#legenda_humbertus" name="lrmoo:R1_is_logical_successor_of" passive="#legenda_constantini"/>
+                    
+                </listRelation>
+            </particDesc>
+            
+            <settingDesc>
+                <listPlace>
+                    <place type="city" xml:id="bologna">
+                        <placeName>Bologna</placeName>
+                        <idno type="wikidata">Q1891</idno>
+                        <idno type="viaf">248053786</idno>                            
+                        <idno type="GeoNames">3181928</idno>
+                        <note xml:lang="it">È il centro propulsore dell'identità dell'Ordine. Si tratta della città in cui san Domenico morì e fu originariamente sepolto, nonché la sede dei primi storici Capitoli Generali (1220, 1221) e dell'inchiesta del processo di canonizzazione del 1233. Attraverso il suo prestigioso Studium universitario, Bologna garantì il reclutamento intellettuale delle prime generazioni dell'Ordine. Nel 1233 fu inoltre l'epicentro del movimento di pacificazione dell'Alleluia guidato da Giovanni da Vicenza, il cui successo politico-religioso fu strettamente intrecciato alla traslazione e alla canonizzazione del fondatore.</note>
+                        <note xml:lang="en">It is the driving force behind the Order's identity. It is the city where Saint Dominic died and was originally buried, as well as the site of the first historic General Chapters (1220, 1221) and the 1233 canonization inquiry. Through its prestigious university *Studium*, Bologna ensured the intellectual recruitment of the Order's early generations. Furthermore, in 1233, it was the epicenter of the "Alleluia" peace movement led by John of Vicenza, whose politico-religious success was closely intertwined with the translation and canonization of the founder.</note>
+                    </place>
+                        
+                    <place type="building" xml:id="san_niccolo_church">                                                           
+                        <placeName>Chiesa di San Niccolò delle Vigne</placeName>
+                        <note xml:lang="it">Primitivo insediamento domenicano a Bologna (1219) dove Domenico morì e fu inumato "sotto i piedi dei frati". Fu il teatro originario del miracolo quotidiano e domestico della moltiplicazione dei pani riferito dai testimoni oculari Rodolfo di Faenza e Buonviso di Piacenza.</note>
+                        <note xml:lang="en">The early Dominican settlement in Bologna (1219), where Dominic died and was buried "beneath the feet of the friars". It was the original setting for the daily, domestic miracle of the multiplication of the loaves, as recounted by eyewitnesses Rodolfo di Faenza and Buonviso di Piacenza.</note>
+                    </place>
+
+                    <place type="building" xml:id="san_domenico_church">                                                           
+                        <placeName>Basilica of San Domenico</placeName>
+                        <idno type="wikidata">Q862602</idno>
+                        <idno type="viaf">316395384</idno>
+                        <note xml:lang="it">Consacrata solennemente nel 1251, sorge sul sito della primitiva chiesa di San Niccolò delle Vigne. È la basilica bolognese destinata a custodire ed esaltare la nuova tomba con le reliquie di san Domenico dopo la solenne traslazionedel maggio 1233. Divenne un importantissimo punto di riferimento civico e religioso per la città, ospitando nel suo chiostro e nella chiesa le sepolture di illustri esponenti accademici, civili ed ecclesiastici.</note> 
+                        <note xml:lang="en">Solemnly consecrated in 1251, it stands on the site of the earlier church of San Niccolò delle Vigne. It is the Bolognese basilica designated to house and honor the new tomb containing the relics of Saint Dominic following their solemn translation in May 1233. It became a vital civic and religious landmark for the city, with its cloister and church serving as the burial place for distinguished figures from the academic, civil, and ecclesiastical spheres.</note>
+                    </place>
+                    
+                    <place type="city" xml:id="toulouse">
+                        <placeName xml:lang="en">Toulouse</placeName>
+                        <placeName xml:lang="it">Tolosa</placeName>
+                        <idno type="wikidata">Q7880</idno>
+                        <idno type="viaf">132307492</idno> 
+                        <idno type="GeoNames">2972315</idno>
+                        <note xml:lang="it">Città della Linguadoca in cui nacque la primitiva azione apostolica di Domenico e della sua prima comunità di compagni. Fu sede delle donazioni del vescovo Folco nel 1215, tra cui la cappella di San Romano e l'ospedale di porta Arnaud-Bernard destinato all'accoglienza di ex prostitute convertite. Nel 1233 ospitò il supplemento d'indagine del processo di canonizzazione, raccogliendo oltre duecento testimonianze giurate, e il 5 agosto 1234 vi si tenne la prima solenne celebrazione della festa del santo, drammaticamente coincidente con la condanna e il rogo di una nobildonna eretica da parte della neonata Inquisizione tolosana.</note>
+                        <note xml:lang="en">A city in Languedoc where the early apostolic work of Dominic and his first community of companions began. It was the site of endowments made by Bishop Foulques in 1215, including the Chapel of Saint Romanus and the Arnaud-Bernard Gate hospital, intended to shelter converted former prostitutes. In 1233, the city hosted the supplementary phase of the canonization inquiry (gathering over two hundred sworn testimonies) and on August 5 1234, the first solemn celebration of the saint's feast day took place there, dramatically coinciding with the condemnation and burning at the stake of a heretical noblewoman by the newly established Toulouse Inquisition.</note>
+                    </place>
+                    <place type="city" xml:id="rome">
+                        <placeName xml:lang="en">Rome</placeName>
+                        <placeName xml:lang="it">Roma</placeName>
+                        <idno type="wikidata">Q220</idno>
+                        <idno type="viaf">243431474</idno> 
+                        <idno type="GeoNames">3169070</idno>
+                        <note xml:lang="it">Sede della curia papale e fulcro diplomatico per le fondamentali bolle di conferma e raccomandazione dell'Ordine. La città fa da sfondo a eventi miracolosi determinanti come la conversione e guarigione di Reginaldo d'Orléans, la resurresione di Napoleone Orsini e la Cena miracolosa. Nella dimensione monastica e della cura d'anime, a Roma Domenico guidò personalmente la riforma e la rigida clausura delle comunità femminili di Santa Maria in Tempulo e di San Sisto, sottomettendole alla disciplina dei frati Predicatori</note>
+                        <note xml:lang="en">It was the seat of the papal curia and a diplomatic hub for the crucial bulls confirming and endorsing the Order. The city served as the setting for pivotal miraculous events, such as the conversion and healing of Reginald of Orléans, the Raising of Napoleone Orsini and the Miraculous Supper. Regarding monastic life and the care of souls, Dominic personally oversaw the reform and the imposition of strict enclosure upon the female communities of Santa Maria in Tempulo and San Sisto, bringing them under the discipline of the Friars Preachers.</note>
+                    </place>
+                    <place type="city" xml:id="montreal">
+                        <placeName>Montréal</placeName>
+                        <idno type="wikidata">Q177083</idno>
+                        <idno type="viaf">149379999</idno> 
+                        <idno type="GeoNames">2992119</idno>
+                        <note xml:lang="it">Località della Linguadoca teatro dell'evento dell'ordalia del fuoco. Secondo la testimonianza contemporanea di Pierre des Vaux-de-Cernay, la disputa e il miracolo del foglio di Domenico rigettato dalle fiamme si svolsero in forma privata dentro una casa.</note>
+                        <note xml:lang="en">A location in Languedoc that served as the setting for the ordeal by fire. According to the contemporary account of Pierre des Vaux-de-Cernay, the dispute and the miracle of Dominic’s manuscript rejected by the flames took place privately inside a house.</note>
+                    </place>
+                    <place type="city" xml:id="fanjeaux">
+                        <placeName>Fanjeaux</placeName>
+                        <idno type="wikidata">Q198573</idno>
+                        <idno type="viaf">126809850</idno> 
+                        <idno type="GeoNames">3019063</idno>
+                        <note xml:lang="it">Scenario in cui la tradizione agiografica ufficiale (a partire da Giordano di Sassonia) riscrisse e teatralizzò il miracolo del fuoco. Venne trasformato in una disputa pubblica solenne davanti a giudici-arbitri ufficiali, in cui il libro ortodosso di Domenico balzò tre volte intatto dalle fiamme.</note>
+                        <note xml:lang="en">Place in which the official hagiographic tradition (beginning with Jordan of Saxony) rewrote and dramatized the miracle of the fire. It was transformed into a solemn public dispute before official adjudicators, in which Dominic’s orthodox book leapt unscathed from the flames three times.</note>
+                    </place>
+                </listPlace>
+
+                <listEvent>
+                    <event xml:id="canonization_process" from="1233-07-13" to="1234-07-03">
+                        <label xml:lang="en">Canonization Process of Saint Dominic</label>
+                        <label xml:lang="it">Processo di canonizzazione di san Domenico</label>
+                        <desc xml:lang="it">Il processo di canonizzazione di frate Domenico fu formalmente avviato il 13 luglio 1233 con la lettera di incarico di papa Gregorio IX. L'inchiesta era stata preceduta, nel maggio dello stesso anno, dalla solenne traslazione del suo corpo a Bologna. L'indagine formale si articolò in due inchieste locali: quella di Bologna (6-15 agosto 1233), basata sulle testimonianze di nove frati domenicani e incentrata sulla condotta morale del fondatore, con particolare enfasi sul tema dell'osservanza della Regola; e quella di Tolosa, avviata in seguito al mandato emesso dai commissari di Bologna il 19 agosto 1233, che raccolse oltre duecento testimonianze (tra cui quelle di diverse monache di Prouille) volte principalmente a documentare il suo ruolo di strenuo oppositore dell'eresia in Linguadoca. Rappresenta un caso procedurale fortemente anomalo per la precocità dell'uso di una lista fissa di articuli interrogatorii e per l'assoluta preponderanza (circa il 90%) delle deposizioni incentrate sulle virtù morali e regolari del candidato rispetto a quelle riservate ai miracoli (solo il 10%). Il procedimento si concluse solennemente il 3 luglio 1234 a Rieti con l'emanazione della bolla *Fons sapientiae*, mediante la quale Gregorio IX decretò l'iscrizione di Domenico nel catalogo dei santi.</desc>
+                        <desc xml:lang="en">The canonization process for Friar Dominic formally opened on July 13, 1233, with the letter of commission from Pope Gregory IX.  The inquiry was preceded, in May of the same year, by the solemn translation of his body to Bologna. The formal investigation comprised two local inquiries: one, the Bologna inquiry (August 6–15, 1233), based on the testimony of nine Dominican friars and focused on the founder's moral conduct, with a marked emphasis on the theme of observance of the Rule. The other, the Toulouse inquiry, initiated following the mandate issued by the Bologna commissioners on August 19, 1233; this inquiry gathered over two hundred testimonies (including those of several nuns from Prouille) aimed primarily at documenting his role as a staunch opponent of heresy in Languedoc. It represents a highly unusual procedural case due to the early use of a fixed list of *articuli interrogatorii* and the overwhelming preponderance (approximately 90%) of testimonies focusing on the candidate’s moral and monastic virtues, as opposed to those concerning miracles (only 10%). The proceedings concluded solemnly on July 3, 1234, in Rieti with the issuance of the bull Fons sapientiae, by which Gregory IX decreed the enrollment of Dominic in the catalogue of saints.</desc>
+                    </event>
+                    <event xml:id="approval_order" from="1215" to="1216-12-22">
+                        <label xml:lang="en">Papal approval and confirmation of the Order of Preachers</label>
+                        <label xml:lang="it">Approvazione papale e conferma dell'Ordine dei Predicatori</label>
+                        <desc xml:lang="it">Avviato nel 1215 con la richiesta presentata a papa Innocenzo III da Domenico di Guzmán e dal vescovo Folco di Tolosa, l'iter ottenne un'iniziale approvazione provvisoria che imponeva alla comunità di adottare una delle regole già riconosciute dalla Chiesa. Durante il Capitolo di Tolosa del 1216, i frati scelsero formalmente la Regola di sant'Agostino, adattandola alle esigenze della predicazione itinerante. Il processo giunse a conclusione solenne il 22 dicembre 1216 con l'emanazione della bolla *Religiosam vitam* da parte di papa Onorio III, che ratificò formalmente la *nova religio* dei Frati Predicatori.</desc>
+                        <desc xml:lang="en">Initiated in 1215 with the petition presented to Pope Innocent III by Dominic of Guzmán and Bishop Fulk of Toulouse, the process secured an initial provisional approval that required the community to adopt one of the rules already sanctioned by the Church. At the Chapter of Toulouse in 1216, the friars formally chose the Rule of Saint Augustine, adapting it to the demands of itinerant preaching. The process reached its solemn conclusion on December 22, 1216, with the issuance of the bull *Religiosam vitam* by Pope Honorius III, which formally ratified the *nova religio* of the Friars Preachers.</desc>
+                    </event>
+                    <event xml:id="approval_order_request" when="1215">
+                        <label xml:lang="en">Request for the approval of the Order of Preachers</label>
+                        <label xml:lang="it">Richiesta per l'approvazione dell'Ordine dei Predicatori</label>
+                        <desc xml:lang="it">Petizione presentata a Roma nel 1215 da Domenico e dal vescovo Folco di Tolosa, poco prima del IV Concilio Lateranense, per richiedere la conferma pontificia della nuova comunità come un ordine che fosse e si chiamasse "dei Predicatori". I seguaci di Domenico avevano già ottenuto da Folco un'istituzione formale e una serie di privilegi presso la loro sede di San Romano a Tolosa. Il pontefice concesse un benestare di massima, vincolando tuttavia il riconoscimento definitivo all'adozione, da parte dei frati, di una delle regole religiose già esistenti ed approvate dalla Chiesa.</desc>
+                        <desc xml:lang="en">A petition was submitted in Rome in 1215 by Dominic and Bishop Fulk of Toulouse (shortly before the Fourth Lateran Council) seeking papal confirmation of the new community as an order that would be, and be known as, the "Order of Preachers." Dominic’s followers had already secured formal establishment and a range of privileges from Fulk for their base at Saint Romain in Toulouse. The Pope granted preliminary approval but made final recognition conditional upon the friars adopting one of the religious rules already in existence and approved by the Church.</desc>
+                    </event>
+                    <event xml:id="orsini_horse_fall">
+                        <label xml:lang="en">Napoleone Orsini falls from the horse</label>
+                        <label xml:lang="it">Napoleone Orsini cade da cavallo</label>
+                        <desc xml:lang="it">Questo evento storico, avvenuto a Roma il 24 febbraio 1221, testimonia – secondo la più antica narrazione di Giordano di Sassonia – la ripresa di Napoleone Orsini, descritto come stordito o semivivo (*semivivum*) in seguito a una caduta da cavallo. Gli storici considerano la caratterizzazione dell'episodio come una "resurrezione" da parte di san Domenico alla stregua di un abbellimento leggendario e di una progressiva drammatizzazione derivanti dalla successiva tradizione agiografica.</desc>
+                        <desc xml:lang="en">This historical event, which took place in Rome on February 24, 1221, attests, according to the earliest account by Jordan of Saxony, to the private revival  of Napoleone Orsini, who is described as having been stunned or half-alive (*semivivum*) following a fall from his horse. Historians regard the characterization of the episode as a "resurrection" conducted by saint Dominic as a legendary embellishment and a progressive dramatization stemming from later hagiographic tradition.</desc>
+                    </event>
+                    <event xml:id="fanjeaux_dispute">
+                        <label xml:lang="en">Fanjeaux Dispute</label>
+                        <label xml:lang="it">Disputa di Fanjeaux</label>
+                        <desc xml:lang="it">La disputa dottrinale contro i Catari, storicamente collocata tra il 1206 e il 1207 nella regione della Linguadoca, è documentata da un'unica fonte coeva: l'opera di Pierre des Vaux-de-Cernay, il quale situa l'evento a Montréal. La storiografia decostruisce il miracolo della prova del fuoco che vide protagonista il libro, evidenziando come la successiva tradizione domenicana abbia sovrapposto l'episodio a Fanjeaux, trasformando così un evento privato in una prova pubblica e spettacolare, concepita per fini apologetici e per legittimare la missione antiereticale.</desc>
+                        <desc xml:lang="en">The doctrinal dispute against the Cathars, historically dated to 1206–1207 in the Languedoc region, is documented by only one contemporary source: the work of Pierre des Vaux-de-Cernay, who places the event at Montréal. Historical scholarship deconstructs the miracle of the ordeal by fire involving the book, highlighting how later Dominican tradition conflated the episode with Fanjeaux, thereby transforming a private incident into a public, theatrical ordeal designed to serve apologetic purposes and legitimize the anti-heretical mission.</desc>
+                    </event>
+                </listEvent>
+            </settingDesc>            
+                
+        </profileDesc>
+        
+        <encodingDesc>
+            <listPrefixDef>
+                <prefixDef ident="crm" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.cidoc-crm.org/cidoc-crm/$1">
+                    <p>CIDOC CRM</p>
+                </prefixDef>
+                <prefixDef ident="arco" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="https://w3id.org/arco/ontology/arco/$1">
+                    <p>ARCO Ontology</p>
+                </prefixDef>
+                <prefixDef ident="arco-cd" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="https://w3id.org/arco/ontology/content-description/$1">
+                    <p>ARCO-cd Ontology</p>
+                </prefixDef>
+                <prefixDef ident="sdm" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.semanticweb.org/danie/ontologies/2026/7/mapping-saint-dominic-memory#$1">
+                    <p>La tua ontologia custom (Saint Dominic Memory)</p>
+                </prefixDef>
+                <prefixDef ident="rdf" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.w3.org/1999/02/22-rdf-syntax-ns#$1">
+                    <p>RDF</p>
+                </prefixDef>
+                <prefixDef ident="rdfs" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.w3.org/2000/01/rdf-schema#$1">
+                    <p>RDF Schema Vocabulary</p>
+                </prefixDef>
+                <prefixDef ident="dcterms" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://purl.org/dc/terms/$1">
+                    <p>dcterms</p>
+                </prefixDef>
+                <prefixDef ident="fabio" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://purl.org/spar/fabio/$1">
+                    <p>fabio</p>
+                </prefixDef>
+                <prefixDef ident="owl" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.w3.org/2002/07/owl#$1">
+                    <p>OWL Vocabulary (Web Ontology Language)</p>
+                </prefixDef>
+                <prefixDef ident="icon" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.w3id.org/icon/ontology/$1">
+                    <p>ICON</p>
+                </prefixDef>
+                <prefixDef ident="lrmoo" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://iflastandards.info/ns/lrm/lrmoo/$1">
+                    <p>LRMOO</p>
+                </prefixDef>
+                <prefixDef ident="rico" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.ica.org/standards/RiC/ontology/$1">
+                    <p>Rico</p>
+                </prefixDef>
+            </listPrefixDef>
+        </encodingDesc>
+    </teiHeader>
+    
+    <text>
+        <body>
+
+            <!-- SEZIONE 1: Snippet estratti dal primo Libro -->
+            <div type="excerpts" source="#moskovitz_arca_legacy" xml:lang="en">
+                <head>Extracted from: Nicola Pisano's arca di San Domenico and its legacy</head>
+                
+                <div type="snippet" xml:id="snippet_01" n="1">
+                    <pb n="15"/>
+                    <p>
+                        Similarly the <rs type="object" ref="#panel_saints_peter_and_paul">relief with Saints <persName ref="#saint_peter">Peter</persName> and <persName ref="#saint_paul">Paul</persName></rs> on the opposite short side (Fig. 30) transfers the divine authority given to <persName ref="#dominic_guzman">Dominic</persName> to the individual friars;  these, in turn, become the mendicants that preach to the lay congregation and to the world at large.
+                    </p>
+                </div>
+
+                <div type="snippet" xml:id="snippet_02" n="2">
+                    <pb n="10"/>
+                    <p>
+                        One of these impressive miracles is illustrated to the right of the Madonna, the <rs type="narrative_theme" ref="inme:theme_ordeal_fire">Burning of the Books</rs> (Figs. 23 and 24), which concerns the dispute between the Albigensians and the <rs ref="#dominican_order">Dominicans</rs>. After each group defended its respective causes before a panel of judges, seen seated above, with inconclusive results, a test of fire is proposed. In the <rs type="object" ref="#panel_burning_books">relief</rs>, while a young boy fans the flames with bellows, the book of the heretics is consumed, while that of <persName ref="#dominic_guzman">Dominic</persName> jumps out of the fire unscathed, the left  even, according to the story, after three separate attempts to burn it.
+                    </p>
+                </div>
+
+                <div type="snippet" xml:id="snippet_03" n="3">
+                    <pb n="11"/>
+                    <p>
+                        Continuing toward the right, onto the short side of the <objectName type="object" ref="#saint_dominic_arca">Arca</objectName>, the <rs type="object" ref="#panel_miraculous_supper">relief</rs> illustrates <rs type="narrative_theme" ref="inme:theme_miraculous_supper">Saint Dominic and His Brethren Fed by Angels</rs> (Fig. 26), again a story recounted by <persName ref="#sister_cecilia_contarini">Sister Cecilia</persName> and repeated in the liturgical lives.
+                    </p>
+                </div>
+                <div type="snippet" xml:id="snippet_04" n="4">
+                    <pb n="10"/>
+                    <p>
+                        Decades later, in her old age, she narrated to a young disciple, Sister Angelica, a series of colorful stories concerning <persName ref="#dominic_guzman">Dominic</persName>'s life and the founding of Saint Sixtus, including the <rs type="narrative_theme" ref="#panel_raising_orsini">miracle</rs> represented on the <objectName ref="#saint_dominic_arca">Arca</objectName> to the left of the Madonna, <rs type="narrative_theme" ref="inme:theme_raising_orsini">The Raising of Napoleone Orsini</rs> (Figs. 19 and 20).<ptr type="footnote" n="42"/>
+                    </p>
+                </div>
+
+                <div type="snippet" xml:id="snippet_05" n="5">
+                    <pb n="11"/>
+                    <p>
+                        <gap reason="omitted"/> this reading clearly contradicts the more logical sequential reading of the adjacent <rs type="object" ref="#panel_reginald_orleans">relief</rs> concerning <persName ref="#reginald_orleans">Reginald of Orleans</persName>.
+                    </p>
+                </div>
+
+                <div type="snippet" xml:id="snippet_07" n="7">
+                    <pb n="11"/>
+                    <p>
+                        On the other side of the Redeemer are <rs type="object" ref="#panel_approval_order">scenes</rs> related to the <rs type="event" ref="#approval_order">approval of the order</rs>.
+                    </p>
+                </div>
+
+                <div type="snippet" xml:id="snippet_08" n="8">
+                    <pb n="1"/>
+                    <p>
+                        The <rs type ="object" ref="#sarcophagus">tomb</rs> was designed by <persName ref="#nicola_pisano">Nicola Pisano</persName> c. 1264 and set up in the <placeName ref="#san_domenico_church">church of San Domenico</placeName>, <placeName ref="#bologna">Bologna</placeName>, in 1267.
+                    </p>                   
+                </div>
+
+                <div type="snippet" xml:id="snippet_09" n="9">
+                    <pb n="23"/>
+                    <p>
+                        During the decades immediately preceding the <rs type="event" ref="inme:tomb_commission">commission for the <rs type="object" ref="#sarcophagus">tomb</rs></rs>, the <rs type="org" ref="#dominican_order">Dominican</rs> liturgy had undergone a series of modifications in response to the lack of uniformity and the predominance of local traditions in the ecclesiastic offices, a situation highly unsatisfactory to an order that was not attached to any local diocese but considered itself to have a universal mission.
+                    </p>                   
+                </div>
+            </div>
+
+             
+            <!-- SEZIONE 2: Snippet estratti da Canetti -->
+            <div type="excerpts" source="#canetti_invenzione_memoria" xml:lang="it">
+                <head>Extracted from: L'invenzione della memoria (Canetti)</head>
+                
+                <div type="snippet" xml:id="snippet_10" n="10">
+                    <pb n="151-152"/>
+                    <p>
+                        Per quanto riguarda i miracoli che <persName ref="#dominic_guzman">Domenico</persName> avrebbe compiuto durante la sua vita, si era già rilevata l'estrema sobrietà dei testimoni <placeName ref="#bologna">bolognesi</placeName>, peraltro assai larghi di particolari anche clamorosi nel descrivere i prodigi olfattivi verificatisi in occasione della <foreign xml:lang="la">translatio</foreign> <rs type="place" ref="#bologna">bolognese</rs> del maggio precedente<ptr type="footnote" n="115"/>. Solo i frati <persName ref="#buonviso">Buonviso di Piacenza</persName> e <persName ref="#rodolfo">Rodolfo di Faenza</persName><ptr type="footnote" n="116"/> avrebbero narrato, anche qui senz'apparente sollecitazione da parte dei commissari, un <rs type="narrative_theme" ref="inme:theme_miraculous_supper">episodio/motivo taumaturgico</rs> dai fortissimi connotati evangelici e cristo-mimetici<ptr type="footnote" n="118"/>, e di larga fortuna nell'agiografia monastica almeno a partire dai Dialogi gregoriani<ptr type="footnote" n="117"/>, non a caso rapidamente catturato e integrato - anche in nuove ambientazioni conventuali e con l'aggiunta rituale del vino - nelle successive ricognizioni 'legendarie' ed 'esemplari' della Vita del <rs type="person" ref="#dominic_guzman">fondatore</rs><ptr type="footnote" n="119"/>: è il celebre racconto di una miracolosa e, secondo <persName ref="#rodolfo">Rodolfo</persName>, reiterata <rs type="narrative_theme" ref="inme:theme_miraculous_supper">moltiplicazione dei pani</rs> a beneficio del convento <rs type="place" ref="#bologna">bolognese</rs>.
+                    </p>
+                </div>
+
+                <div type="snippet" xml:id="snippet_11" n="11">
+                    <pb n="200"/>
+                    <p>
+                        <note place="bottom" n="238"><gap reason="omitted"/> tra gli episodi ‘incerti’ omessi da <persName ref="#jordan_saxony">Giordano</persName> già si trovava, molto probabilmente, il celebre miracolo ‘evangelico’ e tipicamente agiografico-monastico <gap reason="omitted"/> della <rs type="ncarative_theme" ref="inme:theme_miraculous_supper">moltiplicazione dei pani</rs>, già testimoniato al <rs type="event" ref="#canonization_process">processo di canonizzazione</rs> da <persName ref="#buonviso"><roleName>fra’</roleName> <forename>Buonviso</forename></persName> e, addirittura come prassi taumaturgica abituale, da <persName ref="#rodolfo"><roleName>fra’</roleName> <forename>Rodolfo</forename></persName> <gap reason="omitted"/> e poi accolto in varie forme nelle biografia del <rs type="person" ref="#dominic_guzman">santo</rs> e nelle più importanti sillogi di <foreign xml:lang="la">exempla</foreign>.</note>
+                    </p>
+                </div>
+
+                <div type="snippet" xml:id="snippet_12" n="12">
+                    <pb n="199-201"/>
+                    <p>
+                        Se l'inchiesta sui miracoli postumi - peraltro sempre tendenti a insinuare un ambiguo legame esclusivo tra santità del <rs type="person" ref="#dominic_guzman">candidato</rs> e prodigi verificatisi sulla sua tomba<ptr type="footnote" n="236"/> - è formalmente demandata alla commissione ufficiale nominata dal <rs type="person" ref="#pope_gregory_ix">papa</rs><ptr type="footnote" n="237"/>, <persName ref="#jordan_saxony">Giordano</persName> si difonde un poco a narrare alcuni tra i molti prodigi compiuti da <persName ref="#dominic_guzman">Domenico</persName> in vita, limitandosi a quelli attestati con maggior sicurezza e coerenza d'informazione<ptr type="footnote" n="238"/>. Si ricordano, in particolare, lo strepitoso <rs type="narrative_theme" ref="inme:theme_raising_orsini">miracolo <rs type="place" ref="#rome">romano</rs></rs> con cui <persName ref="#dominic_guzman">Domenico</persName>, mosso a compassione da un compagno, quasi novello Elia<ptr type="footnote" n="239"/> <quote xml:lang="la">in conclavi, virtute precum suarum, refocillavit ad vitam</quote> il <rs type="person" ref="inme:napoleone_orsini">giovane nipote del cardinale Stefano di Fossanova</rs>, <quote xml:lang="la">semivivum vel forte iam indubitanter exanimem inter mortuos</quote> dopo una rovinosa <rs type="event" ref="#orsini_horse_fall">caduta da cavallo</rs><ptr type="footnote" n="240"/>: la successiva tradizione leggendaria, enucleatasi in particolare nei racconti di <persName ref="#constantine_orvieto">Costantino d'Orvieto</persName> e <persName ref="#suor_cecilia_contarini">suor Cecilia romana</persName>, avrebbe poi amplificato e drammatizzato quel celebre <rs type="event" ref="#orsini_horse_fall">episodio</rs> sino a farne una vera e propria resurrezione<ptr type="footnote" n="241"/>.
+                    </p>
+                </div>
+
+                <div type="snippet" xml:id="snippet_13" n="13">
+                    <pb n="250-251"/>
+                    <p>
+                        Ma l'episodio che segnò la più importante e clamorosa manifestazione pubblica della santità di <persName ref="#dominic_guzman">Domenico</persName> è senz'altro quello della celebre <rs type="event" ref="#fanjeaux_dispute">disputa di <placeName ref="#fanjeaux">Fanjeaux</placeName></rs> ovvero di <placeName ref="#montreal">Montréal</placeName>, secondo la più sobria, primigenia versione del <rs type="narrative_theme" ref="inme:story_fanjeaux_dispute">racconto</rs> qual è dato ritrovare, ancora una volta, nella <title ref="#historia_albigensis">Historia Albigensis</title> di <persName ref="#pierre_vaux_cernay">Pierre des Vaux-de-Cernay</persName>, cui <persName ref="#jordan_saxony">Giordano</persName> dovette attingere, modificandone però, vent'anni dopo, alcuni tratti essenziali. Il rilievo e l'eco presso i contemporanei del <rs type="narrative_theme" ref="inme:theme_ordeal_fire">'miracolo' del fuoco</rs> è provato se non altro dal fatto che il <rs type="person" ref="#peter_vaux_cernay">monaco-cronista</rs> della crociata lo presenta come unico episodio (tra i numerosi da lui celebrati della «santa predicazione») di cui <persName ref="#dominic_guzman">Domenico</persName> sia stato non solo protagonista esclusivo ma addirittura la fonte orale da cui egli raccolse, se non l'intera narrazione, perlomeno la testimonianza diretta che esso si sarebbe svolto, appunto, nella cittadina di <placeName ref="#montreal">Montréal</placeName><ptr type="footnote" n="116"/>.
+                    </p>
+                </div>
+
+                <div type="snippet" xml:id="snippet_14" n="14">
+                    <pb n="95-96"/>
+                    <p>
+                        Sempre in quell'anno <persName ref="#jordan_saxony">Giordano di Sassonia</persName>, nel suo <title ref="#libellus_principiis">Libellus de principiis Ordinis Praedicatorum</title>, come primo clamoroso episodio di manifestazione pubblica della santità del <rs type="person" ref="#dominic_guzman">fondatore</rs> dell'<rs ref="#dominican_order">Ordine</rs>, sceglieva di narrare una celebre disputa tra <persName ref="#dominic_guzman">Domenico</persName> e gli eretici di <placeName ref="inme:fanjeaux">Fanjeaux</placeName>, conclusasi miracolosamente in una trionfale <rs type="narrative_theme" ref="inme:theme_ordeal_fire">prova del fuoco</rs><ptr type="footnote" n="196"/>.
+                    </p>
+                </div>
+
+                <div type="snippet" xml:id="snippet_15" n="15">
+                    <pb n="419"/>
+                    <p>
+                        <note placement="bottom" n="317">Dopo aver richiamato il miracoloso ingresso nell'<rs type="org" ref="#dominican_order">Ordine</rs> di un sacerdote e l'episodio del cardinale Corrado di Porto (§§ 28-29), già narrati da <persName ref="#peter_ferrand">Ferrandi</persName> (§§ 42-43), <persName ref="#constantine_orvieto">Costantino</persName> chiude poi questa serie apologetica dedicata alle miracolose conversioni all'<rs type="org" ref="#dominican_order">Ordine</rs> con un lungo remake del racconto della prodigiosa <rs type="narrative_theme" ref="inme:theme_reginald_stories">guarigione/conversione <rs type="place" ref="#rome">romana</rs> di <persName ref="#reginald_orleans">Reginaldo d'Orléans</persName></rs> per intercessione di <persName ref="#dominic_guzman">Domenico</persName> e della Vergine (§§ 30-33), episodio anch'esso ripreso da <persName ref="#peter_ferrand">Ferrandi</persName> (§§ 33-37) e comunque già attestato nel <title ref="#libellus_principiis">Libellus</title> di <persName ref="#jordan_saxony">Giordano</persName>.</note>
+                    </p>
+                </div>
+
+                <div type="snippet" xml:id="snippet_16" n="16">
+                    <pb n="387-388"/>
+                    <p>
+                        Lo stesso <persName ref="#constantine_orvieto">Costantino</persName>, a sottolineare ancor più l'originaria e providenziale unità di intenti tra il <rs type="person" ref="#dominic_guzman">fondatore</rs> e la sede apostolica sin dai primi contatti preconciliani, avrebbe inserito per la prima volta nella leggenda di <persName ref="#dominic_guzman">San Domenico</persName>, a integrazione del più sobrio resoconto di <persName ref="#jordan_saxony">Giordano</persName> e di <persName ref="#peter_ferrand">Pietro Ferrandi</persName><ptr type="footnote" n="208"/>, il celebre <rs type="narrative_theme" ref="inme:theme_lateran_dream">motivo del sogno/visione in cui <persName ref="#pope_innocent_iii">papa Innocenzo III</persName> riconobbe nell'immagine di <persName ref="#dominic_guzman">Domenico</persName> che reggeva sulle proprie spalle la periclitante basilica lateranense</rs> <quote xml:lang="la">e… quam necessariumes estet universali, cui presidebat, ecclesie id, ad quod vir Dei Dominicus inspiratus divinitus aspirabat</quote><ptr type="footnote" n="209"/>. La sanzione definitiva del fondamento di apostolicità della <foreign xml:lang="la">missio</foreign> di predicazione cui ora il <rs type="person" ref="#dominic_guzman">santo</rs> si accingeva gli sarebbe pervenuta ancora da una <rs type="narrative_theme" ref="inme:theme_vision_saints_peter_paul"><foreign xml:lang="la">visio imaginaria</foreign></rs> in cui i <res type="person" ref="#saint_paul #saint_peter">principi degli apostoli</res> gli consegnavano, con il <foreign xml:lang="la">baculum</foreign> e il libro, gli oggetti-simbolo della sua nuova vocazione universale<ptr type="footnote" n="210"/>.
+                    </p>
+                </div>
+
+                <div type="snippet" xml:id="snippet_17" n="17">
+                    <pb n="11-12"/>
+                    <p>
+                        Emblematica, da questo punto di vista, la delibera del capitolo generale del 1260 con la quale, dietro istanza del maestro generale <persName ref="#humbert_romans">Umberto di Romans</persName>, si faceva espresso divieto a tutti i frati di servirsi a scopo liturgico delle <foreign xml:lang="la">legendae</foreign> del fondatore anteriori all'ultima e definitiva redazione della biografia di <persName ref="#dominic_guzman">San Domenico</persName>, dovuta forse allo stesso <persName ref="#humbert_romans">Umberto</persName>. Al di là del carattere meramente compilativo di quest'opera (frutto, come vedremo, di un abile collage delle <rs type="work" ref="#legenda_petri_ferrandi #legenda_constantini"><foreign xml:lang="la">legendae</foreign></rs> di <persName ref="#peter_ferrand">Pietro Ferrandi</persName> e <persName ref="#constantine_orvieto">Costantino d’Orvieto</persName>, a loro volta largamente e talora servilmente debitrici del <title ref="#libellus_principiis">Libellus</title> di <persName ref="#jordan_saxony">Giordano</persName>), è un fatto che con il generalato di <persName ref="#humbert_romans">Umberto di Romans</persName> (1254-1263), per certi versi autentico Bonaventura domenicano, si chiude a tutti gli effetti e giunge a compimento quella che possiamo considerare non solo la fase incoativa della nuova formazione religiosa, ma anche quella — invero assai rapida, se confrontata alle dilaceranti vicissitudini istituzionali che sconvolsero la storia dei frati Minori ancora per molti decenni — in cui, proprio grazie all'indefessa attività organizzativa, legislativa e letteraria dello stesso <persName ref="#humbert_romans">Umberto</persName><ptr type="footnote" n="22"/>, l'<orgName ref="#dominican_order">Ordo Praedicatorum</orgName> avrebbe raggiunto quel solido e articolato assetto costituzionale che, superata brillantemente la salutare ‘crisi di identità’ legata alla polemica coi Secolari, avrebbe mantenuto fin quasi ai nostri giorni.
+                    </p>
+                </div>
+
+                <div type="snippet" xml:id="snippet_16" n="16">
+                    <pb n="29"/>
+                    <p>
+                        <note placement="bottom" n="27">La cappella di <placeName ref="#san_niccolo_church">San Niccolò delle Vigne</placeName>, soggetta al giuspatronato della famiglia patrizia dei Carbonesi (ramo dei Lovello), dopo un primitivo breve insediamento presso l'oratorio di S. Maria della Mascarella, fu la sede dei <rs type="org" ref="#dominican_order">Predicatori</rs> di <placeName ref="#bologna">Bologna</placeName> a partire dalla primavera del 1219: sin da subito i frati si impegnarono assiduamente nell'acquisto dei terreni e degli immobili circostanti <gap reason="omitted"/>.</note>
+                    </p>
+                </div>
+            </div>
+
+        </body>
+    </text>
+</TEI>

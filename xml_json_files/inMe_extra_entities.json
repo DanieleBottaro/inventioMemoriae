@@ -1,0 +1,2020 @@
+{
+    "context": {
+        "base_uri": "http://example.org/project/resource/",
+        "namespaces": {
+            "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+            "lrmoo": "http://www.cidoc-crm.org/lrmoo/",
+            "rico": "https://www.ica.org/standards/RiC/ontology#",
+            "icon": "https://w3id.org/icon/ontology/",
+            "arco": "https://w3id.org/arco/ontology/arco/",
+            "arco-cd": "https://w3id.org/arco/ontology/context-description/",
+            "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+            "owl": "http://www.w3.org/2002/07/owl#"
+        }
+    },
+    "extra_entities": [
+        {
+            "id": "creation_dominic_sarcophagus",
+            "label": {
+                "it": "Creazione del sarcofago dell'Arca di San Domenico",
+                "en": "Creation of the Sarcophagus of the Ark of Saint Dominic"
+            },
+            "ontological_classes": [
+                "crm:E12_Production"
+            ],
+                "date": {
+                "from": "1264",
+                "to": "1267"
+            },
+            "description": {
+                "it": "Fase di progettazione ed esecuzione scultorea dell'Arca originale (di cui ora rimane solamente il sarcofago) da parte di Nicola Pisano e della sua bottega.", 
+                "en": "Phase of design and sculptural execution of the original Arca (of which only the sarcophagus now remains) by Nicola Pisano and his workshop."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "sarcophagus_commission",
+            "label": {
+                "it": "Commissione per la realizzazione del sarcofago",
+                "en": "Commission for the Creation of the Sarcophagus"
+            },
+            "ontological_classes": [
+                "arco-cd:Commission"
+            ],
+            "date": {
+                "notAfter": "1265-12-31"
+            },
+            "description": {
+                "it": "Commissione per la realizzazione dell'Arca originale a Nicola Pisano da parte dell'Ordine dei Predicatori.",
+                "en": "Commission for the creation of the original Ark, awarded to Nicola Pisano by the Order of Preachers."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "vi_composition_raising_orsini",
+            "label": {
+                "it": "Composizione visiva del pannello della Resurrezione di Napoleone Orsini",
+                "en": "Visual Composition of the Panel of the Resurrection of Napoleone Orsini"
+            },
+            "ontological_classes": [
+                "crm:E36_Visual_Item"
+            ],
+            "description": {
+                "it": "Questa risorsa immateriale rappresenta l'assetto compositivo e l'aspetto ottico-formale della scena che raffigura la resurrezione del giovane Napoleone Orsini per opera di San Domenico. La scena è strutturata come una narrazione continua articolata in due parti: a sinistra, la tragica caduta da cavallo e la preghiera di Domenico; a destra, il giovane resuscitato restituito alla madre, circondato da frati e familiari. All'interno di questo impianto spaziale, secondo un'ipotesi critica, in alto a sinistra potrebbe essere raffigurata suor Cecilia Contarini. Ritratta con la schiena rivolta verso lo spettatore e lo sguardo sul miracolo, la figura servirebbe a isolarla come testimone oculare dell'evento, riflettendo la supposizione che la monaca — all'epoca residente nel convento bolognese di Sant'Agnese — possa essere stata consultata per la progettazione iconografica del sarcofago. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, indipendentemente dalle caratteristiche fisiche del blocco di marmo.",
+                "en": "This immaterial resource represents the compositional and optical-formal appearance of the scene depicting the resurrection of young Napoleone Orsini by Saint Dominic. The scene is structured as a continuous two-part narrative: on the left, the tragic horse fall and Dominic’s prayer; on the right, the resurrected youth being restored to his mother, surrounded by friars and relatives. Within this spatial arrangement, a critical hypothesis suggests that Sister Cecilia Contarini may be depicted in the upper left. Shown with her back to the viewer and her gaze fixed on the miracle, the figure serves to single her out as an eyewitness to the event, reflecting the theory that the nun—who resided at the Bolognese convent of Sant'Agnese at the time—may have been consulted on the iconographic design of the sarcophagus. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "iconclass_11H_DOMINIC_53",
+            "label": {
+                "it": "San Domenico resuscita il giovane Napoleone Orsini, morto in seguito a una caduta da cavallo (Iconclass 11H(DOMINIC)53)",
+                "en": "St. Dominic resurrects young Napoleon Orsini, who was killed by a fall from his horse (Iconclass 11H(DOMINIC)53)"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione di San Domenico che resuscita il giovane Napoleone Orsini, morto in seguito a una caduta da cavallo.",
+                "en": "Iconclass code representing St. Dominic resurrecting young Napoleon Orsini, who was killed by a fall from his horse."
+            },
+            "external_links": {
+                "iconclass": "http://iconclass.org/11H(DOMINIC)53"
+            }
+        },
+        {
+            "id": "vi_composition_burning_books",
+            "label": {
+                "it": "Composizione visiva del pannello della Prova del fuoco sui libri sacri",
+                "en": "Visual Composition of the Panel of the Trial by Fire on the Sacred Books"
+            },
+            "ontological_classes": [
+                "crm:E36_Visual_Item"
+            ],
+            "description": {
+                "it": "Questa risorsa immateriale rappresenta l'assetto compositivo e ottico-formale della scena che raffigura la Disputa di Fanjeaux e la prova del fuoco. La scena è strutturata secondo una suddivisione gerarchica tra i giudici seduti, nella parte superiore, e la drammatica prova sottostante, in cui i libri degli eretici bruciano mentre quello di Domenico rimane miracolosamente intatto. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, indipendentemente dalle caratteristiche fisiche del blocco di marmo.",
+                "en": "This immaterial resource represents the compositional and optical-formal appearance of the scene depicting the Dispute of Fanjeaux and the Ordeal of Fire. The scene is structured through a hierarchical division between the seated judges above and the dramatic ordeal below, where the heretics’ books burn while Dominic’s book miraculously remains unharmed. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "iconclass_11H_DOMINIC_52",
+            "label": {
+                "it": "San Domenico, circondato dagli eretici albigesi, getta il suo libro nel fuoco, ma questo ne esce intatto, mentre i libri degli eretici vengono consumati dalle fiamme (Iconclass 11H(DOMINIC)52)",
+                "en": "St. Dominic, surrounded by the Albigense heretics, throws his book into the fire but it leaps out intact, while the heretical books are consumed by the fire (Iconclass 11H(DOMINIC)52)"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione di San Domenico il quale, circondato dagli eretici albigesi, getta il suo libro nel fuoco, ma questo ne esce intatto, mentre i libri degli eretici vengono consumati dalle fiamme.",
+                "en": "Iconclass code representing Saint Dominic who, surrounded by Albigensian heretics, casts his book into the fire; the book emerges unscathed, while the heretics' books are consumed by the flames."
+            },
+            "external_links": {
+                "iconclass": "http://iconclass.org/11H(DOMINIC)52"
+            }
+        },
+        {
+            "id": "vi_composition_miraculous_supper",
+            "label": {
+                "it": "Composizione visiva del pannello della Cena miracolosa di San Domenico",
+                "en": "Visual Composition of the Panel of the Miraculous Supper of Saint Dominic"
+            },
+            "ontological_classes": [
+                "crm:E36_Visual_Item"
+            ],
+            "description": {
+                "it": "Questa risorsa immateriale rappresenta l'assetto compositivo e l'aspetto ottico-formale della scena che raffigura la miracolosa nutrizione dei frati da parte degli angeli. La scena è organizzata come un convivio simmetrico, con San Domenico e i suoi frati seduti attorno a una lunga tavola da refettorio, mentre due angeli alati distribuiscono pani contrassegnati da croci. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, indipendentemente dalle caratteristiche fisiche del blocco di marmo.",
+                "en": "This immaterial resource represents the compositional and optical-formal appearance of the scene depicting the miraculous feeding of the brethren by angels. The scene is organized as a symmetrical communal gathering, with Saint Dominic and his friars seated around a long refectory table while two winged angels distribute loaves marked with crosses. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "iconclass_11H_DOMINIC_55",
+            "label": {
+                "it": "Durante la cena, due angeli servono il pane a San Domenico e ad alcuni frati (Iconclass 11H(DOMINIC)55)",
+                "en": "At supper St. Dominic and some friars are served with bread by two angels (Iconclass 11H(DOMINIC)55)"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione due angeli che servono il pane a San Domenico e ad alcuni frati durante la cena.",
+                "en": "Iconclass code representing two angels serving bread to Saint Dominic and some friars during supper."
+            },
+            "external_links": {
+                "iconclass": "http://iconclass.org/11H(DOMINIC)55"
+            }
+        },
+        {
+            "id": "vi_composition_stories_blessed_reginald",
+            "label": {
+                "it": "Composizione visiva del pannello delle Storie del beato Reginaldo",
+                "en": "Visual Composition of the Panel of the Stories of the Blessed Reginald"
+            },
+            "ontological_classes": [
+                "crm:E36_Visual_Item"
+            ],
+            "description": {
+                "it": "Questa risorsa immateriale rappresenta l'assetto compositivo e l'aspetto ottico-formale della scena che raffigura la vocazione, la malattia e la guarigione miracolosa di Reginaldo d'Orléans. La scena è articolata in una sequenza cronologica suddivisa in tre parti: la promessa di Reginaldo a Domenico di entrare nell'Ordine, l'improvvisa malattia e la preghiera di Domenico, e infine la guarigione miracolosa per opera della Vergine Maria e di due sante donne. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, prescindendo dalle caratteristiche fisiche del blocco di marmo.",
+                "en": "This immaterial resource represents the compositional and optical-formal appearance of the scene depicting the vocation, illness, and miraculous healing of Reginald of Orléans. The scene is structured as a three-part chronological sequence, showing Reginald's promise to Dominic to join the Order, his sudden illness and Dominic’s prayer, and his miraculous healing by the Virgin Mary and two holy women. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "vi_detail_reginald_vow_dominican_order",
+            "label": {
+                "it": "Dettaglio visivo del beato Reginaldo che promette a San Domenico di entrare nell'Ordine dei Predicatori",
+                "en": "Visual detail of Blessed Reginald promising Saint Dominic that he will join the Order of Preachers"
+            },
+            "ontological_classes": [
+                "crm:E36_Visual_Item"
+            ],
+            "description": {
+                "it": "Questa risorsa immateriale rappresenta l'assetto compositivo e ottico-formale del dettaglio raffigurante il beato Reginaldo il quale, dinanzi a una struttura a cupola e alla presenza di un pontefice, emette la propria professione solenne ponendo le mani in quelle di Domenico. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, indipendentemente dalle caratteristiche fisiche del blocco di marmo.",
+                "en": "This immaterial resource represents the compositional and optical-formal appearance of the detail depicting the blessed Reginald, who, in front of a domed structure and in the presence of a pontiff, makes his solemn profession by placing his hands in those of Dominic. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "iconclass_11P317",
+            "label": {
+                "it": "Voti dei chierici (Iconclass 11P317)",
+                "en": "Vows of clerics (Iconclass 11P317)"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione dei voti dei chierici.",
+                "en": "Iconclass code representing the vows of clerics."
+            },
+            "external_links": {
+                "iconclass": "http://iconclass.org/11P317"
+            }
+        },
+        {
+            "id": "iconclass_11H_DOMINIC",
+            "label": {
+                "it": "San Domenico (Iconclass 11H(DOMINIC))",
+                "en": "Saint Dominic (Iconclass 11H(DOMINIC))"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione di San Domenico.",
+                "en": "Iconclass code representing Saint Dominic."
+            },
+            "external_links": {
+                "iconclass": "http://iconclass.org/11H(DOMINIC)"
+            }
+        },
+        {
+            "id": "iconclass_11H_REGINALD",
+            "label": {
+                "it": "Beato Reginaldo (Iconclass custom 11H(REGINALD))",
+                "en": "Blessed Reginald (Custom Iconclass 11H(REGINALD))"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass custom creato per identificare la figura specifica del Beato Reginaldo d'Orléans.",
+                "en": "Iconclass custom created to identify the specific figure of Blessed Reginald of Orléans."
+            },
+            "external_links": {}     
+        },
+        {
+            "id": "iconclass_11P315_DOMINICANS",
+            "label": {
+                "it": "Monastic orders, monastic life: Dominicans (Iconclass 11P315(DOMINICANS))",
+                "en": "Monastic orders, monastic life: Dominicans (Iconclass 11P315(DOMINICANS))"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione dell'ordine monastico dei Domenicani.",
+                "en": "Iconclass code representing the monastic order of the Dominicans."
+            },
+            "external_links": {
+                "iconclass": "https://iconclass.org/11P315(DOMINICANS)"
+            }    
+        },
+        {
+            "id": "vi_detail_reginald_illness",
+            "label": {
+                "it": "Dettaglio visivo del beato Reginaldo che cade malato",
+                "en": "Visual detail of Blessed Reginald falling ill"
+            },
+            "ontological_classes": [
+                "crm:E36_Visual_Item"
+            ],
+            "description": {
+                "it": "Questa risorsa immateriale rappresenta l'assetto compositivo e ottico-formale del dettaglio raffigurante il beato Reginaldo colto da un improvviso svenimento, sostenuto e sorretto da un chierico, mentre Domenico è in preghiera per la sua guarigione. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, indipendentemente dalle caratteristiche fisiche del blocco di marmo.",
+                "en": "This immaterial resource represents the compositional and optical-formal appearance of the detail depicting the blessed Reginald who suddenly faints, overcome by a sudden illness, and is supported by a cleric, while Dominic prays for his recovery. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "iconclass_11Q21",
+            "label": {
+                "it": "Una persona che prega (Iconclass 11Q21)",
+                "en": "One person praying (Iconclass 11Q21)"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione di una persona che prega.",
+                "en": "Iconclass code representing a person praying."
+            },
+            "external_links": {
+                "iconclass": "http://iconclass.org/11Q21"
+            }
+        },
+        {
+            "id": "iconclass_49G2",
+            "label": {
+                "it": "Paziente, ammalato (Iconclass 49G2)",
+                "en": "Sick person, patient (Iconclass 49G2)"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione di un ammalato o paziente.",
+                "en": "Iconclass code representing a sick person or patient."
+            },
+            "external_links": {
+                "iconclass": "http://iconclass.org/49G2"
+            }
+        },
+        {
+            "id": "vi_detail_reginald_vision_vergin",
+            "label": {
+                "it": "Dettaglio visivo del beato Reginaldo che viene sanato dalla Vergine che gli appare in visione e gli presenta l'abito domenicano",
+                "en": "Visual detail of Blessed Reginald being healed by the Virgin who appears to him in a vision and presents him with the Dominican habit"
+            },
+            "ontological_classes": [
+                "crm:E36_Visual_Item"
+            ],
+            "description": {
+                "it": "Questa risorsa immateriale rappresenta l'assetto compositivo e ottico-formale del dettaglio raffigurante l'apparizione della Vergine Maria, affiancata da due donne, che tocca la fronte di Reginaldo e gli mostra lo scapolare e la cappa dell'Ordine come segno di celeste approvazione L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, indipendentemente dalle caratteristiche fisiche del blocco di marmo.",
+                "en": "This immaterial resource represents the compositional and optical-formal appearance of the detail depicting the apparition of the Virgin Mary, flanked by two women, touching Reginaldo's forehead and showing him the Order's scapular and mantle as a sign of heavenly approval. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "iconclass_11F82",
+            "label": {
+                "it": "Apparizioni di Maria (Iconclass 11F82)",
+                "en": "Appearances of Mary (Iconclass 11F82)"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione delle apparizioni di Maria.",
+                "en": "Iconclass code representing appearances of Mary."
+            },
+            "external_links": {
+                "iconclass": "http://iconclass.org/11F82"
+            }
+        },
+        {
+            "id": "iconclass_49G231",
+            "label": {
+                "it": "(guarigione mediante) imposizione delle mani ) (Iconclass 49G231)",
+                "en": "(healing by) imposition of hands) (Iconclass 49G231)"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione della guarigione mediante l'imposizione delle mani.",
+                "en": "Iconclass code representing the healing by imposition of hands."
+            },
+            "external_links": {
+                "iconclass": "http://iconclass.org/49G231"
+            }
+        },
+        {
+            "id": "iconclass_11P3154",
+            "label": {
+                "it": "Vestito, tonaca (Iconclass 11P3154)",
+                "en": "Habit, frock (Iconclass 11P3154)"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione dell'abito monastico.",
+                "en": "Iconclass code representing the monastic habit."
+            },
+            "external_links": {
+                "iconclass": "http://iconclass.org/11P3154"
+            }
+        },
+        {
+            "id": "vi_composition_approval_order",
+            "label": {
+                "it": "Composizione visiva del pannello delle Storia dell'approvazione dell'Ordine",
+                "en": "Visual Composition of the Stories of the Approval of the Order"
+            },
+            "ontological_classes": [
+                "crm:E36_Visual_Item"
+            ],
+            "description": {
+                "it": "Questa risorsa immateriale rappresenta l'assetto compositivo e ottico-formale del rilievo raffigurante l'approvazione papale dell'Ordine domenicano. La scena è articolata in tre segmenti narrativi equilibrati: San Domenico che porge un rotolo al Papa, il sogno del Papa in cui Domenico sostiene la Basilica del Laterano che sta per crollare, e il Papa che consegna a Domenico il Libro della Regola. L'identità del Papa è oggetto di dibattito: le tre raffigurazioni potrebbero riferirsi specificamente a Innocenzo III e alla fase di fondazione del 1215, oppure la figura finale potrebbe rappresentare Onorio III nell'atto di confermare formalmente l'Ordine nel 1216. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, indipendentemente dalle caratteristiche fisiche del blocco di marmo.",
+                "en": "This immaterial resource represents the compositional and optical-formal appearance of the relief depicting the papal approval of the Dominican Order. The scene is structured into three balanced narrative segments: Saint Dominic presenting a scroll to the Pope, the Pope’s dream with Dominic supporting the collapsing Lateran Basilica, and the Pope presenting Dominic with the Book of the Rule. The identity of the Pope is debated: the three representations may refer specifically to Innocent III and the foundation phase of 1215, or the final figure may represent Honorius III formally confirming the Order in 1216. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "vi_detail_innocent_iii_receiving_scroll",
+            "label": {
+                "it": "Dettaglio di San Domenico che porge un rotulo a Papa Innocenzo III",
+                "en": "Detail of Saint Dominic Receiving a Scroll from Pope Innocent III"
+            },
+            "ontological_classes": [
+                "crm:E36_Visual_Item"
+            ],
+            "description": {
+                "it": "Questa risorsa immateriale rappresenta l'aspetto compositivo e ottico-formale del dettaglio sulla sinistra del pannello raffigurante San Domenico che chiede la conferma del riconoscimento della nuova aggregazione a papa Innocenzo III porgendogli un rotulo. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena e sul movimento delle figure, indipendentemente dalle caratteristiche fisiche del blocco di marmo.",
+                "en": "This immaterial resource represents the compositional and optical-formal appearance of the detail on the left side of the panel, which depicts Saint Dominic presenting a scroll to Pope Innocent III and requesting official recognition of the new order. The visual element focuses on the spatial and visual organization of the scene and the movement of the figures, irrespective of the physical characteristics of the marble block."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "iconclass_49L71",
+            "label": {
+                "it": "Rotulo (Iconclass 49L71)",
+                "en": "Scroll (Iconclass 49L71)"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione del rotulo di pergamena.",
+                "en": "Iconclass code representing the scroll."
+            },
+            "external_links": {
+                "iconclass": "http://iconclass.org/49L71"
+            }
+        },
+        {
+            "id": "iconclass_11P3111",
+            "label": {
+                "it": "Papa (Iconclass 11P3111)",
+                "en": "Pope (Iconclass 11P3111)"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione di un Papa.",
+                "en": "Iconclass code representing a Pope."
+            },
+            "external_links": {
+                "iconclass": "http://iconclass.org/11P3111"
+            }
+        },
+        {
+            "id": "vi_detail_lateran_dream",
+            "label": {
+                "it": "Dettaglio di Papa Innocenzo III che sogna San Domenico che sostiene la Basilica del Laterano",
+                "en": "Detail of Pope Innocent III Dreaming of Saint Dominic Supporting the Lateran Basilica"
+            },
+            "ontological_classes": [
+                "crm:E36_Visual_Item"
+            ],
+            "description": {
+                "it": "Questa risorsa immateriale rappresenta l'aspetto compositivo e ottico-formale del dettaglio al centro del pannello raffigurante papa Innocenzo III che sogna San Domenico che regge sulle sue spalle la Basilica del Laterano. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena e sul movimento delle figure, indipendentemente dalle caratteristiche fisiche del blocco di marmo.",
+                "en": "This immaterial resource represents the compositional and optical-formal appearance of the detail at the center of the panel, which depicts Pope Innocent III dreaming of Saint Dominic supporting the Lateran Basilica. The visual element focuses on the spatial and visual organization of the scene and the movement of the figures, irrespective of the physical characteristics of the marble block."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "iconclass_11H_DOMINIC_51",
+            "label": {
+                "it": "Il sogno di papa Innocenzo III: vede la Chiesa del Laterano crollare e San Domenico sorreggerla con le mani. (Iconclass 11H(DOMINIC)51)",
+                "en": "the dream of pope Innocent III: he sees the Lateran Church toppling, and St.Dominic holding it up with his hands (Iconclass 11H(DOMINIC)51)"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione del sogno di papa Innocenzo III, il quale vede la Chiesa del Laterano crollare e San Domenico sorreggerla con le mani.",
+                "en": "Iconclass code representing the dream of pope Innocent III, who sees the Lateran Church toppling, and St. Dominic holding it up with his hands."
+            },
+            "external_links": {
+                "iconclass": "http://iconclass.org/11H(DOMINIC)51"
+            }
+        },
+        {
+            "id": "vi_detail_approval_order",
+            "label": {
+                "it": "Dettaglio di Papa Innocenzo III o Papa Onorio III che porge a San Domenico il Libro della Regola",
+                "en": "Detail of Pope Innocent III or Pope Honorius III presenting the Book of the Rule to Saint Dominic"
+            },
+            "ontological_classes": [
+                "crm:E36_Visual_Item"
+            ],
+            "description": {
+                "it": "Questa risorsa immateriale rappresenta l'aspetto compositivo e ottico-formale del dettaglio al centro del pannello raffigurante papa Innocenzo III o papa Onorio III che porge a San Domenico il Libro della Regola, approvando così l'Ordine dei Predicatori. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena e sul movimento delle figure, indipendentemente dalle caratteristiche fisiche del blocco di marmo.",
+                "en": "This immaterial resource represents the compositional and optical-formal appearance of the detail at the center of the panel, which depicts Pope Innocent III or Pope Honorius III presenting the Book of the Rule to Saint Dominic, approving the Order of the Preachers. The visual element focuses on the spatial and visual organization of the scene and the movement of the figures, irrespective of the physical characteristics of the marble block."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "iconclass_11H_DOMINIC_131",
+            "label": {
+                "it": "Conferma dell'ordine domenicano da parte di papa Innocenzo III (o Onorio III) (Iconclass 11H(DOMINIC)131)",
+                "en": "Confirmation of the Dominican order by pope Innocent III (or Honorius III) (Iconclass 11H(DOMINIC)131)"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione della conferma dell'ordine domenicano da parte di papa Innocenzo III o papa Onorio III.",
+                "en": "Iconclass code representing the confirmation of the Dominican order by pope Innocent III or Honorius III."
+            },
+            "external_links": {
+                "iconclass": "http://iconclass.org/11H(DOMINIC)131"
+            }
+        },
+        {
+            "id": "vi_composition_vision_saints_peter_paul",
+            "label": {
+                "it": "Composizione visiva del pannello della Visione dei santi Pietro e Paolo a San Domenico e missione dei domenicani",
+                "en": "Visual Composition of the Panel of the Vision of Saints Peter and Paul to Saint Dominic and the Mission of the Dominicans"
+            },
+            "ontological_classes": [
+                "crm:E36_Visual_Item"
+            ],
+            "description": {
+                "it": "Questa risorsa immateriale rappresenta l'assetto compositivo e ottico-formale della scena che raffigura la Visione dei santi Pietro e Paolo e la missione dei frati. La scena mostra San Domenico mentre riceve il libro da San Paolo e il bastone da San Pietro, seguito dai primi frati inviati a predicare. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena e sul movimento delle figure, indipendentemente dalle caratteristiche fisiche del blocco di marmo.",
+                "en": "This immaterial resource represents the compositional and optical-formal appearance of the scene depicting the Vision of Saints Peter and Paul and the mission of the friars. The scene shows Saint Dominic receiving the book from Saint Paul and the staff from Saint Peter, followed by the first friars being sent to preach. The Visual Item focuses on the spatial and visual organization of the scene and the movement of the figures, independently of the physical features of the marble block."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "vi_detail_vision_saints_peter_paul",
+            "label": {
+                "it": "Dettaglio della Visione dei santi Pietro e Paolo a San Domenico",
+                "en": "Detail of the Vision of Saints Peter and Paul to Saint Dominic"
+            },
+            "ontological_classes": [
+                "crm:E36_Visual_Item"
+            ],
+            "description": {
+                "it": "Questa risorsa immateriale rappresenta l'aspetto compositivo e ottico-formale del dettaglio che raffigura San Domenico al centro, mentre riceve il libro da San Paolo e il bastone da San Pietro. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena e sul movimento delle figure, indipendentemente dalle caratteristiche fisiche del blocco di marmo.",
+                "en": "This immaterial resource represents the compositional and optical-formal appearance of the detail depicting Saint Dominic in the center receiving the book from Saint Paul and the staff from Saint Peter. The Visual Item focuses on the spatial and visual organization of the scene and the movement of the figures, independently of the physical features of the marble block."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "iconclass_11H_DOMINIC_342",
+            "label": {
+                "it": "San Domenico riceve l'incarico di predicare: San Pietro e San Paolo gli appaiono in visione e gli donano un bastone e un libro (i vangeli) (Iconclass 11H(DOMINIC)342)",
+                "en": "St. Dominic receives the commission to preach: St. Peter and St. Paul appear to him in a vision and give him a staff and a book (the gospels) (Iconclass 11H(DOMINIC)342)"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione di San Domenico che riceve l'incarico di predicare. San Pietro e San Paolo gli appaiono in visione e gli donano un bastone e il libro dei vangeli.",
+                "en": "Iconclass code representing Saint Dominic receiving the commission to preach. Saints Peter and Paul appear to him in a vision and present him with a staff and the Book of the Gospels."
+            },
+            "external_links": {
+                "iconclass": "http://iconclass.org/11H(DOMINIC)342"
+            }
+        },
+        {
+            "id": "vi_detail_dominic_sending_friars",
+            "label": {
+                "it": "Dettaglio della Visione dei santi Pietro e Paolo a San Domenico",
+                "en": "Detail of the Vision of Saints Peter and Paul to Saint Dominic"
+            },
+            "ontological_classes": [
+                "crm:E36_Visual_Item"
+            ],
+            "description": {
+                "it": "Questa risorsa immateriale rappresenta l'aspetto compositivo e ottico-formale del dettaglio che raffigura nella parte destra del pannello San Domenico che, avendo appena ricevuto il libro da San Paolo, lo consegna ai frati e li invia a predicare nel mondo. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena e sul movimento delle figure, indipendentemente dalle caratteristiche fisiche del blocco di marmo.",
+                "en": "This intangible resource represents the compositional and optical-formal aspect of the detail depicting — on the right side of the panel — Saint Dominic, who, having just received the book from Saint Paul, hands it to the friars and sends them out to preach to the world. The visual element focuses on the spatial and visual organization of the scene and the movement of the figures, irrespective of the physical characteristics of the marble block."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "iconclass_11P5",
+            "label": {
+                "it": "Diffondere il Vangelo; opera missionaria (+ variante) (Iconclass 11P5)",
+                "en": "Spreading the gospel; missionary work (+ variant) (Iconclass 11P5)"
+            },
+            "ontological_classes": [
+                "crm:E55_Type"
+            ],
+            "description": {
+                "it": "Codice Iconclass per la rappresentazione di una variante dell'atto di diffusione del Vagelo o l'opera missionaria.",
+                "en": "Iconclass code representing a variant ofthe spreading of the gospel or missionary work."
+            },
+            "external_links": {
+                "iconclass": "https://iconclass.org/11P5"
+            }
+        },
+
+
+
+        {
+            "id": "theme_raising_orsini",
+            "label": {
+                "it": "Tema narrativo relativo al miracolo della resurrezione di Napoleone Orsini per intercessione di san Domenico",
+                "en": "Narrative theme concerning the miracle of the resurrection of Napoleone Orsini through the intercession of Saint Dominic"
+            },
+            "ontological_classes": [
+                "icon:Story",
+                "crm:E89_Propositional_Object",
+                "lrmoo:F1_Work"
+            ],
+            "description": {
+                "it": "Il nucleo storico, contenuto nel *Libellus* di Giordano di Sassonia, riferiva un intervento privato di Domenico per rianimare il giovane ritenuto in fin di vita dopo una caduta da cavallo. Le redazioni successive (Costantino d'Orvieto, suor Cecilia) hanno drammatizzato l'evento trasformandolo in una resurrezione pubblica dai morti. La narrazione risponde a una strategia propagandistica dell'Ordine Domenicano volta a delineare per il fondatore un profilo cristo-mimetico, in competizione con la figura di Francesco d'Assisi.",
+                "en": "The core historical account, found in the *Libellus* by Jordan of Saxony, described a private intervention by Dominic to revive a young man believed to be at death's door following a fall from his horse. Later accounts (by Constantine of Orvieto and Sister Cecilia) dramatized the event, transforming it into a public resurrection from the dead. This narrative reflects a propaganda strategy of the Dominican Order aimed at shaping a Christ-like profile for its founder, in competition with the figure of Francis of Assisi."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "theme_ordeal_fire",
+            "label": {
+                "it": "Tema narrativo relativo alla disputa dottrinale contro i catari e al miracolo dell'ordalia del fuoco",
+                "en": "Narrative theme concerning the doctrinal dispute with the Cathars and the miracle of the ordeal by fire"
+            },
+            "ontological_classes": [
+                "icon:Story",
+                "crm:E89_Propositional_Object",
+                "lrmoo:F1_Work"
+            ],
+            "description": {
+                "it": "La versione originaria e più sobria del racconto, registrata dall'unico testimone contemporaneo Pierre des Vaux-de-Cernay, collocava l'episodio a Montréal all'interno di una casa privata, configurandolo come un miracolo a finalità apologetico-dottrinale di cui gli eretici tentarono di occultare segretamente la notizia. Canetti mette in luce lo sdoppiamento della tradizione domenicana operato da Giordano di Sassonia circa vent'anni dopo, il quale riscrisse e teatralizzò l'ordalia sdoppiandola sia sul piano spaziale-ambientale (spostando lo scontro dal chiuso notturno di una conventicola eretica a Montréal a una solenne e aperta disputa pubblica a Fanjeaux, davanti a giudici-arbitri ufficiali) sia sul piano dell'oggetto del miracolo (il semplice 'foglio' contenente gli appunti scritti da Domenico si trasforma nel 'libro' vero e proprio). A questo si aggiunge un ulteriore sdoppiamento del miracolo dei libri consolidatosi nella memoria dell'Ordine con Gerardo di Frachet, il quale creò un perfetto parallelismo simmetrico tra i libri scritti dal santo salvati dal fuoco a Fanjeaux e i libri letti dal santo salvati dall'acqua del fiume Ariège. Nella prospettiva degli agiografi dell'Ordine, il miracolo cessa di essere una testimonianza dottrinale locale e circoscritta per divenire una clamorosa dimostrazione della santità personale di Domenico e della sua missione di *persequutor hereticorum*. La rappresentazione di questa prova offre una solenne legittimazione soprannaturale e carismatica alla *militia* antiereticale dell'Ordine dei Predicatori, proprio nella fase del suo definitivo e stabile insediamento istituzionale all'interno della Chiesa",
+                "en": "The original, more understated version of the story—recorded by the sole contemporary witness, Pierre des Vaux-de-Cernay—placed the episode in a private home in Montréal, framing it as a miracle with an apologetic and doctrinal purpose that the heretics attempted to keep secret. Canetti highlights the way the Dominican tradition was subsequently split by Jordan of Saxony some twenty years later; he rewrote and dramatized the ordeal, creating a twofold division regarding both the setting (shifting the confrontation from the nocturnal confines of a heretical gathering in Montréal to a solemn, open public dispute in Fanjeaux before official adjudicators) and the object of the miracle (transforming the simple 'sheet' of paper containing Dominic’s notes into an actual 'book'). Added to this is a further splitting of the 'book miracle' that became entrenched in the Order’s collective memory through Gerard of Frachet, who established a perfect symmetrical parallel between the books written by the saint (saved from fire at Fanjeaux) and the books read by the saint (saved from the waters of the Ariège River). From the perspective of the Order’s hagiographers, the miracle ceased to be a localized, limited doctrinal testimony and instead became a resounding demonstration of Dominic’s personal sanctity and his mission as a *persequutor hereticorum* (persecutor of heretics). The depiction of this ordeal provided solemn supernatural and charismatic legitimation for the anti-heretical *militia* of the Order of Preachers, precisely at the moment of its definitive and stable institutional establishment within the Church."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "theme_miraculous_supper",
+            "label": {
+                "it": "Tema narrativo relativo al miracolo della moltiplicazione dei pani (cena miracolosa) a favore della comunità dei frati",
+                "en": "Narrative theme concerning the miracle of the multiplication of the loaves (miraculous supper) for the benefit of the community of friars"
+            },
+            "ontological_classes": [
+                "icon:Story",
+                "crm:E89_Propositional_Object",
+                "lrmoo:F1_Work"
+            ],
+            "description": {
+                "it": "Il nucleo storico originario di questo racconto risiede nelle deposizioni giurate di frate Buonviso di Piacenza e Rodolfo di Faenza al processo di canonizzazione di Bologna del 1233, le quali descrivevano un sobrio prodigio quotidiano e cristo-mimetico ambientato nel refettorio del convento bolognese di San Niccolò delle Vigne. La successiva tradizione liturgica ufficiale (Umberto di Romans, suor Cecilia romana) ha operato una riscrittura e ricollocazione geografica, spostando il prodigio a Roma (convento di San Sisto) e arricchendolo dell'apparizione spettacolare di due angeli distributori. La transizione simbolica a Roma serviva a sovrapporre una solenne veste liturgica e 'angelica' alla primitiva memoria domestica della comunità di Bologna, facilitando la promozione del culto del fondatore su scala universale",
+                "en": "The original historical core of this account lies in the sworn testimonies given by Friar Buonviso of Piacenza and Rodolfo of Faenza during the 1233 canonization proceedings in Bologna; these described a modest, daily, and Christ-mimetic miracle set in the refectory of the Bolognese convent of San Niccolò delle Vigne. Subsequent official liturgical tradition (Humbert of Romans, Sister Cecilia of Rome) rewrote and geographically relocated the story, shifting the miracle to Rome (the convent of San Sisto) and embellishing it with the spectacular appearance of two angels who distributed the food. This symbolic shift to Rome served to overlay a solemn liturgical and 'angelic' character upon the community's original, intimate memory from Bologna, thereby facilitating the promotion of the founder's cult on a universal scale."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "theme_reginald_stories",
+            "label": {
+                "it": "Tema narrativo relativo alla guarigione miracolosa e alla rivelazione dell'abito domenicano a Reginaldo d'Orléans",
+                "en": "Narrative theme concerning the miraculous healing and the revelation of the Dominican habit to Reginald of Orléans"
+            },
+            "ontological_classes": [
+                "icon:Story",
+                "crm:E89_Propositional_Object",
+                "lrmoo:F1_Work"
+            ],
+            "description": {
+                "it": "Originata nel Libellus di Giordano di Sassonia, la narrazione descrive la Vergine Maria che appare al capezzale del celebre docente di diritto malato di febbri acute a Roma, ungendone i sensi e presentandogli lo scapolare dell'Ordine. L'episodio è stato poi ereditato e normalizzato dalle legende liturgiche successive (Pietro Ferrandi, Costantino d'Orvieto, Umberto di Romans). La digressione agiografica assolve a una precisa funzione politico-istituzionale: legittimare la vocazione intellettuale e universitaria dei Predicatori celebrando la conversione soprannaturale di un famosissimo maestro, giustificando e promuovendo così il reclutamento dell'Ordine all'interno degli Studia di Parigi e Bologna.",
+                "en": "Originating in the *Libellus* of Jordan of Saxony, the narrative describes the Virgin Mary appearing at the bedside of the renowned law professor—who was suffering from a severe fever in Rome, anointing his senses and presenting him with the Order's scapular. This episode was subsequently adopted and standardized by later hagiographical accounts (Peter Ferrandi, Constantine of Orvieto, Humbert of Romans). The hagiographical digression serves a specific political-institutional purpose: to legitimize the intellectual and academic vocation of the Preachers by celebrating the supernatural conversion of a highly celebrated master, thereby justifying and promoting the Order's recruitment efforts within the *studia* of Paris and Bologna."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "theme_lateran_dream",
+            "label": {
+                "it": "Tema narrativo relativo al sogno della basilica del Laterano di papa Innocenzo III",
+                "en": "Narrative theme concerning Pope Innocent III's dream of the Lateran Basilica"
+            },
+            "ontological_classes": [
+                "icon:Story",
+                "crm:E89_Propositional_Object",
+                "lrmoo:F1_Work"
+            ],
+            "description": {
+                "it": "Assente nel Libellus di Giordano e nella prima stesura di Pietro Ferrandi, compare per la prima volta nella Legenda nova di Costantino d'Orvieto (1246-1247) ed è poi ripreso dalle compilazioni successive di Umberto di Romans e Jacopo da Varazze. Sulla genesi di questo motivo vi sono pareri fortemente discordanti: sebbene la storiografia tradizionale tenda a liquidarlo come un prestito dei Domenicani ai danni dei Francescani, la storica Chiara Frugoni propone la tesi contraria. Analizzando la Vita secunda di Celano, in cui si accenna al fatto che il papa riconobbe la realizzazione della visione anche in Francesco ('et in hoc homine'), la studiosa individua un 'furto' prima letterario e poi iconografico operato dai Francescani a danno dei Domenicani. Luigi Canetti propone una terza via, ipotizzando che sia Celano sia Costantino d'Orvieto abbiano attinto indipendentemente, a metà degli anni Quaranta del Duecento, a una comune tradizione narrativa e orale romano-curiale e centro-italiana. La narrazione mira ad accreditare ex post una provvidenziale e diretta sintonia tra il fondatore e il papato innocenziano, presentando l'Ordine come baluardo necessario per la sopravvivenza stessa della Chiesa di Roma.",
+                "en": "Absent from Jordan’s *Libellus* and Peter Ferrandi’s initial draft, this motif appears for the first time in Constantine of Orvieto’s *Legenda nova* (1246–1247) and is subsequently adopted in later compilations by Humbert of Romans and Jacobus de Voragine. Opinions regarding the origins of this motif are sharply divided: while traditional historiography tends to dismiss it as something the Dominicans appropriated from the Franciscans, the historian Chiara Frugoni argues the opposite. By analyzing Celano’s *Vita secunda* — which notes that the Pope recognized the fulfillment of the vision in Francis himself (*et in hoc homine*) — she identifies a 'theft', first literary and then iconographic, committed by the Franciscans against the Dominicans. Luigi Canetti proposes a third perspective, hypothesizing that both Celano and Constantine of Orvieto independently drew, during the mid-1240s, upon a shared narrative and oral tradition rooted in the Roman Curia and central Italy. The narrative aims to establish, *ex post*, a providential and direct rapport between the founder and the papacy of Innocent III, presenting the Order as a bulwark essential to the very survival of the Church of Rome."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "theme_vision_saints_peter_paul",
+            "label": {
+                "it": "Tema narrativo relativo alla visione dei santi Pietro e Paolo",
+                "en": "Narrative theme concerning the vision of Saints Peter and Paul"
+            },
+            "ontological_classes": [
+                "icon:Story",
+                "crm:E89_Propositional_Object",
+                "lrmoo:F1_Work"
+            ],
+            "description": {
+                "it": "Descritto da Costantino d'Orvieto e ripreso dagli agiografi successivi, il racconto mostra Domenico a Roma che riceve il bastone da san Pietro e il libro delle Scritture da san Paolo, ricevendo l'ordine di andare a predicare, cui segue l'immediata dispersione dei frati nel mondo. Il tema risponde a una precisa istanza apologetica ed ecclesiologica dell'Ordine: inserendo l'avvento dei Predicatori direttamente nella successione e nella tradizione apostolica, si legittimava sul piano carismatico l'autorità di predicazione universale dei domenicani, conferendo al loro ministero una dignità ed eccellenza pari a quella dell'ufficio episcopale.",
+                "en": "Recounted by Constantine of Orvieto and taken up by later hagiographers, the story depicts Dominic in Rome receiving the staff from Saint Peter and the book of the Scriptures from Saint Paul, thereby receiving the command to go forth and preach, followed by the immediate dispersal of the friars throughout the world. This theme addresses a specific apologetic and ecclesiological aim of the Order: by situating the advent of the Preachers directly within the apostolic succession and tradition, it provided charismatic legitimation for the Dominicans' authority to preach universally, endowing their ministry with a dignity and excellence equal to that of the episcopal office."
+            },
+            "external_links": {}
+        },
+        {
+            "id": "creation_deposition_rodolfo",
+            "label": {
+                "it": "Relazione di creazione della deposizione di Rodolfo da Faenza",
+                "en": "Relation creation of the deposition of Rodolfo da Faenza"
+            },
+            "ontological_classes": [
+                "rico:CreationRelation"
+            ],
+            "description": {
+                "it": "Relazione che attesta la creazione della testimonianza giurata (deposizione) di fra' Rodolfo da Faenza, resa nel 1233 a Bologna davanti alla commissione pontificia, nell'ambito del processo per la canonizzazione di san Domenico di Guzmán.",
+                "en": "Relation attesting to the creation of the sworn testimony (deposition) of Friar Rodolfo da Faenza, given in 1233 in Bologna before the papal commission during the canonization process of Saint Dominic of Guzmán."
+            },
+            "external_links": {
+            }
+        },
+        {
+            "id": "creation_deposition_buonviso",
+            "label": {
+                "it": "Relazione di creazione della deposizione di Buonviso da Piacenza",
+                "en": "Relation creation of the deposition of Buonviso da Piacenza"
+            },
+            "ontological_classes": [
+                "rico:CreationRelation"
+            ],
+            "description": {
+                "it": "Relazione che attesta la creazione della testimonianza giurata (deposizione) di fra' Buonviso da Piacenza, resa nel 1233 a Bologna davanti alla commissione pontificia, nell'ambito del processo per la canonizzazione di san Domenico di Guzmán.",
+                "en": "Relation attesting to the creation of the sworn testimony (deposition) of Friar Buonviso da Piacenza, given in 1233 in Bologna before the papal commission during the canonization process of Saint Dominic of Guzmán."
+            },
+            "external_links": {
+            }
+        },
+        {
+            "id": "role_witness",
+            "label": {
+                "it": "Testimone deponente",
+                "en": "Witness deponent"
+            },
+            "ontological_classes": [
+                "rico:RoleType"
+            ],
+            "description": {
+                "it": "Ruolo attribuito a un agente (persona) che rilascia una dichiarazione formale, una deposizione o una testimonianza giurata davanti a un'autorità o a una commissione. Nel contesto di una relazione di creazione, identifica l'attore le cui parole e risposte formano la sostanza intellettuale del documento finale.",
+                "en": "Role assigned to an agent (person) who provides a formal statement, deposition, or sworn testimony before an authority or commission. In the context of a creation relationship, it identifies the actor whose words and responses constitute the intellectual substance of the final document."
+            },
+            "external_links": {
+            }
+        },
+        {
+            "id": "deposition_rodolfo",
+            "label": {
+                "it": "Deposizione di Rodolfo da Faenza",
+                "en": "Deposition of Rodolfo da Faenza"
+            },
+            "ontological_classes": [
+                "lrmoo:F1_Work",
+                "rico:Record"
+            ],
+            "description": {
+                "it": "Testimonianza giurata del procuratore del convento bolognese di San Niccolò delle Vigne. Rodolfo offre uno dei resoconti più intimi e realistici sulle ultime ore e l'agonia di Domenico, descrivendo come ne sorresse fisicamente il capo e ne asciugò il sudore, e ne riporta la celebre volontà testamentaria di essere inumato 'sotto i piedi dei frati'. Descrive inoltre i dettagli costruttivi della prima sepoltura, la successiva fatica fisica per l'apertura notturna della tomba e la persistenza del miracoloso profumo durante la traslazione del 1233. Infine, fornisce la testimonianza originaria sul quotidiano e domestico miracolo bolognese della moltiplicazione dei pani nel refettorio del convento.",
+                "en": "Sworn testimony by the procurator of the Bolognese convent of San Niccolò delle Vigne. Rodolfo offers one of the most intimate and realistic accounts of Dominic’s final hours and agony, describing how he physically supported the saint's head and wiped away his sweat—and records his famous wish to be buried 'beneath the friars' feet'. He also details the construction of the initial burial site, the arduous physical effort involved in opening the tomb by night, and the enduring miraculous fragrance observed during the translation of the remains in 1233. Finally, he provides the original account of the everyday, domestic miracle in Bologna: the multiplication of loaves in the convent refectory."
+            },
+            "external_links": {
+            }
+        },
+        {
+            "id": "deposition_buonviso",
+            "label": {
+                "it": "Deposizione di Buonviso da Piacenza",
+                "en": "Deposition of Buonviso da Piacenza"
+            },
+            "ontological_classes": [
+                "lrmoo:F1_Work",
+                "rico:Record"
+            ],
+            "description": {
+                "it": "Testimonianza giurata del primo compagno di Domenico e fondatore del convento di Piacenza. Buonviso attesta l'ascesi rigorosa, le estenuanti veglie di preghiera notturna e il dono delle lacrime del fondatore. Rievoca l'austerità della loro vita itinerante lungo la via, descrivendo l'abitudine di Domenico di camminare a piedi nudi e di digiunare rigorosamente. Offre inoltre, insieme a Rodolfo, la fondamentale testimonianza oculare e originaria sul miracolo domestico della moltiplicazione dei pani a favore della comunità di San Niccolò delle Vigne.",
+                "en": "Sworn testimony from Dominic’s first companion and the founder of the Piacenza convent. Buonviso attests to the founder’s rigorous asceticism, exhausting nocturnal prayer vigils, and gift of tears. He recalls the austerity of their itinerant life on the road, describing Dominic’s habit of walking barefoot and fasting strictly. Together with Rodolfo, he also provides crucial, firsthand eyewitness testimony regarding the domestic miracle of the multiplication of loaves for the community of San Niccolò delle Vigne."
+            },
+            "external_links": {
+            }
+        },    
+        {
+            "id": "nicola_workshop",
+            "label": {
+                "it": "Atelier di Nicola Pisano",
+                "en": "Nicola Pisano's workshop"
+            },
+            "ontological_classes": [
+                "crm:E74_Group",
+                "rico:Group"
+            ],
+            "description": {
+                "it": "Bottega scultorea, attiva principalmente a Pisa, responsabile della progettazione (c. 1264) e dell'esecuzione dell'Arca di San Domenico . Sotto la direzione di Nicola, il cantiere dell'opera vide l'ampia e fondamentale partecipazione di assistenti di spicco quali Arnolfo di Cambio, Lapo e il frate domenicano Guglielmo.",
+                "en": "A sculptural workshop, active primarily in Pisa, responsible for the design (c. 1264) and execution of the Shrine of Saint Dominic. Under Nicola's direction, the project involved the extensive and crucial participation of prominent assistants such as Arnolfo di Cambio, Lapo, and the Dominican friar Guglielmo."
+            },
+            "external_links": {
+            }
+        },
+        {
+            "id": "Niccolo_to_Domenico_church_transformation",
+            "label": {
+                "it": "Trasformazione della Chiesa di San Niccolò delle Vigne nella Basilica di San Domenico",
+                "en": "Transformation of the Church of San Niccolò delle Vigne into the Basilica of San Domenico"
+            },
+            "ontological_classes": [
+                "crm:E81_Transformation"
+            ],
+            "date": {
+                "from": "1228",
+                "to": "1235"
+            },
+            "description": {
+                "it": "Processo di radicale trasformazione materiale e istituzionale che, tra il 1228 e il 1235, ha portato alla totale demolizione dell'antica e angusta chiesa tardo-duecentesca di San Niccolò delle Vigne (attestata dal 1198) per far posto all'edificazione ex novo della monumentale Basilica di San Domenico. L'evento, guidato dall'architettura funzionale dell'Ordine Mendicante, ha comportato la completa inversione dell'orientamento liturgico (edificato dal coro a est verso la facciata a ovest) e la strutturazione dello spazio in due grandi vani distinti: la 'chiesa interna' voltata per i frati e la 'chiesa esterna' a capriate per i laici. Questo processo racchiude il momento cruciale della traslazione delle spoglie di Domenico (maggio 1233), rimaste temporaneamente esposte alle intemperie proprio a causa del cantiere di abbattimento del vecchio edificio, e si conclude idealmente nel 1235 con la bolla papale di indulgenza che ridenomina ufficialmente il luogo di culto in onore del Santo fondatore",
+                "en": "A process of radical material and institutional transformation that, between 1228 and 1235, led to the complete demolition of the old, cramped late-12th-century church of San Niccolò delle Vigne (documented since 1198) to make way for the construction—from the ground up—of the monumental Basilica of San Domenico. Driven by the functional architectural principles of the Mendicant Order, this undertaking involved a complete reversal of the liturgical orientation (shifting the axis from the choir in the east to the façade in the west) and the division of the interior into two distinct spaces: the vaulted 'inner church' for the friars and the truss-roofed 'outer church' for the laity. This process encompasses the pivotal moment of the translation of Dominic’s remains (May 1233)—which had been left temporarily exposed to the elements precisely because of the demolition work on the old building—and culminates symbolically in 1235 with the papal bull of indulgence that officially renamed the place of worship in honor of its founding saint."
+            },
+            "external_links": {}
+        }
+
+    ],
+
+
+
+    "relations": [
+        {
+            "subject": {
+                "id": "creation_dominic_sarcophagus",
+                "source": "extra"
+            },
+            "predicate": "crm:P108_has_produced",
+            "object": {
+                "id": "sarcophagus",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "creation_dominic_sarcophagus",
+                "source": "extra"
+            },
+            "predicate": "crm:P14_carried_out_by",
+            "object": {
+                "id": "nicola_workshop",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "panel_raising_orsini",
+                "source": "core"
+            },
+            "predicate": "crm:P65_shows_visual_item",
+            "object": {
+                "id": "vi_composition_raising_orsini",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "panel_burning_books",
+                "source": "core"
+            },
+            "predicate": "crm:P65_shows_visual_item",
+            "object": {
+                "id": "vi_composition_burning_books",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "panel_miraculous_supper",
+                "source": "core"
+            },
+            "predicate": "crm:P65_shows_visual_item",
+            "object": {
+                "id": "vi_composition_miraculous_supper",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "panel_story_reginald",
+                "source": "core"
+            },
+            "predicate": "crm:P65_shows_visual_item",
+            "object": {
+                "id": "vi_composition_stories_blessed_reginald",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "panel_approval_order",
+                "source": "core"
+            },
+            "predicate": "crm:P65_shows_visual_item",
+            "object": {
+                "id": "vi_composition_approval_order",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "panel_saints_peter_paul",
+                "source": "core"
+            },
+            "predicate": "crm:P65_shows_visual_item",
+            "object": {
+                "id": "vi_composition_vision_saints_peter_paul",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "sarcophagus",
+                "source": "core"
+            },
+            "predicate": "arco:hasCommission",
+            "object": {
+                "id": "sarcophagus_commission",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "sarcophagus_commission",
+                "source": "extra"
+            },
+            "predicate": "arco-cd:hasCommittent",
+            "object": {
+                "id": "dominican_order",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_raising_orsini",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11H_DOMINIC_53",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_burning_books",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11H_DOMINIC_52",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_miraculous_supper",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11H_DOMINIC_55",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_stories_blessed_reginald",
+                "source": "extra"
+            },
+            "predicate": "crm:P106_is_composed_of",
+            "object": {
+                "id": "vi_detail_reginald_vow_dominican_order",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_vow_dominican_order",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11H_DOMINIC",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_vow_dominican_order",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11H_REGINALD",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_vow_dominican_order",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11P317",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_vow_dominican_order",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11P315_DOMINICANS",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_stories_blessed_reginald",
+                "source": "extra"
+            },
+            "predicate": "crm:P106_is_composed_of",
+            "object": {
+                "id": "vi_detail_reginald_illness",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_illness",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11H_DOMINIC",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_illness",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11Q21",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_illness",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11H_REGINALD",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_illness",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_49G2",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_stories_blessed_reginald",
+                "source": "extra"
+            },
+            "predicate": "crm:P106_is_composed_of",
+            "object": {
+                "id": "vi_detail_reginald_vision_vergin",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_vision_vergin",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11H_REGINALD",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_vision_vergin",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11F82",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_vision_vergin",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_49G231",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_vision_vergin",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11P3154",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_approval_order",
+                "source": "extra"
+            },
+            "predicate": "crm:P106_is_composed_of",
+            "object": {
+                "id": "vi_detail_innocent_iii_receiving_scroll",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_innocent_iii_receiving_scroll",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11H_DOMINIC",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_innocent_iii_receiving_scroll",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_49L71",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_innocent_iii_receiving_scroll",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11P3111",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_approval_order",
+                "source": "extra"
+            },
+            "predicate": "crm:P106_is_composed_of",
+            "object": {
+                "id": "vi_detail_lateran_dream",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_lateran_dream",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11H_DOMINIC_51",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_approval_order",
+                "source": "extra"
+            },
+            "predicate": "crm:P106_is_composed_of",
+            "object": {
+                "id": "vi_detail_approval_order",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_approval_order",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11H_DOMINIC_31",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_vision_saints_peter_paul",
+                "source": "extra"
+            },
+            "predicate": "crm:P106_is_composed_of",
+            "object": {
+                "id": "vi_detail_vision_saints_peter_paul",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_vision_saints_peter_paul",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11H_DOMINIC_342",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_vision_saints_peter_paul",
+                "source": "extra"
+            },
+            "predicate": "crm:P106_is_composed_of",
+            "object": {
+                "id": "vi_detail_dominic_sending_friars",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_dominic_sending_friars",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "iconclass_11P5",
+                "source": "extra"
+            }
+        },
+        
+        {
+            "subject": {
+                "id": "vi_composition_raising_orsini",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "napoleone_orsini",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_raising_orsini",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "dominic_guzman",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_burning_books",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "dominic_guzman",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_miraculous_supper",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "dominic_guzman",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_vow_dominican_order",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "dominic_guzman",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_vow_dominican_order",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "reginald_orleans",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_illness",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "dominic_guzman",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_illness",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "reginald_orleans",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_reginald_vision_vergin",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "reginald_orleans",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_innocent_iii_receiving_scroll",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "dominic_guzman",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_innocent_iii_receiving_scroll",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "pope_innocent_iii",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_lateran_dream",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "pope_innocent_iii",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_lateran_dream",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "dominic_guzman",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_approval_order",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "dominic_guzman",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_approval_order",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "approval_order",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_innocent_iii_receiving_scroll",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "approval_order_request",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_vision_saints_peter_paul",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "dominic_guzman",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_vision_saints_peter_paul",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "saint_paul",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_vision_saints_peter_paul",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "saint_peter",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_dominic_sending_friars",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "dominic_guzman",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_raising_orsini",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "theme_raising_orsini",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_burning_books",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "theme_ordeal_fire",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_miraculous_supper",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "theme_miraculous_supper",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_composition_stories_blessed_reginald",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "theme_reginald_stories",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_lateran_dream",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "theme_lateran_dream",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "vi_detail_vision_saints_peter_paul",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object": {
+                "id": "theme_vision_saints_peter_paul",
+                "source": "extra"
+            }
+        },    
+        {
+            "subject": {
+                "id": "theme_raising_orsini",
+                "source": "extra"
+            },
+            "predicate": "crm:P67_refers_to",
+            "object": {
+                "id": "orsini_horse_fall",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "theme_raising_orsini",
+                "source": "extra"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "napoleone_orsini",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "theme_raising_orsini",
+                "source": "extra"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "dominic_guzman",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "theme_ordeal_fire",
+                "source": "extra"
+            },
+            "predicate": "crm:P67_refers_to",
+            "object": {
+                "id": "fanjeaux_dispute",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "theme_ordeal_fire",
+                "source": "extra"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "dominic_guzman",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "theme_miraculous_supper",
+                "source": "extra"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "dominic_guzman",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "theme_reginald_stories",
+                "source": "extra"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "reginald_orleans",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "theme_lateran_dream",
+                "source": "extra"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "pope_innocent_iii",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "theme_lateran_dream",
+                "source": "extra"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "dominic_guzman",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "theme_vision_saints_peter_paul",
+                "source": "extra"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "saint_paul",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "theme_vision_saints_peter_paul",
+                "source": "extra"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "saint_peter",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "theme_vision_saints_peter_paul",
+                "source": "extra"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "dominic_guzman",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "creation_deposition_buonviso",
+                "source": "extra"
+            },
+            "predicate": "rico:creationWithRole",
+            "object": {
+                "id": "role_witness",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "creation_deposition_buonviso",
+                "source": "extra"
+            },
+            "predicate": "rico:relationHasTarget",
+            "object": {
+                "id": "buonviso",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "creation_deposition_buonviso",
+                "source": "extra"
+            },
+            "predicate": "rico:relationHasSource",
+            "object": {
+                "id": "deposition_buonviso",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "deposition_buonviso",
+                "source": "extra"
+            },
+            "predicate": "rico:isOrWasIncludedIn",
+            "object": {
+                "id": "acta_canonizationis",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "deposition_buonviso",
+                "source": "extra"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_miraculous_supper",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "creation_deposition_rodolfo",
+                "source": "extra"
+            },
+            "predicate": "rico:creationWithRole",
+            "object": {
+                "id": "role_witness",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "creation_deposition_rodolfo",
+                "source": "extra"
+            },
+            "predicate": "rico:relationHasTarget",
+            "object": {
+                "id": "rodolfo",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "creation_deposition_rodolfo",
+                "source": "extra"
+            },
+            "predicate": "rico:relationHasSource",
+            "object": {
+                "id": "deposition_rodolfo",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "deposition_rodolfo",
+                "source": "extra"
+            },
+            "predicate": "rico:isOrWasIncludedIn",
+            "object": {
+                "id": "acta_canonizationis",
+                "source": "core"
+            }
+        },
+        {
+            "subject": {
+                "id": "deposition_rodolfo",
+                "source": "extra"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_miraculous_supper",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "libellus_principiis",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_raising_orsini",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "legenda_constantini",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_raising_orsini",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "libellus_principiis",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_ordeal_fire",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "legenda_constantini",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_ordeal_fire",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "legenda_petri_ferrandi",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_ordeal_fire",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "legenda_humbertus",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_ordeal_fire",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "legenda_humbertus",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_miraculous_supper",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "legenda_constantini",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_miraculous_supper",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "legenda_constantini",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_reginald_stories",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "libellus_principiis",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_reginald_stories",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "legenda_humbertus",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_reginald_stories",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "legenda_petri_ferrandi",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_reginald_stories",
+                "source": "extra"
+            }
+        }, 
+        {
+            "subject": {
+                "id": "legenda_constantini",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_lateran_dream",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "legenda_humbertus",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_lateran_dream",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "legenda_humbertus",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_raising_orsini",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "legenda_constantini",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_vision_saints_peter_paul",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "legenda_humbertus",
+                "source": "core"
+            },
+            "predicate": "crm:P129_is_about",
+            "object": {
+                "id": "theme_vision_saints_peter_paul",
+                "source": "extra"
+            }
+        },
+        {
+            "subject": {
+                "id": "nicola_pisano",
+                "source": "core"
+            },
+            "predicate": "rico:isOrWasLeaderOf",
+            "object": {
+                "id": "nicola_workshop",
+                "source": "extra"
+            }
+        },
+        {
+            "subject":{
+                "id": "Niccolo_to_Domenico_church_transformation",
+                "source": "extra"
+            },
+            "predicate": "crm:P124_transformed",
+            "object":{
+                "id": "san_niccolo_church",
+                "source": "core"
+            }
+        },
+        {
+            "subject":{
+                "id": "Niccolo_to_Domenico_church_transformation",
+                "source": "extra"
+            },
+            "predicate": "crm:P123_resulted_in",
+            "object":{
+                "id": "san_domenico_church",
+                "source": "core"
+            }
+        },
+        {
+            "subject":{
+                "id": "Niccolo_to_Domenico_church_transformation",
+                "source": "extra"
+            },
+            "predicate": "crm:P14_carried_out_by",
+            "object":{
+                "id": "dominican_order",
+                "source": "core"
+            }
+        },
+        {
+            "subject":{
+                "id": "orsini_horse_fall",
+                "source": "extra"
+            },
+            "predicate": "crm:P11_had_participant",
+            "object":{
+                "id": "sister_cecilia_contarini",
+                "source": "core"
+            }
+        },
+        {
+            "subject":{
+                "id": "vi_composition_raising_orsini",
+                "source": "extra"
+            },
+            "predicate": "crm:P138_represents",
+            "object":{
+                "id": "sister_cecilia_contarini",
+                "source": "core"
+            }
+        }
+
+  ]
+}

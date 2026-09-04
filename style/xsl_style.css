@@ -1,0 +1,159 @@
+body {
+    background-color: rgb(33, 37, 41);
+    color: #f8f9fa;
+}
+
+.text-purple-title { color: #d0bfff !important; }
+.purple-highlight { color: #e0aaff; }
+.quote {
+    border-color: #7b2cbf !important; 
+}
+.card-surface { 
+    background-color: #2b2b35; 
+    border: 1px solid #4a3b5c; 
+}
+.btn-purple {
+    background-color: #7b2cbf;
+    color: white;
+    transition: all 0.3s;
+}
+.btn-purple:hover {
+    background-color: #9d4edd;
+    color: white;
+}
+.btn-lang.active {
+    background-color: #d0bfff;
+    color: #2b2b35;
+    font-weight: bold;
+}
+
+/* SCROLLBAR PERSONALIZZATA */
+.custom-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+    background-color: #7b2cbf;
+    border-radius: 10px;
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #d0bfff;
+}
+.custom-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #7b2cbf transparent;
+}
+
+/* LARGHEZZA CARD E EFFETTO FLIP */
+.card-width-custom {
+    width: 100%;
+    max-width: 420px;
+}
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    min-height: 480px; 
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+.is-flipped {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.flip-card-back {
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+/* STILI PER LE TAB UNDERLINE */
+.card-holder {
+    max-width: 1300px; /* Valore indicativo per 4 card */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important; /* Mantiene la responsività su schermi piccoli */
+}
+
+.nav-underline .nav-link.custom-tab {
+    color: #a89bb9; /* Viola spento per le tab inattive */
+    font-size: 1.1rem;
+    padding-bottom: 0.75rem;
+    margin: 0 0.5rem;
+    transition: all 0.3s;
+}
+.nav-underline .nav-link.custom-tab:hover {
+    color: #e0aaff;
+    border-bottom-color: rgba(123, 44, 191, 0.5); /* Sfumatura al passaggio del mouse */
+}
+.nav-underline .nav-link.custom-tab.active {
+    color: #d0bfff;
+    font-weight: bold;
+    border-bottom-color: #7b2cbf !important; /* Linea viola spessa per la tab attiva */
+}
+/* RISOLUZIONE BUG SPAZIO VUOTO TABS */
+.tab-content > .tab-pane:not(.active) {
+    display: none !important;
+}
+/*DIMENSIONI PER CARD PIU' PICCOLE*/
+.sm-card-width-custom {
+    width: 100%;
+    max-width: 280px; /* Ridotto da 420px: ora le card sono belle compatte */
+}
+.sm-flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    min-height: 340px; /* Ridotto da 480px: proporzionato alla nuova larghezza */
+}
+
+
+/* STILI PER LA TABELLA DELLE RELAZIONI */
+.custom-table-wrapper {
+    border: 1px solid #4a3b5c;
+    overflow: hidden; /* Mantiene i bordi arrotondati */
+}
+
+/* Colore di sfondo personalizzato per le righe (in tinta con le card) */
+.table-dark {
+    --bs-table-bg: #2b2b35; 
+    --bs-table-border-color: #4a3b5c;
+    --bs-table-hover-bg: #3a324b; /* Colore al passaggio del mouse */
+}
+
+/* Intestazione viola */
+.table-header-purple th {
+    background-color: #1e1e24 !important;
+    color: #d0bfff !important;
+    border-bottom: 2px solid #7b2cbf !important;
+}
+
+.text-entity{
+    cursor: help;
+}
+
+.note-size{
+    font-size: 0.75rem;
+}
+
+.card-dessc{
+    font-size: 0.95rem;
+}
+
+.card-id-size{
+    font-size: 0.85rem;
+}

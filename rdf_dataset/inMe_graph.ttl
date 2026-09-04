@@ -1,0 +1,688 @@
+@prefix arco: <https://w3id.org/arco/ontology/arco/> .
+@prefix arco-cd: <https://w3id.org/arco/ontology/content-description/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix icon: <http://www.w3id.org/icon/ontology/> .
+@prefix inme: <http://example.org/inventio-memoriae/> .
+@prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <http://www.ica.org/standards/RiC/ontology/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+inme:Niccolo_to_Domenico_church_transformation a crm:E81_Transformation ;
+    rdfs:label "Transformation of the Church of San Niccolò delle Vigne into the Basilica of San Domenico"@en,
+        "Trasformazione della Chiesa di San Niccolò delle Vigne nella Basilica di San Domenico"@it ;
+    dcterms:description "A process of radical material and institutional transformation that, between 1228 and 1235, led to the complete demolition of the old, cramped late-12th-century church of San Niccolò delle Vigne (documented since 1198) to make way for the construction—from the ground up—of the monumental Basilica of San Domenico. Driven by the functional architectural principles of the Mendicant Order, this undertaking involved a complete reversal of the liturgical orientation (shifting the axis from the choir in the east to the façade in the west) and the division of the interior into two distinct spaces: the vaulted 'inner church' for the friars and the truss-roofed 'outer church' for the laity. This process encompasses the pivotal moment of the translation of Dominic’s remains (May 1233)—which had been left temporarily exposed to the elements precisely because of the demolition work on the old building—and culminates symbolically in 1235 with the papal bull of indulgence that officially renamed the place of worship in honor of its founding saint."@en,
+        "Processo di radicale trasformazione materiale e istituzionale che, tra il 1228 e il 1235, ha portato alla totale demolizione dell'antica e angusta chiesa tardo-duecentesca di San Niccolò delle Vigne (attestata dal 1198) per far posto all'edificazione ex novo della monumentale Basilica di San Domenico. L'evento, guidato dall'architettura funzionale dell'Ordine Mendicante, ha comportato la completa inversione dell'orientamento liturgico (edificato dal coro a est verso la facciata a ovest) e la strutturazione dello spazio in due grandi vani distinti: la 'chiesa interna' voltata per i frati e la 'chiesa esterna' a capriate per i laici. Questo processo racchiude il momento cruciale della traslazione delle spoglie di Domenico (maggio 1233), rimaste temporaneamente esposte alle intemperie proprio a causa del cantiere di abbattimento del vecchio edificio, e si conclude idealmente nel 1235 con la bolla papale di indulgenza che ridenomina ufficialmente il luogo di culto in onore del Santo fondatore"@it .
+
+inme:approval_order a crm:E5_Event ;
+    rdfs:label "Papal approval and confirmation of the Order of Preachers"@en,
+        "Approvazione papale e conferma dell'Ordine dei Predicatori"@it ;
+    dcterms:description "Initiated in 1215 with the petition presented to Pope Innocent III by Dominic of Guzmán and Bishop Fulk of Toulouse, the process secured an initial provisional approval that required the community to adopt one of the rules already sanctioned by the Church. At the Chapter of Toulouse in 1216, the friars formally chose the Rule of Saint Augustine, adapting it to the demands of itinerant preaching. The process reached its solemn conclusion on December 22, 1216, with the issuance of the bull *Religiosam vitam* by Pope Honorius III, which formally ratified the *nova religio* of the Friars Preachers."@en,
+        "Avviato nel 1215 con la richiesta presentata a papa Innocenzo III da Domenico di Guzmán e dal vescovo Folco di Tolosa, l'iter ottenne un'iniziale approvazione provvisoria che imponeva alla comunità di adottare una delle regole già riconosciute dalla Chiesa. Durante il Capitolo di Tolosa del 1216, i frati scelsero formalmente la Regola di sant'Agostino, adattandola alle esigenze della predicazione itinerante. Il processo giunse a conclusione solenne il 22 dicembre 1216 con l'emanazione della bolla *Religiosam vitam* da parte di papa Onorio III, che ratificò formalmente la *nova religio* dei Frati Predicatori."@it ;
+    crm:P11_had_participant inme:dominic_guzman,
+        inme:pope_honorius_iii .
+
+inme:approval_order_request a crm:E5_Event ;
+    rdfs:label "Request for the approval of the Order of Preachers"@en,
+        "Richiesta per l'approvazione dell'Ordine dei Predicatori"@it ;
+    dcterms:description "A petition was submitted in Rome in 1215 by Dominic and Bishop Fulk of Toulouse (shortly before the Fourth Lateran Council) seeking papal confirmation of the new community as an order that would be, and be known as, the \"Order of Preachers.\" Dominic’s followers had already secured formal establishment and a range of privileges from Fulk for their base at Saint Romain in Toulouse. The Pope granted preliminary approval but made final recognition conditional upon the friars adopting one of the religious rules already in existence and approved by the Church."@en,
+        "Petizione presentata a Roma nel 1215 da Domenico e dal vescovo Folco di Tolosa, poco prima del IV Concilio Lateranense, per richiedere la conferma pontificia della nuova comunità come un ordine che fosse e si chiamasse \"dei Predicatori\". I seguaci di Domenico avevano già ottenuto da Folco un'istituzione formale e una serie di privilegi presso la loro sede di San Romano a Tolosa. Il pontefice concesse un benestare di massima, vincolando tuttavia il riconoscimento definitivo all'adozione, da parte dei frati, di una delle regole religiose già esistenti ed approvate dalla Chiesa."@it ;
+    crm:P11_had_participant inme:dominic_guzman,
+        inme:pope_innocent_iii ;
+    crm:P7_took_place_at inme:rome .
+
+inme:canonization_process a crm:E5_Event ;
+    rdfs:label "Canonization Process of Saint Dominic"@en,
+        "Processo di canonizzazione di san Domenico"@it ;
+    dcterms:description "The canonization process for Friar Dominic formally opened on July 13, 1233, with the letter of commission from Pope Gregory IX.  The inquiry was preceded, in May of the same year, by the solemn translation of his body to Bologna. The formal investigation comprised two local inquiries: one, the Bologna inquiry (August 6–15, 1233), based on the testimony of nine Dominican friars and focused on the founder's moral conduct, with a marked emphasis on the theme of observance of the Rule. The other, the Toulouse inquiry, initiated following the mandate issued by the Bologna commissioners on August 19, 1233; this inquiry gathered over two hundred testimonies (including those of several nuns from Prouille) aimed primarily at documenting his role as a staunch opponent of heresy in Languedoc. It represents a highly unusual procedural case due to the early use of a fixed list of *articuli interrogatorii* and the overwhelming preponderance (approximately 90%) of testimonies focusing on the candidate’s moral and monastic virtues, as opposed to those concerning miracles (only 10%). The proceedings concluded solemnly on July 3, 1234, in Rieti with the issuance of the bull Fons sapientiae, by which Gregory IX decreed the enrollment of Dominic in the catalogue of saints."@en,
+        "Il processo di canonizzazione di frate Domenico fu formalmente avviato il 13 luglio 1233 con la lettera di incarico di papa Gregorio IX. L'inchiesta era stata preceduta, nel maggio dello stesso anno, dalla solenne traslazione del suo corpo a Bologna. L'indagine formale si articolò in due inchieste locali: quella di Bologna (6-15 agosto 1233), basata sulle testimonianze di nove frati domenicani e incentrata sulla condotta morale del fondatore, con particolare enfasi sul tema dell'osservanza della Regola; e quella di Tolosa, avviata in seguito al mandato emesso dai commissari di Bologna il 19 agosto 1233, che raccolse oltre duecento testimonianze (tra cui quelle di diverse monache di Prouille) volte principalmente a documentare il suo ruolo di strenuo oppositore dell'eresia in Linguadoca. Rappresenta un caso procedurale fortemente anomalo per la precocità dell'uso di una lista fissa di articuli interrogatorii e per l'assoluta preponderanza (circa il 90%) delle deposizioni incentrate sulle virtù morali e regolari del candidato rispetto a quelle riservate ai miracoli (solo il 10%). Il procedimento si concluse solennemente il 3 luglio 1234 a Rieti con l'emanazione della bolla *Fons sapientiae*, mediante la quale Gregorio IX decretò l'iscrizione di Domenico nel catalogo dei santi."@it ;
+    crm:P11_had_participant inme:buonviso,
+        inme:pope_gregory_ix,
+        inme:rodolfo ;
+    crm:P67_refers_to inme:dominic_guzman ;
+    crm:P7_took_place_at inme:bologna,
+        inme:toulouse ;
+    crm:P94_has_created inme:acta_canonizationis .
+
+inme:creation_deposition_buonviso a rico:CreationRelation ;
+    rdfs:label "Relation creation of the deposition of Buonviso da Piacenza"@en,
+        "Relazione di creazione della deposizione di Buonviso da Piacenza"@it ;
+    dcterms:description "Relation attesting to the creation of the sworn testimony (deposition) of Friar Buonviso da Piacenza, given in 1233 in Bologna before the papal commission during the canonization process of Saint Dominic of Guzmán."@en,
+        "Relazione che attesta la creazione della testimonianza giurata (deposizione) di fra' Buonviso da Piacenza, resa nel 1233 a Bologna davanti alla commissione pontificia, nell'ambito del processo per la canonizzazione di san Domenico di Guzmán."@it .
+
+inme:creation_deposition_rodolfo a rico:CreationRelation ;
+    rdfs:label "Relation creation of the deposition of Rodolfo da Faenza"@en,
+        "Relazione di creazione della deposizione di Rodolfo da Faenza"@it ;
+    dcterms:description "Relation attesting to the creation of the sworn testimony (deposition) of Friar Rodolfo da Faenza, given in 1233 in Bologna before the papal commission during the canonization process of Saint Dominic of Guzmán."@en,
+        "Relazione che attesta la creazione della testimonianza giurata (deposizione) di fra' Rodolfo da Faenza, resa nel 1233 a Bologna davanti alla commissione pontificia, nell'ambito del processo per la canonizzazione di san Domenico di Guzmán."@it .
+
+inme:creation_dominic_sarcophagus a crm:E12_Production ;
+    rdfs:label "Creation of the Sarcophagus of the Ark of Saint Dominic"@en,
+        "Creazione del sarcofago dell'Arca di San Domenico"@it ;
+    dcterms:description "Phase of design and sculptural execution of the original Arca (of which only the sarcophagus now remains) by Nicola Pisano and his workshop."@en,
+        "Fase di progettazione ed esecuzione scultorea dell'Arca originale (di cui ora rimane solamente il sarcofago) da parte di Nicola Pisano e della sua bottega."@it .
+
+inme:deposition_buonviso a lrmoo:F1_Work,
+        rico:Record ;
+    rdfs:label "Deposition of Buonviso da Piacenza"@en,
+        "Deposizione di Buonviso da Piacenza"@it ;
+    dcterms:description "Sworn testimony from Dominic’s first companion and the founder of the Piacenza convent. Buonviso attests to the founder’s rigorous asceticism, exhausting nocturnal prayer vigils, and gift of tears. He recalls the austerity of their itinerant life on the road, describing Dominic’s habit of walking barefoot and fasting strictly. Together with Rodolfo, he also provides crucial, firsthand eyewitness testimony regarding the domestic miracle of the multiplication of loaves for the community of San Niccolò delle Vigne."@en,
+        "Testimonianza giurata del primo compagno di Domenico e fondatore del convento di Piacenza. Buonviso attesta l'ascesi rigorosa, le estenuanti veglie di preghiera notturna e il dono delle lacrime del fondatore. Rievoca l'austerità della loro vita itinerante lungo la via, descrivendo l'abitudine di Domenico di camminare a piedi nudi e di digiunare rigorosamente. Offre inoltre, insieme a Rodolfo, la fondamentale testimonianza oculare e originaria sul miracolo domestico della moltiplicazione dei pani a favore della comunità di San Niccolò delle Vigne."@it .
+
+inme:deposition_rodolfo a lrmoo:F1_Work,
+        rico:Record ;
+    rdfs:label "Deposition of Rodolfo da Faenza"@en,
+        "Deposizione di Rodolfo da Faenza"@it ;
+    dcterms:description "Sworn testimony by the procurator of the Bolognese convent of San Niccolò delle Vigne. Rodolfo offers one of the most intimate and realistic accounts of Dominic’s final hours and agony, describing how he physically supported the saint's head and wiped away his sweat—and records his famous wish to be buried 'beneath the friars' feet'. He also details the construction of the initial burial site, the arduous physical effort involved in opening the tomb by night, and the enduring miraculous fragrance observed during the translation of the remains in 1233. Finally, he provides the original account of the everyday, domestic miracle in Bologna: the multiplication of loaves in the convent refectory."@en,
+        "Testimonianza giurata del procuratore del convento bolognese di San Niccolò delle Vigne. Rodolfo offre uno dei resoconti più intimi e realistici sulle ultime ore e l'agonia di Domenico, descrivendo come ne sorresse fisicamente il capo e ne asciugò il sudore, e ne riporta la celebre volontà testamentaria di essere inumato 'sotto i piedi dei frati'. Descrive inoltre i dettagli costruttivi della prima sepoltura, la successiva fatica fisica per l'apertura notturna della tomba e la persistenza del miracoloso profumo durante la traslazione del 1233. Infine, fornisce la testimonianza originaria sul quotidiano e domestico miracolo bolognese della moltiplicazione dei pani nel refettorio del convento."@it .
+
+inme:fanjeaux a crm:E53_Place ;
+    rdfs:label "Fanjeaux"@en,
+        "Fanjeaux"@it ;
+    dcterms:description "Place in which the official hagiographic tradition (beginning with Jordan of Saxony) rewrote and dramatized the miracle of the fire. It was transformed into a solemn public dispute before official adjudicators, in which Dominic’s orthodox book leapt unscathed from the flames three times."@en,
+        "Scenario in cui la tradizione agiografica ufficiale (a partire da Giordano di Sassonia) riscrisse e teatralizzò il miracolo del fuoco. Venne trasformato in una disputa pubblica solenne davanti a giudici-arbitri ufficiali, in cui il libro ortodosso di Domenico balzò tre volte intatto dalle fiamme."@it ;
+    owl:sameAs <https://sws.geonames.org/3019063>,
+        <https://www.wikidata.org/wiki/Q198573> ;
+    skos:exactMatch <https://viaf.org/en/viaf/126809850> .
+
+inme:historia_albigensis a lrmoo:F1_Work ;
+    crm:P129_is_about inme:fanjeaux_dispute .
+
+inme:iconclass_11F82 a crm:E55_Type ;
+    rdfs:label "Appearances of Mary (Iconclass 11F82)"@en,
+        "Apparizioni di Maria (Iconclass 11F82)"@it ;
+    dcterms:description "Iconclass code representing appearances of Mary."@en,
+        "Codice Iconclass per la rappresentazione delle apparizioni di Maria."@it ;
+    skos:exactMatch <http://iconclass.org/11F82> .
+
+inme:iconclass_11H_DOMINIC a crm:E55_Type ;
+    rdfs:label "Saint Dominic (Iconclass 11H(DOMINIC))"@en,
+        "San Domenico (Iconclass 11H(DOMINIC))"@it ;
+    dcterms:description "Iconclass code representing Saint Dominic."@en,
+        "Codice Iconclass per la rappresentazione di San Domenico."@it ;
+    skos:exactMatch <http://iconclass.org/11H(DOMINIC)> .
+
+inme:iconclass_11H_DOMINIC_131 a crm:E55_Type ;
+    rdfs:label "Confirmation of the Dominican order by pope Innocent III (or Honorius III) (Iconclass 11H(DOMINIC)131)"@en,
+        "Conferma dell'ordine domenicano da parte di papa Innocenzo III (o Onorio III) (Iconclass 11H(DOMINIC)131)"@it ;
+    dcterms:description "Iconclass code representing the confirmation of the Dominican order by pope Innocent III or Honorius III."@en,
+        "Codice Iconclass per la rappresentazione della conferma dell'ordine domenicano da parte di papa Innocenzo III o papa Onorio III."@it ;
+    skos:exactMatch <http://iconclass.org/11H(DOMINIC)131> .
+
+inme:iconclass_11H_DOMINIC_342 a crm:E55_Type ;
+    rdfs:label "St. Dominic receives the commission to preach: St. Peter and St. Paul appear to him in a vision and give him a staff and a book (the gospels) (Iconclass 11H(DOMINIC)342)"@en,
+        "San Domenico riceve l'incarico di predicare: San Pietro e San Paolo gli appaiono in visione e gli donano un bastone e un libro (i vangeli) (Iconclass 11H(DOMINIC)342)"@it ;
+    dcterms:description "Iconclass code representing Saint Dominic receiving the commission to preach. Saints Peter and Paul appear to him in a vision and present him with a staff and the Book of the Gospels."@en,
+        "Codice Iconclass per la rappresentazione di San Domenico che riceve l'incarico di predicare. San Pietro e San Paolo gli appaiono in visione e gli donano un bastone e il libro dei vangeli."@it ;
+    skos:exactMatch <http://iconclass.org/11H(DOMINIC)342> .
+
+inme:iconclass_11H_DOMINIC_51 a crm:E55_Type ;
+    rdfs:label "the dream of pope Innocent III: he sees the Lateran Church toppling, and St.Dominic holding it up with his hands (Iconclass 11H(DOMINIC)51)"@en,
+        "Il sogno di papa Innocenzo III: vede la Chiesa del Laterano crollare e San Domenico sorreggerla con le mani. (Iconclass 11H(DOMINIC)51)"@it ;
+    dcterms:description "Iconclass code representing the dream of pope Innocent III, who sees the Lateran Church toppling, and St. Dominic holding it up with his hands."@en,
+        "Codice Iconclass per la rappresentazione del sogno di papa Innocenzo III, il quale vede la Chiesa del Laterano crollare e San Domenico sorreggerla con le mani."@it ;
+    skos:exactMatch <http://iconclass.org/11H(DOMINIC)51> .
+
+inme:iconclass_11H_DOMINIC_52 a crm:E55_Type ;
+    rdfs:label "St. Dominic, surrounded by the Albigense heretics, throws his book into the fire but it leaps out intact, while the heretical books are consumed by the fire (Iconclass 11H(DOMINIC)52)"@en,
+        "San Domenico, circondato dagli eretici albigesi, getta il suo libro nel fuoco, ma questo ne esce intatto, mentre i libri degli eretici vengono consumati dalle fiamme (Iconclass 11H(DOMINIC)52)"@it ;
+    dcterms:description "Iconclass code representing Saint Dominic who, surrounded by Albigensian heretics, casts his book into the fire; the book emerges unscathed, while the heretics' books are consumed by the flames."@en,
+        "Codice Iconclass per la rappresentazione di San Domenico il quale, circondato dagli eretici albigesi, getta il suo libro nel fuoco, ma questo ne esce intatto, mentre i libri degli eretici vengono consumati dalle fiamme."@it ;
+    skos:exactMatch <http://iconclass.org/11H(DOMINIC)52> .
+
+inme:iconclass_11H_DOMINIC_53 a crm:E55_Type ;
+    rdfs:label "St. Dominic resurrects young Napoleon Orsini, who was killed by a fall from his horse (Iconclass 11H(DOMINIC)53)"@en,
+        "San Domenico resuscita il giovane Napoleone Orsini, morto in seguito a una caduta da cavallo (Iconclass 11H(DOMINIC)53)"@it ;
+    dcterms:description "Iconclass code representing St. Dominic resurrecting young Napoleon Orsini, who was killed by a fall from his horse."@en,
+        "Codice Iconclass per la rappresentazione di San Domenico che resuscita il giovane Napoleone Orsini, morto in seguito a una caduta da cavallo."@it ;
+    skos:exactMatch <http://iconclass.org/11H(DOMINIC)53> .
+
+inme:iconclass_11H_DOMINIC_55 a crm:E55_Type ;
+    rdfs:label "At supper St. Dominic and some friars are served with bread by two angels (Iconclass 11H(DOMINIC)55)"@en,
+        "Durante la cena, due angeli servono il pane a San Domenico e ad alcuni frati (Iconclass 11H(DOMINIC)55)"@it ;
+    dcterms:description "Iconclass code representing two angels serving bread to Saint Dominic and some friars during supper."@en,
+        "Codice Iconclass per la rappresentazione due angeli che servono il pane a San Domenico e ad alcuni frati durante la cena."@it ;
+    skos:exactMatch <http://iconclass.org/11H(DOMINIC)55> .
+
+inme:iconclass_11H_REGINALD a crm:E55_Type ;
+    rdfs:label "Blessed Reginald (Custom Iconclass 11H(REGINALD))"@en,
+        "Beato Reginaldo (Iconclass custom 11H(REGINALD))"@it ;
+    dcterms:description "Iconclass custom created to identify the specific figure of Blessed Reginald of Orléans."@en,
+        "Codice Iconclass custom creato per identificare la figura specifica del Beato Reginaldo d'Orléans."@it .
+
+inme:iconclass_11P3111 a crm:E55_Type ;
+    rdfs:label "Pope (Iconclass 11P3111)"@en,
+        "Papa (Iconclass 11P3111)"@it ;
+    dcterms:description "Iconclass code representing a Pope."@en,
+        "Codice Iconclass per la rappresentazione di un Papa."@it ;
+    skos:exactMatch <http://iconclass.org/11P3111> .
+
+inme:iconclass_11P3154 a crm:E55_Type ;
+    rdfs:label "Habit, frock (Iconclass 11P3154)"@en,
+        "Vestito, tonaca (Iconclass 11P3154)"@it ;
+    dcterms:description "Iconclass code representing the monastic habit."@en,
+        "Codice Iconclass per la rappresentazione dell'abito monastico."@it ;
+    skos:exactMatch <http://iconclass.org/11P3154> .
+
+inme:iconclass_11P315_DOMINICANS a crm:E55_Type ;
+    rdfs:label "Monastic orders, monastic life: Dominicans (Iconclass 11P315(DOMINICANS))"@en,
+        "Monastic orders, monastic life: Dominicans (Iconclass 11P315(DOMINICANS))"@it ;
+    dcterms:description "Iconclass code representing the monastic order of the Dominicans."@en,
+        "Codice Iconclass per la rappresentazione dell'ordine monastico dei Domenicani."@it ;
+    skos:exactMatch <https://iconclass.org/11P315(DOMINICANS)> .
+
+inme:iconclass_11P317 a crm:E55_Type ;
+    rdfs:label "Vows of clerics (Iconclass 11P317)"@en,
+        "Voti dei chierici (Iconclass 11P317)"@it ;
+    dcterms:description "Iconclass code representing the vows of clerics."@en,
+        "Codice Iconclass per la rappresentazione dei voti dei chierici."@it ;
+    skos:exactMatch <http://iconclass.org/11P317> .
+
+inme:iconclass_11P5 a crm:E55_Type ;
+    rdfs:label "Spreading the gospel; missionary work (+ variant) (Iconclass 11P5)"@en,
+        "Diffondere il Vangelo; opera missionaria (+ variante) (Iconclass 11P5)"@it ;
+    dcterms:description "Iconclass code representing a variant ofthe spreading of the gospel or missionary work."@en,
+        "Codice Iconclass per la rappresentazione di una variante dell'atto di diffusione del Vagelo o l'opera missionaria."@it ;
+    skos:exactMatch <https://iconclass.org/11P5> .
+
+inme:iconclass_11Q21 a crm:E55_Type ;
+    rdfs:label "One person praying (Iconclass 11Q21)"@en,
+        "Una persona che prega (Iconclass 11Q21)"@it ;
+    dcterms:description "Iconclass code representing a person praying."@en,
+        "Codice Iconclass per la rappresentazione di una persona che prega."@it ;
+    skos:exactMatch <http://iconclass.org/11Q21> .
+
+inme:iconclass_49G2 a crm:E55_Type ;
+    rdfs:label "Sick person, patient (Iconclass 49G2)"@en,
+        "Paziente, ammalato (Iconclass 49G2)"@it ;
+    dcterms:description "Iconclass code representing a sick person or patient."@en,
+        "Codice Iconclass per la rappresentazione di un ammalato o paziente."@it ;
+    skos:exactMatch <http://iconclass.org/49G2> .
+
+inme:iconclass_49G231 a crm:E55_Type ;
+    rdfs:label "(healing by) imposition of hands) (Iconclass 49G231)"@en,
+        "(guarigione mediante) imposizione delle mani ) (Iconclass 49G231)"@it ;
+    dcterms:description "Iconclass code representing the healing by imposition of hands."@en,
+        "Codice Iconclass per la rappresentazione della guarigione mediante l'imposizione delle mani."@it ;
+    skos:exactMatch <http://iconclass.org/49G231> .
+
+inme:iconclass_49L71 a crm:E55_Type ;
+    rdfs:label "Scroll (Iconclass 49L71)"@en,
+        "Rotulo (Iconclass 49L71)"@it ;
+    dcterms:description "Iconclass code representing the scroll."@en,
+        "Codice Iconclass per la rappresentazione del rotulo di pergamena."@it ;
+    skos:exactMatch <http://iconclass.org/49L71> .
+
+inme:legenda_humbertus a lrmoo:F1_Work ;
+    lrmoo:R1_is_logical_successor_of inme:legenda_constantini ;
+    lrmoo:R68_is_inspired_by inme:legenda_constantini,
+        inme:legenda_petri_ferrandi,
+        inme:libellus_principiis .
+
+inme:nicola_pisano a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Nicola Pisano"@en,
+        "Nicola Pisano"@it ;
+    dcterms:description "A renowned Tuscan sculptor who, together with his industrious workshop in Pisa (which included assistants such as Fra Guglielmo, Arnolfo di Cambio, and Lapo), designed and carved the monumental marble sarcophagus of the Shrine of Saint Dominic in Bologna between approximately 1264 and 1267."@en,
+        "Celebre scultore toscano che, insieme alla sua operosa bottega di Pisa (in cui figuravano assistenti come fra Guglielmo, Arnolfo di Cambio e Lapo), progettò e scolpì intorno al 1264-1267 il monumentale sarcofago marmoreo dell'Arca di San Domenico a Bologna."@it ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q364413> ;
+    skos:exactMatch <https://viaf.org/en/viaf/95710492> .
+
+inme:nicola_workshop a crm:E74_Group,
+        rico:Group ;
+    rdfs:label "Nicola Pisano's workshop"@en,
+        "Atelier di Nicola Pisano"@it ;
+    dcterms:description "A sculptural workshop, active primarily in Pisa, responsible for the design (c. 1264) and execution of the Shrine of Saint Dominic. Under Nicola's direction, the project involved the extensive and crucial participation of prominent assistants such as Arnolfo di Cambio, Lapo, and the Dominican friar Guglielmo."@en,
+        "Bottega scultorea, attiva principalmente a Pisa, responsabile della progettazione (c. 1264) e dell'esecuzione dell'Arca di San Domenico . Sotto la direzione di Nicola, il cantiere dell'opera vide l'ampia e fondamentale partecipazione di assistenti di spicco quali Arnolfo di Cambio, Lapo e il frate domenicano Guglielmo."@it .
+
+inme:orsini_horse_fall a crm:E5_Event ;
+    rdfs:label "Napoleone Orsini falls from the horse"@en,
+        "Napoleone Orsini cade da cavallo"@it ;
+    dcterms:description "This historical event, which took place in Rome on February 24, 1221, attests, according to the earliest account by Jordan of Saxony, to the private revival  of Napoleone Orsini, who is described as having been stunned or half-alive (*semivivum*) following a fall from his horse. Historians regard the characterization of the episode as a \"resurrection\" conducted by saint Dominic as a legendary embellishment and a progressive dramatization stemming from later hagiographic tradition."@en,
+        "Questo evento storico, avvenuto a Roma il 24 febbraio 1221, testimonia – secondo la più antica narrazione di Giordano di Sassonia – la ripresa di Napoleone Orsini, descritto come stordito o semivivo (*semivivum*) in seguito a una caduta da cavallo. Gli storici considerano la caratterizzazione dell'episodio come una \"resurrezione\" da parte di san Domenico alla stregua di un abbellimento leggendario e di una progressiva drammatizzazione derivanti dalla successiva tradizione agiografica."@it ;
+    crm:P11_had_participant inme:dominic_guzman,
+        inme:napoleone_orsini ;
+    crm:P7_took_place_at inme:rome .
+
+inme:peter_vaux_cernay a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Peter of Vaux-de-Cernay"@en,
+        "Pietro di Vaux-de-Cernay"@it ;
+    dcterms:description "A Cistercian monk and author of the *Historia Albigensis* (c. 1215); he recorded the earliest and most sober contemporary account of Dominic’s preaching in Languedoc and the miracle of the books rejected unharmed by the flames at Montréal."@en,
+        "Monaco cistercense autore dell'*Historia Albigensis* (c. 1215); registrò la più antica e sobria testimonianza contemporanea della predicazione di Domenico in Linguadoca e del miracolo dei libri rigettati indenni dalle fiamme a Montréal."@it ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q745030> ;
+    skos:exactMatch <https://viaf.org/en/viaf/263271643> .
+
+inme:role_witness a rico:RoleType ;
+    rdfs:label "Witness deponent"@en,
+        "Testimone deponente"@it ;
+    dcterms:description "Role assigned to an agent (person) who provides a formal statement, deposition, or sworn testimony before an authority or commission. In the context of a creation relationship, it identifies the actor whose words and responses constitute the intellectual substance of the final document."@en,
+        "Ruolo attribuito a un agente (persona) che rilascia una dichiarazione formale, una deposizione o una testimonianza giurata davanti a un'autorità o a una commissione. Nel contesto di una relazione di creazione, identifica l'attore le cui parole e risposte formano la sostanza intellettuale del documento finale."@it .
+
+inme:saint_dominic_arca a arco:ComplexCulturalProperty,
+        arco:HistoricOrArtisticProperty ;
+    rdfs:label "Arca di San Domenico"@en,
+        "Arca di San Domenico"@it ;
+    dcterms:description "A funerary monument created in Bologna that integrates elements dating from the 13th to the 16th century into a single, majestic structure. The ensemble combines the original medieval core designed by Nicola Pisano (1267) with the magnificent Renaissance crowning section by Niccolò dell'Arca, enriched by celebrated sculptures by Michelangelo and later additions by Alfonso Lombardi. Housed today in the basilica's 16th-century chapel, this complex artistic layering stands, in its monumental entirety, as the driving force and benchmark for the evolution of funerary art in Italy."@en,
+        "Monumento sepolcrale realizzato a Bologna che integra in un'unica e maestosa struttura elementi realizzati dal XIII al XVI secolo. L'insieme unisce il nucleo medievale originario progettato da Nicola Pisano (1267) alla grandiosa cimasa rinascimentale di Niccolò dell'Arca, arricchita dalle celebri sculture di Michelangelo e dai successivi interventi di Alfonso Lombardi. Questa complessa stratificazione artistica, oggi custodita nella cappella cinquecentesca della basilica, costituisce nella sua interezza monumentale il motore e il punto di riferimento per l'intera evoluzione dell'arte funeraria in Italia."@it ;
+    crm:P53_hasFormerOrCurrentLocation inme:san_domenico_church ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q2417706> ;
+    arco:hasCulturalPropertyComponent inme:sarcophagus .
+
+inme:saint_paul a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Saint Paul"@en,
+        "San Paolo"@it ;
+    dcterms:description "An apostle who, according to the Dominican hagiographic tradition codified by Constantine of Orvieto, appeared in a vision to Saint Dominic in Rome alongside Saint Peter, handing him the book of the Scriptures and sending him forth to preach to the world."@en,
+        "Apostolo che, secondo la tradizione agiografica domenicana codificata da Costantino d'Orvieto, apparve in visione a san Domenico a Roma insieme a san Pietro, consegnandogli il libro delle Scritture e inviandolo a predicare nel mondo."@it ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q9200> ;
+    skos:exactMatch <https://viaf.org/en/viaf/100178828> .
+
+inme:saint_peter a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Saint Peter"@en,
+        "San Pietro"@it ;
+    dcterms:description "Apostle and first pope who appeared to Saint Dominic in the same Roman vision, handing him the staff of pilgrimage and authority for the mission of universal preaching."@en,
+        "Apostolo e primo papa che apparve nella medesima visione romana a san Domenico, consegnandogli il bastone del cammino e dell'autorità per la missione di predicazione universale."@it ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q33923> ;
+    skos:exactMatch <https://viaf.org/en/viaf/13581141> .
+
+inme:sarcophagus_commission a arco-cd:Commission ;
+    rdfs:label "Commission for the Creation of the Sarcophagus"@en,
+        "Commissione per la realizzazione del sarcofago"@it ;
+    dcterms:description "Commission for the creation of the original Ark, awarded to Nicola Pisano by the Order of Preachers."@en,
+        "Commissione per la realizzazione dell'Arca originale a Nicola Pisano da parte dell'Ordine dei Predicatori."@it .
+
+inme:suor_cecilia_contarini rdfs:label "Suor Cecilia Contarini"@en,
+        "Suor Cecilia Contarini"@it ;
+    dcterms:description "A Dominican nun, she founded the convent of San Sisto in Rome and later resided at the convent of Sant'Agnese in Bologna during the years Nicola Pisano created the *Arca* (1264–1267). Having lived at San Sisto in 1221, Cecilia was a direct eyewitness to certain significant events involving Dominic in Rome—most notably the so-called resurrection of the young Napoleone Orsini. For this reason, some hypothesize that she may have been consulted regarding the sarcophagus's iconographic program; traditionally, she is identified as the figure sculpted in the upper-left section of the resurrection panel. Depicted with her back to the viewer yet gazing toward the miracle, this compositional choice isolates her from the crowd and, in her old age, establishes her as the eyewitness recounting the event."@en,
+        "Monaca domenicana, fondatrice del convento di San Sisto a Roma e successivamente residente presso il convento di Sant'Agnese a Bologna negli anni in cui Nicola Pisano realizzò l'Arca (1264-1267). Avendo vissuto a San Sisto nel 1221, Cecilia fu testimone oculare diretta di alcuni importanti eventi romani di Domenico, in particolare della cosiddetta resurrezione del giovane Napoleone Orsini. Per questo motivo alcuni ipotizzano possa esser stata consultata per l'apparato iconografico del sarcofago e tradizionalmente la identificano nella figura scolpita in alto a sinistra del pannello della resurrezione: ritratta di spalle rispetto allo spettatore ma con lo sguardo rivolto al miracolo, una scelta compositiva che la isola dalla folla e la consacra, nella sua vecchiaia, come testimone oculare narrante dell'evento."@it .
+
+inme:theme_lateran_dream a lrmoo:F1_Work,
+        crm:E89_Propositional_Object,
+        icon:Story ;
+    rdfs:label "Narrative theme concerning Pope Innocent III's dream of the Lateran Basilica"@en,
+        "Tema narrativo relativo al sogno della basilica del Laterano di papa Innocenzo III"@it ;
+    dcterms:description "Absent from Jordan’s *Libellus* and Peter Ferrandi’s initial draft, this motif appears for the first time in Constantine of Orvieto’s *Legenda nova* (1246–1247) and is subsequently adopted in later compilations by Humbert of Romans and Jacobus de Voragine. Opinions regarding the origins of this motif are sharply divided: while traditional historiography tends to dismiss it as something the Dominicans appropriated from the Franciscans, the historian Chiara Frugoni argues the opposite. By analyzing Celano’s *Vita secunda* — which notes that the Pope recognized the fulfillment of the vision in Francis himself (*et in hoc homine*) — she identifies a 'theft', first literary and then iconographic, committed by the Franciscans against the Dominicans. Luigi Canetti proposes a third perspective, hypothesizing that both Celano and Constantine of Orvieto independently drew, during the mid-1240s, upon a shared narrative and oral tradition rooted in the Roman Curia and central Italy. The narrative aims to establish, *ex post*, a providential and direct rapport between the founder and the papacy of Innocent III, presenting the Order as a bulwark essential to the very survival of the Church of Rome."@en,
+        "Assente nel Libellus di Giordano e nella prima stesura di Pietro Ferrandi, compare per la prima volta nella Legenda nova di Costantino d'Orvieto (1246-1247) ed è poi ripreso dalle compilazioni successive di Umberto di Romans e Jacopo da Varazze. Sulla genesi di questo motivo vi sono pareri fortemente discordanti: sebbene la storiografia tradizionale tenda a liquidarlo come un prestito dei Domenicani ai danni dei Francescani, la storica Chiara Frugoni propone la tesi contraria. Analizzando la Vita secunda di Celano, in cui si accenna al fatto che il papa riconobbe la realizzazione della visione anche in Francesco ('et in hoc homine'), la studiosa individua un 'furto' prima letterario e poi iconografico operato dai Francescani a danno dei Domenicani. Luigi Canetti propone una terza via, ipotizzando che sia Celano sia Costantino d'Orvieto abbiano attinto indipendentemente, a metà degli anni Quaranta del Duecento, a una comune tradizione narrativa e orale romano-curiale e centro-italiana. La narrazione mira ad accreditare ex post una provvidenziale e diretta sintonia tra il fondatore e il papato innocenziano, presentando l'Ordine come baluardo necessario per la sopravvivenza stessa della Chiesa di Roma."@it .
+
+inme:theme_miraculous_supper a lrmoo:F1_Work,
+        crm:E89_Propositional_Object,
+        icon:Story ;
+    rdfs:label "Narrative theme concerning the miracle of the multiplication of the loaves (miraculous supper) for the benefit of the community of friars"@en,
+        "Tema narrativo relativo al miracolo della moltiplicazione dei pani (cena miracolosa) a favore della comunità dei frati"@it ;
+    dcterms:description "The original historical core of this account lies in the sworn testimonies given by Friar Buonviso of Piacenza and Rodolfo of Faenza during the 1233 canonization proceedings in Bologna; these described a modest, daily, and Christ-mimetic miracle set in the refectory of the Bolognese convent of San Niccolò delle Vigne. Subsequent official liturgical tradition (Humbert of Romans, Sister Cecilia of Rome) rewrote and geographically relocated the story, shifting the miracle to Rome (the convent of San Sisto) and embellishing it with the spectacular appearance of two angels who distributed the food. This symbolic shift to Rome served to overlay a solemn liturgical and 'angelic' character upon the community's original, intimate memory from Bologna, thereby facilitating the promotion of the founder's cult on a universal scale."@en,
+        "Il nucleo storico originario di questo racconto risiede nelle deposizioni giurate di frate Buonviso di Piacenza e Rodolfo di Faenza al processo di canonizzazione di Bologna del 1233, le quali descrivevano un sobrio prodigio quotidiano e cristo-mimetico ambientato nel refettorio del convento bolognese di San Niccolò delle Vigne. La successiva tradizione liturgica ufficiale (Umberto di Romans, suor Cecilia romana) ha operato una riscrittura e ricollocazione geografica, spostando il prodigio a Roma (convento di San Sisto) e arricchendolo dell'apparizione spettacolare di due angeli distributori. La transizione simbolica a Roma serviva a sovrapporre una solenne veste liturgica e 'angelica' alla primitiva memoria domestica della comunità di Bologna, facilitando la promozione del culto del fondatore su scala universale"@it .
+
+inme:theme_ordeal_fire a lrmoo:F1_Work,
+        crm:E89_Propositional_Object,
+        icon:Story ;
+    rdfs:label "Narrative theme concerning the doctrinal dispute with the Cathars and the miracle of the ordeal by fire"@en,
+        "Tema narrativo relativo alla disputa dottrinale contro i catari e al miracolo dell'ordalia del fuoco"@it ;
+    dcterms:description "The original, more understated version of the story—recorded by the sole contemporary witness, Pierre des Vaux-de-Cernay—placed the episode in a private home in Montréal, framing it as a miracle with an apologetic and doctrinal purpose that the heretics attempted to keep secret. Canetti highlights the way the Dominican tradition was subsequently split by Jordan of Saxony some twenty years later; he rewrote and dramatized the ordeal, creating a twofold division regarding both the setting (shifting the confrontation from the nocturnal confines of a heretical gathering in Montréal to a solemn, open public dispute in Fanjeaux before official adjudicators) and the object of the miracle (transforming the simple 'sheet' of paper containing Dominic’s notes into an actual 'book'). Added to this is a further splitting of the 'book miracle' that became entrenched in the Order’s collective memory through Gerard of Frachet, who established a perfect symmetrical parallel between the books written by the saint (saved from fire at Fanjeaux) and the books read by the saint (saved from the waters of the Ariège River). From the perspective of the Order’s hagiographers, the miracle ceased to be a localized, limited doctrinal testimony and instead became a resounding demonstration of Dominic’s personal sanctity and his mission as a *persequutor hereticorum* (persecutor of heretics). The depiction of this ordeal provided solemn supernatural and charismatic legitimation for the anti-heretical *militia* of the Order of Preachers, precisely at the moment of its definitive and stable institutional establishment within the Church."@en,
+        "La versione originaria e più sobria del racconto, registrata dall'unico testimone contemporaneo Pierre des Vaux-de-Cernay, collocava l'episodio a Montréal all'interno di una casa privata, configurandolo come un miracolo a finalità apologetico-dottrinale di cui gli eretici tentarono di occultare segretamente la notizia. Canetti mette in luce lo sdoppiamento della tradizione domenicana operato da Giordano di Sassonia circa vent'anni dopo, il quale riscrisse e teatralizzò l'ordalia sdoppiandola sia sul piano spaziale-ambientale (spostando lo scontro dal chiuso notturno di una conventicola eretica a Montréal a una solenne e aperta disputa pubblica a Fanjeaux, davanti a giudici-arbitri ufficiali) sia sul piano dell'oggetto del miracolo (il semplice 'foglio' contenente gli appunti scritti da Domenico si trasforma nel 'libro' vero e proprio). A questo si aggiunge un ulteriore sdoppiamento del miracolo dei libri consolidatosi nella memoria dell'Ordine con Gerardo di Frachet, il quale creò un perfetto parallelismo simmetrico tra i libri scritti dal santo salvati dal fuoco a Fanjeaux e i libri letti dal santo salvati dall'acqua del fiume Ariège. Nella prospettiva degli agiografi dell'Ordine, il miracolo cessa di essere una testimonianza dottrinale locale e circoscritta per divenire una clamorosa dimostrazione della santità personale di Domenico e della sua missione di *persequutor hereticorum*. La rappresentazione di questa prova offre una solenne legittimazione soprannaturale e carismatica alla *militia* antiereticale dell'Ordine dei Predicatori, proprio nella fase del suo definitivo e stabile insediamento istituzionale all'interno della Chiesa"@it .
+
+inme:theme_raising_orsini a lrmoo:F1_Work,
+        crm:E89_Propositional_Object,
+        icon:Story ;
+    rdfs:label "Narrative theme concerning the miracle of the resurrection of Napoleone Orsini through the intercession of Saint Dominic"@en,
+        "Tema narrativo relativo al miracolo della resurrezione di Napoleone Orsini per intercessione di san Domenico"@it ;
+    dcterms:description "The core historical account, found in the *Libellus* by Jordan of Saxony, described a private intervention by Dominic to revive a young man believed to be at death's door following a fall from his horse. Later accounts (by Constantine of Orvieto and Sister Cecilia) dramatized the event, transforming it into a public resurrection from the dead. This narrative reflects a propaganda strategy of the Dominican Order aimed at shaping a Christ-like profile for its founder, in competition with the figure of Francis of Assisi."@en,
+        "Il nucleo storico, contenuto nel *Libellus* di Giordano di Sassonia, riferiva un intervento privato di Domenico per rianimare il giovane ritenuto in fin di vita dopo una caduta da cavallo. Le redazioni successive (Costantino d'Orvieto, suor Cecilia) hanno drammatizzato l'evento trasformandolo in una resurrezione pubblica dai morti. La narrazione risponde a una strategia propagandistica dell'Ordine Domenicano volta a delineare per il fondatore un profilo cristo-mimetico, in competizione con la figura di Francesco d'Assisi."@it .
+
+inme:theme_reginald_stories a lrmoo:F1_Work,
+        crm:E89_Propositional_Object,
+        icon:Story ;
+    rdfs:label "Narrative theme concerning the miraculous healing and the revelation of the Dominican habit to Reginald of Orléans"@en,
+        "Tema narrativo relativo alla guarigione miracolosa e alla rivelazione dell'abito domenicano a Reginaldo d'Orléans"@it ;
+    dcterms:description "Originating in the *Libellus* of Jordan of Saxony, the narrative describes the Virgin Mary appearing at the bedside of the renowned law professor—who was suffering from a severe fever in Rome, anointing his senses and presenting him with the Order's scapular. This episode was subsequently adopted and standardized by later hagiographical accounts (Peter Ferrandi, Constantine of Orvieto, Humbert of Romans). The hagiographical digression serves a specific political-institutional purpose: to legitimize the intellectual and academic vocation of the Preachers by celebrating the supernatural conversion of a highly celebrated master, thereby justifying and promoting the Order's recruitment efforts within the *studia* of Paris and Bologna."@en,
+        "Originata nel Libellus di Giordano di Sassonia, la narrazione descrive la Vergine Maria che appare al capezzale del celebre docente di diritto malato di febbri acute a Roma, ungendone i sensi e presentandogli lo scapolare dell'Ordine. L'episodio è stato poi ereditato e normalizzato dalle legende liturgiche successive (Pietro Ferrandi, Costantino d'Orvieto, Umberto di Romans). La digressione agiografica assolve a una precisa funzione politico-istituzionale: legittimare la vocazione intellettuale e universitaria dei Predicatori celebrando la conversione soprannaturale di un famosissimo maestro, giustificando e promuovendo così il reclutamento dell'Ordine all'interno degli Studia di Parigi e Bologna."@it .
+
+inme:theme_vision_saints_peter_paul a lrmoo:F1_Work,
+        crm:E89_Propositional_Object,
+        icon:Story ;
+    rdfs:label "Narrative theme concerning the vision of Saints Peter and Paul"@en,
+        "Tema narrativo relativo alla visione dei santi Pietro e Paolo"@it ;
+    dcterms:description "Recounted by Constantine of Orvieto and taken up by later hagiographers, the story depicts Dominic in Rome receiving the staff from Saint Peter and the book of the Scriptures from Saint Paul, thereby receiving the command to go forth and preach, followed by the immediate dispersal of the friars throughout the world. This theme addresses a specific apologetic and ecclesiological aim of the Order: by situating the advent of the Preachers directly within the apostolic succession and tradition, it provided charismatic legitimation for the Dominicans' authority to preach universally, endowing their ministry with a dignity and excellence equal to that of the episcopal office."@en,
+        "Descritto da Costantino d'Orvieto e ripreso dagli agiografi successivi, il racconto mostra Domenico a Roma che riceve il bastone da san Pietro e il libro delle Scritture da san Paolo, ricevendo l'ordine di andare a predicare, cui segue l'immediata dispersione dei frati nel mondo. Il tema risponde a una precisa istanza apologetica ed ecclesiologica dell'Ordine: inserendo l'avvento dei Predicatori direttamente nella successione e nella tradizione apostolica, si legittimava sul piano carismatico l'autorità di predicazione universale dei domenicani, conferendo al loro ministero una dignità ed eccellenza pari a quella dell'ufficio episcopale."@it .
+
+inme:vi_composition_approval_order a crm:E36_Visual_Item ;
+    rdfs:label "Visual Composition of the Stories of the Approval of the Order"@en,
+        "Composizione visiva del pannello delle Storia dell'approvazione dell'Ordine"@it ;
+    dcterms:description "This immaterial resource represents the compositional and optical-formal appearance of the relief depicting the papal approval of the Dominican Order. The scene is structured into three balanced narrative segments: Saint Dominic presenting a scroll to the Pope, the Pope’s dream with Dominic supporting the collapsing Lateran Basilica, and the Pope presenting Dominic with the Book of the Rule. The identity of the Pope is debated: the three representations may refer specifically to Innocent III and the foundation phase of 1215, or the final figure may represent Honorius III formally confirming the Order in 1216. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."@en,
+        "Questa risorsa immateriale rappresenta l'assetto compositivo e ottico-formale del rilievo raffigurante l'approvazione papale dell'Ordine domenicano. La scena è articolata in tre segmenti narrativi equilibrati: San Domenico che porge un rotolo al Papa, il sogno del Papa in cui Domenico sostiene la Basilica del Laterano che sta per crollare, e il Papa che consegna a Domenico il Libro della Regola. L'identità del Papa è oggetto di dibattito: le tre raffigurazioni potrebbero riferirsi specificamente a Innocenzo III e alla fase di fondazione del 1215, oppure la figura finale potrebbe rappresentare Onorio III nell'atto di confermare formalmente l'Ordine nel 1216. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, indipendentemente dalle caratteristiche fisiche del blocco di marmo."@it .
+
+inme:vi_composition_burning_books a crm:E36_Visual_Item ;
+    rdfs:label "Visual Composition of the Panel of the Trial by Fire on the Sacred Books"@en,
+        "Composizione visiva del pannello della Prova del fuoco sui libri sacri"@it ;
+    dcterms:description "This immaterial resource represents the compositional and optical-formal appearance of the scene depicting the Dispute of Fanjeaux and the Ordeal of Fire. The scene is structured through a hierarchical division between the seated judges above and the dramatic ordeal below, where the heretics’ books burn while Dominic’s book miraculously remains unharmed. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."@en,
+        "Questa risorsa immateriale rappresenta l'assetto compositivo e ottico-formale della scena che raffigura la Disputa di Fanjeaux e la prova del fuoco. La scena è strutturata secondo una suddivisione gerarchica tra i giudici seduti, nella parte superiore, e la drammatica prova sottostante, in cui i libri degli eretici bruciano mentre quello di Domenico rimane miracolosamente intatto. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, indipendentemente dalle caratteristiche fisiche del blocco di marmo."@it .
+
+inme:vi_composition_miraculous_supper a crm:E36_Visual_Item ;
+    rdfs:label "Visual Composition of the Panel of the Miraculous Supper of Saint Dominic"@en,
+        "Composizione visiva del pannello della Cena miracolosa di San Domenico"@it ;
+    dcterms:description "This immaterial resource represents the compositional and optical-formal appearance of the scene depicting the miraculous feeding of the brethren by angels. The scene is organized as a symmetrical communal gathering, with Saint Dominic and his friars seated around a long refectory table while two winged angels distribute loaves marked with crosses. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."@en,
+        "Questa risorsa immateriale rappresenta l'assetto compositivo e l'aspetto ottico-formale della scena che raffigura la miracolosa nutrizione dei frati da parte degli angeli. La scena è organizzata come un convivio simmetrico, con San Domenico e i suoi frati seduti attorno a una lunga tavola da refettorio, mentre due angeli alati distribuiscono pani contrassegnati da croci. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, indipendentemente dalle caratteristiche fisiche del blocco di marmo."@it .
+
+inme:vi_composition_raising_orsini a crm:E36_Visual_Item ;
+    rdfs:label "Visual Composition of the Panel of the Resurrection of Napoleone Orsini"@en,
+        "Composizione visiva del pannello della Resurrezione di Napoleone Orsini"@it ;
+    dcterms:description "This immaterial resource represents the compositional and optical-formal appearance of the scene depicting the resurrection of young Napoleone Orsini by Saint Dominic. The scene is structured as a continuous two-part narrative: on the left, the tragic horse fall and Dominic’s prayer; on the right, the resurrected youth being restored to his mother, surrounded by friars and relatives. Within this spatial arrangement, a critical hypothesis suggests that Sister Cecilia Contarini may be depicted in the upper left. Shown with her back to the viewer and her gaze fixed on the miracle, the figure serves to single her out as an eyewitness to the event, reflecting the theory that the nun—who resided at the Bolognese convent of Sant'Agnese at the time—may have been consulted on the iconographic design of the sarcophagus. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."@en,
+        "Questa risorsa immateriale rappresenta l'assetto compositivo e l'aspetto ottico-formale della scena che raffigura la resurrezione del giovane Napoleone Orsini per opera di San Domenico. La scena è strutturata come una narrazione continua articolata in due parti: a sinistra, la tragica caduta da cavallo e la preghiera di Domenico; a destra, il giovane resuscitato restituito alla madre, circondato da frati e familiari. All'interno di questo impianto spaziale, secondo un'ipotesi critica, in alto a sinistra potrebbe essere raffigurata suor Cecilia Contarini. Ritratta con la schiena rivolta verso lo spettatore e lo sguardo sul miracolo, la figura servirebbe a isolarla come testimone oculare dell'evento, riflettendo la supposizione che la monaca — all'epoca residente nel convento bolognese di Sant'Agnese — possa essere stata consultata per la progettazione iconografica del sarcofago. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, indipendentemente dalle caratteristiche fisiche del blocco di marmo."@it ;
+    crm:P138_represents inme:sister_cecilia_contarini .
+
+inme:vi_composition_stories_blessed_reginald a crm:E36_Visual_Item ;
+    rdfs:label "Visual Composition of the Panel of the Stories of the Blessed Reginald"@en,
+        "Composizione visiva del pannello delle Storie del beato Reginaldo"@it ;
+    dcterms:description "This immaterial resource represents the compositional and optical-formal appearance of the scene depicting the vocation, illness, and miraculous healing of Reginald of Orléans. The scene is structured as a three-part chronological sequence, showing Reginald's promise to Dominic to join the Order, his sudden illness and Dominic’s prayer, and his miraculous healing by the Virgin Mary and two holy women. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."@en,
+        "Questa risorsa immateriale rappresenta l'assetto compositivo e l'aspetto ottico-formale della scena che raffigura la vocazione, la malattia e la guarigione miracolosa di Reginaldo d'Orléans. La scena è articolata in una sequenza cronologica suddivisa in tre parti: la promessa di Reginaldo a Domenico di entrare nell'Ordine, l'improvvisa malattia e la preghiera di Domenico, e infine la guarigione miracolosa per opera della Vergine Maria e di due sante donne. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, prescindendo dalle caratteristiche fisiche del blocco di marmo."@it .
+
+inme:vi_composition_vision_saints_peter_paul a crm:E36_Visual_Item ;
+    rdfs:label "Visual Composition of the Panel of the Vision of Saints Peter and Paul to Saint Dominic and the Mission of the Dominicans"@en,
+        "Composizione visiva del pannello della Visione dei santi Pietro e Paolo a San Domenico e missione dei domenicani"@it ;
+    dcterms:description "This immaterial resource represents the compositional and optical-formal appearance of the scene depicting the Vision of Saints Peter and Paul and the mission of the friars. The scene shows Saint Dominic receiving the book from Saint Paul and the staff from Saint Peter, followed by the first friars being sent to preach. The Visual Item focuses on the spatial and visual organization of the scene and the movement of the figures, independently of the physical features of the marble block."@en,
+        "Questa risorsa immateriale rappresenta l'assetto compositivo e ottico-formale della scena che raffigura la Visione dei santi Pietro e Paolo e la missione dei frati. La scena mostra San Domenico mentre riceve il libro da San Paolo e il bastone da San Pietro, seguito dai primi frati inviati a predicare. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena e sul movimento delle figure, indipendentemente dalle caratteristiche fisiche del blocco di marmo."@it .
+
+inme:vi_detail_approval_order a crm:E36_Visual_Item ;
+    rdfs:label "Detail of Pope Innocent III or Pope Honorius III presenting the Book of the Rule to Saint Dominic"@en,
+        "Dettaglio di Papa Innocenzo III o Papa Onorio III che porge a San Domenico il Libro della Regola"@it ;
+    dcterms:description "This immaterial resource represents the compositional and optical-formal appearance of the detail at the center of the panel, which depicts Pope Innocent III or Pope Honorius III presenting the Book of the Rule to Saint Dominic, approving the Order of the Preachers. The visual element focuses on the spatial and visual organization of the scene and the movement of the figures, irrespective of the physical characteristics of the marble block."@en,
+        "Questa risorsa immateriale rappresenta l'aspetto compositivo e ottico-formale del dettaglio al centro del pannello raffigurante papa Innocenzo III o papa Onorio III che porge a San Domenico il Libro della Regola, approvando così l'Ordine dei Predicatori. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena e sul movimento delle figure, indipendentemente dalle caratteristiche fisiche del blocco di marmo."@it .
+
+inme:vi_detail_dominic_sending_friars a crm:E36_Visual_Item ;
+    rdfs:label "Detail of the Vision of Saints Peter and Paul to Saint Dominic"@en,
+        "Dettaglio della Visione dei santi Pietro e Paolo a San Domenico"@it ;
+    dcterms:description "This intangible resource represents the compositional and optical-formal aspect of the detail depicting — on the right side of the panel — Saint Dominic, who, having just received the book from Saint Paul, hands it to the friars and sends them out to preach to the world. The visual element focuses on the spatial and visual organization of the scene and the movement of the figures, irrespective of the physical characteristics of the marble block."@en,
+        "Questa risorsa immateriale rappresenta l'aspetto compositivo e ottico-formale del dettaglio che raffigura nella parte destra del pannello San Domenico che, avendo appena ricevuto il libro da San Paolo, lo consegna ai frati e li invia a predicare nel mondo. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena e sul movimento delle figure, indipendentemente dalle caratteristiche fisiche del blocco di marmo."@it .
+
+inme:vi_detail_innocent_iii_receiving_scroll a crm:E36_Visual_Item ;
+    rdfs:label "Detail of Saint Dominic Receiving a Scroll from Pope Innocent III"@en,
+        "Dettaglio di San Domenico che porge un rotulo a Papa Innocenzo III"@it ;
+    dcterms:description "This immaterial resource represents the compositional and optical-formal appearance of the detail on the left side of the panel, which depicts Saint Dominic presenting a scroll to Pope Innocent III and requesting official recognition of the new order. The visual element focuses on the spatial and visual organization of the scene and the movement of the figures, irrespective of the physical characteristics of the marble block."@en,
+        "Questa risorsa immateriale rappresenta l'aspetto compositivo e ottico-formale del dettaglio sulla sinistra del pannello raffigurante San Domenico che chiede la conferma del riconoscimento della nuova aggregazione a papa Innocenzo III porgendogli un rotulo. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena e sul movimento delle figure, indipendentemente dalle caratteristiche fisiche del blocco di marmo."@it .
+
+inme:vi_detail_lateran_dream a crm:E36_Visual_Item ;
+    rdfs:label "Detail of Pope Innocent III Dreaming of Saint Dominic Supporting the Lateran Basilica"@en,
+        "Dettaglio di Papa Innocenzo III che sogna San Domenico che sostiene la Basilica del Laterano"@it ;
+    dcterms:description "This immaterial resource represents the compositional and optical-formal appearance of the detail at the center of the panel, which depicts Pope Innocent III dreaming of Saint Dominic supporting the Lateran Basilica. The visual element focuses on the spatial and visual organization of the scene and the movement of the figures, irrespective of the physical characteristics of the marble block."@en,
+        "Questa risorsa immateriale rappresenta l'aspetto compositivo e ottico-formale del dettaglio al centro del pannello raffigurante papa Innocenzo III che sogna San Domenico che regge sulle sue spalle la Basilica del Laterano. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena e sul movimento delle figure, indipendentemente dalle caratteristiche fisiche del blocco di marmo."@it .
+
+inme:vi_detail_reginald_illness a crm:E36_Visual_Item ;
+    rdfs:label "Visual detail of Blessed Reginald falling ill"@en,
+        "Dettaglio visivo del beato Reginaldo che cade malato"@it ;
+    dcterms:description "This immaterial resource represents the compositional and optical-formal appearance of the detail depicting the blessed Reginald who suddenly faints, overcome by a sudden illness, and is supported by a cleric, while Dominic prays for his recovery. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."@en,
+        "Questa risorsa immateriale rappresenta l'assetto compositivo e ottico-formale del dettaglio raffigurante il beato Reginaldo colto da un improvviso svenimento, sostenuto e sorretto da un chierico, mentre Domenico è in preghiera per la sua guarigione. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, indipendentemente dalle caratteristiche fisiche del blocco di marmo."@it .
+
+inme:vi_detail_reginald_vision_vergin a crm:E36_Visual_Item ;
+    rdfs:label "Visual detail of Blessed Reginald being healed by the Virgin who appears to him in a vision and presents him with the Dominican habit"@en,
+        "Dettaglio visivo del beato Reginaldo che viene sanato dalla Vergine che gli appare in visione e gli presenta l'abito domenicano"@it ;
+    dcterms:description "This immaterial resource represents the compositional and optical-formal appearance of the detail depicting the apparition of the Virgin Mary, flanked by two women, touching Reginaldo's forehead and showing him the Order's scapular and mantle as a sign of heavenly approval. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."@en,
+        "Questa risorsa immateriale rappresenta l'assetto compositivo e ottico-formale del dettaglio raffigurante l'apparizione della Vergine Maria, affiancata da due donne, che tocca la fronte di Reginaldo e gli mostra lo scapolare e la cappa dell'Ordine come segno di celeste approvazione L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, indipendentemente dalle caratteristiche fisiche del blocco di marmo."@it .
+
+inme:vi_detail_reginald_vow_dominican_order a crm:E36_Visual_Item ;
+    rdfs:label "Visual detail of Blessed Reginald promising Saint Dominic that he will join the Order of Preachers"@en,
+        "Dettaglio visivo del beato Reginaldo che promette a San Domenico di entrare nell'Ordine dei Predicatori"@it ;
+    dcterms:description "This immaterial resource represents the compositional and optical-formal appearance of the detail depicting the blessed Reginald, who, in front of a domed structure and in the presence of a pontiff, makes his solemn profession by placing his hands in those of Dominic. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."@en,
+        "Questa risorsa immateriale rappresenta l'assetto compositivo e ottico-formale del dettaglio raffigurante il beato Reginaldo il quale, dinanzi a una struttura a cupola e alla presenza di un pontefice, emette la propria professione solenne ponendo le mani in quelle di Domenico. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, indipendentemente dalle caratteristiche fisiche del blocco di marmo."@it .
+
+inme:vi_detail_vision_saints_peter_paul a crm:E36_Visual_Item ;
+    rdfs:label "Detail of the Vision of Saints Peter and Paul to Saint Dominic"@en,
+        "Dettaglio della Visione dei santi Pietro e Paolo a San Domenico"@it ;
+    dcterms:description "This immaterial resource represents the compositional and optical-formal appearance of the detail depicting Saint Dominic in the center receiving the book from Saint Paul and the staff from Saint Peter. The Visual Item focuses on the spatial and visual organization of the scene and the movement of the figures, independently of the physical features of the marble block."@en,
+        "Questa risorsa immateriale rappresenta l'aspetto compositivo e ottico-formale del dettaglio che raffigura San Domenico al centro, mentre riceve il libro da San Paolo e il bastone da San Pietro. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena e sul movimento delle figure, indipendentemente dalle caratteristiche fisiche del blocco di marmo."@it .
+
+inme:acta_canonizationis a crm:E31_Document,
+        rico:Record ;
+    crm:P129_is_about inme:dominic_guzman .
+
+inme:constantine_orvieto a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Constantine of Orvieto"@en,
+        "Constantine of Orvieto"@it ;
+    dcterms:description "A Dominican friar and later Bishop of Orvieto, he authored the *Legenda nova* (c. 1246–1247); he significantly enriched the biography of Dominic with accounts of miracles performed during the saint's lifetime, incorporated the dream of the Lateran, and strongly characterized Dominic as an inquisitor through the miraculous rescue of Raimondo Grossi from the stake."@en,
+        "Frate domenicano e poi vescovo di Orvieto autore della Legenda nuova (c. 1246-1247); arricchì notevolmente la biografia di Domenico con miracoli in vita, vi inserì il sogno del Laterano e caratterizzò in modo marcato Domenico come inquisitore attraverso il prodigio della salvezza di Raimondo Grossi dal rogo."@it ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q108463017> ;
+    skos:exactMatch <https://viaf.org/en/viaf/22567337> .
+
+inme:fanjeaux_dispute a crm:E5_Event ;
+    rdfs:label "Fanjeaux Dispute"@en,
+        "Disputa di Fanjeaux"@it ;
+    dcterms:description "The doctrinal dispute against the Cathars, historically dated to 1206–1207 in the Languedoc region, is documented by only one contemporary source: the work of Pierre des Vaux-de-Cernay, who places the event at Montréal. Historical scholarship deconstructs the miracle of the ordeal by fire involving the book, highlighting how later Dominican tradition conflated the episode with Fanjeaux, thereby transforming a private incident into a public, theatrical ordeal designed to serve apologetic purposes and legitimize the anti-heretical mission."@en,
+        "La disputa dottrinale contro i Catari, storicamente collocata tra il 1206 e il 1207 nella regione della Linguadoca, è documentata da un'unica fonte coeva: l'opera di Pierre des Vaux-de-Cernay, il quale situa l'evento a Montréal. La storiografia decostruisce il miracolo della prova del fuoco che vide protagonista il libro, evidenziando come la successiva tradizione domenicana abbia sovrapposto l'episodio a Fanjeaux, trasformando così un evento privato in una prova pubblica e spettacolare, concepita per fini apologetici e per legittimare la missione antiereticale."@it ;
+    crm:P11_had_participant inme:dominic_guzman ;
+    crm:P7_took_place_at inme:montreal .
+
+inme:humbert_romans a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Humbert of Romans"@en,
+        "Umberto di Romans"@it ;
+    dcterms:description "Fifth Master General of the Order (1254–1263); he reorganized and unified the Dominican liturgy by compiling the liturgical \"Prototype\" (1256–1260), promoted the writing of the *Vitae fratrum* by Gerard of Frachet, and signed off on the definitive, standardized version of the liturgical *Legenda* of Saint Dominic."@en,
+        "Quinto maestro generale dell'Ordine (1254-1263); riordinò e unificò la liturgia domenicana redigendo il \"Prototipo\" liturgico (1256-1260), promosse la stesura delle *Vitae fratrum* di Gerardo di Frachet e firmò la redazione definitiva e normalizzata della Legenda liturgica di san Domenico."@it ;
+    rico:isOrWasLeaderOf inme:dominican_order ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q2623954> ;
+    skos:exactMatch <https://viaf.org/en/viaf/122038877> .
+
+inme:jordan_saxony a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Giordano di Sassonia"@en,
+        "Giordano di Sassonia"@it ;
+    dcterms:description "He was the second Master General of the Order and the direct successor to Dominic from 1222; he composed the *Libellus de principiis*, the first historical and hagiographical work on the origins of the Dominican Order, was a formidable recruiter among university students, oversaw the translation of the saint's remains in 1233, and died in a shipwreck in 1237."@en,
+        "Secondo maestro generale dell'Ordine e successore diretto di Domenico dal 1222; compose il Libellus de principiis, la prima opera storica e agiografica sulle origini domenicane, fu un formidabile reclutatore tra gli universitari, curò la traslazione dei resti del santo nel 1233 e morì in un naufragio nel 1237."@it ;
+    rico:isOrWasLeaderOf inme:dominican_order ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q60790> ;
+    skos:exactMatch <https://viaf.org/en/viaf/84971788> .
+
+inme:montreal a crm:E53_Place ;
+    rdfs:label "Montréal"@en,
+        "Montréal"@it ;
+    dcterms:description "A location in Languedoc that served as the setting for the ordeal by fire. According to the contemporary account of Pierre des Vaux-de-Cernay, the dispute and the miracle of Dominic’s manuscript rejected by the flames took place privately inside a house."@en,
+        "Località della Linguadoca teatro dell'evento dell'ordalia del fuoco. Secondo la testimonianza contemporanea di Pierre des Vaux-de-Cernay, la disputa e il miracolo del foglio di Domenico rigettato dalle fiamme si svolsero in forma privata dentro una casa."@it ;
+    owl:sameAs <https://sws.geonames.org/2992119>,
+        <https://www.wikidata.org/wiki/Q177083> ;
+    skos:exactMatch <https://viaf.org/en/viaf/149379999> .
+
+inme:napoleone_orsini a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Napoleone Orsini"@en,
+        "Napoleone Orsini"@it ;
+    dcterms:description "A young Roman count and nephew of Cardinal Stefano di Fossanova; he died in Rome following a disastrous fall from his horse in 1221 and was miraculously restored to life by Saint Dominic, an event carved onto the side of the Arca."@en,
+        "Giovane conte romano, nipote del cardinale Stefano di Fossanova; morì a Roma in seguito a una rovinosa caduta da cavallo nel 1221 e fu miracolosamente risuscitato da san Domenico, evento testimoniato direttamente da suor Cecilia e scolpito sul fianco dell'Arca."@it .
+
+inme:panel_approval_order a lrmoo:F5_Item,
+        crm:E22_Human-Made_Object ;
+    rdfs:label "Pannello dell'approvazione dell'Ordine"@en ;
+    dcterms:description "The relief focuses on the stages of the Order's legitimation and papal confirmation. On the left, Dominic presents the petition to Pope Innocent III; in the center, the sleeping pontiff dreams of the saint propping up the Lateran Basilica with his shoulder; on the right, some identify the pontiff as Innocent's successor, Honorius III, formally handing the book of the Rule to Dominic, while others maintain it is still Innocent III, supporting this view by pointing to the emphasis placed by the Order's own sources (which focus much more heavily on the initial phase of Innocent's approval)."@en,
+        "Rilievo incentrato sulle tappe della legittimazione e della conferma pontificia dell'Ordine. A sinistra Domenico presenta la petizione a papa Innocenzo III; al centro il pontefice addormentato sogna il santo che sorregge con la spalla la basilica del Laterano; a destra alcuni identificano il pontefice con il successore Onorio III mentre consegna formalmente a Domenico il libro della Regola mentre altri riconoscono sempre lo stesso Innocenzo III supportando questa tesi con l'insistenza delle fonti interne dell'Ordine (le quali insistono assai più sulla prima fase dell'approvazione innocenziana)."@it .
+
+inme:panel_burning_books a lrmoo:F5_Item,
+        crm:E22_Human-Made_Object ;
+    rdfs:label "Panel of the Burning Books"@en,
+        "Pannello della prova del fuoco"@it ;
+    dcterms:description "A scene depicting the ordeal by fire that took place during the doctrinal clash with the Cathar heresy in Languedoc. It shows the adjudicators seated above, witnessing the trial, while below, a young man uses a pair of bellows to stoke the flames consuming the heretical books from which Dominic’s text miraculously emerges unscathed."@en,
+        "Scena dell'ordalia del fuoco svoltasi durante lo scontro dottrinale contro l'eresia catara in Linguadoca. Mostra i giudici arbitri seduti in alto ad assistere alla prova, mentre in basso un giovane alimenta con un soffietto le fiamme che consumano i libri eretici, dalle quali il testo di Domenico balza miracolosamente indenne."@it .
+
+inme:panel_miraculous_supper a lrmoo:F5_Item,
+        crm:E22_Human-Made_Object ;
+    rdfs:label "Panel of the Miraculous Supper of Saint Dominic"@en,
+        "Panel of the Miraculous Supper of Saint Dominic"@it ;
+    dcterms:description "Depiction of the miracle of the multiplication of the loaves in the refectory of the Roman convent of San Sisto. It shows Saint Dominic and the community of friars arranged in symmetrical, informal poses around a long table, while in the foreground, two angels seen from behind distribute loaves marked with crosses."@en,
+        "Raffigurazione del miracolo della moltiplicazione dei pani nel refettorio del convento romano di San Sisto. Mostra san Domenico e la comunità dei frati disposti in posizioni simmetriche e domestiche attorno a una lunga tavola, mentre in primo piano due angeli visti di spalle distribuiscono pani segnati da croci."@it .
+
+inme:panel_raising_orsini a lrmoo:F5_Item,
+        crm:E22_Human-Made_Object ;
+    rdfs:label "Panel of the Raising of Napoleone Orsini"@en,
+        "Pannello della resurrezione di Napoleone Orsini"@it ;
+    dcterms:description "A relief depicting the Roman miracle of the resurrection of the young Orsini, nephew of Cardinal Stefano di Fossanova. On the left, it shows the dramatic moment of the disastrous fall from his horse and Dominic’s prayer; on the right, the return of the resurrected youth to his mother."@en,
+        "Rilievo che descrive il miracolo romano della resurrezione del giovane Orsini, nipote del cardinale Stefano di Fossanova. Presenta a sinistra il momento drammatico della rovinosa caduta da cavallo e la preghiera di Domenico, e a destra la riconsegna del giovane risorto alla madre."@it .
+
+inme:panel_saints_peter_paul a lrmoo:F5_Item,
+        crm:E22_Human-Made_Object ;
+    rdfs:label "Pannello dei santi Pietro e Paolo"@en ;
+    dcterms:description "Depiction of the commissioning of Dominic with the mandate for universal preaching. The saint solemnly receives the pilgrim's staff from Saint Peter and the Book of Scriptures from Saint Paul, a prelude to the immediate and confident dispersal of the first missionary friars throughout the world."@en,
+        "Rappresentazione del conferimento del mandato di predicazione universale a Domenico. Il santo riceve solennemente il bastone del cammino da san Pietro e il libro delle Scritture da san Paolo, preludio all'immediata e fiduciosa dispersione dei primi frati missionari nel mondo."@it .
+
+inme:panel_story_reginald a lrmoo:F5_Item,
+        crm:E22_Human-Made_Object ;
+    rdfs:label "Panel of the Story of Reginald"@en,
+        "Pannello delle storie di Reginaldo"@it ;
+    dcterms:description "Depiction of the miracle of the multiplication of the loaves in the refectory of the Roman convent of San Sisto. The scene is divided into three moments centering on the pivotal entry of Reginald of Orléans into the Order: on the left, the Parisian canon pledges obedience to Dominic in the presence of the Pope; in the center, he is suddenly taken ill and supported by a cleric; on the right, he receives a healing visit from the Virgin, who shows him the Dominican scapular."@en,
+        "Scena divisa in tre momenti focalizzati sul decisivo ingresso nell'Ordine di Reginaldo d'Orléans. A sinistra il canonico parigino promette obbedienza a Domenico davanti al papa; al centro viene colto da un improvviso malore e sorretto da un chierico; a destra riceve la visita terapeutica della Vergine che gli mostra lo scapolare domenicano."@it .
+
+inme:peter_ferrand a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Peter Ferrand"@en,
+        "Pietro Ferrandi"@it ;
+    dcterms:description "Spanish hagiographer and author of the first official liturgical *Legenda* of Saint Dominic (c. 1235–1238); he supplemented the work of Jordan by framing it within an eschatological context and was the first to introduce the account of the spiritual testament and the curse against anyone who introduced temporal property into the Order."@en,
+        "Agiografo spagnolo autore della prima Legenda liturgica ufficiale di san Domenico (c. 1235-1238); integrò l'opera di Giordano proiettandola in un quadro escatologico e introdusse per primo il racconto del testamento spirituale e della maledizione contro chi introducesse proprietà temporali nell'Ordine."@it ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q23619886> ;
+    skos:exactMatch <https://viaf.org/en/viaf/311283097> .
+
+inme:pope_gregory_ix a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Pope Gregory IX"@en,
+        "Papa Gregorio IX"@it ;
+    dcterms:description "Formerly Cardinal Ugolino of Ostia and a close friend of Dominic, as Pope he promoted the solemn translation of the founder's remains in 1233, initiated the formal canonization process in Bologna, proclaimed Dominic a saint in 1234 with the bull *Fons sapientiae*, and formally established the Dominican Inquisition."@en,
+        "Già cardinale Ugolino d'Ostia e intimo amico di Domenico; come papa promosse la solenne traslazione delle spoglie del fondatore nel 1233, avviò il regolare processo di canonizzazione bolognese, proclamò Domenico santo nel 1234 con la bolla *Fons sapientiae* e istituì formalmente l'Inquisizione domenicana."@it ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q124831> ;
+    skos:exactMatch <https://viaf.org/en/viaf/91013639> .
+
+inme:pope_honorius_iii a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Papa Onorio III"@en,
+        "Papa Onorio III"@it ;
+    dcterms:description "As the successor to Innocent III, he promulgated the bull solemnly confirming the Order of Preachers in 1216 (*Religiosam vitam*), issued various bulls recommending the friars, and mandated that the female communities of San Sisto in Rome and Sant'Agnese in Bologna be placed under the spiritual care of the Order."@en,
+        "Successore di Innocenzo III, promulgò la bolla di conferma solenne dell'Ordine dei Predicatori nel 1216 (*Religiosam vitam*), emanò varie bolle di raccomandazione per i frati e impose l'incorporazione delle comunità femminili romane di San Sisto e bolognesi di Sant'Agnese sotto la cura spirituale dell'Ordine."@it ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q160182> ;
+    skos:exactMatch <https://viaf.org/en/viaf/41848773> .
+
+inme:pope_innocent_iii a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Pope Innocent III"@en,
+        "Papa Innocenzo III"@it ;
+    dcterms:description "The Pontiff who welcomed Saint Dominic to Rome in 1215 and, struck by the famous prophetic dream in which the saint was seen propping up the tottering Lateran Basilica, granted the Order its initial oral and preliminary approval."@en,
+        "Pontefice che nel 1215 accolse san Domenico a Roma e, colpito dal celebre sogno premonitore in cui il santo sosteneva la basilica del Laterano pericolante, concesse la prima approvazione orale e preliminare all'Ordine."@it ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q128076> ;
+    skos:exactMatch <https://viaf.org/en/viaf/16017787> .
+
+inme:reginald_orleans a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Reginaldo d'Orléans"@en,
+        "Reginaldo d'Orléans"@it ;
+    dcterms:description "A renowned professor of canon law in Paris and Dean of Saint-Aignan in Orléans, he joined Saint Dominic in Rome in 1218 after being miraculously healed by the Virgin Mary (who, on that occasion, showed him the Order's habit); he was a formidable preacher in Bologna and Paris, where he facilitated the crucial recruitment of the first friars from university circles before his untimely death in 1220."@en,
+        "Celebre docente di diritto canonico a Parigi e decano di Saint-Aignan a Orléans; unitosi a san Domenico a Roma nel 1218 dopo essere stato miracolosamente risanato dalla Vergine Maria (che nell'occasione gli mostrò l'abito dell'Ordine), fu un formidabile predicatore a Bologna e a Parigi, dove favorì il decisivo reclutamento universitario dei primi frati prima della sua precoce scomparsa nel 1220."@it ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q3931864> ;
+    skos:exactMatch <https://viaf.org/en/viaf/89368066> .
+
+inme:san_domenico_church a crm:E24_Physical_human-made_thing,
+        crm:E53_Place ;
+    rdfs:label "Basilica of San Domenico"@en,
+        "Basilica of San Domenico"@it ;
+    dcterms:description "Solemnly consecrated in 1251, it stands on the site of the earlier church of San Niccolò delle Vigne. It is the Bolognese basilica designated to house and honor the new tomb containing the relics of Saint Dominic following their solemn translation in May 1233. It became a vital civic and religious landmark for the city, with its cloister and church serving as the burial place for distinguished figures from the academic, civil, and ecclesiastical spheres."@en,
+        "Consacrata solennemente nel 1251, sorge sul sito della primitiva chiesa di San Niccolò delle Vigne. È la basilica bolognese destinata a custodire ed esaltare la nuova tomba con le reliquie di san Domenico dopo la solenne traslazionedel maggio 1233. Divenne un importantissimo punto di riferimento civico e religioso per la città, ospitando nel suo chiostro e nella chiesa le sepolture di illustri esponenti accademici, civili ed ecclesiastici."@it ;
+    crm:P89_falls_within inme:bologna ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q862602> ;
+    skos:exactMatch <https://viaf.org/en/viaf/316395384> .
+
+inme:san_niccolo_church a crm:E24_Physical_human-made_thing,
+        crm:E53_Place ;
+    rdfs:label "Chiesa di San Niccolò delle Vigne"@en,
+        "Chiesa di San Niccolò delle Vigne"@it ;
+    dcterms:description "The early Dominican settlement in Bologna (1219), where Dominic died and was buried \"beneath the feet of the friars\". It was the original setting for the daily, domestic miracle of the multiplication of the loaves, as recounted by eyewitnesses Rodolfo di Faenza and Buonviso di Piacenza."@en,
+        "Primitivo insediamento domenicano a Bologna (1219) dove Domenico morì e fu inumato \"sotto i piedi dei frati\". Fu il teatro originario del miracolo quotidiano e domestico della moltiplicazione dei pani riferito dai testimoni oculari Rodolfo di Faenza e Buonviso di Piacenza."@it .
+
+inme:sarcophagus a lrmoo:F5_Item,
+        crm:E22_Human-Made_Object,
+        arco:HistoricOrArtisticProperty ;
+    rdfs:label "Sarcophagus of the Arca di San Domenico"@en,
+        "Sarcofago dell'Arca di San Domenico"@it ;
+    dcterms:description "This is the only part of the original 1267 monument that has survived intact within the Basilica of San Domenico in Bologna. In its original configuration, the marble chest did not rest directly on the base but was conceived as a freestanding monumental sarcophagus, supported by a novel and extraordinary figurative system of caryatids and telamones (elements removed from the complex and now partially preserved in various museum collections). Featuring a rich, classically inspired entablature adorned with acanthus and bird friezes, the sarcophagus displays six biographical reliefs depicting the saint's life, interspersed with high-relief figures of the Madonna, the Redeemer, and the four Doctors of the Church. The latter are positioned diagonally at the corners of the sarcophagus to break the rectangle's geometric rigidity and fluidly guide the viewer's gaze and movement around the entire structure."@en,
+        "L'unica porzione del monumento originario del 1267 a essersi conservata intatta all'interno della basilica di San Domenico a Bologna. Nella sua configurazione originale, la cassa marmorea non poggiava direttamente sul basamento ma era concepita come un sarcofago monumentale isolato (freestanding) sostenuto da un inedito e straordinario sistema figurato composto da cariatidi e telamoni, oggi rimossi dal complesso e parzialmente conservati in varie collezioni museali. Caratterizzato da una ricca trabeazione di gusto classico con fregi di acanto e uccelli, ospita i sei rilievi biografici della vita del santo intervallati ad altorilievo dalle figure della Madonna, del Redentore e dei quattro Dottori della Chiesa. Questi ultimi sono posizionati diagonalmente agli angoli del sarcofago per spezzare la rigidità geometrica del rettangolo e guidare fluidamente lo sguardo e il movimento dell'osservatore tutt'intorno alla struttura."@it ;
+    crm:P46_is_composed_of inme:panel_approval_order,
+        inme:panel_burning_books,
+        inme:panel_miraculous_supper,
+        inme:panel_raising_orsini,
+        inme:panel_saints_peter_paul,
+        inme:panel_story_reginald ;
+    crm:P53_hasFormerOrCurrentLocation inme:san_niccolo_church ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q126766539> .
+
+inme:toulouse rdfs:label "Toulouse"@en,
+        "Tolosa"@it ;
+    dcterms:description "A city in Languedoc where the early apostolic work of Dominic and his first community of companions began. It was the site of endowments made by Bishop Foulques in 1215, including the Chapel of Saint Romanus and the Arnaud-Bernard Gate hospital, intended to shelter converted former prostitutes. In 1233, the city hosted the supplementary phase of the canonization inquiry (gathering over two hundred sworn testimonies) and on August 5 1234, the first solemn celebration of the saint's feast day took place there, dramatically coinciding with the condemnation and burning at the stake of a heretical noblewoman by the newly established Toulouse Inquisition."@en,
+        "Città della Linguadoca in cui nacque la primitiva azione apostolica di Domenico e della sua prima comunità di compagni. Fu sede delle donazioni del vescovo Folco nel 1215, tra cui la cappella di San Romano e l'ospedale di porta Arnaud-Bernard destinato all'accoglienza di ex prostitute convertite. Nel 1233 ospitò il supplemento d'indagine del processo di canonizzazione, raccogliendo oltre duecento testimonianze giurate, e il 5 agosto 1234 vi si tenne la prima solenne celebrazione della festa del santo, drammaticamente coincidente con la condanna e il rogo di una nobildonna eretica da parte della neonata Inquisizione tolosana."@it ;
+    owl:sameAs <https://sws.geonames.org/2972315>,
+        <https://www.wikidata.org/wiki/Q7880> ;
+    skos:exactMatch <https://viaf.org/en/viaf/132307492> .
+
+inme:bologna a crm:E53_Place ;
+    rdfs:label "Bologna"@en,
+        "Bologna"@it ;
+    dcterms:description "It is the driving force behind the Order's identity. It is the city where Saint Dominic died and was originally buried, as well as the site of the first historic General Chapters (1220, 1221) and the 1233 canonization inquiry. Through its prestigious university *Studium*, Bologna ensured the intellectual recruitment of the Order's early generations. Furthermore, in 1233, it was the epicenter of the \"Alleluia\" peace movement led by John of Vicenza, whose politico-religious success was closely intertwined with the translation and canonization of the founder."@en,
+        "È il centro propulsore dell'identità dell'Ordine. Si tratta della città in cui san Domenico morì e fu originariamente sepolto, nonché la sede dei primi storici Capitoli Generali (1220, 1221) e dell'inchiesta del processo di canonizzazione del 1233. Attraverso il suo prestigioso Studium universitario, Bologna garantì il reclutamento intellettuale delle prime generazioni dell'Ordine. Nel 1233 fu inoltre l'epicentro del movimento di pacificazione dell'Alleluia guidato da Giovanni da Vicenza, il cui successo politico-religioso fu strettamente intrecciato alla traslazione e alla canonizzazione del fondatore."@it ;
+    owl:sameAs <https://sws.geonames.org/3181928>,
+        <https://www.wikidata.org/wiki/Q1891> ;
+    skos:exactMatch <https://viaf.org/en/viaf/248053786> .
+
+inme:buonviso a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Buonviso da Piacenza"@en,
+        "Buonviso da Piacenza"@it ;
+    dcterms:description "An early companion of Dominic and founder of the convent in Piacenza; he testified at the 1233 canonization proceedings in Bologna, recounting Dominic’s asceticism and prayer and personally witnessing the miracle of the multiplication of the loaves in Bologna."@en,
+        "Primo compagno di Domenico e fondatore del convento di Piacenza; depose come testimone al processo di canonizzazione bolognese del 1233 riferendo dell'ascesi e della preghiera di Domenico e testimoniando direttamente il miracolo bolognese della moltiplicazione dei pani."@it .
+
+inme:legenda_constantini a lrmoo:F1_Work ;
+    lrmoo:R1_is_logical_successor_of inme:legenda_petri_ferrandi ;
+    lrmoo:R68_is_inspired_by inme:legenda_petri_ferrandi,
+        inme:libellus_principiis .
+
+inme:rodolfo a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Rodolfo da Faenza"@en,
+        "Rodolfo da Faenza"@it ;
+    dcterms:description "Rector of San Niccolò delle Vigne and later procurator of the Bolognese convent; a key witness at the 1233 trial, he described the founder's final hours, his wish to be buried \"beneath the friars' feet,\" and the domestic miracle of the multiplication of the loaves."@en,
+        "Rettore di San Niccolò delle Vigne e poi procuratore del convento bolognese; testimone chiave al processo del 1233, descrisse le ultime ore del fondatore, la sua volontà di essere sepolto \"sotto i piedi dei frati\" e il miracolo domestico della moltiplicazione dei pani."@it .
+
+inme:rome rdfs:label "Rome"@en,
+        "Roma"@it ;
+    dcterms:description "It was the seat of the papal curia and a diplomatic hub for the crucial bulls confirming and endorsing the Order. The city served as the setting for pivotal miraculous events, such as the conversion and healing of Reginald of Orléans, the Raising of Napoleone Orsini and the Miraculous Supper. Regarding monastic life and the care of souls, Dominic personally oversaw the reform and the imposition of strict enclosure upon the female communities of Santa Maria in Tempulo and San Sisto, bringing them under the discipline of the Friars Preachers."@en,
+        "Sede della curia papale e fulcro diplomatico per le fondamentali bolle di conferma e raccomandazione dell'Ordine. La città fa da sfondo a eventi miracolosi determinanti come la conversione e guarigione di Reginaldo d'Orléans, la resurresione di Napoleone Orsini e la Cena miracolosa. Nella dimensione monastica e della cura d'anime, a Roma Domenico guidò personalmente la riforma e la rigida clausura delle comunità femminili di Santa Maria in Tempulo e di San Sisto, sottomettendole alla disciplina dei frati Predicatori"@it ;
+    owl:sameAs <https://sws.geonames.org/3169070>,
+        <https://www.wikidata.org/wiki/Q220> ;
+    skos:exactMatch <https://viaf.org/en/viaf/243431474> .
+
+inme:dominican_order a crm:E74_Group,
+        rico:Group ;
+    rdfs:label "Order of Preachers"@en,
+        "Ordine dei Predicatori"@it ;
+    dcterms:description "A mendicant order founded in Toulouse by Saint Dominic in the early 13th century to counter the spread of the Cathar and Waldensian heresies through itinerant preaching and the example of a life of apostolic poverty. It received provisional approval from Pope Innocent III in 1215 and formal confirmation from Honorius III in 1216, adopting the Rule of Saint Augustine. Its extraordinary institutional innovation lay in the universal right to preach doctrine granted to every friar in holy orders (a prerogative previously reserved solely for bishops) combined with a strong intellectual orientation that fostered massive recruitment from the university *Studia* of Paris and Bologna. At the first General Chapter in Bologna (1220), the Order embraced the principle of mendicancy and the total renunciation of property, adopting a flexible, collegial constitution centered on the authority of General Chapters and dedicated *ex officio* to study, the defense of orthodoxy, and the salvation of souls."@en,
+        "Ordine mendicante fondato a Tolosa da san Domenico nei primi anni del Duecento per contrastare la diffusione delle eresie catara e valdese attraverso la predicazione itinerante e l'esempio di una vita in povertà apostolica. Ottenne la conferma provvisoria da papa Innocenzo III nel 1215 e quella solenne da Onorio III nel 1216, adottando la regola di sant'Agostino. La sua straordinaria novità istituzionale risiedette nel diritto universale di predicazione dottrinale concesso a ciascun frate chierico (prerogativa precedentemente riservata ai soli vescovi), unito a un vigoroso orientamento intellettuale che favorì un massiccio reclutamento negli Studia universitari di Parigi e Bologna. Nel primo Capitolo Generale di Bologna (1220) l'Ordine abbracciò il principio della mendicità conventuale e della rinuncia totale alle proprietà, strutturandosi con una costituzione collegiale ed elastica incentrata sull'autorità dei Capitoli Generali e finalizzata *ex officio* allo studio, alla difesa dell'ortodossia e alla salvezza delle anime."@it ;
+    crm:P107_has_current_or_former_member inme:buonviso,
+        inme:constantine_orvieto,
+        inme:dominic_guzman,
+        inme:humbert_romans,
+        inme:jordan_saxony,
+        inme:peter_ferrand,
+        inme:reginald_orleans,
+        inme:rodolfo,
+        inme:sister_cecilia_contarini ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q131479> ;
+    skos:exactMatch <https://viaf.org/en/viaf/140291092> .
+
+inme:legenda_petri_ferrandi a lrmoo:F1_Work ;
+    lrmoo:R1_is_logical_successor_of inme:libellus_principiis ;
+    lrmoo:R68_is_inspired_by inme:libellus_principiis .
+
+inme:libellus_principiis a lrmoo:F1_Work .
+
+inme:dominic_guzman a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Dominic de Guzmán"@en,
+        "Domenico di Guzmán"@it ;
+    dcterms:description "Canon of Osma, preacher against heresy in Languedoc, and founder of the Order of Preachers (Dominicans); he lived in strict evangelical poverty and died in Bologna in 1221."@en,
+        "Canonico di Osma, predicatore antieretico in Linguadoca e fondatore dell'Ordine dei Frati Predicatori (Domenicani), vissuto in rigorosa povertà evangelica e morto a Bologna nel 1221."@it ;
+    rico:isOrWasLeaderOf inme:dominican_order ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q44091> ;
+    skos:exactMatch <https://viaf.org/en/viaf/17240904> .
+
