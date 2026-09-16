@@ -1,0 +1,429 @@
+<!-- 2. THE HISTORICAL/HAGIOGRAPHIC TEXTS -->
+<listBibl type="historical_works">
+    <bibl xml:id="historia_albigensis" type="chronicle">
+        <idno type="viaf">176177946</idno>
+        <!-- 2. AUTORE -->
+        <author ref="#peter_vaux_cernay">Peter of Vaux-de-Cernay</author>
+        <!-- 3. TITOLO e LINGUA -->
+        <title level="m" xml:lang="la">Historia Albigensis</title>
+        <textLang mainLang="la">Latin</textLang>
+        
+        <!-- 4. DATAZIONE DELLA STESURA (Cruciale!) -->
+        <date notBefore="1212" notAfter="1218">Between 1212 and 1218</date>
+        
+        <!-- 5. NOTA DESCRITTIVA (Per contestualizzare) -->
+        <note type="context" xml:lang="it">Cronaca cistercense che narra la crociata contro gli Albigesi; rappresenta l'unica testimonianza documentaria diretta dell'attività antiereticale di Domenico in Linguadoca, prima che la sua immagine venisse rielaborata dalla campagna di canonizzazione del 1233–1234. Fornisce un resoconto più "sobrio" dell'episodio miracoloso della prova del fuoco rispetto alle narrazioni iperboliche di Giordano di Sassonia e Pietro Ferrand. Proprio in virtù di tale rigore, fu utilizzata come fonte da Umberto di Romans per la stesura definitiva della *Legenda Sancti Dominici* liturgica ufficiale (1255–1260).</note>
+        <note type="context" xml:lang="en">Cistercian chronicle recounting the Albigensian Crusade; it represents the only direct documentary evidence of Dominic's anti-heretical activity in Languedoc before his image was reshaped by the canonization campaign of 1233–1234. It provides a more "sober" account of the miracle episode of the fire ordeal compared to the hyperbolic accounts of Jordan of Saxony and Peter Ferrand. Precisely because of this rigor, it was used as a source by Humbert of Romans for the definitive drafting of the official liturgical *Legenda Sancti Dominici* (1255–1260).</note>
+        
+        <!-- 6. EDIZIONE MODERNA DI RIFERIMENTO (Da cui Canetti o tu traete i testi) -->
+        <relatedItem type="modern_edition">
+            <bibl>
+                <title level="m">Historia Albigensis</title>
+                <editor>Pascal Guébin</editor>
+                <editor>Ernest Lyon</editor>
+                <pubPlace>Paris</pubPlace>
+                <publisher>Société de l'Histoire de France</publisher>
+                <date>1926-1939</date>
+                <biblScope unit="volume">I-III</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Edizione critica latina di riferimento.</note>
+                <note xml:lang="en">Standard critical edition in Latin.</note>
+            </bibl>
+        </relatedItem>
+
+        <relatedItem type="modern_edition">
+            <bibl>
+                <title level="m">Histoire Albigeoise</title>
+                <editor>Pascal Guébin</editor>
+                <editor>Henri Maisonneuve</editor>
+                <pubPlace>Paris</pubPlace>
+                <publisher>Vrin</publisher>
+                <date>1951</date>
+                <textLang mainLang="fr">French</textLang>   
+                <note xml:lang="it">Traduzione francese moderna.</note>
+                <note xml:lang="en">Modern French translation.</note>
+            </bibl>
+        </relatedItem>
+    </bibl>
+
+    <bibl xml:id="legenda_constantini" type="hagiography">
+        <!-- 2. AUTORE (collegato alla tua anagrafica) -->
+        <author ref="#constantine_orvieto">Constantine of Orvieto</author>
+        <!-- 3. TITOLO e LINGUA -->
+        <title level="m" xml:lang="la">Legenda Sancti Dominici</title>
+        <textLang mainLang="la">Latin</textLang>
+        
+        <!-- 4. DATAZIONE DELLA STESURA (Cruciale!) -->
+        <date notBefore="1246" notAfter="1247">Between 1246 and 1247</date>
+        
+        <!-- 5. NOTA DESCRITTIVA (Per contestualizzare) -->
+        <note type="context" xml:lang="it">Approvata nel 1248, la "Legenda Nova" di Costantino segna una svolta decisiva nella memoria domenicana, trasformando la vita del fondatore da cronaca storica a biografia sistematica di prodigi. Pur attingendo ampiamente a Pietro Ferrandi, Costantino omette molti dettagli locali per proiettare un'immagine di Domenico più universale e profetica. Si tratta della prima fonte ufficiale a fissare il "Miracolo dei pani" e a introdurre miti istituzionali fondamentali, come il sogno del Laterano e il mandato di Pietro e Paolo, che conferirono all'Ordine la sua definitiva legittimazione carismatica e la narrazione primaria per i suoi futuri programmi iconografici.</note>
+        <note type="context" xml:lang="en">Approved in 1248, Constantine's "Legenda Nova" marks a decisive shift in Dominican memory, transforming the founder’s life from a historical chronicle into a systematic biography of wonders. While drawing heavily on Peter Ferrandi, Constantine omits many local details to project a more universal and prophetic image of Dominic. It is the first official source to stabilize the "Miracle of the Loaves" and to introduce pivotal institutional myths such as the Dream of the Lateran and the mandate from Peter and Paul which provided the Order with its definitive charismatic legitimacy and the primary narrative for its future iconographic programs.</note>
+        
+        <!-- 6. EDIZIONE MODERNA DI RIFERIMENTO (Da cui Canetti o tu traete i testi) -->
+
+        <relatedItem type="historical_edition">
+            <bibl>
+                <title level="m">Scriptores Ordinis Praedicatorum recensiti, notisque historicis et criticis illustrati</title>
+                <title level="m" type="short"><abbr>QE</abbr></title>
+                <editor>Jacques Quétif</editor>
+                <editor>Jacques Échard</editor>
+                <pubPlace>Paris</pubPlace>
+                <publisher>Ballard &amp; Simart</publisher>
+                <date>1719</date>
+                <biblScope unit="volume">I</biblScope>
+                <biblScope unit="page">pp. 25-37</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Prima importante edizione a stampa della tradizione domenicana.</note>
+                <note xml:lang="en">First major printed edition of the Dominican tradition.</note>
+            </bibl>
+        </relatedItem>
+
+        <relatedItem type="modern_edition">
+            <bibl>
+                <title level="j">Analecta Sacri Ordinis Fratrum Praedicatorum</title>
+                <title level="j" type="short"><abbr>ASOP</abbr></title>
+                <editor>Modesto Canal</editor>
+                <pubPlace>Rome</pubPlace>
+                <publisher>In Domo Generalitia</publisher>
+                <date>1933-1934</date>
+                <biblScope unit="volume">XLI</biblScope>
+                <biblScope unit="page">pp. 541-558, 602-609, 647-658</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Edizione moderna basata sull'esame di manoscritti di area italiana.</note>
+                <note xml:lang="en">Modern edition based on the review of manuscripts from the Italian area.</note>
+            </bibl>
+        </relatedItem>
+
+        <relatedItem type="modern_edition">
+            <bibl>
+                <title level="m">Monumenta S. P. N. Dominici: Historia et Constitutiones</title>
+                <biblScope unit="issue">Fasc. II</biblScope>
+                
+                <title level="s" type="short"><abbr>MOPH</abbr></title>
+                <title level="s">Monumenta Ordinis Fratrum Praedicatorum Historica</title>
+                <biblScope unit="volume">Tomus XVI</biblScope>
+
+                <editor>Heribert Christian Scheeben</editor>
+                <pubPlace>Rome</pubPlace>
+                <publisher>Istituto Storico Domenicano</publisher>
+                <date>1935</date>
+                <biblScope unit="page">pp. 263-352</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <textLang otherLang="de">German</textLang>
+                <note xml:lang="it">L'intervallo di pagine comprende sia il saggio introduttivo in tedesco ("Einführung", pp. 263–285) sia il testo latino della <emph>Legenda</emph> (pp. 286–352).</note>
+                <note xml:lang="en">The page range includes both the introductory essay in German ("Einführung", pp. 263–285) and the Latin text of the <emph>Legenda</emph> (pp. 286–352).</note>
+            </bibl>
+        </relatedItem>
+    </bibl>
+
+    <bibl xml:id="legenda_petri_ferrandi" type="hagiography">
+        <idno type="viaf">25145602481301361738</idno>
+        <!-- 2. AUTORE -->
+        <author ref="#peter_ferrand">Peter Ferrand</author>
+        <!-- 3. TITOLO e LINGUA -->
+        <title level="m" xml:lang="la">Legenda Sancti Dominici</title>
+        <textLang mainLang="la">Latin</textLang>
+        
+        <!-- 4. DATAZIONE DELLA STESURA -->
+        <date notBefore="1235" notAfter="1238">Between 1235 and 1238</date>
+        
+        <!-- 5. NOTA DESCRITTIVA (Per contestualizzare) -->
+        <note type="context" xml:lang="it">Approvata per l'uso liturgico nel 1238, l'opera di Pietro Ferrandi costituisce la *prior legenda* e la prima biografia ufficiale del fondatore. Sebbene si tratti in gran parte di una compilazione letterale del *Libellus* di Giordano di Sassonia, essa introduce motivi fondamentali che hanno plasmato l'autocoscienza domenicana: l'immagine escatologica di Domenico come *vespertinus sydus* (stella della sera), inviato alla fine dei tempi, e l'influente narrazione del "Testamento" del fondatore. Associando l'eredità della povertà volontaria a una severa maledizione contro chi avesse introdotto beni temporali, Ferrandi fornì il fondamento agiografico primario per la futura identità dell'Ordine e per la sua difesa della mendicità.</note>
+        <note type="context" xml:lang="en">Approved for liturgical use in 1238, Pietro Ferrandi’s work constitutes the "prior legenda" and the first official biography of the founder. While largely a literal compilation of Jordan of Saxony’s Libellus, it introduces pivotal motifs that shaped Dominican self-consciousness: the eschatological image of Dominic as the "vespertinus sydus" (evening star) sent at the world's end and the influential narrative of the founder’s "Testament". By pairing the legacy of voluntary poverty with a stern curse against those who would introduce temporal possessions, Ferrandi provided the primary hagiographical foundation for the Order's future identity and its defense of mendicancy.</note>
+        
+        <!-- 6. EDIZIONE MODERNA DI RIFERIMENTO (Da cui Canetti o tu traete i testi) -->
+        <relatedItem type="historical_edition">
+            <bibl>
+                <title level="m">Sanctuarium seu Vitae sanctorum</title>
+                <editor>Boninus Mombritius</editor>
+                <pubPlace>Paris</pubPlace>
+                <publisher>Fontemoing</publisher>
+                <date>1910</date>
+                <biblScope unit="volume">II</biblScope>
+                <biblScope unit="page">pp. 429-443</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Nuova edizione del testo originariamente stampato a Milano nel 1479. La citazione include implicitamente la ristampa anastatica del 1978 pubblicata a Hildesheim e New York.</note>
+                <note xml:lang="en">New edition of the text originally printed in Milan in 1479. The citation implicitly includes the 1978 facsimile reprint published in Hildesheim and New York.</note>
+            </bibl>
+        </relatedItem>
+
+        <relatedItem type="modern_edition">
+            <bibl>
+                <title level="j">Analecta Sacri Ordinis Fratrum Praedicatorum</title>
+                <title level="j" type="short"><abbr>ASOP</abbr></title>
+                <biblScope unit="volume">IV</biblScope>
+                <editor>Pierre Mothon</editor>
+                <date>1899</date>
+                <biblScope unit="volume">XLI</biblScope>
+                <biblScope unit="page">pp. 296-319</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Edizione pubblicata attribuendo l'opera a un autore anonimo.</note>
+                <note xml:lang="en">Edition published attributing the work to an anonymous author.</note>
+            </bibl>
+        </relatedItem>
+
+        <relatedItem type="modern_edition">
+            <bibl>
+                <title level="m">Analecta Bollandiana</title>
+                <title level="j" type="short"><abbr>An. Boll.</abbr></title>
+                <biblScope unit="volume">XXX</biblScope>                        
+                <editor>François Van Ortroy</editor>
+                <date>1911</date>
+                <biblScope unit="page">pp. 54-87</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Prima edizione della cosiddetta "recensio altera" (seconda recensione).</note>
+                <note xml:lang="en">First edition of the so-called "recensio altera" (second recension).</note>
+            </bibl>
+        </relatedItem>
+
+        <relatedItem type="modern_edition">
+            <bibl>
+                <title level="m">Monumenta S. P. N. Dominici: Historia et Constitutiones</title>
+                <biblScope unit="issue">Fasc. II</biblScope>
+                <title level="s" type="short"><abbr>MOPH</abbr></title>
+                <title level="s">Monumenta Ordinis Fratrum Praedicatorum Historica</title>
+                <biblScope unit="volume">Tomus XVI</biblScope>
+                <editor>Marie-Hyacinthe Laurent</editor>
+                <pubPlace>Rome</pubPlace>
+                <publisher>Istituto Storico Domenicano</publisher>
+                <date>1935</date>
+                <biblScope unit="page">pp. 209-260</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Edizione della "recensio pristina" (recensione originale)</note>
+                <note xml:lang="en">Edition of the "recensio pristine" (original recension)</note>
+            </bibl>
+        </relatedItem>
+    </bibl>
+
+    <bibl xml:id="legenda_humbertus" type="hagiography">
+        <idno type="viaf">211752959</idno>
+        <!-- 2. AUTORE (collegato alla tua anagrafica) -->
+        <author ref="#humbert_romans">Humbert of Romans</author>
+        <!-- 3. TITOLO e LINGUA -->
+        <title level="m" xml:lang="la">Legenda Sancti Dominici</title>
+        <textLang mainLang="la">Latin</textLang>
+        
+        <!-- 4. DATAZIONE DELLA STESURA -->
+        <date notBefore="1255" notAfter="1260">Between 1255 and 1260</date>
+
+        <!-- 5. NOTA DESCRITTIVA -->
+        <note type="context" xml:lang="it">Approvata nel 1260, quest'opera segna la codificazione definitiva dell'immagine ufficiale di Domenico, concludendo la fase agiografica formativa dell'Ordine. Pur basandosi essenzialmente su una compilazione letterale dei testi di Pietro Ferrandi e Costantino di Orvieto, essa persegue una maggiore sobrietà e un più rigoroso ordine cronologico, adattando al contempo la narrazione a un uso esclusivamente liturgico e comunitario. Elemento cardine della più ampia riforma liturgica promossa da Umberto, il suo impiego fu reso obbligatorio dal Capitolo Generale di Strasburgo, soppiantando di fatto tutte le precedenti versioni agiografiche.</note>
+        <note type="context" xml:lang="en">Approved in 1260, this work marks the final codification of Dominic’s official image, ending the Order's formative hagiographical period. Primarily a literal compilation of Peter Ferrandi and Constantine of Orvieto, it seeks greater sobriety and chronological rigor while adapting the narrative for exclusive liturgical and communal use. As a pillar of Humbert’s broader liturgical reform, its use was strictly imposed by the General Chapter of Strasbourg, effectively supplanting all previous hagiographical versions.</note>
+
+        <relatedItem type="modern_edition">
+            <bibl>
+                <title level="m">Monumenta S. P. N. Dominici: Historia et Constitutiones</title>
+                <title level="s" type="short"><abbr>MOPH</abbr></title>
+                <biblScope unit="issue">Fasc. II</biblScope>
+                <title level="s">Monumenta Ordinis Fratrum Praedicatorum Historica</title>
+                <biblScope unit="volume">Tomus XVI</biblScope>
+                <editor>Angelus Walz</editor>
+                <pubPlace>Rome</pubPlace>
+                <publisher>Istituto Storico Domenicano</publisher>
+                <date>1935</date>
+                <biblScope unit="page">pp. 369-433</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Edizione moderna, completa e definitiva della *Legenda* di Umberto all'interno della collana MOPH.</note>
+                <note xml:lang="en">Definitive complete modern edition of Humbert's *Legenda* within the MOPH series.</note>
+            </bibl>
+        </relatedItem>
+    </bibl>
+    
+    <bibl xml:id="libellus_principiis" type="hagiography">
+        <idno type="viaf">7818165326352416290000</idno>
+        <!-- 2. AUTORE (collegato alla tua anagrafica) -->
+        <author ref="#jordan_saxony">Jordan of Saxony</author>
+        <!-- 3. TITOLO e LINGUA -->
+        <title level="m" xml:lang="la">Libellus de Principiis Ordinis Predicatorum</title>
+        <textLang mainLang="la">Latin</textLang>
+        
+        <!-- 4. DATAZIONE DELLA STESURA -->
+        <date notBefore="1231" notAfter="1234">Between 1231 and 1234</date>
+
+        <!-- 5. NOTA DESCRITTIVA -->
+        <note type="context" xml:lang="it">Il *Libellus* di Giordano di Sassonia costituisce la più antica testimonianza storica e agiografica sulle origini dell'Ordine. Esso intreccia la cronaca dell'istituzione con la vita di Domenico e le biografie dei primi frati, configurandosi come un'«agiografia collettiva» in cui l'Ordine stesso è protagonista. L'opera delinea strategicamente l'identità dell'Ordine attorno alla sua missione escatologica e al reclutamento di matrice intellettuale e universitaria. Nonostante la sua struttura composita, il testo funse da prima *legenda* liturgica ufficiale dell'Ordine (a seguito di una revisione del 1235-1236) e rimase la fonte primaria per tutte le successive tradizioni agiografiche domenicane.</note>
+        <note type="context" xml:lang="en">Jordan of Saxony’s "Libellus" is the earliest historical and hagiographical record of the Order’s origins. It weaves a chronicle of the institution with the life of Dominic and the biographies of other early friars, functioning as a "collective hagiography" where the Order itself is a protagonist. It strategically frames the Order’s identity around its eschatological mission and its intellectual, university-based recruitment. Despite its composite structure, it served as the Order's first official liturgical "legenda" (following a 1235/36 revision) and remained the primary source for all subsequent Dominican hagiographical traditions</note>
+
+            <relatedItem type="historical_edition">
+            <bibl>
+                <title level="m" type="short"><abbr>QE</abbr></title>
+                <title level="m">Scriptores Ordinis Praedicatorum recensiti, notisque historicis et criticis illustrati</title>
+                <editor>Jacques Quétif</editor>
+                <editor>Jacques Échard</editor>
+                <pubPlace>Paris</pubPlace>
+                <publisher>Ballard &amp; Simart</publisher>
+                <date>1719</date>
+                <biblScope unit="volume">I</biblScope>
+                <biblScope unit="page">pp. 2-24</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Contiene solo estratti selezionati.</note>
+                <note xml:lang="en">Contains selected excerpts only.</note>
+            </bibl>
+        </relatedItem>
+
+        <relatedItem type="historical_edition">
+            <bibl>
+                <title level="j" type="short"><abbr>AA. SS.</abbr></title>
+                <title level="j">Acta Sanctorum</title>
+                <pubPlace>Antwerp</pubPlace>
+                <publisher>Société des Bollandistes</publisher>
+                <date>1733</date>
+                <biblScope unit="volume">Augusti I</biblScope>
+                <biblScope unit="page">pp. 545-559</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Le pagine si riferiscono all'edizione originale; le pagine alternative (pp. 541-555) corrispondono alla terza edizione (ed. III).</note>
+                <note xml:lang="en">Pages refer to the original edition; alternative pages (pp. 541-555) correspond to the third edition (ed. III).</note>
+            </bibl>
+        </relatedItem>
+
+        <relatedItem type="modern_edition">
+            <bibl>
+                <title level="m">Beati Iordani de Saxonia altera Opera</title>
+                <editor>Joachim-Joseph Berthier</editor>
+                <pubPlace>Fribourg</pubPlace>
+                <publisher>Typis Consociationis Sancti Pauli</publisher>
+                <date>1891</date>
+                <biblScope unit="page">pp. 1-40</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Prima raccolta delle opere di Giordano di Sassonia.</note>
+                <note xml:lang="en">First collection of Jordan of Saxony's works.</note>
+            </bibl>
+        </relatedItem>
+
+        <relatedItem type="modern_edition">
+            <bibl>
+                <title level="j" type="short"><abbr>ASOP</abbr></title>
+                <title level="j">Analecta Sacri Ordinis Fratrum Praedicatorum</title>
+                <biblScope unit="volume">XLI</biblScope>
+                <editor>Modesto Canal</editor>
+                <pubPlace>Rome</pubPlace>
+                <publisher>In Domo Generalitia</publisher>
+                <date>1933-1934</date>
+                <biblScope unit="page">pp. 482-503</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Edizione pubblicata all'interno del periodico ufficiale domenicano.</note>
+                <note xml:lang="en">Edition issued within the official Dominican periodical.</note>
+            </bibl>
+        </relatedItem>
+
+        <relatedItem type="modern_edition">
+            <bibl>
+                <title level="m">Monumenta S. P. N. Dominici: Historia et Constitutiones</title>
+                <biblScope unit="issue">Fasc. II</biblScope>
+                <title level="s" type="short"><abbr>MOPH</abbr></title>
+                <title level="s">Monumenta Ordinis Fratrum Praedicatorum Historica</title>
+                <biblScope unit="volume">Tomus XVI</biblScope>
+                <editor>Heribert Christian Scheeben</editor>
+                <pubPlace>Rome</pubPlace>
+                <publisher>Istituto Storico Domenicano</publisher>
+                <date>1935</date>
+                <biblScope unit="page">pp. 25-82</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Edizione critica moderna standard.</note>
+                <note xml:lang="en">Standard modern critical edition.</note>
+            </bibl>
+        </relatedItem>
+    </bibl>
+
+    <bibl xml:id="acta_canonizationis" type="official_record">
+        <title>Acta canonizationis sancti Dominici</title>
+        <!-- 3. TITOLO e LINGUA -->
+        <title level="m" xml:lang="la">Acta canonizationis sancti Dominici</title>
+        <textLang mainLang="la">Latin</textLang>
+        
+        <!-- 4. DATAZIONE DELLA STESURA -->
+        <date when="1233">1233</date>
+
+        <!-- 5. NOTA DESCRITTIVA -->
+        <note type="context" xml:lang="it">Si tratta della documentazione relativa alle inchieste ufficiali svolte a Bologna e Tolosa nel 1233. Tale documento segna un'importante svolta procedurale nella storia della canonizzazione, rappresentando uno dei primi casi di utilizzo di un elenco strutturato di *articuli interrogatorii* per orientare le deposizioni. Anziché concentrarsi sulla taumaturgia, gli *Acta* pongono l'accento sull'*amor regularitatis* (lo zelo per la Regola) e sullo *zelus animarum* del fondatore, delineando un modello di santità coerente con l'identità costituzionale dell'Ordine. Promosso strategicamente durante il movimento dell'«Alleluia», il processo conferì la legittimazione carismatica necessaria per i nuovi compiti inquisitoriali affidati all'Ordine e ne consolidò lo status istituzionale all'interno della Chiesa.</note>
+        <note type="context" xml:lang="en">The record of the official inquiries held in Bologna and Toulouse in 1233. This document marks a significant procedural shift in the history of canonization, being one of the first instances to utilize a structured list of "articuli interrogatorii" to guide testimonies. Rather than focusing on thaumaturgy, the Acta emphasize the founder's "amor regularitatis" (zeal for the Rule) and "zelus animarum," projecting a model of sanctity that aligns with the Order's established constitutional identity. Strategically promoted during the "Alleluia" movement, the process provided the charismatic legitimacy needed for the Order’s newly assigned inquisitorial duties and secured its institutional status within the Church.</note>
+
+        <relatedItem type="constituent">
+            <bibl xml:id="bologna_inquiry">
+                <title level="a">Dicta testium in inquisitione de vita et miraculis</title>
+                <idno type="BHL">2208</idno> 
+                <date when="1233">1233</date>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Raccoglie i verbali ufficiali con le deposizioni dirette dei testimoni oculari (sia i frati a Bologna sia i testimoni a Tolosa)</note>
+                <note xml:lang="en">It compiles the official records containing the direct testimonies of eyewitnesses (both the friars in Bologna and the witnesses in Toulouse).</note>
+            </bibl>
+        </relatedItem>
+
+        <relatedItem type="constituent">
+            <bibl xml:id="toulouse_inquiry">
+                <title level="a">Epistula inquisitorum Tolosanorum de virtutibus et miraculis</title>
+                <idno type="BHL">2209</idno> 
+                <date when="1233">1233</date>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Lettera di trasmissione redatta dagli inquisitori tolosani inviata a Maestro Tancredi a Bologna per autenticare l'inchiesta svolta in Francia</note>
+                <note xml:lang="en">Covering letter drafted by the inquisitors of Toulouse and sent to Master Tancred in Bologna to authenticate the inquiry conducted in France.</note>
+            </bibl>
+        </relatedItem>
+
+        <relatedItem type="historical_edition">
+            <bibl>                                
+                <title level="m">Scriptores Ordinis Praedicatorum recensiti, notisque historicis et criticis illustrati</title>
+                <title level="m" type="short"><abbr>QE</abbr></title>
+                <editor>Jacques Quétif</editor>
+                <editor>Jacques Échard</editor>
+                <pubPlace>Paris</pubPlace>
+                <publisher>Ballard &amp; Simart</publisher>
+                <date>1719</date>
+                <biblScope unit="volume">I</biblScope>
+                <biblScope unit="page">pp. 44-58</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Pubblicazione storica contenuta nel primo volume della raccolta.</note>
+                <note xml:lang="en">Historical publication within the first volume of the collection.</note>
+            </bibl>
+        </relatedItem>
+
+        <relatedItem type="historical_edition">
+            <bibl>                                
+                <title level="j">Acta Sanctorum</title>
+                <title level="j" type="short"><abbr>AA. SS.</abbr></title>
+                <pubPlace>Antwerp</pubPlace>
+                <publisher>Albertus Thieullier</publisher>
+                <date>1733</date>
+                <biblScope unit="volume">Augusti I</biblScope>
+                <biblScope unit="page">pp. 632-647</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Edizione originale di Anversa.</note>
+                <note xml:lang="en">Original Antwerp edition.</note>
+            </bibl>
+        </relatedItem> 
+
+        <relatedItem type="historical_edition">
+            <bibl>                                
+                <title level="j">Acta Sanctorum</title>
+                <title level="j" type="short"><abbr>AA. SS.</abbr></title>
+                <pubPlace>Paris</pubPlace>
+                <publisher>Victor Palmé</publisher>
+                <date>1867</date>
+                <biblScope unit="volume">Augusti I</biblScope>
+                <biblScope unit="page">pp. 628-643</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Terza edizione (ed. III).</note>
+                <note xml:lang="en">Third edition (ed. III).</note>
+            </bibl>
+        </relatedItem>
+
+        <relatedItem type="modern_edition">
+            <bibl>
+                <title level="m">Monumenta S. P. N. Dominici: Historia et Constitutiones</title>
+                <biblScope unit="issue">Fasc. II</biblScope>
+                <title level="s" type="short"><abbr>MOPH</abbr></title>
+                <title level="s">Monumenta Ordinis Fratrum Praedicatorum Historica</title>
+                <biblScope unit="volume">Tomus XVI</biblScope>
+                <editor>Angelus Walz</editor>
+                <pubPlace>Rome</pubPlace>
+                <publisher>Istituto Storico Domenicano</publisher>
+                <date>1935</date>
+                <biblScope unit="page">pp. 123-172, 176-187</biblScope>
+                <textLang mainLang="la">Latin</textLang>
+                <note xml:lang="it">Edizione critica moderna standard. Il testo comprende sia gli atti di Bologna (pp. 123-172) sia quelli di Tolosa (pp. 176-187).</note>
+                <note xml:lang="en">Standard modern critical edition. The text includes both the Bologna acts (pp. 123-172) and the Toulouse acts (pp. 176-187).</note>
+            </bibl>
+        </relatedItem>
+    </bibl> 
+</listBibl>

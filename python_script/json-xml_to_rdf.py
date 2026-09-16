@@ -1,7 +1,7 @@
 import json
 import xml.etree.ElementTree as ET
 from rdflib import Graph, Namespace, URIRef, Literal
-from rdflib.namespace import RDF, RDFS, OWL
+from rdflib.namespace import RDF, RDFS, OWL, XSD
 
 
 CRM = Namespace("http://www.cidoc-crm.org/cidoc-crm/")
@@ -28,6 +28,33 @@ def normalize_uri(value:str):
         if prefix in ns_dict:
             return ns_dict[prefix][entity_name]
 
+def process_time_span(db_graph, subj_uri, date_dict, is_bibl:bool):
+    
+    timespan_uri = URIRef(f"{subj_uri}_time")
+    db_graph.add((timespan_uri, RDF.type, CRM["E52_Time-Span"]))
+
+    if is_bibl:
+        creation_uri = URIRef(f"{subj_uri}_creation")
+        db_graph.add((creation_uri, RDF.type, LRMOO["F27_Work_Creation"]))
+        db_graph.add((creation_uri, LRMOO["R16_created"], subj_uri))        
+        db_graph.add((creation_uri, CRM["P4_has_time-span"], timespan_uri))
+    else:
+        db_graph.add((subj_uri, CRM["P4_has_time-span"], timespan_uri))
+
+    for date_type, date_val in date_dict.items():
+
+        if len(date_val) == 4:
+            datatype = XSD.gYear
+        else:
+            datatype = XSD.date
+
+        if date_type == "when":
+            db_graph.add((timespan_uri, CRM["P82_at_some_time_within"], Literal(date_val, datatype=datatype)))
+        elif date_type in ["from", "notBefore"]:
+            db_graph.add((timespan_uri, CRM["P82a_begin_of_the_begin"], Literal(date_val, datatype=datatype)))
+        elif date_type in ["to", "notAfter"]:
+            db_graph.add((timespan_uri, CRM["P82b_end_of_the_end"], Literal(date_val, datatype=datatype)))
+        
 
 def parse_json_data(json_filepath):
 
@@ -64,6 +91,7 @@ def parse_json_data(json_filepath):
         subject = relation["subject"]["id"]
         predicate = relation["predicate"]
         object = relation["object"]["id"]
+        json_relations.append([subject, predicate, object])
 
     if relation["object"]["source"] == "extra" and object not in json_entities_db:
         print(f"ATTENTO: QUESTA {relation} NON E' SALVATA SUL JSON")
@@ -71,10 +99,8 @@ def parse_json_data(json_filepath):
     if relation["subject"]["source"] == "extra" and subject not in json_entities_db:
         print(f"ATTENTO: QUESTA {relation} NON E' SALVATA SUL JSON")
 
-    
-    json_relations.append([subject, predicate, object])
-
     return json_entities_db, json_relations
+
 
 
 def parse_tei_xml(xml_filepath):
@@ -131,9 +157,9 @@ def parse_tei_xml(xml_filepath):
 
         for idno in person.findall("tei:idno", xml_ns):
             
-            if idno.get('type') == "wikidata":
+            if idno.get('type').lower() == "wikidata":
                 external_links["wikidata"] = "https://www.wikidata.org/wiki/" + idno.text
-            elif idno.get('type') == "viaf":
+            elif idno.get('type').lower() == "viaf":
                 external_links["viaf"] = "https://viaf.org/en/viaf/" + idno.text
             else:
                 external_links[idno.get('type')] = idno.text
@@ -196,9 +222,9 @@ def parse_tei_xml(xml_filepath):
         external_links = dict()
 
         for idno in organization.findall("tei:idno", xml_ns):
-            if idno.get('type') == "wikidata":
+            if idno.get('type').lower() == "wikidata":
                 external_links["wikidata"] = "https://www.wikidata.org/wiki/" + idno.text
-            elif idno.get('type') == "viaf":
+            elif idno.get('type').lower() == "viaf":
                 external_links["viaf"] = "https://viaf.org/en/viaf/" + idno.text
             else:
                 external_links[idno.get('type')] = idno.text
@@ -258,9 +284,9 @@ def parse_tei_xml(xml_filepath):
         external_links = dict()
 
         for idno in artwork.findall("tei:idno", xml_ns):
-            if idno.get('type') == "wikidata":
+            if idno.get('type').lower() == "wikidata":
                 external_links["wikidata"] = "https://www.wikidata.org/wiki/" + idno.text
-            elif idno.get('type') == "viaf":
+            elif idno.get('type').lower() == "viaf":
                 external_links["viaf"] = "https://viaf.org/en/viaf/" + idno.text
             else:
                 external_links[idno.get('type')] = idno.text
@@ -320,6 +346,154 @@ def parse_tei_xml(xml_filepath):
 
         core_entities_db[core_entity["id"]] = core_entity
 
+    # ========== LITERARY WORKS ==============
+    for literary_work in root.findall('.//tei:bibl', xml_ns):
+
+        work_id = literary_work.get(id_node)
+
+        core_entity = {"id": work_id}
+
+        #put a sort of label in order to recognize literary works when populating the graph
+        core_entity["type"] = "Literary work"
+
+        work_titles_dict = dict()
+        
+        for work_title in literary_work.findall("tei:title", xml_ns):
+
+            language = work_title.get(check_lang)
+
+            if language:
+                work_titles_dict[language] = work_title.text
+
+        core_entity.update({"label": work_titles_dict})
+
+        work_authors_list = []
+        for author in literary_work.findall("tei:author", xml_ns):
+
+            author_id = author.get("ref")
+
+            if author_id:
+                work_authors_list.append(author_id)
+
+        core_entity.update({"authors": work_authors_list})
+
+        all_languages = []
+        for language in literary_work.findall("tei:textLang", xml_ns):
+
+            main_lang = language.get("mainLang")
+            if main_lang:
+                all_languages.append(main_lang)
+
+            other_lang = language.get("otherLangs")
+            if other_lang:
+                all_languages.extend(other_lang.split(" "))
+
+        core_entity.update({"languages": all_languages})
+
+        date_dict = dict()
+        
+        time_attributes = ["when", "from", "to", "notBefore", "notAfter"]
+
+        date_tag = literary_work.find(".//tei:date", xml_ns)
+
+        if date_tag is not None:
+            for attribute in time_attributes:
+                date_value = literary_work.get(attribute)
+                if date_value:
+                    date_dict[attribute] = date_value
+
+        if date_dict:
+            core_entity.update({"date":date_dict})
+        
+
+        descriptions_dict = dict()
+        
+        for description in literary_work.findall("tei:note", xml_ns):
+
+            language = description.get(check_lang)
+
+            descriptions_dict[language] = description.text
+
+        core_entity.update({"description":descriptions_dict})
+
+        external_links = dict()
+        
+        for idno in literary_work.findall("tei:idno", xml_ns):
+                
+            if idno.get('type').lower() == "wikidata":
+                external_links["wikidata"] = "https://www.wikidata.org/wiki/" + idno.text
+            elif idno.get('type').lower() == "viaf":
+                external_links["viaf"] = "https://viaf.org/en/viaf/" + idno.text
+            else:
+                external_links[idno.get('type')] = idno.text
+        
+        core_entity.update({"external_links":external_links})
+
+        core_entities_db[core_entity["id"]] = core_entity
+        #extracting the data of the constituent, if present
+
+        if literary_work.get('type') == "official_record":
+
+            related_works = literary_work.findall("relatedItem")
+
+            constituents = []
+            
+            for item in related_works:
+                if item.get('type') == "constituent":
+
+                    constituent_data = {
+                        "id": item.get(id_node),
+                        "title": item.find("title").text,
+                        "languages": item.find("textLang", xml_ns).get("mainLang"),
+                    }
+
+                    const_date_dict = dict()
+
+                    time_attributes = ["when", "from", "to", "notBefore", "notAfter"]
+
+                    date_node = item.find("tei:date", xml_ns)
+
+                    if date_node is not None:
+                        for attribute in time_attributes:
+                            date_value = date_node.get(attribute)
+                            if date_value:
+                                const_date_dict[attribute] = date_value
+            
+                    if const_date_dict:
+                        constituent_data.update({"date":const_date_dict})
+
+                    const_desc_dict = dict()
+                    for note in item.findall("tei:note", xml_ns):
+
+                        language = note.get(check_lang)                        
+                        const_desc_dict[language] = note.text
+
+                    constituent_data.update({"description":const_desc_dict})
+
+                    const_external_links = dict()
+
+                    for idno in item.findall("tei:idno", xml_ns):
+                                    
+                        if idno.get('type').lower() == "wikidata":
+                            const_external_links["wikidata"] = "https://www.wikidata.org/wiki/" + idno.text
+                        elif idno.get('type').lower() == "viaf":
+                            const_external_links["viaf"] = "https://viaf.org/en/viaf/" + idno.text
+                        elif idno.get('type').lower() == "bhl":
+                            const_external_links["bhl"] = "urn:clavis:bhl:" + idno.text
+                        else:
+                            const_external_links[idno.get('type')] = idno.text
+
+
+                    constituents.append(constituent_data)
+                
+                core_entity.update({"constituents":constituents})
+
+            core_entities_db[core_entity["id"]] = core_entity
+                
+
+
+
+
     # =========== EVENTS =====================
 
     for event in root.findall('.//tei:event', xml_ns):
@@ -355,9 +529,9 @@ def parse_tei_xml(xml_filepath):
 
         for idno in event.findall("tei:idno", xml_ns):
                 
-            if idno.get('type') == "wikidata":
+            if idno.get('type').lower() == "wikidata":
                 external_links["wikidata"] = "https://www.wikidata.org/wiki/" + idno.text
-            elif idno.get('type') == "viaf":
+            elif idno.get('type').lower() == "viaf":
                 external_links["viaf"] = "https://viaf.org/en/viaf/" + idno.text
             else:
                 external_links[idno.get('type')] = idno.text
@@ -398,7 +572,6 @@ def parse_tei_xml(xml_filepath):
         xml_relations.append([subject, predicate, object])
 
     #print(xml_relations)
-
     return core_entities_db, xml_relations
 
 
@@ -424,31 +597,91 @@ def setup_rdf_graph():
 def populate_graph(db_graph, entities_db, relations):
 
     for entity_id, entity_data  in entities_db.items():
-        subj_uri = normalize_uri(entity_id)
 
-        label_value = entity_data["label"]
+        #checking if it's a literary work
+        if entity_data.get("type") == "Literary work":
 
-        for lang_label, label in label_value.items():
-            db_graph.add((subj_uri, RDFS.label , Literal(label, lang = lang_label)))
-        
-        
-        desc_value = entity_data["description"]
+            print("HEY")
+            bibl_waiting_list = [entity_data]
 
-        for lang_desc, desc in desc_value.items():
-            db_graph.add((subj_uri, DCTERMS.description , Literal(desc, lang = lang_desc)))
-        
+            while bibl_waiting_list:
 
-        aut_cont_value = entity_data["external_links"]
+                current_entity = bibl_waiting_list.pop(0)
 
-        for aut_code_type, aut_code in aut_cont_value.items():
-            if aut_code_type == "viaf" or aut_code_type == "iconclass":
-                db_graph.add((subj_uri,  SKOS.exactMatch, URIRef(aut_code)))
+                subj_uri = normalize_uri(current_entity["id"])
+
+                title_value = current_entity["label"]
+                for lang_title, title in title_value.items():
+                    db_graph.add((subj_uri, RDFS.label , Literal(title, lang = lang_title)))
+                    db_graph.add((subj_uri, DCTERMS.title , Literal(title, lang = lang_title)))
+
+                authors = current_entity.get("authors")
+
+                for author in authors:
+                    db_graph.add((subj_uri, DCTERMS.creator , URIRef(author)))
+
+                languages = current_entity.get("languages")
+                for lang in languages:
+                    db_graph.add((subj_uri, DCTERMS.language, Literal(lang)))
+
+                date_dict = current_entity.get("date")
+
+                if date_dict:
+                    process_time_span(db_graph, subj_uri, date_dict, True)
+
+                desc_value = current_entity.get("description")
+
+                for lang_desc, desc in desc_value.items():
+                    db_graph.add((subj_uri, DCTERMS.description , Literal(desc, lang = lang_desc)))
+
+                aut_cont_value = current_entity.get("external_links")
+                
+                for aut_code_type, aut_code in aut_cont_value.items():
+                    if aut_code_type == "viaf":
+                        db_graph.add((subj_uri,  SKOS.exactMatch, URIRef(aut_code)))
+                    
+                    elif aut_code_type == "wikidata":
+                        db_graph.add((subj_uri, OWL.sameAs, URIRef(aut_code)))
+
+                    elif aut_code_type == "bhl":
+                        db_graph.add((subj_uri, RICO.hasResourceAssociatedWithSource, URIRef(aut_code)))
+
+                if "constituents" in current_entity:
+                    for constituent in current_entity["constituents"]:
+                        bibl_waiting_list.append(constituent)
+
+                        constituent_uri = normalize_uri(constituent["id"])
+                        db_graph.add((subj_uri, RICO.hasPart, constituent_uri))
+
+        else:
+            print("hoooooo")
+            subj_uri = normalize_uri(entity_id)
+
+            label_value = entity_data["label"]
+
+            for lang_label, label in label_value.items():
+                db_graph.add((subj_uri, RDFS.label , Literal(label, lang = lang_label)))
             
-            elif aut_code_type == "wikidata" or aut_code_type == "GeoNames":
-                db_graph.add((subj_uri, OWL.sameAs, URIRef(aut_code)))
+            
+            desc_value = entity_data["description"]
 
-        #if entity_data["date"] != None:
-        #    for date in entity_data["date"].items():
+            for lang_desc, desc in desc_value.items():
+                db_graph.add((subj_uri, DCTERMS.description , Literal(desc, lang = lang_desc)))
+            
+
+            aut_cont_value = entity_data["external_links"]
+
+            for aut_code_type, aut_code in aut_cont_value.items():
+                if aut_code_type == "viaf" or aut_code_type == "iconclass":
+                    db_graph.add((subj_uri,  SKOS.exactMatch, URIRef(aut_code)))
+                
+                elif aut_code_type == "wikidata" or aut_code_type == "GeoNames":
+                    db_graph.add((subj_uri, OWL.sameAs, URIRef(aut_code)))
+
+
+            date_dict = entity_data.get("date")
+            if date_dict:
+                process_time_span(db_graph, subj_uri, date_dict, False)
 
             
     for relation in relations:
@@ -462,15 +695,15 @@ def populate_graph(db_graph, entities_db, relations):
 
 def main():
 
-    json_filepath = "Jsoning_mingus.json"
-    xml_filepath = "Mapping_mingus.xml"
-    output_filepath = "inventio_memoriae_graph.ttl"
+    json_filepath = "../xml_json_files/inMe_extra_entities.json"
+    xml_filepath = "../xml_json_files/inMe_TEI.xml"
+    output_filepath = "../rdf_dataset/inventio_memoriae_graph2.ttl"
 
     # 1. Estrazione JSON
-    json_entities, json_relations = parse_json_data("Jsoning_mingus.json")
+    json_entities, json_relations = parse_json_data(json_filepath)
 
     # 2. Estrazione XML
-    xml_entities, xml_relations = parse_tei_xml("Mapping_mingus.xml")
+    xml_entities, xml_relations = parse_tei_xml(xml_filepath)
 
     
 
