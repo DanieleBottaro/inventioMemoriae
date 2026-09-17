@@ -21,7 +21,10 @@ ns_dict = {
     }  
 
 def normalize_uri(value:str):
-    if ":" not in value:
+    if ":" not in value and "#" not in value:
+        return INME[value]
+    elif value.startswith('#'):
+        value = value[1:]
         return INME[value]
     elif ":" in value and not value.startswith('http'):
         prefix, entity_name = value.split(':', 1)
@@ -93,11 +96,11 @@ def parse_json_data(json_filepath):
         object = relation["object"]["id"]
         json_relations.append([subject, predicate, object])
 
-    if relation["object"]["source"] == "extra" and object not in json_entities_db:
-        print(f"ATTENTO: QUESTA {relation} NON E' SALVATA SUL JSON")
-        
-    if relation["subject"]["source"] == "extra" and subject not in json_entities_db:
-        print(f"ATTENTO: QUESTA {relation} NON E' SALVATA SUL JSON")
+        if relation["object"]["source"] == "extra" and object not in json_entities_db:
+            print(f"ATTENTO: QUESTA {relation} NON E' SALVATA SUL JSON")
+            
+        if relation["subject"]["source"] == "extra" and subject not in json_entities_db:
+            print(f"ATTENTO: QUESTA {relation} NON E' SALVATA SUL JSON")
 
     return json_entities_db, json_relations
 
@@ -349,6 +352,75 @@ def parse_tei_xml(xml_filepath):
     # ========== LITERARY WORKS ==============
     for literary_work in root.findall('.//tei:bibl', xml_ns):
 
+        #if present, extract the data of the constituent for official records
+        if literary_work.get('type') == "official_record":
+        
+            related_works = literary_work.findall('.//tei:relatedItem', xml_ns)
+
+            constituents = []
+            for item in related_works:
+                if item.get('type') == "constituent":
+
+                    inner_bibl = item.find('.//tei:bibl', xml_ns)
+                    constituent_data = {
+                        "id": inner_bibl.get(id_node),
+                        "title": inner_bibl.find("tei:title", xml_ns).text,
+                        "languages": [inner_bibl.find("tei:textLang", xml_ns).get("mainLang")],
+                    }
+
+                    const_titles_dict = dict()
+                    for const_title in inner_bibl.findall("tei:title", xml_ns):
+                                               
+                        language = const_title.get(check_lang)
+            
+                        if language:
+                            const_titles_dict[language] = const_title.text
+            
+                    constituent_data.update({"label": work_titles_dict})
+                                
+                    const_date_dict = dict()
+
+                    time_attributes = ["when", "from", "to", "notBefore", "notAfter"]
+
+                    date_node = inner_bibl.find("tei:date", xml_ns)
+
+                    if date_node is not None:
+                        for attribute in time_attributes:
+                            date_value = date_node.get(attribute)
+                            if date_value:
+                                const_date_dict[attribute] = date_value
+            
+                    if const_date_dict:
+                        constituent_data.update({"date":const_date_dict})
+
+                    const_desc_dict = dict()
+                    for note in item.findall("tei:note", xml_ns):
+                        language = note.get(check_lang)                        
+                        const_desc_dict[language] = note.text
+
+                    constituent_data.update({"description":const_desc_dict})
+
+                    const_external_links = dict()
+
+                    for idno in inner_bibl.findall("tei:idno", xml_ns):
+
+                        if idno.get('type').lower() == "wikidata":
+                            const_external_links["wikidata"] = "https://www.wikidata.org/wiki/" + idno.text
+                        elif idno.get('type').lower() == "viaf":
+                            const_external_links["viaf"] = "https://viaf.org/en/viaf/" + idno.text
+                        elif idno.get('type').lower() == "bhl":
+                            const_external_links["bhl"] = "urn:clavis:bhl:" + idno.text
+                        else:
+                            const_external_links[idno.get('type')] = idno.text
+
+                    constituent_data.update({"external_links": const_external_links})
+
+                    constituents.append(constituent_data)
+                
+                core_entity.update({"constituents":constituents})
+
+                core_entities_db[core_entity["id"]] = core_entity
+
         work_id = literary_work.get(id_node)
 
         core_entity = {"id": work_id}
@@ -359,6 +431,7 @@ def parse_tei_xml(xml_filepath):
         work_titles_dict = dict()
         
         for work_title in literary_work.findall("tei:title", xml_ns):
+            
 
             language = work_title.get(check_lang)
 
@@ -371,7 +444,7 @@ def parse_tei_xml(xml_filepath):
         for author in literary_work.findall("tei:author", xml_ns):
 
             author_id = author.get("ref")
-
+            
             if author_id:
                 work_authors_list.append(author_id)
 
@@ -398,7 +471,7 @@ def parse_tei_xml(xml_filepath):
 
         if date_tag is not None:
             for attribute in time_attributes:
-                date_value = literary_work.get(attribute)
+                date_value = date_tag.get(attribute)
                 if date_value:
                     date_dict[attribute] = date_value
 
@@ -419,7 +492,6 @@ def parse_tei_xml(xml_filepath):
         external_links = dict()
         
         for idno in literary_work.findall("tei:idno", xml_ns):
-                
             if idno.get('type').lower() == "wikidata":
                 external_links["wikidata"] = "https://www.wikidata.org/wiki/" + idno.text
             elif idno.get('type').lower() == "viaf":
@@ -429,70 +501,8 @@ def parse_tei_xml(xml_filepath):
         
         core_entity.update({"external_links":external_links})
 
-        core_entities_db[core_entity["id"]] = core_entity
-        #extracting the data of the constituent, if present
-
-        if literary_work.get('type') == "official_record":
-
-            related_works = literary_work.findall("relatedItem")
-
-            constituents = []
-            
-            for item in related_works:
-                if item.get('type') == "constituent":
-
-                    constituent_data = {
-                        "id": item.get(id_node),
-                        "title": item.find("title").text,
-                        "languages": item.find("textLang", xml_ns).get("mainLang"),
-                    }
-
-                    const_date_dict = dict()
-
-                    time_attributes = ["when", "from", "to", "notBefore", "notAfter"]
-
-                    date_node = item.find("tei:date", xml_ns)
-
-                    if date_node is not None:
-                        for attribute in time_attributes:
-                            date_value = date_node.get(attribute)
-                            if date_value:
-                                const_date_dict[attribute] = date_value
-            
-                    if const_date_dict:
-                        constituent_data.update({"date":const_date_dict})
-
-                    const_desc_dict = dict()
-                    for note in item.findall("tei:note", xml_ns):
-
-                        language = note.get(check_lang)                        
-                        const_desc_dict[language] = note.text
-
-                    constituent_data.update({"description":const_desc_dict})
-
-                    const_external_links = dict()
-
-                    for idno in item.findall("tei:idno", xml_ns):
-                                    
-                        if idno.get('type').lower() == "wikidata":
-                            const_external_links["wikidata"] = "https://www.wikidata.org/wiki/" + idno.text
-                        elif idno.get('type').lower() == "viaf":
-                            const_external_links["viaf"] = "https://viaf.org/en/viaf/" + idno.text
-                        elif idno.get('type').lower() == "bhl":
-                            const_external_links["bhl"] = "urn:clavis:bhl:" + idno.text
-                        else:
-                            const_external_links[idno.get('type')] = idno.text
-
-
-                    constituents.append(constituent_data)
+        core_entities_db[core_entity["id"]] = core_entity  
                 
-                core_entity.update({"constituents":constituents})
-
-            core_entities_db[core_entity["id"]] = core_entity
-                
-
-
-
 
     # =========== EVENTS =====================
 
@@ -601,7 +611,7 @@ def populate_graph(db_graph, entities_db, relations):
         #checking if it's a literary work
         if entity_data.get("type") == "Literary work":
 
-            print("HEY")
+            
             bibl_waiting_list = [entity_data]
 
             while bibl_waiting_list:
@@ -617,8 +627,11 @@ def populate_graph(db_graph, entities_db, relations):
 
                 authors = current_entity.get("authors")
 
-                for author in authors:
-                    db_graph.add((subj_uri, DCTERMS.creator , URIRef(author)))
+                if authors is not None:
+                    for author in authors:
+                        print(author)
+                        author = normalize_uri(author)
+                        db_graph.add((subj_uri, DCTERMS.creator , URIRef(author)))
 
                 languages = current_entity.get("languages")
                 for lang in languages:
@@ -654,7 +667,6 @@ def populate_graph(db_graph, entities_db, relations):
                         db_graph.add((subj_uri, RICO.hasPart, constituent_uri))
 
         else:
-            print("hoooooo")
             subj_uri = normalize_uri(entity_id)
 
             label_value = entity_data["label"]

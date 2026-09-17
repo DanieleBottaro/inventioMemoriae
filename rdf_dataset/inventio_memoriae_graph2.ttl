@@ -21,9 +21,13 @@ inme:Niccolo_to_Domenico_church_transformation a crm:E81_Transformation ;
     crm:P14_carried_out_by inme:dominican_order ;
     crm:P4_has_time-span inme:Niccolo_to_Domenico_church_transformation_time .
 
-inme:bologna_inquiry dcterms:description "It compiles the official records containing the direct testimonies of eyewitnesses (both the friars in Bologna and the witnesses in Toulouse)."@en,
-        "Raccoglie i verbali ufficiali con le deposizioni dirette dei testimoni oculari (sia i frati a Bologna sia i testimoni a Tolosa)"@it ;
-    dcterms:language "la" .
+inme:acta_canonizationis_creation a lrmoo:F27_Work_Creation ;
+    lrmoo:R16_created inme:acta_canonizationis ;
+    crm:P4_has_time-span inme:acta_canonizationis_time .
+
+inme:bologna_inquiry_creation a lrmoo:F27_Work_Creation ;
+    lrmoo:R16_created inme:bologna_inquiry ;
+    crm:P4_has_time-span inme:bologna_inquiry_time .
 
 inme:canonization_process a crm:E5_Event ;
     rdfs:label "Canonization Process of Saint Dominic"@en,
@@ -75,41 +79,25 @@ inme:fanjeaux a crm:E53_Place ;
         <https://www.wikidata.org/wiki/Q198573> ;
     skos:exactMatch <https://viaf.org/en/viaf/126809850> .
 
-inme:historia_albigensis a lrmoo:F1_Work ;
-    rdfs:label "Historia Albigensis"@la ;
-    dcterms:creator <#peter_vaux_cernay> ;
-    dcterms:description "Cistercian chronicle recounting the Albigensian Crusade; it represents the only direct documentary evidence of Dominic's anti-heretical activity in Languedoc before his image was reshaped by the canonization campaign of 1233–1234. It provides a more \"sober\" account of the miracle episode of the fire ordeal compared to the hyperbolic accounts of Jordan of Saxony and Peter Ferrand. Precisely because of this rigor, it was used as a source by Humbert of Romans for the definitive drafting of the official liturgical *Legenda Sancti Dominici* (1255–1260)."@en,
-        "Cronaca cistercense che narra la crociata contro gli Albigesi; rappresenta l'unica testimonianza documentaria diretta dell'attività antiereticale di Domenico in Linguadoca, prima che la sua immagine venisse rielaborata dalla campagna di canonizzazione del 1233–1234. Fornisce un resoconto più \"sobrio\" dell'episodio miracoloso della prova del fuoco rispetto alle narrazioni iperboliche di Giordano di Sassonia e Pietro Ferrand. Proprio in virtù di tale rigore, fu utilizzata come fonte da Umberto di Romans per la stesura definitiva della *Legenda Sancti Dominici* liturgica ufficiale (1255–1260)."@it ;
-    dcterms:language "la" ;
-    dcterms:title "Historia Albigensis"@la ;
-    crm:P129_is_about inme:fanjeaux_dispute ;
-    skos:exactMatch <https://viaf.org/en/viaf/176177946> .
+inme:historia_albigensis_creation a lrmoo:F27_Work_Creation ;
+    lrmoo:R16_created inme:historia_albigensis ;
+    crm:P4_has_time-span inme:historia_albigensis_time .
 
-inme:iconclass_11H_DOMINIC_131 a crm:E55_Type ;
-    rdfs:label "Confirmation of the Dominican order by pope Innocent III (or Honorius III) (Iconclass 11H(DOMINIC)131)"@en,
-        "Conferma dell'ordine domenicano da parte di papa Innocenzo III (o Onorio III) (Iconclass 11H(DOMINIC)131)"@it ;
-    dcterms:description "Iconclass code representing the confirmation of the Dominican order by pope Innocent III or Honorius III."@en,
-        "Codice Iconclass per la rappresentazione della conferma dell'ordine domenicano da parte di papa Innocenzo III o papa Onorio III."@it ;
-    skos:exactMatch <http://iconclass.org/11H(DOMINIC)131> .
+inme:legenda_constantini_creation a lrmoo:F27_Work_Creation ;
+    lrmoo:R16_created inme:legenda_constantini ;
+    crm:P4_has_time-span inme:legenda_constantini_time .
 
-inme:legenda_humbertus a lrmoo:F1_Work ;
-    rdfs:label "Legenda Sancti Dominici"@la ;
-    lrmoo:R1_is_logical_successor_of inme:legenda_constantini ;
-    lrmoo:R68_is_inspired_by inme:legenda_constantini,
-        inme:legenda_petri_ferrandi,
-        inme:libellus_principiis ;
-    dcterms:creator <#humbert_romans> ;
-    dcterms:description "Approved in 1260, this work marks the final codification of Dominic’s official image, ending the Order's formative hagiographical period. Primarily a literal compilation of Peter Ferrandi and Constantine of Orvieto, it seeks greater sobriety and chronological rigor while adapting the narrative for exclusive liturgical and communal use. As a pillar of Humbert’s broader liturgical reform, its use was strictly imposed by the General Chapter of Strasbourg, effectively supplanting all previous hagiographical versions."@en,
-        "Approvata nel 1260, quest'opera segna la codificazione definitiva dell'immagine ufficiale di Domenico, concludendo la fase agiografica formativa dell'Ordine. Pur basandosi essenzialmente su una compilazione letterale dei testi di Pietro Ferrandi e Costantino di Orvieto, essa persegue una maggiore sobrietà e un più rigoroso ordine cronologico, adattando al contempo la narrazione a un uso esclusivamente liturgico e comunitario. Elemento cardine della più ampia riforma liturgica promossa da Umberto, il suo impiego fu reso obbligatorio dal Capitolo Generale di Strasburgo, soppiantando di fatto tutte le precedenti versioni agiografiche."@it ;
-    dcterms:language "la" ;
-    dcterms:title "Legenda Sancti Dominici"@la ;
-    crm:P129_is_about inme:theme_lateran_dream,
-        inme:theme_miraculous_supper,
-        inme:theme_ordeal_fire,
-        inme:theme_raising_orsini,
-        inme:theme_reginald_stories,
-        inme:theme_vision_saints_peter_paul ;
-    skos:exactMatch <https://viaf.org/en/viaf/211752959> .
+inme:legenda_humbertus_creation a lrmoo:F27_Work_Creation ;
+    lrmoo:R16_created inme:legenda_humbertus ;
+    crm:P4_has_time-span inme:legenda_humbertus_time .
+
+inme:legenda_petri_ferrandi_creation a lrmoo:F27_Work_Creation ;
+    lrmoo:R16_created inme:legenda_petri_ferrandi ;
+    crm:P4_has_time-span inme:legenda_petri_ferrandi_time .
+
+inme:libellus_principiis_creation a lrmoo:F27_Work_Creation ;
+    lrmoo:R16_created inme:libellus_principiis ;
+    crm:P4_has_time-span inme:libellus_principiis_time .
 
 inme:nicola_pisano a crm:E21_Person,
         rico:Person ;
@@ -121,15 +109,6 @@ inme:nicola_pisano a crm:E21_Person,
     owl:sameAs <https://www.wikidata.org/wiki/Q364413> ;
     skos:exactMatch <https://viaf.org/en/viaf/95710492> .
 
-inme:peter_vaux_cernay a crm:E21_Person,
-        rico:Person ;
-    rdfs:label "Peter of Vaux-de-Cernay"@en,
-        "Pietro di Vaux-de-Cernay"@it ;
-    dcterms:description "A Cistercian monk and author of the *Historia Albigensis* (c. 1215); he recorded the earliest and most sober contemporary account of Dominic’s preaching in Languedoc and the miracle of the books rejected unharmed by the flames at Montréal."@en,
-        "Monaco cistercense autore dell'*Historia Albigensis* (c. 1215); registrò la più antica e sobria testimonianza contemporanea della predicazione di Domenico in Linguadoca e del miracolo dei libri rigettati indenni dalle fiamme a Montréal."@it ;
-    owl:sameAs <https://www.wikidata.org/wiki/Q745030> ;
-    skos:exactMatch <https://viaf.org/en/viaf/263271643> .
-
 inme:saint_dominic_arca a arco:ComplexCulturalProperty,
         arco:HistoricOrArtisticProperty ;
     rdfs:label "Arca di San Domenico"@en,
@@ -140,18 +119,16 @@ inme:saint_dominic_arca a arco:ComplexCulturalProperty,
     owl:sameAs <https://www.wikidata.org/wiki/Q2417706> ;
     arco:hasCulturalPropertyComponent inme:sarcophagus .
 
-inme:suor_cecilia_contarini rdfs:label "Suor Cecilia Contarini"@en,
-        "Suor Cecilia Contarini"@it ;
-    dcterms:description "A Dominican nun, she founded the convent of San Sisto in Rome and later resided at the convent of Sant'Agnese in Bologna during the years Nicola Pisano created the *Arca* (1264–1267). Having lived at San Sisto in 1221, Cecilia was a direct eyewitness to certain significant events involving Dominic in Rome—most notably the so-called resurrection of the young Napoleone Orsini. For this reason, some hypothesize that she may have been consulted regarding the sarcophagus's iconographic program; traditionally, she is identified as the figure sculpted in the upper-left section of the resurrection panel. Depicted with her back to the viewer yet gazing toward the miracle, this compositional choice isolates her from the crowd and, in her old age, establishes her as the eyewitness recounting the event."@en,
-        "Monaca domenicana, fondatrice del convento di San Sisto a Roma e successivamente residente presso il convento di Sant'Agnese a Bologna negli anni in cui Nicola Pisano realizzò l'Arca (1264-1267). Avendo vissuto a San Sisto nel 1221, Cecilia fu testimone oculare diretta di alcuni importanti eventi romani di Domenico, in particolare della cosiddetta resurrezione del giovane Napoleone Orsini. Per questo motivo alcuni ipotizzano possa esser stata consultata per l'apparato iconografico del sarcofago e tradizionalmente la identificano nella figura scolpita in alto a sinistra del pannello della resurrezione: ritratta di spalle rispetto allo spettatore ma con lo sguardo rivolto al miracolo, una scelta compositiva che la isola dalla folla e la consacra, nella sua vecchiaia, come testimone oculare narrante dell'evento."@it .
-
-inme:toulouse_inquiry dcterms:description "Covering letter drafted by the inquisitors of Toulouse and sent to Master Tancred in Bologna to authenticate the inquiry conducted in France."@en,
-        "Lettera di trasmissione redatta dagli inquisitori tolosani inviata a Maestro Tancredi a Bologna per autenticare l'inchiesta svolta in Francia"@it ;
-    dcterms:language "la" .
+inme:toulouse_inquiry_creation a lrmoo:F27_Work_Creation ;
+    lrmoo:R16_created inme:toulouse_inquiry ;
+    crm:P4_has_time-span inme:toulouse_inquiry_time .
 
 inme:Niccolo_to_Domenico_church_transformation_time a crm:E52_Time-Span ;
     crm:P82a_begin_of_the_begin "1228"^^xsd:gYear ;
     crm:P82b_end_of_the_end "1235"^^xsd:gYear .
+
+inme:acta_canonizationis_time a crm:E52_Time-Span ;
+    crm:P82_at_some_time_within "1233"^^xsd:gYear .
 
 inme:approval_order a crm:E5_Event ;
     rdfs:label "Papal approval and confirmation of the Order of Preachers"@en,
@@ -179,18 +156,12 @@ inme:approval_order_time a crm:E52_Time-Span ;
     crm:P82a_begin_of_the_begin "1215"^^xsd:gYear ;
     crm:P82b_end_of_the_end "1216-12-22"^^xsd:date .
 
+inme:bologna_inquiry_time a crm:E52_Time-Span ;
+    crm:P82_at_some_time_within "1233"^^xsd:gYear .
+
 inme:canonization_process_time a crm:E52_Time-Span ;
     crm:P82a_begin_of_the_begin "1233-07-13"^^xsd:date ;
     crm:P82b_end_of_the_end "1234-07-03"^^xsd:date .
-
-inme:constantine_orvieto a crm:E21_Person,
-        rico:Person ;
-    rdfs:label "Constantine of Orvieto"@en,
-        "Constantine of Orvieto"@it ;
-    dcterms:description "A Dominican friar and later Bishop of Orvieto, he authored the *Legenda nova* (c. 1246–1247); he significantly enriched the biography of Dominic with accounts of miracles performed during the saint's lifetime, incorporated the dream of the Lateran, and strongly characterized Dominic as an inquisitor through the miraculous rescue of Raimondo Grossi from the stake."@en,
-        "Frate domenicano e poi vescovo di Orvieto autore della Legenda nuova (c. 1246-1247); arricchì notevolmente la biografia di Domenico con miracoli in vita, vi inserì il sogno del Laterano e caratterizzò in modo marcato Domenico come inquisitore attraverso il prodigio della salvezza di Raimondo Grossi dal rogo."@it ;
-    owl:sameAs <https://www.wikidata.org/wiki/Q108463017> ;
-    skos:exactMatch <https://viaf.org/en/viaf/22567337> .
 
 inme:creation_dominic_sarcophagus_time a crm:E52_Time-Span ;
     crm:P82a_begin_of_the_begin "1264"^^xsd:gYear ;
@@ -203,7 +174,7 @@ inme:deposition_buonviso a lrmoo:F1_Work,
     dcterms:description "Sworn testimony from Dominic’s first companion and the founder of the Piacenza convent. Buonviso attests to the founder’s rigorous asceticism, exhausting nocturnal prayer vigils, and gift of tears. He recalls the austerity of their itinerant life on the road, describing Dominic’s habit of walking barefoot and fasting strictly. Together with Rodolfo, he also provides crucial, firsthand eyewitness testimony regarding the domestic miracle of the multiplication of loaves for the community of San Niccolò delle Vigne."@en,
         "Testimonianza giurata del primo compagno di Domenico e fondatore del convento di Piacenza. Buonviso attesta l'ascesi rigorosa, le estenuanti veglie di preghiera notturna e il dono delle lacrime del fondatore. Rievoca l'austerità della loro vita itinerante lungo la via, descrivendo l'abitudine di Domenico di camminare a piedi nudi e di digiunare rigorosamente. Offre inoltre, insieme a Rodolfo, la fondamentale testimonianza oculare e originaria sul miracolo domestico della moltiplicazione dei pani a favore della comunità di San Niccolò delle Vigne."@it ;
     crm:P129_is_about inme:theme_miraculous_supper ;
-    rico:isOrWasIncludedIn inme:acta_canonizationis .
+    rico:isOrWasIncludedIn inme:bologna_inquiry .
 
 inme:deposition_rodolfo a lrmoo:F1_Work,
         rico:Record ;
@@ -212,17 +183,21 @@ inme:deposition_rodolfo a lrmoo:F1_Work,
     dcterms:description "Sworn testimony by the procurator of the Bolognese convent of San Niccolò delle Vigne. Rodolfo offers one of the most intimate and realistic accounts of Dominic’s final hours and agony, describing how he physically supported the saint's head and wiped away his sweat—and records his famous wish to be buried 'beneath the friars' feet'. He also details the construction of the initial burial site, the arduous physical effort involved in opening the tomb by night, and the enduring miraculous fragrance observed during the translation of the remains in 1233. Finally, he provides the original account of the everyday, domestic miracle in Bologna: the multiplication of loaves in the convent refectory."@en,
         "Testimonianza giurata del procuratore del convento bolognese di San Niccolò delle Vigne. Rodolfo offre uno dei resoconti più intimi e realistici sulle ultime ore e l'agonia di Domenico, descrivendo come ne sorresse fisicamente il capo e ne asciugò il sudore, e ne riporta la celebre volontà testamentaria di essere inumato 'sotto i piedi dei frati'. Descrive inoltre i dettagli costruttivi della prima sepoltura, la successiva fatica fisica per l'apertura notturna della tomba e la persistenza del miracoloso profumo durante la traslazione del 1233. Infine, fornisce la testimonianza originaria sul quotidiano e domestico miracolo bolognese della moltiplicazione dei pani nel refettorio del convento."@it ;
     crm:P129_is_about inme:theme_miraculous_supper ;
-    rico:isOrWasIncludedIn inme:acta_canonizationis .
+    rico:isOrWasIncludedIn inme:bologna_inquiry .
 
-inme:humbert_romans a crm:E21_Person,
-        rico:Person ;
-    rdfs:label "Humbert of Romans"@en,
-        "Umberto di Romans"@it ;
-    dcterms:description "Fifth Master General of the Order (1254–1263); he reorganized and unified the Dominican liturgy by compiling the liturgical \"Prototype\" (1256–1260), promoted the writing of the *Vitae fratrum* by Gerard of Frachet, and signed off on the definitive, standardized version of the liturgical *Legenda* of Saint Dominic."@en,
-        "Quinto maestro generale dell'Ordine (1254-1263); riordinò e unificò la liturgia domenicana redigendo il \"Prototipo\" liturgico (1256-1260), promosse la stesura delle *Vitae fratrum* di Gerardo di Frachet e firmò la redazione definitiva e normalizzata della Legenda liturgica di san Domenico."@it ;
-    rico:isOrWasLeaderOf inme:dominican_order ;
-    owl:sameAs <https://www.wikidata.org/wiki/Q2623954> ;
-    skos:exactMatch <https://viaf.org/en/viaf/122038877> .
+inme:historia_albigensis a lrmoo:F1_Work ;
+    rdfs:label "Historia Albigensis"@la ;
+    dcterms:creator inme:peter_vaux_cernay ;
+    dcterms:description "Cistercian chronicle recounting the Albigensian Crusade; it represents the only direct documentary evidence of Dominic's anti-heretical activity in Languedoc before his image was reshaped by the canonization campaign of 1233–1234. It provides a more \"sober\" account of the miracle episode of the fire ordeal compared to the hyperbolic accounts of Jordan of Saxony and Peter Ferrand. Precisely because of this rigor, it was used as a source by Humbert of Romans for the definitive drafting of the official liturgical *Legenda Sancti Dominici* (1255–1260)."@en,
+        "Cronaca cistercense che narra la crociata contro gli Albigesi; rappresenta l'unica testimonianza documentaria diretta dell'attività antiereticale di Domenico in Linguadoca, prima che la sua immagine venisse rielaborata dalla campagna di canonizzazione del 1233–1234. Fornisce un resoconto più \"sobrio\" dell'episodio miracoloso della prova del fuoco rispetto alle narrazioni iperboliche di Giordano di Sassonia e Pietro Ferrand. Proprio in virtù di tale rigore, fu utilizzata come fonte da Umberto di Romans per la stesura definitiva della *Legenda Sancti Dominici* liturgica ufficiale (1255–1260)."@it ;
+    dcterms:language "la" ;
+    dcterms:title "Historia Albigensis"@la ;
+    crm:P129_is_about inme:fanjeaux_dispute ;
+    skos:exactMatch <https://viaf.org/en/viaf/176177946> .
+
+inme:historia_albigensis_time a crm:E52_Time-Span ;
+    crm:P82a_begin_of_the_begin "1212"^^xsd:gYear ;
+    crm:P82b_end_of_the_end "1218"^^xsd:gYear .
 
 inme:iconclass_11F82 a crm:E55_Type ;
     rdfs:label "Appearances of Mary (Iconclass 11F82)"@en,
@@ -230,6 +205,13 @@ inme:iconclass_11F82 a crm:E55_Type ;
     dcterms:description "Iconclass code representing appearances of Mary."@en,
         "Codice Iconclass per la rappresentazione delle apparizioni di Maria."@it ;
     skos:exactMatch <http://iconclass.org/11F82> .
+
+inme:iconclass_11H_DOMINIC_131 a crm:E55_Type ;
+    rdfs:label "Confirmation of the Dominican order by pope Innocent III (or Honorius III) (Iconclass 11H(DOMINIC)131)"@en,
+        "Conferma dell'ordine domenicano da parte di papa Innocenzo III (o Onorio III) (Iconclass 11H(DOMINIC)131)"@it ;
+    dcterms:description "Iconclass code representing the confirmation of the Dominican order by pope Innocent III or Honorius III."@en,
+        "Codice Iconclass per la rappresentazione della conferma dell'ordine domenicano da parte di papa Innocenzo III o papa Onorio III."@it ;
+    skos:exactMatch <http://iconclass.org/11H(DOMINIC)131> .
 
 inme:iconclass_11H_DOMINIC_342 a crm:E55_Type ;
     rdfs:label "St. Dominic receives the commission to preach: St. Peter and St. Paul appear to him in a vision and give him a staff and a book (the gospels) (Iconclass 11H(DOMINIC)342)"@en,
@@ -329,15 +311,40 @@ inme:iconclass_49L71 a crm:E55_Type ;
         "Codice Iconclass per la rappresentazione del rotulo di pergamena."@it ;
     skos:exactMatch <http://iconclass.org/49L71> .
 
-inme:jordan_saxony a crm:E21_Person,
-        rico:Person ;
-    rdfs:label "Giordano di Sassonia"@en,
-        "Giordano di Sassonia"@it ;
-    dcterms:description "He was the second Master General of the Order and the direct successor to Dominic from 1222; he composed the *Libellus de principiis*, the first historical and hagiographical work on the origins of the Dominican Order, was a formidable recruiter among university students, oversaw the translation of the saint's remains in 1233, and died in a shipwreck in 1237."@en,
-        "Secondo maestro generale dell'Ordine e successore diretto di Domenico dal 1222; compose il Libellus de principiis, la prima opera storica e agiografica sulle origini domenicane, fu un formidabile reclutatore tra gli universitari, curò la traslazione dei resti del santo nel 1233 e morì in un naufragio nel 1237."@it ;
-    rico:isOrWasLeaderOf inme:dominican_order ;
-    owl:sameAs <https://www.wikidata.org/wiki/Q60790> ;
-    skos:exactMatch <https://viaf.org/en/viaf/84971788> .
+inme:legenda_constantini_time a crm:E52_Time-Span ;
+    crm:P82a_begin_of_the_begin "1246"^^xsd:gYear ;
+    crm:P82b_end_of_the_end "1247"^^xsd:gYear .
+
+inme:legenda_humbertus a lrmoo:F1_Work ;
+    rdfs:label "Legenda maior Sancti Dominici"@la ;
+    lrmoo:R1_is_logical_successor_of inme:legenda_constantini ;
+    lrmoo:R68_is_inspired_by inme:legenda_constantini,
+        inme:legenda_petri_ferrandi,
+        inme:libellus_principiis ;
+    dcterms:creator inme:humbert_romans ;
+    dcterms:description "Approved in 1260, this work marks the final codification of Dominic’s official image, ending the Order's formative hagiographical period. Primarily a literal compilation of Peter Ferrandi and Constantine of Orvieto, it seeks greater sobriety and chronological rigor while adapting the narrative for exclusive liturgical and communal use. As a pillar of Humbert’s broader liturgical reform, its use was strictly imposed by the General Chapter of Strasbourg, effectively supplanting all previous hagiographical versions."@en,
+        "Approvata nel 1260, quest'opera segna la codificazione definitiva dell'immagine ufficiale di Domenico, concludendo la fase agiografica formativa dell'Ordine. Pur basandosi essenzialmente su una compilazione letterale dei testi di Pietro Ferrandi e Costantino di Orvieto, essa persegue una maggiore sobrietà e un più rigoroso ordine cronologico, adattando al contempo la narrazione a un uso esclusivamente liturgico e comunitario. Elemento cardine della più ampia riforma liturgica promossa da Umberto, il suo impiego fu reso obbligatorio dal Capitolo Generale di Strasburgo, soppiantando di fatto tutte le precedenti versioni agiografiche."@it ;
+    dcterms:language "la" ;
+    dcterms:title "Legenda maior Sancti Dominici"@la ;
+    crm:P129_is_about inme:theme_lateran_dream,
+        inme:theme_miraculous_supper,
+        inme:theme_ordeal_fire,
+        inme:theme_raising_orsini,
+        inme:theme_reginald_stories,
+        inme:theme_vision_saints_peter_paul ;
+    skos:exactMatch <https://viaf.org/en/viaf/211752959> .
+
+inme:legenda_humbertus_time a crm:E52_Time-Span ;
+    crm:P82a_begin_of_the_begin "1255"^^xsd:gYear ;
+    crm:P82b_end_of_the_end "1260"^^xsd:gYear .
+
+inme:legenda_petri_ferrandi_time a crm:E52_Time-Span ;
+    crm:P82a_begin_of_the_begin "1235"^^xsd:gYear ;
+    crm:P82b_end_of_the_end "1238"^^xsd:gYear .
+
+inme:libellus_principiis_time a crm:E52_Time-Span ;
+    crm:P82a_begin_of_the_begin "1231"^^xsd:gYear ;
+    crm:P82b_end_of_the_end "1234"^^xsd:gYear .
 
 inme:montreal a crm:E53_Place ;
     rdfs:label "Montréal"@en,
@@ -354,8 +361,8 @@ inme:orsini_horse_fall a crm:E5_Event ;
     dcterms:description "This historical event, which took place in Rome on February 24, 1221, attests, according to the earliest account by Jordan of Saxony, to the private revival  of Napoleone Orsini, who is described as having been stunned or half-alive (*semivivum*) following a fall from his horse. Historians regard the characterization of the episode as a \"resurrection\" conducted by saint Dominic as a legendary embellishment and a progressive dramatization stemming from later hagiographic tradition."@en,
         "Questo evento storico, avvenuto a Roma il 24 febbraio 1221, testimonia – secondo la più antica narrazione di Giordano di Sassonia – la ripresa di Napoleone Orsini, descritto come stordito o semivivo (*semivivum*) in seguito a una caduta da cavallo. Gli storici considerano la caratterizzazione dell'episodio come una \"resurrezione\" da parte di san Domenico alla stregua di un abbellimento leggendario e di una progressiva drammatizzazione derivanti dalla successiva tradizione agiografica."@it ;
     crm:P11_had_participant inme:dominic_guzman,
-        inme:napoleone_orsini,
-        inme:sister_cecilia_contarini ;
+        inme:fanjeaux_dispute,
+        inme:napoleone_orsini ;
     crm:P7_took_place_at inme:rome .
 
 inme:panel_approval_order a lrmoo:F5_Item,
@@ -404,14 +411,14 @@ inme:panel_story_reginald a lrmoo:F5_Item,
         "Scena divisa in tre momenti focalizzati sul decisivo ingresso nell'Ordine di Reginaldo d'Orléans. A sinistra il canonico parigino promette obbedienza a Domenico davanti al papa; al centro viene colto da un improvviso malore e sorretto da un chierico; a destra riceve la visita terapeutica della Vergine che gli mostra lo scapolare domenicano."@it ;
     crm:P65_shows_visual_item inme:vi_composition_stories_blessed_reginald .
 
-inme:peter_ferrand a crm:E21_Person,
+inme:peter_vaux_cernay a crm:E21_Person,
         rico:Person ;
-    rdfs:label "Peter Ferrand"@en,
-        "Pietro Ferrandi"@it ;
-    dcterms:description "Spanish hagiographer and author of the first official liturgical *Legenda* of Saint Dominic (c. 1235–1238); he supplemented the work of Jordan by framing it within an eschatological context and was the first to introduce the account of the spiritual testament and the curse against anyone who introduced temporal property into the Order."@en,
-        "Agiografo spagnolo autore della prima Legenda liturgica ufficiale di san Domenico (c. 1235-1238); integrò l'opera di Giordano proiettandola in un quadro escatologico e introdusse per primo il racconto del testamento spirituale e della maledizione contro chi introducesse proprietà temporali nell'Ordine."@it ;
-    owl:sameAs <https://www.wikidata.org/wiki/Q23619886> ;
-    skos:exactMatch <https://viaf.org/en/viaf/311283097> .
+    rdfs:label "Peter of Vaux-de-Cernay"@en,
+        "Pietro di Vaux-de-Cernay"@it ;
+    dcterms:description "A Cistercian monk and author of the *Historia Albigensis* (c. 1215); he recorded the earliest and most sober contemporary account of Dominic’s preaching in Languedoc and the miracle of the books rejected unharmed by the flames at Montréal."@en,
+        "Monaco cistercense autore dell'*Historia Albigensis* (c. 1215); registrò la più antica e sobria testimonianza contemporanea della predicazione di Domenico in Linguadoca e del miracolo dei libri rigettati indenni dalle fiamme a Montréal."@it ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q745030> ;
+    skos:exactMatch <https://viaf.org/en/viaf/263271643> .
 
 inme:pope_gregory_ix a crm:E21_Person,
         rico:Person ;
@@ -449,6 +456,9 @@ inme:toulouse rdfs:label "Toulouse"@en,
     owl:sameAs <https://sws.geonames.org/2972315>,
         <https://www.wikidata.org/wiki/Q7880> ;
     skos:exactMatch <https://viaf.org/en/viaf/132307492> .
+
+inme:toulouse_inquiry_time a crm:E52_Time-Span ;
+    crm:P82_at_some_time_within "1233"^^xsd:gYear .
 
 inme:vi_composition_approval_order a crm:E36_Visual_Item ;
     rdfs:label "Visual Composition of the Stories of the Approval of the Order"@en,
@@ -513,7 +523,7 @@ inme:vi_detail_approval_order a crm:E36_Visual_Item ;
         "Questa risorsa immateriale rappresenta l'aspetto compositivo e ottico-formale del dettaglio al centro del pannello raffigurante papa Innocenzo III o papa Onorio III che porge a San Domenico il Libro della Regola, approvando così l'Ordine dei Predicatori. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena e sul movimento delle figure, indipendentemente dalle caratteristiche fisiche del blocco di marmo."@it ;
     crm:P138_represents inme:approval_order,
         inme:dominic_guzman,
-        inme:iconclass_11H_DOMINIC_31 .
+        inme:iconclass_11H_DOMINIC_131 .
 
 inme:vi_detail_dominic_sending_friars a crm:E36_Visual_Item ;
     rdfs:label "Detail of the Vision of Saints Peter and Paul to Saint Dominic"@en,
@@ -591,6 +601,15 @@ inme:vi_detail_vision_saints_peter_paul a crm:E36_Visual_Item ;
         inme:saint_peter,
         inme:theme_vision_saints_peter_paul .
 
+inme:acta_canonizationis a crm:E31_Document,
+        rico:Record ;
+    rdfs:label "Acta canonizationis sancti Dominici"@la ;
+    dcterms:description "The record of the official inquiries held in Bologna and Toulouse in 1233. This document marks a significant procedural shift in the history of canonization, being one of the first instances to utilize a structured list of \"articuli interrogatorii\" to guide testimonies. Rather than focusing on thaumaturgy, the Acta emphasize the founder's \"amor regularitatis\" (zeal for the Rule) and \"zelus animarum,\" projecting a model of sanctity that aligns with the Order's established constitutional identity. Strategically promoted during the \"Alleluia\" movement, the process provided the charismatic legitimacy needed for the Order’s newly assigned inquisitorial duties and secured its institutional status within the Church."@en,
+        "Si tratta della documentazione relativa alle inchieste ufficiali svolte a Bologna e Tolosa nel 1233. Tale documento segna un'importante svolta procedurale nella storia della canonizzazione, rappresentando uno dei primi casi di utilizzo di un elenco strutturato di *articuli interrogatorii* per orientare le deposizioni. Anziché concentrarsi sulla taumaturgia, gli *Acta* pongono l'accento sull'*amor regularitatis* (lo zelo per la Regola) e sullo *zelus animarum* del fondatore, delineando un modello di santità coerente con l'identità costituzionale dell'Ordine. Promosso strategicamente durante il movimento dell'«Alleluia», il processo conferì la legittimazione carismatica necessaria per i nuovi compiti inquisitoriali affidati all'Ordine e ne consolidò lo status istituzionale all'interno della Chiesa."@it ;
+    dcterms:language "la" ;
+    dcterms:title "Acta canonizationis sancti Dominici"@la ;
+    crm:P129_is_about inme:dominic_guzman .
+
 inme:bologna a crm:E53_Place ;
     rdfs:label "Bologna"@en,
         "Bologna"@it ;
@@ -600,30 +619,34 @@ inme:bologna a crm:E53_Place ;
         <https://www.wikidata.org/wiki/Q1891> ;
     skos:exactMatch <https://viaf.org/en/viaf/248053786> .
 
-inme:fanjeaux_dispute a crm:E5_Event ;
-    rdfs:label "Fanjeaux Dispute"@en,
-        "Disputa di Fanjeaux"@it ;
-    dcterms:description "The doctrinal dispute against the Cathars, historically dated to 1206–1207 in the Languedoc region, is documented by only one contemporary source: the work of Pierre des Vaux-de-Cernay, who places the event at Montréal. Historical scholarship deconstructs the miracle of the ordeal by fire involving the book, highlighting how later Dominican tradition conflated the episode with Fanjeaux, thereby transforming a private incident into a public, theatrical ordeal designed to serve apologetic purposes and legitimize the anti-heretical mission."@en,
-        "La disputa dottrinale contro i Catari, storicamente collocata tra il 1206 e il 1207 nella regione della Linguadoca, è documentata da un'unica fonte coeva: l'opera di Pierre des Vaux-de-Cernay, il quale situa l'evento a Montréal. La storiografia decostruisce il miracolo della prova del fuoco che vide protagonista il libro, evidenziando come la successiva tradizione domenicana abbia sovrapposto l'episodio a Fanjeaux, trasformando così un evento privato in una prova pubblica e spettacolare, concepita per fini apologetici e per legittimare la missione antiereticale."@it ;
-    crm:P11_had_participant inme:dominic_guzman ;
-    crm:P7_took_place_at inme:montreal .
+inme:constantine_orvieto a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Constantine of Orvieto"@en,
+        "Constantine of Orvieto"@it ;
+    dcterms:description "A Dominican friar and later Bishop of Orvieto, he authored the *Legenda nova* (c. 1246–1247); he significantly enriched the biography of Dominic with accounts of miracles performed during the saint's lifetime, incorporated the dream of the Lateran, and strongly characterized Dominic as an inquisitor through the miraculous rescue of Raimondo Grossi from the stake."@en,
+        "Frate domenicano e poi vescovo di Orvieto autore della Legenda nuova (c. 1246-1247); arricchì notevolmente la biografia di Domenico con miracoli in vita, vi inserì il sogno del Laterano e caratterizzò in modo marcato Domenico come inquisitore attraverso il prodigio della salvezza di Raimondo Grossi dal rogo."@it ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q108463017> ;
+    skos:exactMatch <https://viaf.org/en/viaf/22567337> .
 
-inme:legenda_constantini a lrmoo:F1_Work ;
-    rdfs:label "Legenda Sancti Dominici"@la ;
-    lrmoo:R1_is_logical_successor_of inme:legenda_petri_ferrandi ;
-    lrmoo:R68_is_inspired_by inme:legenda_petri_ferrandi,
-        inme:libellus_principiis ;
-    dcterms:creator <#constantine_orvieto> ;
-    dcterms:description "Approved in 1248, Constantine's \"Legenda Nova\" marks a decisive shift in Dominican memory, transforming the founder’s life from a historical chronicle into a systematic biography of wonders. While drawing heavily on Peter Ferrandi, Constantine omits many local details to project a more universal and prophetic image of Dominic. It is the first official source to stabilize the \"Miracle of the Loaves\" and to introduce pivotal institutional myths such as the Dream of the Lateran and the mandate from Peter and Paul which provided the Order with its definitive charismatic legitimacy and the primary narrative for its future iconographic programs."@en,
-        "Approvata nel 1248, la \"Legenda Nova\" di Costantino segna una svolta decisiva nella memoria domenicana, trasformando la vita del fondatore da cronaca storica a biografia sistematica di prodigi. Pur attingendo ampiamente a Pietro Ferrandi, Costantino omette molti dettagli locali per proiettare un'immagine di Domenico più universale e profetica. Si tratta della prima fonte ufficiale a fissare il \"Miracolo dei pani\" e a introdurre miti istituzionali fondamentali, come il sogno del Laterano e il mandato di Pietro e Paolo, che conferirono all'Ordine la sua definitiva legittimazione carismatica e la narrazione primaria per i suoi futuri programmi iconografici."@it ;
-    dcterms:language "la" ;
-    dcterms:title "Legenda Sancti Dominici"@la ;
-    crm:P129_is_about inme:theme_lateran_dream,
-        inme:theme_miraculous_supper,
-        inme:theme_ordeal_fire,
-        inme:theme_raising_orsini,
-        inme:theme_reginald_stories,
-        inme:theme_vision_saints_peter_paul .
+inme:humbert_romans a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Humbert of Romans"@en,
+        "Umberto di Romans"@it ;
+    dcterms:description "Fifth Master General of the Order (1254–1263); he reorganized and unified the Dominican liturgy by compiling the liturgical \"Prototype\" (1256–1260), promoted the writing of the *Vitae fratrum* by Gerard of Frachet, and signed off on the definitive, standardized version of the liturgical *Legenda* of Saint Dominic."@en,
+        "Quinto maestro generale dell'Ordine (1254-1263); riordinò e unificò la liturgia domenicana redigendo il \"Prototipo\" liturgico (1256-1260), promosse la stesura delle *Vitae fratrum* di Gerardo di Frachet e firmò la redazione definitiva e normalizzata della Legenda liturgica di san Domenico."@it ;
+    rico:isOrWasLeaderOf inme:dominican_order ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q2623954> ;
+    skos:exactMatch <https://viaf.org/en/viaf/122038877> .
+
+inme:jordan_saxony a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Giordano di Sassonia"@en,
+        "Giordano di Sassonia"@it ;
+    dcterms:description "He was the second Master General of the Order and the direct successor to Dominic from 1222; he composed the *Libellus de principiis*, the first historical and hagiographical work on the origins of the Dominican Order, was a formidable recruiter among university students, oversaw the translation of the saint's remains in 1233, and died in a shipwreck in 1237."@en,
+        "Secondo maestro generale dell'Ordine e successore diretto di Domenico dal 1222; compose il Libellus de principiis, la prima opera storica e agiografica sulle origini domenicane, fu un formidabile reclutatore tra gli universitari, curò la traslazione dei resti del santo nel 1233 e morì in un naufragio nel 1237."@it ;
+    rico:isOrWasLeaderOf inme:dominican_order ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q60790> ;
+    skos:exactMatch <https://viaf.org/en/viaf/84971788> .
 
 inme:nicola_workshop a crm:E74_Group,
         rico:Group ;
@@ -631,6 +654,15 @@ inme:nicola_workshop a crm:E74_Group,
         "Atelier di Nicola Pisano"@it ;
     dcterms:description "A sculptural workshop, active primarily in Pisa, responsible for the design (c. 1264) and execution of the Shrine of Saint Dominic. Under Nicola's direction, the project involved the extensive and crucial participation of prominent assistants such as Arnolfo di Cambio, Lapo, and the Dominican friar Guglielmo."@en,
         "Bottega scultorea, attiva principalmente a Pisa, responsabile della progettazione (c. 1264) e dell'esecuzione dell'Arca di San Domenico . Sotto la direzione di Nicola, il cantiere dell'opera vide l'ampia e fondamentale partecipazione di assistenti di spicco quali Arnolfo di Cambio, Lapo e il frate domenicano Guglielmo."@it .
+
+inme:peter_ferrand a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Peter Ferrand"@en,
+        "Pietro Ferrandi"@it ;
+    dcterms:description "Spanish hagiographer and author of the first official liturgical *Legenda* of Saint Dominic (c. 1235–1238); he supplemented the work of Jordan by framing it within an eschatological context and was the first to introduce the account of the spiritual testament and the curse against anyone who introduced temporal property into the Order."@en,
+        "Agiografo spagnolo autore della prima Legenda liturgica ufficiale di san Domenico (c. 1235-1238); integrò l'opera di Giordano proiettandola in un quadro escatologico e introdusse per primo il racconto del testamento spirituale e della maledizione contro chi introducesse proprietà temporali nell'Ordine."@it ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q23619886> ;
+    skos:exactMatch <https://viaf.org/en/viaf/311283097> .
 
 inme:role_witness a rico:RoleType ;
     rdfs:label "Witness deponent"@en,
@@ -698,14 +730,17 @@ inme:sarcophagus a lrmoo:F5_Item,
     owl:sameAs <https://www.wikidata.org/wiki/Q126766539> ;
     arco:hasCommission inme:sarcophagus_commission .
 
-inme:acta_canonizationis a crm:E31_Document,
-        rico:Record ;
-    rdfs:label "Acta canonizationis sancti Dominici"@la ;
-    dcterms:description "The record of the official inquiries held in Bologna and Toulouse in 1233. This document marks a significant procedural shift in the history of canonization, being one of the first instances to utilize a structured list of \"articuli interrogatorii\" to guide testimonies. Rather than focusing on thaumaturgy, the Acta emphasize the founder's \"amor regularitatis\" (zeal for the Rule) and \"zelus animarum,\" projecting a model of sanctity that aligns with the Order's established constitutional identity. Strategically promoted during the \"Alleluia\" movement, the process provided the charismatic legitimacy needed for the Order’s newly assigned inquisitorial duties and secured its institutional status within the Church."@en,
-        "Si tratta della documentazione relativa alle inchieste ufficiali svolte a Bologna e Tolosa nel 1233. Tale documento segna un'importante svolta procedurale nella storia della canonizzazione, rappresentando uno dei primi casi di utilizzo di un elenco strutturato di *articuli interrogatorii* per orientare le deposizioni. Anziché concentrarsi sulla taumaturgia, gli *Acta* pongono l'accento sull'*amor regularitatis* (lo zelo per la Regola) e sullo *zelus animarum* del fondatore, delineando un modello di santità coerente con l'identità costituzionale dell'Ordine. Promosso strategicamente durante il movimento dell'«Alleluia», il processo conferì la legittimazione carismatica necessaria per i nuovi compiti inquisitoriali affidati all'Ordine e ne consolidò lo status istituzionale all'interno della Chiesa."@it ;
+inme:sister_cecilia_contarini rdfs:label "Suor Cecilia Contarini"@en,
+        "Suor Cecilia Contarini"@it ;
+    dcterms:description "A Dominican nun, she founded the convent of San Sisto in Rome and later resided at the convent of Sant'Agnese in Bologna during the years Nicola Pisano created the *Arca* (1264–1267). Having lived at San Sisto in 1221, Cecilia was a direct eyewitness to certain significant events involving Dominic in Rome—most notably the so-called resurrection of the young Napoleone Orsini. For this reason, some hypothesize that she may have been consulted regarding the sarcophagus's iconographic program; traditionally, she is identified as the figure sculpted in the upper-left section of the resurrection panel. Depicted with her back to the viewer yet gazing toward the miracle, this compositional choice isolates her from the crowd and, in her old age, establishes her as the eyewitness recounting the event."@en,
+        "Monaca domenicana, fondatrice del convento di San Sisto a Roma e successivamente residente presso il convento di Sant'Agnese a Bologna negli anni in cui Nicola Pisano realizzò l'Arca (1264-1267). Avendo vissuto a San Sisto nel 1221, Cecilia fu testimone oculare diretta di alcuni importanti eventi romani di Domenico, in particolare della cosiddetta resurrezione del giovane Napoleone Orsini. Per questo motivo alcuni ipotizzano possa esser stata consultata per l'apparato iconografico del sarcofago e tradizionalmente la identificano nella figura scolpita in alto a sinistra del pannello della resurrezione: ritratta di spalle rispetto allo spettatore ma con lo sguardo rivolto al miracolo, una scelta compositiva che la isola dalla folla e la consacra, nella sua vecchiaia, come testimone oculare narrante dell'evento."@it .
+
+inme:toulouse_inquiry rdfs:label "Libellus de Principiis Ordinis Predicatorum"@la ;
+    dcterms:description "Covering letter drafted by the inquisitors of Toulouse and sent to Master Tancred in Bologna to authenticate the inquiry conducted in France."@en,
+        "Lettera di trasmissione redatta dagli inquisitori tolosani inviata a Maestro Tancredi a Bologna per autenticare l'inchiesta svolta in Francia"@it ;
     dcterms:language "la" ;
-    dcterms:title "Acta canonizationis sancti Dominici"@la ;
-    crm:P129_is_about inme:dominic_guzman .
+    dcterms:title "Libellus de Principiis Ordinis Predicatorum"@la ;
+    rico:hasResourceAssociatedWithSource <urn:clavis:bhl:2209> .
 
 inme:buonviso a crm:E21_Person,
         rico:Person ;
@@ -713,6 +748,14 @@ inme:buonviso a crm:E21_Person,
         "Buonviso da Piacenza"@it ;
     dcterms:description "An early companion of Dominic and founder of the convent in Piacenza; he testified at the 1233 canonization proceedings in Bologna, recounting Dominic’s asceticism and prayer and personally witnessing the miracle of the multiplication of the loaves in Bologna."@en,
         "Primo compagno di Domenico e fondatore del convento di Piacenza; depose come testimone al processo di canonizzazione bolognese del 1233 riferendo dell'ascesi e della preghiera di Domenico e testimoniando direttamente il miracolo bolognese della moltiplicazione dei pani."@it .
+
+inme:fanjeaux_dispute a crm:E5_Event ;
+    rdfs:label "Fanjeaux Dispute"@en,
+        "Disputa di Fanjeaux"@it ;
+    dcterms:description "The doctrinal dispute against the Cathars, historically dated to 1206–1207 in the Languedoc region, is documented by only one contemporary source: the work of Pierre des Vaux-de-Cernay, who places the event at Montréal. Historical scholarship deconstructs the miracle of the ordeal by fire involving the book, highlighting how later Dominican tradition conflated the episode with Fanjeaux, thereby transforming a private incident into a public, theatrical ordeal designed to serve apologetic purposes and legitimize the anti-heretical mission."@en,
+        "La disputa dottrinale contro i Catari, storicamente collocata tra il 1206 e il 1207 nella regione della Linguadoca, è documentata da un'unica fonte coeva: l'opera di Pierre des Vaux-de-Cernay, il quale situa l'evento a Montréal. La storiografia decostruisce il miracolo della prova del fuoco che vide protagonista il libro, evidenziando come la successiva tradizione domenicana abbia sovrapposto l'episodio a Fanjeaux, trasformando così un evento privato in una prova pubblica e spettacolare, concepita per fini apologetici e per legittimare la missione antiereticale."@it ;
+    crm:P11_had_participant inme:dominic_guzman ;
+    crm:P7_took_place_at inme:montreal .
 
 inme:iconclass_11H_DOMINIC a crm:E55_Type ;
     rdfs:label "Saint Dominic (Iconclass 11H(DOMINIC))"@en,
@@ -727,18 +770,22 @@ inme:iconclass_11H_REGINALD a crm:E55_Type ;
     dcterms:description "Iconclass custom created to identify the specific figure of Blessed Reginald of Orléans."@en,
         "Codice Iconclass custom creato per identificare la figura specifica del Beato Reginaldo d'Orléans."@it .
 
-inme:legenda_petri_ferrandi a lrmoo:F1_Work ;
+inme:legenda_constantini a lrmoo:F1_Work ;
     rdfs:label "Legenda Sancti Dominici"@la ;
-    lrmoo:R1_is_logical_successor_of inme:libellus_principiis ;
-    lrmoo:R68_is_inspired_by inme:libellus_principiis ;
-    dcterms:creator <#peter_ferrand> ;
-    dcterms:description "Approved for liturgical use in 1238, Pietro Ferrandi’s work constitutes the \"prior legenda\" and the first official biography of the founder. While largely a literal compilation of Jordan of Saxony’s Libellus, it introduces pivotal motifs that shaped Dominican self-consciousness: the eschatological image of Dominic as the \"vespertinus sydus\" (evening star) sent at the world's end and the influential narrative of the founder’s \"Testament\". By pairing the legacy of voluntary poverty with a stern curse against those who would introduce temporal possessions, Ferrandi provided the primary hagiographical foundation for the Order's future identity and its defense of mendicancy."@en,
-        "Approvata per l'uso liturgico nel 1238, l'opera di Pietro Ferrandi costituisce la *prior legenda* e la prima biografia ufficiale del fondatore. Sebbene si tratti in gran parte di una compilazione letterale del *Libellus* di Giordano di Sassonia, essa introduce motivi fondamentali che hanno plasmato l'autocoscienza domenicana: l'immagine escatologica di Domenico come *vespertinus sydus* (stella della sera), inviato alla fine dei tempi, e l'influente narrazione del \"Testamento\" del fondatore. Associando l'eredità della povertà volontaria a una severa maledizione contro chi avesse introdotto beni temporali, Ferrandi fornì il fondamento agiografico primario per la futura identità dell'Ordine e per la sua difesa della mendicità."@it ;
+    lrmoo:R1_is_logical_successor_of inme:legenda_petri_ferrandi ;
+    lrmoo:R68_is_inspired_by inme:legenda_petri_ferrandi,
+        inme:libellus_principiis ;
+    dcterms:creator inme:constantine_orvieto ;
+    dcterms:description "Approved in 1248, Constantine's \"Legenda Nova\" marks a decisive shift in Dominican memory, transforming the founder’s life from a historical chronicle into a systematic biography of wonders. While drawing heavily on Peter Ferrandi, Constantine omits many local details to project a more universal and prophetic image of Dominic. It is the first official source to stabilize the \"Miracle of the Loaves\" and to introduce pivotal institutional myths such as the Dream of the Lateran and the mandate from Peter and Paul which provided the Order with its definitive charismatic legitimacy and the primary narrative for its future iconographic programs."@en,
+        "Approvata nel 1248, la \"Legenda Nova\" di Costantino segna una svolta decisiva nella memoria domenicana, trasformando la vita del fondatore da cronaca storica a biografia sistematica di prodigi. Pur attingendo ampiamente a Pietro Ferrandi, Costantino omette molti dettagli locali per proiettare un'immagine di Domenico più universale e profetica. Si tratta della prima fonte ufficiale a fissare il \"Miracolo dei pani\" e a introdurre miti istituzionali fondamentali, come il sogno del Laterano e il mandato di Pietro e Paolo, che conferirono all'Ordine la sua definitiva legittimazione carismatica e la narrazione primaria per i suoi futuri programmi iconografici."@it ;
     dcterms:language "la" ;
     dcterms:title "Legenda Sancti Dominici"@la ;
-    crm:P129_is_about inme:theme_ordeal_fire,
-        inme:theme_reginald_stories ;
-    skos:exactMatch <https://viaf.org/en/viaf/25145602481301361738> .
+    crm:P129_is_about inme:theme_lateran_dream,
+        inme:theme_miraculous_supper,
+        inme:theme_ordeal_fire,
+        inme:theme_raising_orsini,
+        inme:theme_reginald_stories,
+        inme:theme_vision_saints_peter_paul .
 
 inme:napoleone_orsini a crm:E21_Person,
         rico:Person ;
@@ -775,17 +822,25 @@ inme:theme_vision_saints_peter_paul a lrmoo:F1_Work,
         inme:saint_paul,
         inme:saint_peter .
 
-inme:libellus_principiis a lrmoo:F1_Work ;
-    rdfs:label "Libellus de Principiis Ordinis Predicatorum"@la ;
-    dcterms:creator <#jordan_saxony> ;
-    dcterms:description "Jordan of Saxony’s \"Libellus\" is the earliest historical and hagiographical record of the Order’s origins. It weaves a chronicle of the institution with the life of Dominic and the biographies of other early friars, functioning as a \"collective hagiography\" where the Order itself is a protagonist. It strategically frames the Order’s identity around its eschatological mission and its intellectual, university-based recruitment. Despite its composite structure, it served as the Order's first official liturgical \"legenda\" (following a 1235/36 revision) and remained the primary source for all subsequent Dominican hagiographical traditions"@en,
-        "Il *Libellus* di Giordano di Sassonia costituisce la più antica testimonianza storica e agiografica sulle origini dell'Ordine. Esso intreccia la cronaca dell'istituzione con la vita di Domenico e le biografie dei primi frati, configurandosi come un'«agiografia collettiva» in cui l'Ordine stesso è protagonista. L'opera delinea strategicamente l'identità dell'Ordine attorno alla sua missione escatologica e al reclutamento di matrice intellettuale e universitaria. Nonostante la sua struttura composita, il testo funse da prima *legenda* liturgica ufficiale dell'Ordine (a seguito di una revisione del 1235-1236) e rimase la fonte primaria per tutte le successive tradizioni agiografiche domenicane."@it ;
+inme:bologna_inquiry rdfs:label "Libellus de Principiis Ordinis Predicatorum"@la ;
+    dcterms:description "It compiles the official records containing the direct testimonies of eyewitnesses (both the friars in Bologna and the witnesses in Toulouse)."@en,
+        "Raccoglie i verbali ufficiali con le deposizioni dirette dei testimoni oculari (sia i frati a Bologna sia i testimoni a Tolosa)"@it ;
     dcterms:language "la" ;
     dcterms:title "Libellus de Principiis Ordinis Predicatorum"@la ;
+    rico:hasResourceAssociatedWithSource <urn:clavis:bhl:2208> .
+
+inme:legenda_petri_ferrandi a lrmoo:F1_Work ;
+    rdfs:label "Legenda Sancti Dominici"@la ;
+    lrmoo:R1_is_logical_successor_of inme:libellus_principiis ;
+    lrmoo:R68_is_inspired_by inme:libellus_principiis ;
+    dcterms:creator inme:peter_ferrand ;
+    dcterms:description "Approved for liturgical use in 1238, Pietro Ferrandi’s work constitutes the \"prior legenda\" and the first official biography of the founder. While largely a literal compilation of Jordan of Saxony’s Libellus, it introduces pivotal motifs that shaped Dominican self-consciousness: the eschatological image of Dominic as the \"vespertinus sydus\" (evening star) sent at the world's end and the influential narrative of the founder’s \"Testament\". By pairing the legacy of voluntary poverty with a stern curse against those who would introduce temporal possessions, Ferrandi provided the primary hagiographical foundation for the Order's future identity and its defense of mendicancy."@en,
+        "Approvata per l'uso liturgico nel 1238, l'opera di Pietro Ferrandi costituisce la *prior legenda* e la prima biografia ufficiale del fondatore. Sebbene si tratti in gran parte di una compilazione letterale del *Libellus* di Giordano di Sassonia, essa introduce motivi fondamentali che hanno plasmato l'autocoscienza domenicana: l'immagine escatologica di Domenico come *vespertinus sydus* (stella della sera), inviato alla fine dei tempi, e l'influente narrazione del \"Testamento\" del fondatore. Associando l'eredità della povertà volontaria a una severa maledizione contro chi avesse introdotto beni temporali, Ferrandi fornì il fondamento agiografico primario per la futura identità dell'Ordine e per la sua difesa della mendicità."@it ;
+    dcterms:language "la" ;
+    dcterms:title "Legenda Sancti Dominici"@la ;
     crm:P129_is_about inme:theme_ordeal_fire,
-        inme:theme_raising_orsini,
         inme:theme_reginald_stories ;
-    skos:exactMatch <https://viaf.org/en/viaf/7818165326352416290000> .
+    skos:exactMatch <https://viaf.org/en/viaf/25145602481301361738> .
 
 inme:pope_innocent_iii a crm:E21_Person,
         rico:Person ;
@@ -824,6 +879,20 @@ inme:dominican_order a crm:E74_Group,
         inme:sister_cecilia_contarini ;
     owl:sameAs <https://www.wikidata.org/wiki/Q131479> ;
     skos:exactMatch <https://viaf.org/en/viaf/140291092> .
+
+inme:libellus_principiis a lrmoo:F1_Work ;
+    rdfs:label "Libellus de Principiis Ordinis Predicatorum"@la ;
+    dcterms:creator inme:jordan_saxony ;
+    dcterms:description "Jordan of Saxony’s \"Libellus\" is the earliest historical and hagiographical record of the Order’s origins. It weaves a chronicle of the institution with the life of Dominic and the biographies of other early friars, functioning as a \"collective hagiography\" where the Order itself is a protagonist. It strategically frames the Order’s identity around its eschatological mission and its intellectual, university-based recruitment. Despite its composite structure, it served as the Order's first official liturgical \"legenda\" (following a 1235/36 revision) and remained the primary source for all subsequent Dominican hagiographical traditions"@en,
+        "Il *Libellus* di Giordano di Sassonia costituisce la più antica testimonianza storica e agiografica sulle origini dell'Ordine. Esso intreccia la cronaca dell'istituzione con la vita di Domenico e le biografie dei primi frati, configurandosi come un'«agiografia collettiva» in cui l'Ordine stesso è protagonista. L'opera delinea strategicamente l'identità dell'Ordine attorno alla sua missione escatologica e al reclutamento di matrice intellettuale e universitaria. Nonostante la sua struttura composita, il testo funse da prima *legenda* liturgica ufficiale dell'Ordine (a seguito di una revisione del 1235-1236) e rimase la fonte primaria per tutte le successive tradizioni agiografiche domenicane."@it ;
+    dcterms:language "la" ;
+    dcterms:title "Libellus de Principiis Ordinis Predicatorum"@la ;
+    crm:P129_is_about inme:theme_ordeal_fire,
+        inme:theme_raising_orsini,
+        inme:theme_reginald_stories ;
+    rico:hasPart inme:bologna_inquiry,
+        inme:toulouse_inquiry ;
+    skos:exactMatch <https://viaf.org/en/viaf/7818165326352416290000> .
 
 inme:reginald_orleans a crm:E21_Person,
         rico:Person ;

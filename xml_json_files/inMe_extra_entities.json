@@ -1185,7 +1185,7 @@
             },
             "predicate": "crm:P138_represents",
             "object": {
-                "id": "iconclass_11H_DOMINIC_31",
+                "id": "iconclass_11H_DOMINIC_131",
                 "source": "extra"
             }
         },
@@ -1692,7 +1692,7 @@
             },
             "predicate": "rico:isOrWasIncludedIn",
             "object": {
-                "id": "acta_canonizationis",
+                "id": "bologna_inquiry",
                 "source": "core"
             }
         },
@@ -1747,7 +1747,7 @@
             },
             "predicate": "rico:isOrWasIncludedIn",
             "object": {
-                "id": "acta_canonizationis",
+                "id": "bologna_inquiry",
                 "source": "core"
             }
         },
@@ -1996,11 +1996,11 @@
         {
             "subject":{
                 "id": "orsini_horse_fall",
-                "source": "extra"
+                "source": "core"
             },
             "predicate": "crm:P11_had_participant",
             "object":{
-                "id": "sister_cecilia_contarini",
+                "id": "fanjeaux_dispute",
                 "source": "core"
             }
         },
