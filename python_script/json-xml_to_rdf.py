@@ -16,10 +16,12 @@ SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
 
 INME = Namespace("http://example.org/inventio-memoriae/")
 
+#creating a dictionary that contains...............
 ns_dict = {
-    "crm": CRM, "arco": ARCO, "arco-cd": ARCO_CD, "dcterms": DCTERMS, "fabio": FABIO, "icon": ICON, "lrmoo": LRMOO, "rico": RICO, "inme": INME, "rdf": RDF
+    "crm": CRM, "arco": ARCO, "arco-cd": ARCO_CD, "dcterms": DCTERMS, "icon": ICON, "lrmoo": LRMOO, "rico": RICO, "inme": INME, "rdf": RDF
     }  
 
+#function used to normalize the URIs
 def normalize_uri(value:str):
     if ":" not in value and "#" not in value:
         return INME[value]
@@ -31,11 +33,14 @@ def normalize_uri(value:str):
         if prefix in ns_dict:
             return ns_dict[prefix][entity_name]
 
+#helper function to process timespans
 def process_time_span(db_graph, subj_uri, date_dict, is_bibl:bool):
-    
+
+    #creating a new triple with subject composed by the uri of the subject we want to express the timespan adding "_time" at the end
     timespan_uri = URIRef(f"{subj_uri}_time")
     db_graph.add((timespan_uri, RDF.type, CRM["E52_Time-Span"]))
 
+    #if the entity is a literary work, proceed creating specific triples. Otherwise (in case of events) just add a triple connecting the subject to its timespan entity
     if is_bibl:
         creation_uri = URIRef(f"{subj_uri}_creation")
         db_graph.add((creation_uri, RDF.type, LRMOO["F27_Work_Creation"]))
@@ -44,6 +49,7 @@ def process_time_span(db_graph, subj_uri, date_dict, is_bibl:bool):
     else:
         db_graph.add((subj_uri, CRM["P4_has_time-span"], timespan_uri))
 
+    #iterating through the dictionary (that contains the type of the date as key and the date as value)
     for date_type, date_val in date_dict.items():
 
         if len(date_val) == 4:
@@ -51,6 +57,7 @@ def process_time_span(db_graph, subj_uri, date_dict, is_bibl:bool):
         else:
             datatype = XSD.date
 
+        #creating different conditions with specific triples created for each possible type of date
         if date_type == "when":
             db_graph.add((timespan_uri, CRM["P82_at_some_time_within"], Literal(date_val, datatype=datatype)))
         elif date_type in ["from", "notBefore"]:
@@ -58,7 +65,7 @@ def process_time_span(db_graph, subj_uri, date_dict, is_bibl:bool):
         elif date_type in ["to", "notAfter"]:
             db_graph.add((timespan_uri, CRM["P82b_end_of_the_end"], Literal(date_val, datatype=datatype)))
         
-
+#function for parsing the extra entities defined in the json file
 def parse_json_data(json_filepath):
 
     #opening and loading the json file  
@@ -71,7 +78,7 @@ def parse_json_data(json_filepath):
     #creating a list of lists to store all of the relations
     json_relations = []
 
-
+    #iterating through the entities, for each one of them create a separate dictionary with its data and storing it in the json_entities_db with the id of the entity as key
     for entity in json_data["extra_entities"]:
         entity_to_add = {"id": entity["id"], "label": entity["label"], "description": entity["description"], "external_links": entity["external_links"]}
 
@@ -90,6 +97,7 @@ def parse_json_data(json_filepath):
 
             json_relations.append([subject, predicate, object])
 
+    #iterating through the relations defined in the json file and adding them as a list of 3 elements: subject, object and predicate
     for relation in json_data["relations"]:
         subject = relation["subject"]["id"]
         predicate = relation["predicate"]
@@ -105,7 +113,7 @@ def parse_json_data(json_filepath):
     return json_entities_db, json_relations
 
 
-
+#function for parsing the entities defined in the xml/TEI file
 def parse_tei_xml(xml_filepath):
     #loading the xml file
     tree = ET.parse(xml_filepath)
@@ -133,6 +141,7 @@ def parse_tei_xml(xml_filepath):
         
         #creating a dictionary for the italian and english names of each entity to be later added to the dictionary containing the information of each one of the entities
         pers_names_dict = dict()
+        #looping through the tei persName tags and saving them as label with the respective language (if not present, the labels will be)
         for pers_name in person.findall("tei:persName", xml_ns):
 
             language = pers_name.get(check_lang)
@@ -145,7 +154,7 @@ def parse_tei_xml(xml_filepath):
 
         core_entity.update({"label":pers_names_dict})
 
-        #creating a dictionary for the multilingual descriptions of each entity to be later added to the dictionary containing the information of each one of the entities
+        #creating a dictionary for the multilingual descriptions of each entity to be later added to the dictionary as "description" containing the information of each one of the entities
         descriptions_dict = dict()
         for description in person.findall("tei:note", xml_ns):
 
@@ -170,27 +179,31 @@ def parse_tei_xml(xml_filepath):
 
         core_entity.update({"external_links":external_links})
 
-        #appending the dictionary containing the information of each entity to the list containing the dictionary describing each entity
+        #appending the dictionary containing all of the informations of each entity to the dictionary containing all of the entities described in the xml/TEI file
 
         core_entities_db[core_entity["id"]] = core_entity
 
     # =========== ORGANIZATIONS =====================
 
+    #looping through each organization element described in the xml/TEI file
     for organization in root.findall('.//tei:org', xml_ns):
 
         org_id = organization.get(id_node)
 
+        #initializing the dictionary of the current entity with its id
         core_entity = {"id":org_id}
 
+        #creating a list for storing the alternative names of the organizations
         alias_list = []
         org_names_dict = dict()
 
+        #looping all the various names an organization could have, storing the standard one as label, the others are stored in a dictionary
         for org_name in organization.findall("tei:orgName", xml_ns):
 
             language = org_name.get(check_lang)
             name_type = org_name.get('type')
 
-            if name_type == "standard" or not name_type:
+            if name_type == "standard" or name_type== "official" or not name_type:
 
                 if not language:
                     org_names_dict["en"] = org_name.text
@@ -211,7 +224,7 @@ def parse_tei_xml(xml_filepath):
             if alias_list:
                 core_entity.update({"alias": alias_list})
 
-
+        #looping through each tei:note element and storing its content as value and language as key in a dictionary
         descriptions_dict = dict()
         for description in organization.findall("tei:note", xml_ns):
 
@@ -222,8 +235,9 @@ def parse_tei_xml(xml_filepath):
 
         core_entity.update({"description":descriptions_dict})
 
+        #looping through the tei:idno values and storing them in the external_links dictionary with the type of authority control as key
         external_links = dict()
-
+        
         for idno in organization.findall("tei:idno", xml_ns):
             if idno.get('type').lower() == "wikidata":
                 external_links["wikidata"] = "https://www.wikidata.org/wiki/" + idno.text
@@ -234,20 +248,24 @@ def parse_tei_xml(xml_filepath):
 
         core_entity.update({"external_links": external_links})
         
-
+        #finally adding the entity to the dictionary storing all the core entities
         core_entities_db[core_entity["id"]] = core_entity
 
     # =========== OBJECTS =====================
 
+    #looping through each tei:object tag to store the artifacts entities
     for artwork in root.findall(".//tei:object", xml_ns):
 
         artwork_id = artwork.get(id_node)
 
+        #creating a dictionary for each entity adding the id right away
         core_entity = {"id": artwork_id}
 
+        #creating a list to store the various names an artwork could be known
         alias_list = []
         artwork_names_dict = dict()
 
+        #looping through each artwork name, checking each type and storing each alternative name other than "preferred" in a dictionary and then added to a list of dictionaries containing all the different alternative names for that artwork
         for artwork_name in artwork.findall(".//tei:objectName", xml_ns):
 
             language = artwork_name.get(check_lang)
@@ -694,6 +712,19 @@ def populate_graph(db_graph, entities_db, relations):
             date_dict = entity_data.get("date")
             if date_dict:
                 process_time_span(db_graph, subj_uri, date_dict, False)
+
+            alt_names = entity_data.get("alias")
+            print(alt_names)
+            if alt_names:
+                for alt_name in alt_names:
+                    name = alt_name.get("name")
+                    name_lang = alt_name.get("lang")
+
+                    if name_lang == "unknown" or not name_lang:
+                        db_graph.add((subj_uri, SKOS.altLabel, Literal(name)))
+                    else:
+                        db_graph.add((subj_uri, SKOS.altLabel, Literal(name, lang=name_lang)))
+
 
             
     for relation in relations:

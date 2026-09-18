@@ -117,6 +117,8 @@ inme:saint_dominic_arca a arco:ComplexCulturalProperty,
         "Monumento sepolcrale realizzato a Bologna che integra in un'unica e maestosa struttura elementi realizzati dal XIII al XVI secolo. L'insieme unisce il nucleo medievale originario progettato da Nicola Pisano (1267) alla grandiosa cimasa rinascimentale di Niccolò dell'Arca, arricchita dalle celebri sculture di Michelangelo e dai successivi interventi di Alfonso Lombardi. Questa complessa stratificazione artistica, oggi custodita nella cappella cinquecentesca della basilica, costituisce nella sua interezza monumentale il motore e il punto di riferimento per l'intera evoluzione dell'arte funeraria in Italia."@it ;
     crm:P53_hasFormerOrCurrentLocation inme:san_domenico_church ;
     owl:sameAs <https://www.wikidata.org/wiki/Q2417706> ;
+    skos:altLabel "Ark of Saint Dominic"@en,
+        "Shrine of Saint Dominic"@en ;
     arco:hasCulturalPropertyComponent inme:sarcophagus .
 
 inme:toulouse_inquiry_creation a lrmoo:F27_Work_Creation ;
@@ -865,7 +867,8 @@ inme:theme_raising_orsini a lrmoo:F1_Work,
 inme:dominican_order a crm:E74_Group,
         rico:Group ;
     rdfs:label "Order of Preachers"@en,
-        "Ordine dei Predicatori"@it ;
+        "Ordine dei Predicatori"@it,
+        "Ordo Praedicatorum"@la ;
     dcterms:description "A mendicant order founded in Toulouse by Saint Dominic in the early 13th century to counter the spread of the Cathar and Waldensian heresies through itinerant preaching and the example of a life of apostolic poverty. It received provisional approval from Pope Innocent III in 1215 and formal confirmation from Honorius III in 1216, adopting the Rule of Saint Augustine. Its extraordinary institutional innovation lay in the universal right to preach doctrine granted to every friar in holy orders (a prerogative previously reserved solely for bishops) combined with a strong intellectual orientation that fostered massive recruitment from the university *Studia* of Paris and Bologna. At the first General Chapter in Bologna (1220), the Order embraced the principle of mendicancy and the total renunciation of property, adopting a flexible, collegial constitution centered on the authority of General Chapters and dedicated *ex officio* to study, the defense of orthodoxy, and the salvation of souls."@en,
         "Ordine mendicante fondato a Tolosa da san Domenico nei primi anni del Duecento per contrastare la diffusione delle eresie catara e valdese attraverso la predicazione itinerante e l'esempio di una vita in povertà apostolica. Ottenne la conferma provvisoria da papa Innocenzo III nel 1215 e quella solenne da Onorio III nel 1216, adottando la regola di sant'Agostino. La sua straordinaria novità istituzionale risiedette nel diritto universale di predicazione dottrinale concesso a ciascun frate chierico (prerogativa precedentemente riservata ai soli vescovi), unito a un vigoroso orientamento intellettuale che favorì un massiccio reclutamento negli Studia universitari di Parigi e Bologna. Nel primo Capitolo Generale di Bologna (1220) l'Ordine abbracciò il principio della mendicità conventuale e della rinuncia totale alle proprietà, strutturandosi con una costituzione collegiale ed elastica incentrata sull'autorità dei Capitoli Generali e finalizzata *ex officio* allo studio, alla difesa dell'ortodossia e alla salvezza delle anime."@it ;
     crm:P107_has_current_or_former_member inme:buonviso,
@@ -878,6 +881,9 @@ inme:dominican_order a crm:E74_Group,
         inme:rodolfo,
         inme:sister_cecilia_contarini ;
     owl:sameAs <https://www.wikidata.org/wiki/Q131479> ;
+    skos:altLabel "OP",
+        "Dominican Order"@en,
+        "Ordine Domenicano"@it ;
     skos:exactMatch <https://viaf.org/en/viaf/140291092> .
 
 inme:libellus_principiis a lrmoo:F1_Work ;
