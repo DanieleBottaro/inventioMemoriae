@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Domenico - Progetto Digital Humanities</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts: Merriweather (Headings) & Lora (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Palette "Lo Scriptorium" */
+            --bg-color: #FDFBF7; /* Pergamena chiaro */
+            --text-color: #2D2926; /* Grigio antracite / inchiostro */
+            --accent-color: #9E1B1B; /* Rosso rubrica */
+            --border-color: #D4C5B0; /* Colore sabbia/oro per bordi */
+            
+            --dark-mode-bg: #2D2926;
+            /* Tipografia */
+            --font-headings: 'Merriweather', serif;
+            --font-body: 'Lora', serif;
+        }
+
+        body {
+            background-color: /*var(--bg-color)*/ var(--dark-mode-bg);
+            color: /*var(--text-color)*/ var(--bg-color);
+            font-family: var(--font-body);
+            /* Compensazione per la navbar fissa durante lo scroll verso le ancore */
+            padding-top: 76px; 
+            line-height: 1.8;
+        }
+
+        h1, h2, h3, h4, h5, h6, .navbar-brand {
+            font-family: var(--font-headings);
+            color: var(--text-color);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #7A1515; /* Tonalità più scura per hover */
+            text-decoration: underline;
+        }
+
+        .navbar-scriptorium {
+            background-color: var(--accent-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-scriptorium .navbar-brand {
+            color: var(--bg-color) !important;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .navbar-scriptorium .nav-link {
+            color: #FDFBF7 !important; /* Testo crema */
+            opacity: 0.85;
+            transition: opacity 0.3s ease;
+            font-family: var(--font-headings);
+            font-size: 0.9rem;
+        }
+
+        .navbar-scriptorium .nav-link:hover,
+        .navbar-scriptorium .nav-link.active {
+            opacity: 1;
+            font-weight: bold;
+        }
+
+        .hero-section {
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 3rem;
+        }
+        
+        .hero-section h1 {
+            color: var(--accent-color);
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .hero-section .lead {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            color: var(--text-color);
+            font-style: italic;
+        }
+
+        .card-scriptorium {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 4px; /* Angoli leggermente arrotondati, non troppo moderni */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            height: 100%;
+        }
+
+        .card-scriptorium:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-scriptorium .card-title {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .btn-scriptorium {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            border: none;
+            font-family: var(--font-headings);
+            font-size: 0.9rem;
+        }
+
+        .btn-scriptorium:hover {
+            background-color: #7A1515;
+            color: var(--bg-color);
+        }
+
+        /* Placeholder diagramma */
+        .diagram-placeholder {
+            background-color: #FFFFFF;
+            border: 1px dashed var(--border-color);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: #888;
+            border-radius: 4px;
+        }
+
+        .accordion-scriptorium .accordion-item {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            margin-bottom: 0.5rem;
+            border-radius: 4px !important;
+        }
+        
+        .accordion-scriptorium .accordion-button {
+            background-color: #FFFFFF;
+            color: var(--text-color);
+            font-family: var(--font-headings);
+            font-weight: bold;
+            box-shadow: none; /* Rimuove il focus ring di default */
+        }
+
+        .accordion-scriptorium .accordion-button:not(.collapsed) {
+            background-color: var(--bg-color);
+            color: var(--accent-color);
+        }
+
+        .accordion-scriptorium .accordion-button:focus {
+            border-color: var(--border-color);
+            box-shadow: 0 0 0 0.25rem rgba(158, 27, 27, 0.25);
+        }
+
+        section {
+            padding-bottom: 4rem;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-main" tabindex="0">
+
+    <nav id="navbar-main" class="navbar navbar-expand-lg navbar-scriptorium fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Inventio Memoriae</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#domain-analysis">Domain Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#entities">Entities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#knowledge-organization">Knowledge Organization</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ontologies">Ontologies</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="hero-section container-fluid">
+        <div class="container">
+            <h1>Inventio Memoriae</h1>
+            <p class="lead mt-3">Mapping the construction of Memory: A Linked Open Data approach to Nicola Pisano’s Arca di San Domenico</p>
+            <p class="mt-4"><small>Created by: <strong>Daniele Bottaro</strong> <br> Course in Information Science & Cultural Heritage</small></p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="domain-analysis">
+            <h2>Domain Analysis</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>The project aims to model and represent in <strong>Linked Open Data (LOD)</strong> format the iconography chosen by the Dominicans to decorate the panels of the sarcophagus of the <strong><em>Arca di San Domenico</em></strong> by <strong>Nicola Pisano</strong>, as a visual consecration and monumental objectification of a process of "<strong>memory construction</strong>."</p>
+                    
+                    <p>The data architecture traces the trajectory of this complex process brilliantly brought to light by <strong>Luigi Canetti</strong> in <em>L'invenzione della memoria. Il culto e l'immagine di Domenico nella storia dei primi frati predicatori</em>: the transition leading from the actual historical event to its intentional reworking in hagiographic sources (particularly in the narration of miracles), ultimately culminating in its monumentalization between 1264 and 1267 in the sarcophagus of the <em>Arca</em>.
+                    </p>
+
+                    <p>To populate the network of relationships that makes up the project, the entities were extracted directly from two texts. The aforementioned essay by Canetti provided the ideal references to identify the web of historical figures, hagiographic texts, and events, as well as their correlations. However, since the author only touches upon the creation of the monument in passing, it was necessary to supplement this with an art-historical source in order to map its physical objectification. Therefore, <strong>Anita F. Moskovitz</strong>'s authoritative monograph on Nicola Pisano's work (<em>Nicola Pisano's arca di San Domenico and its legacy</em>) was chosen, which provided the textual basis necessary to extract and describe the entities closely linked to the sarcophagus and the individual narrative panels.</p>
+
+                    <p>Finally, to tie together this complex network of relationships and provide a broader historical and conceptual context, it was decided to integrate into the model several ad hoc entities created in an external <strong>JSON</strong> file, also with the aim of preserving the structural and semantic integrity of the <strong>ontologies</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="entities">
+            <h2>Entities extraction and modeling</h2>
+            <p class="mb-4">Sono state identificate e modellate in totale 93 entities: 46 sono state estratte da stralci selezionati dai due testi presi in considerazione e le restanti 47 sono state definite nel file JSON. Di seguito </p>
+            
+            
+            <!-- NAVIGAZIONE TAB -->
+            <ul class="nav nav-underline justify-content-center mb-5" id="entityTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link custom-tab active" id="people-tab" data-bs-toggle="tab" data-bs-target="#people-pane" type="button" role="tab">People</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link custom-tab" id="places-tab" data-bs-toggle="tab" data-bs-target="#places-pane" type="button" role="tab">Places</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link custom-tab" id="events-tab" data-bs-toggle="tab" data-bs-target="#events-pane" type="button" role="tab">Events</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link custom-tab" id="artworks-tab" data-bs-toggle="tab" data-bs-target="#artworks-pane" type="button" role="tab">Artworks</button>
+                </li>
+                
+                <!-- NUOVI TAB -->
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link custom-tab" id="themes-tab" data-bs-toggle="tab" data-bs-target="#themes-pane" type="button" role="tab">Narrative Themes</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link custom-tab" id="literary-tab" data-bs-toggle="tab" data-bs-target="#literary-pane" type="button" role="tab">Literary Works</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link custom-tab" id="visual-tab" data-bs-toggle="tab" data-bs-target="#visual-pane" type="button" role="tab">Visual Items</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link custom-tab" id="other-tab" data-bs-toggle="tab" data-bs-target="#other-pane" type="button" role="tab">Other Concepts</button>
+                </li>
+            </ul> 
+
+            <!-- CONTENITORE PRINCIPALE DI TUTTE LE TAB -->
+            <div class="tab-content" id="entityTabsContent">
+                
+                <!-- TAB PERSONE -->
+                <!-- active e show indicano il tab aperto di default -->
+                <div class="tab-pane fade show active" id="people-pane" role="tabpanel" aria-labelledby="people-tab" tabindex="0">
+                    <div class="row w-100 m-0 justify-content-center card-holder">
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Dominic de Guzmán</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: dominic_guzman</h6>
+                                    <p class="card-text flex-grow-1">Canon of Osma, preacher against heresy in Languedoc, and founder of the Order of Preachers (Dominicans); he lived in strict evangelical poverty...</p>
+                                    
+                                        <a href="https://www.wikidata.org/wiki/Q44091" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See wikidata</a>
+                                        <a href="https://viaf.org/en/viaf/17240904" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See viaf</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Nicola Pisano</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: nicola_pisano</h6>
+                                    <p class="card-text flex-grow-1">A renowned Tuscan sculptor who, together with his industrious workshop in Pisa (which included assistants such as Fra Guglielmo, Arnolfo di...</p>
+                                    
+                                        <a href="https://www.wikidata.org/wiki/Q364413" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See wikidata</a>
+                                        <a href="https://viaf.org/en/viaf/95710492" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See viaf</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Pope Innocent III</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: pope_innocent_iii</h6>
+                                    <p class="card-text flex-grow-1">The Pontiff who welcomed Saint Dominic to Rome in 1215 and, struck by the famous prophetic dream in which the saint was seen propping up the...</p>
+                                    
+                                        <a href="https://www.wikidata.org/wiki/Q128076" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See wikidata</a>
+                                        <a href="https://viaf.org/en/viaf/16017787" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See viaf</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Pope Gregory IX</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: pope_gregory_ix</h6>
+                                    <p class="card-text flex-grow-1">Formerly Cardinal Ugolino of Ostia and a close friend of Dominic, as Pope he promoted the solemn translation of the founder's remains in 1233,...</p>
+                                    
+                                        <a href="https://www.wikidata.org/wiki/Q124831" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See wikidata</a>
+                                        <a href="https://viaf.org/en/viaf/91013639" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See viaf</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Papa Onorio III</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: pope_honorius_iii</h6>
+                                    <p class="card-text flex-grow-1">As the successor to Innocent III, he promulgated the bull solemnly confirming the Order of Preachers in 1216 (*Religiosam vitam*), issued various...</p>
+                                    
+                                        <a href="https://www.wikidata.org/wiki/Q160182" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See wikidata</a>
+                                        <a href="https://viaf.org/en/viaf/41848773" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See viaf</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Giordano di Sassonia</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: jordan_saxony</h6>
+                                    <p class="card-text flex-grow-1">He was the second Master General of the Order and the direct successor to Dominic from 1222; he composed the *Libellus de principiis*, the first...</p>
+                                    
+                                        <a href="https://www.wikidata.org/wiki/Q60790" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See wikidata</a>
+                                        <a href="https://viaf.org/en/viaf/84971788" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See viaf</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Peter Ferrand</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: peter_ferrand</h6>
+                                    <p class="card-text flex-grow-1">Spanish hagiographer and author of the first official liturgical *Legenda* of Saint Dominic (c. 1235–1238); he supplemented the work of Jordan by...</p>
+                                    
+                                        <a href="https://www.wikidata.org/wiki/Q23619886" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See wikidata</a>
+                                        <a href="https://viaf.org/en/viaf/311283097" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See viaf</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Constantine of Orvieto</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: constantine_orvieto</h6>
+                                    <p class="card-text flex-grow-1">A Dominican friar and later Bishop of Orvieto, he authored the *Legenda nova* (c. 1246–1247); he significantly enriched the biography of Dominic...</p>
+                                    
+                                        <a href="https://www.wikidata.org/wiki/Q108463017" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See wikidata</a>
+                                        <a href="https://viaf.org/en/viaf/22567337" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See viaf</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Humbert of Romans</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: humbert_romans</h6>
+                                    <p class="card-text flex-grow-1">Fifth Master General of the Order (1254–1263); he reorganized and unified the Dominican liturgy by compiling the liturgical "Prototype"...</p>
+                                    
+                                        <a href="https://www.wikidata.org/wiki/Q2623954" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See wikidata</a>
+                                        <a href="https://viaf.org/en/viaf/122038877" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See viaf</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Reginaldo d'Orléans</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: reginald_orleans</h6>
+                                    <p class="card-text flex-grow-1">A renowned professor of canon law in Paris and Dean of Saint-Aignan in Orléans, he joined Saint Dominic in Rome in 1218 after being miraculously...</p>
+                                    
+                                        <a href="https://www.wikidata.org/wiki/Q3931864" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See wikidata</a>
+                                        <a href="https://viaf.org/en/viaf/89368066" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See viaf</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Saint Paul</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: saint_paul</h6>
+                                    <p class="card-text flex-grow-1">An apostle who, according to the Dominican hagiographic tradition codified by Constantine of Orvieto, appeared in a vision to Saint Dominic in...</p>
+                                    
+                                        <a href="https://www.wikidata.org/wiki/Q9200" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See wikidata</a>
+                                        <a href="https://viaf.org/en/viaf/100178828" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See viaf</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Saint Peter</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: saint_peter</h6>
+                                    <p class="card-text flex-grow-1">Apostle and first pope who appeared to Saint Dominic in the same Roman vision, handing him the staff of pilgrimage and authority for the mission...</p>
+                                    
+                                        <a href="https://www.wikidata.org/wiki/Q33923" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See wikidata</a>
+                                        <a href="https://viaf.org/en/viaf/13581141" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See viaf</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Peter of Vaux-de-Cernay</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: peter_vaux_cernay</h6>
+                                    <p class="card-text flex-grow-1">A Cistercian monk and author of the *Historia Albigensis* (c. 1215); he recorded the earliest and most sober contemporary account of Dominic’s...</p>
+                                    
+                                        <a href="https://www.wikidata.org/wiki/Q745030" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See wikidata</a>
+                                        <a href="https://viaf.org/en/viaf/263271643" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See viaf</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Buonviso da Piacenza</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: buonviso</h6>
+                                    <p class="card-text flex-grow-1">An early companion of Dominic and founder of the convent in Piacenza; he testified at the 1233 canonization proceedings in Bologna, recounting...</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Rodolfo da Faenza</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: rodolfo</h6>
+                                    <p class="card-text flex-grow-1">Rector of San Niccolò delle Vigne and later procurator of the Bolognese convent; a key witness at the 1233 trial, he described the founder's final...</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-primary">Napoleone Orsini</h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: napoleone_orsini</h6>
+                                    <p class="card-text flex-grow-1">A young Roman count and nephew of Cardinal Stefano di Fossanova; he died in Rome following a disastrous fall from his horse in 1221 and was...</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- TAB LUOGHI -->
+                <div class="tab-pane fade" id="places-pane" role="tabpanel" aria-labelledby="places-tab" tabindex="0">
+                    <div class="row w-100 m-0 justify-content-center card-holder">
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-info"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: bologna</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-info"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: montreal</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-info"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: fanjeaux</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- TAB EVENTI -->
+                <div class="tab-pane fade" id="events-pane" role="tabpanel" aria-labelledby="events-tab" tabindex="0">
+                    <div class="row w-100 m-0 justify-content-center card-holder">
+                        
+                        <!-- ... stesso blocco card ... (cambia il colore, es: text-success) -->
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-success"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: canonization_process</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- ... stesso blocco card ... (cambia il colore, es: text-success) -->
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-success"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: approval_order</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- ... stesso blocco card ... (cambia il colore, es: text-success) -->
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-success"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: approval_order_request</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- ... stesso blocco card ... (cambia il colore, es: text-success) -->
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-success"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: orsini_horse_fall</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- ... stesso blocco card ... (cambia il colore, es: text-success) -->
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-success"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: fanjeaux_dispute</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- TAB ARTWORKS -->
+                <div class="tab-pane fade" id="artworks-pane" role="tabpanel" aria-labelledby="artworks-tab" tabindex="0">
+                    <div class="row w-100 m-0 justify-content-center card-holder">
+                        
+                            <p class="text-center text-muted w-100 mt-4">Nessuna entità trovata in questa categoria.</p>
+                        
+                    </div>
+                </div>
+
+                <!-- NUOVO TAB: NARRATIVE THEMES -->
+                <div class="tab-pane fade" id="themes-pane" role="tabpanel" aria-labelledby="themes-tab" tabindex="0">
+                    <div class="row w-100 m-0 justify-content-center card-holder">
+                        
+                            <p class="text-center text-muted w-100 mt-4">Nessuna entità trovata in questa categoria.</p>
+                        
+                    </div>
+                </div>
+
+                <!-- NUOVO TAB: LITERARY WORKS -->
+                <div class="tab-pane fade" id="literary-pane" role="tabpanel" aria-labelledby="literary-tab" tabindex="0">
+                    <div class="row w-100 m-0 justify-content-center card-holder">
+                        
+                            <p class="text-center text-muted w-100 mt-4">Nessuna entità trovata in questa categoria.</p>
+                        
+                    </div>
+                </div>
+
+                <!-- NUOVO TAB: VISUAL ITEMS -->
+                <div class="tab-pane fade" id="visual-pane" role="tabpanel" aria-labelledby="visual-tab" tabindex="0">
+                    <div class="row w-100 m-0 justify-content-center card-holder">
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="color: #6f42c1;"></h5> <!-- Esempio con un colore viola custom -->
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: vi_composition_raising_orsini</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="color: #6f42c1;"></h5> <!-- Esempio con un colore viola custom -->
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: vi_composition_burning_books</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="color: #6f42c1;"></h5> <!-- Esempio con un colore viola custom -->
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: vi_composition_miraculous_supper</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="color: #6f42c1;"></h5> <!-- Esempio con un colore viola custom -->
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: vi_composition_stories_blessed_reginald</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="color: #6f42c1;"></h5> <!-- Esempio con un colore viola custom -->
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: vi_detail_reginald_vow_dominican_order</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="color: #6f42c1;"></h5> <!-- Esempio con un colore viola custom -->
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: vi_detail_reginald_illness</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="color: #6f42c1;"></h5> <!-- Esempio con un colore viola custom -->
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: vi_detail_reginald_vision_vergin</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="color: #6f42c1;"></h5> <!-- Esempio con un colore viola custom -->
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: vi_composition_approval_order</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="color: #6f42c1;"></h5> <!-- Esempio con un colore viola custom -->
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: vi_detail_innocent_iii_receiving_scroll</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="color: #6f42c1;"></h5> <!-- Esempio con un colore viola custom -->
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: vi_detail_lateran_dream</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="color: #6f42c1;"></h5> <!-- Esempio con un colore viola custom -->
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: vi_detail_approval_order</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="color: #6f42c1;"></h5> <!-- Esempio con un colore viola custom -->
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: vi_composition_vision_saints_peter_paul</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="color: #6f42c1;"></h5> <!-- Esempio con un colore viola custom -->
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: vi_detail_vision_saints_peter_paul</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title" style="color: #6f42c1;"></h5> <!-- Esempio con un colore viola custom -->
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: vi_detail_dominic_sending_friars</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- NUOVO TAB: OTHER -->
+                <div class="tab-pane fade" id="other-pane" role="tabpanel" aria-labelledby="other-tab" tabindex="0">
+                    <div class="row w-100 m-0 justify-content-center card-holder">
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: creation_dominic_sarcophagus</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: sarcophagus_commission</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_11H_DOMINIC_53</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_11H_DOMINIC_52</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_11H_DOMINIC_55</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_11P317</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_11H_DOMINIC</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_11H_REGINALD</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_11P315_DOMINICANS</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_11Q21</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_49G2</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_11F82</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_49G231</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_11P3154</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_49L71</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_11P3111</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_11H_DOMINIC_51</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_11H_DOMINIC_131</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_11H_DOMINIC_342</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: iconclass_11P5</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: creation_deposition_rodolfo</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: creation_deposition_buonviso</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: role_witness</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: deposition_rodolfo</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: deposition_buonviso</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: nicola_workshop</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: Niccolo_to_Domenico_church_transformation</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: sister_cecilia_contarini</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: dominican_order</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: saint_dominic_arca</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: sarcophagus</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: panel_burning_books</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: panel_miraculous_supper</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: panel_raising_orsini</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: panel_saints_peter_paul</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: panel_story_reginald</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: panel_approval_order</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: san_niccolo_church</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: san_domenico_church</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: toulouse</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: rome</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: acta_canonizationis</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: bologna_inquiry</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
+                            <div class="card h-100 shadow-sm border-0 bg-light">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title text-dark"></h5>
+                                    <h6 class="card-subtitle mb-3 text-muted small">ID: toulouse_inquiry</h6>
+                                    <p class="card-text flex-grow-1"></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+            <!--FINE TAB-->
+
+
+            <div class="row g-4">
+                <!-- Entity Card 1 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card card-scriptorium">
+                        <img src="https://placehold.co/600x400/D4C5B0/2D2926?text=Documento+Storico" class="card-img-top" alt="Placeholder Bolla Papale">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Religioam vitam</h5>
+                            <p class="card-text">Bolla papale promulgata da Papa Onorio III nel 1216, con la quale si conferma la Regola di Sant'Agostino per i frati predicatori.</p>
+                            <a href="#" class="btn btn-scriptorium mt-auto w-100">Dettagli URI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entity Card 2 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card card-scriptorium">
+                        <img src="https://placehold.co/600x400/D4C5B0/2D2926?text=Persona" class="card-img-top" alt="Placeholder Persona">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">San Tommaso d'Aquino</h5>
+                            <p class="card-text">Frate domenicano e filosofo, autore della <em>Summa Theologiae</em>. Rappresenta la massima espressione dell'eredità intellettuale dell'ordine.</p>
+                            <a href="#" class="btn btn-scriptorium mt-auto w-100">Dettagli URI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entity Card 3 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="card card-scriptorium">
+                        <img src="https://placehold.co/600x400/D4C5B0/2D2926?text=Luogo" class="card-img-top" alt="Placeholder Luogo">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Basilica di San Domenico (BO)</h5>
+                            <p class="card-text">Uno dei luoghi di culto più importanti di Bologna, che custodisce l'Arca di San Domenico contenente le spoglie del Santo.</p>
+                            <a href="#" class="btn btn-scriptorium mt-auto w-100">Dettagli URI</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="knowledge-organization">
+            <h2>Knowledge Organization</h2>
+            <p>Per strutturare l'informazione è stato sviluppato un modello concettuale che definisce le classi e le proprietà. Il modello collega documenti, persone, eventi storici e luoghi geografici.</p>
+            
+            <div class="row mt-4">
+                <div class="col-md-10 offset-md-1">
+                    <div class="diagram-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-diagram-3 text-secondary mb-3" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5zM0 11.5A1.5 1.5 0 0 1 1.5 10h2A1.5 1.5 0 0 1 5 11.5v1A1.5 1.5 0 0 1 3.5 14h-2A1.5 1.5 0 0 1 0 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h2a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-2a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/>
+                        </svg>
+                        <h4>Mappa Concettuale (ER / UML)</h4>
+                        <p class="mb-0"><em>Inserisci qui l'immagine del tuo modello concettuale o diagramma RDF.</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ontologies">
+            <h2>Ontologies & Vocabularies</h2>
+            <p>Il progetto riutilizza ontologie standard del web semantico per garantire l'interoperabilità dei dati descritti.</p>
+            
+            <div class="accordion accordion-scriptorium" id="ontologiesAccordion">
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne" style="margin:0; border:none; padding:0;">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            FOAF (Friend of a Friend)
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#ontologiesAccordion">
+                        <div class="accordion-body">
+                            Utilizzato per modellare le informazioni anagrafiche e le reti sociali dei personaggi storici, come San Domenico stesso, Papa Onorio III, e altri contemporanei. Nello specifico, si impiegano proprietà come <code>foaf:Person</code>, <code>foaf:name</code> e <code>foaf:knows</code>.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo" style="margin:0; border:none; padding:0;">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Dublin Core (DC / DCTERMS)
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#ontologiesAccordion">
+                        <div class="accordion-body">
+                            Impiegato per la metadatazione dei documenti storici, delle bolle papali e dei manoscritti. Proprietà fondamentali usate: <code>dcterms:title</code>, <code>dcterms:creator</code>, <code>dcterms:date</code>, <code>dcterms:subject</code>.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree" style="margin:0; border:none; padding:0;">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            CIDOC CRM / FRBRoo (Opzionale)
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#ontologiesAccordion">
+                        <div class="accordion-body">
+                            Ideale per mappare l'aspetto eventivo (eventi di predicazione, canonizzazione, morte). Classi come <code>E5_Event</code> o <code>F22_Self-Contained_Expression</code> per distinguere l'opera testuale dal supporto fisico.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-4 mt-5" style="border-top: 1px solid var(--border-color); background-color: #FFFFFF;">
+        <div class="container">
+            <p class="mb-0" style="color: var(--text-color);"><small>Progetto di Information Science and CH &copy; 2024</small></p>
+            <p class="mb-0"><small><a href="#">Torna in cima ↑</a></small></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS (include Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script per gestire l'active state della navbar (Bootstrap scrollspy support) -->
+    <script>
+        // Lo scrollspy è gestito dagli attributi data-bs-spy sul body,
+        // Questo mini script assicura un offset morbido se si clicca sui link della navbar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 76; // Altezza della navbar
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        //JAVASCRIPT PER LA TAB
+        function flipCard(cardId) {
+        const card = document.getElementById(cardId);
+        card.classList.toggle('is-flipped');
+        }
+
+        function switchLanguage(cardId, lang, clickedButton) {
+        const textIt = document.getElementById('text-it-' + cardId);
+        const textEn = document.getElementById('text-en-' + cardId);
+        const title = document.getElementById('title-' + cardId);
+
+        if (lang === 'it') {
+            textIt.classList.remove('d-none');
+            textEn.classList.add('d-none');
+            title.innerText = "Descrizione";
+        } else if (lang === 'en') {
+            textIt.classList.add('d-none');
+            textEn.classList.remove('d-none');
+            title.innerText = "Description";
+        }
+
+        // Gestione dello stile dei bottoni attivi
+        const buttonGroup = clickedButton.parentElement;
+        const allButtons = buttonGroup.querySelectorAll('.btn-lang');
+        allButtons.forEach(btn => btn.classList.remove('active'));
+        
+        clickedButton.classList.add('active');
+        }
+            
+    </script>
+</body>
+</html>

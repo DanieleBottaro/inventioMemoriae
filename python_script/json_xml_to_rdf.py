@@ -598,8 +598,7 @@ def parse_tei_xml(xml_filepath):
             object = object[1:]
 
         xml_relations.append([subject, predicate, object])
-
-    #print(xml_relations)
+        
     return core_entities_db, xml_relations
 
 
@@ -647,7 +646,6 @@ def populate_graph(db_graph, entities_db, relations):
 
                 if authors is not None:
                     for author in authors:
-                        print(author)
                         author = normalize_uri(author)
                         db_graph.add((subj_uri, DCTERMS.creator , URIRef(author)))
 
@@ -714,7 +712,7 @@ def populate_graph(db_graph, entities_db, relations):
                 process_time_span(db_graph, subj_uri, date_dict, False)
 
             alt_names = entity_data.get("alias")
-            print(alt_names)
+
             if alt_names:
                 for alt_name in alt_names:
                     name = alt_name.get("name")
@@ -749,10 +747,12 @@ def main():
     xml_entities, xml_relations = parse_tei_xml(xml_filepath)
 
     
-
+    print(len(json_entities))
+    print(len(xml_entities))
     # 3. Unione dei dati
     all_entities_db = json_entities.copy()
     all_entities_db.update(xml_entities)
+    print(len(all_entities_db))
 
     all_relations = json_relations.copy()
     all_relations.extend(xml_relations)
