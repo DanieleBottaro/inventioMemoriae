@@ -388,13 +388,13 @@ def parse_tei_xml(xml_filepath):
 
                     const_titles_dict = dict()
                     for const_title in inner_bibl.findall("tei:title", xml_ns):
-                                               
+                        print(const_title.text)
                         language = const_title.get(check_lang)
             
                         if language:
                             const_titles_dict[language] = const_title.text
             
-                    constituent_data.update({"label": work_titles_dict})
+                    constituent_data.update({"label": const_titles_dict})
                                 
                     const_date_dict = dict()
 
@@ -598,7 +598,7 @@ def parse_tei_xml(xml_filepath):
             object = object[1:]
 
         xml_relations.append([subject, predicate, object])
-        
+
     return core_entities_db, xml_relations
 
 

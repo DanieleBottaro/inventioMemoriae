@@ -724,7 +724,7 @@
                 "en": "Deposition of Rodolfo da Faenza"
             },
             "ontological_classes": [
-                "lrmoo:F1_Work",
+                "crm:E31_Document",
                 "rico:Record"
             ],
             "description": {
@@ -741,7 +741,7 @@
                 "en": "Deposition of Buonviso da Piacenza"
             },
             "ontological_classes": [
-                "lrmoo:F1_Work",
+                "crm:E31_Document",
                 "rico:Record"
             ],
             "description": {

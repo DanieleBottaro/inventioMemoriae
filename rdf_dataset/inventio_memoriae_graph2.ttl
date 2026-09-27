@@ -169,7 +169,7 @@ inme:creation_dominic_sarcophagus_time a crm:E52_Time-Span ;
     crm:P82a_begin_of_the_begin "1264"^^xsd:gYear ;
     crm:P82b_end_of_the_end "1267"^^xsd:gYear .
 
-inme:deposition_buonviso a lrmoo:F1_Work,
+inme:deposition_buonviso a crm:E31_Document,
         rico:Record ;
     rdfs:label "Deposition of Buonviso da Piacenza"@en,
         "Deposizione di Buonviso da Piacenza"@it ;
@@ -178,7 +178,7 @@ inme:deposition_buonviso a lrmoo:F1_Work,
     crm:P129_is_about inme:theme_miraculous_supper ;
     rico:isOrWasIncludedIn inme:bologna_inquiry .
 
-inme:deposition_rodolfo a lrmoo:F1_Work,
+inme:deposition_rodolfo a crm:E31_Document,
         rico:Record ;
     rdfs:label "Deposition of Rodolfo da Faenza"@en,
         "Deposizione di Rodolfo da Faenza"@it ;
@@ -610,7 +610,11 @@ inme:acta_canonizationis a crm:E31_Document,
         "Si tratta della documentazione relativa alle inchieste ufficiali svolte a Bologna e Tolosa nel 1233. Tale documento segna un'importante svolta procedurale nella storia della canonizzazione, rappresentando uno dei primi casi di utilizzo di un elenco strutturato di *articuli interrogatorii* per orientare le deposizioni. Anziché concentrarsi sulla taumaturgia, gli *Acta* pongono l'accento sull'*amor regularitatis* (lo zelo per la Regola) e sullo *zelus animarum* del fondatore, delineando un modello di santità coerente con l'identità costituzionale dell'Ordine. Promosso strategicamente durante il movimento dell'«Alleluia», il processo conferì la legittimazione carismatica necessaria per i nuovi compiti inquisitoriali affidati all'Ordine e ne consolidò lo status istituzionale all'interno della Chiesa."@it ;
     dcterms:language "la" ;
     dcterms:title "Acta canonizationis sancti Dominici"@la ;
-    crm:P129_is_about inme:dominic_guzman .
+    crm:P129_is_about inme:dominic_guzman ;
+    crm:P148_has_component inme:bologna_inquiry,
+        inme:toulouse_inquiry ;
+    rico:hasDirectConstituent inme:bologna_inquiry,
+        inme:toulouse_inquiry .
 
 inme:bologna a crm:E53_Place ;
     rdfs:label "Bologna"@en,
@@ -710,8 +714,8 @@ inme:san_domenico_church a crm:E24_Physical_human-made_thing,
 
 inme:san_niccolo_church a crm:E24_Physical_human-made_thing,
         crm:E53_Place ;
-    rdfs:label "Chiesa di San Niccolò delle Vigne"@en,
-        "Chiesa di San Niccolò delle Vigne"@it ;
+    rdfs:label "Church of San Niccolò delle Vigne"@en,
+        "Church of San Niccolò delle Vigne"@it ;
     dcterms:description "The early Dominican settlement in Bologna (1219), where Dominic died and was buried \"beneath the feet of the friars\". It was the original setting for the daily, domestic miracle of the multiplication of the loaves, as recounted by eyewitnesses Rodolfo di Faenza and Buonviso di Piacenza."@en,
         "Primitivo insediamento domenicano a Bologna (1219) dove Domenico morì e fu inumato \"sotto i piedi dei frati\". Fu il teatro originario del miracolo quotidiano e domestico della moltiplicazione dei pani riferito dai testimoni oculari Rodolfo di Faenza e Buonviso di Piacenza."@it .
 
@@ -732,17 +736,12 @@ inme:sarcophagus a lrmoo:F5_Item,
     owl:sameAs <https://www.wikidata.org/wiki/Q126766539> ;
     arco:hasCommission inme:sarcophagus_commission .
 
-inme:sister_cecilia_contarini rdfs:label "Suor Cecilia Contarini"@en,
+inme:sister_cecilia_contarini a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Suor Cecilia Contarini"@en,
         "Suor Cecilia Contarini"@it ;
     dcterms:description "A Dominican nun, she founded the convent of San Sisto in Rome and later resided at the convent of Sant'Agnese in Bologna during the years Nicola Pisano created the *Arca* (1264–1267). Having lived at San Sisto in 1221, Cecilia was a direct eyewitness to certain significant events involving Dominic in Rome—most notably the so-called resurrection of the young Napoleone Orsini. For this reason, some hypothesize that she may have been consulted regarding the sarcophagus's iconographic program; traditionally, she is identified as the figure sculpted in the upper-left section of the resurrection panel. Depicted with her back to the viewer yet gazing toward the miracle, this compositional choice isolates her from the crowd and, in her old age, establishes her as the eyewitness recounting the event."@en,
         "Monaca domenicana, fondatrice del convento di San Sisto a Roma e successivamente residente presso il convento di Sant'Agnese a Bologna negli anni in cui Nicola Pisano realizzò l'Arca (1264-1267). Avendo vissuto a San Sisto nel 1221, Cecilia fu testimone oculare diretta di alcuni importanti eventi romani di Domenico, in particolare della cosiddetta resurrezione del giovane Napoleone Orsini. Per questo motivo alcuni ipotizzano possa esser stata consultata per l'apparato iconografico del sarcofago e tradizionalmente la identificano nella figura scolpita in alto a sinistra del pannello della resurrezione: ritratta di spalle rispetto allo spettatore ma con lo sguardo rivolto al miracolo, una scelta compositiva che la isola dalla folla e la consacra, nella sua vecchiaia, come testimone oculare narrante dell'evento."@it .
-
-inme:toulouse_inquiry rdfs:label "Libellus de Principiis Ordinis Predicatorum"@la ;
-    dcterms:description "Covering letter drafted by the inquisitors of Toulouse and sent to Master Tancred in Bologna to authenticate the inquiry conducted in France."@en,
-        "Lettera di trasmissione redatta dagli inquisitori tolosani inviata a Maestro Tancredi a Bologna per autenticare l'inchiesta svolta in Francia"@it ;
-    dcterms:language "la" ;
-    dcterms:title "Libellus de Principiis Ordinis Predicatorum"@la ;
-    rico:hasResourceAssociatedWithSource <urn:clavis:bhl:2209> .
 
 inme:buonviso a crm:E21_Person,
         rico:Person ;
@@ -824,13 +823,6 @@ inme:theme_vision_saints_peter_paul a lrmoo:F1_Work,
         inme:saint_paul,
         inme:saint_peter .
 
-inme:bologna_inquiry rdfs:label "Libellus de Principiis Ordinis Predicatorum"@la ;
-    dcterms:description "It compiles the official records containing the direct testimonies of eyewitnesses (both the friars in Bologna and the witnesses in Toulouse)."@en,
-        "Raccoglie i verbali ufficiali con le deposizioni dirette dei testimoni oculari (sia i frati a Bologna sia i testimoni a Tolosa)"@it ;
-    dcterms:language "la" ;
-    dcterms:title "Libellus de Principiis Ordinis Predicatorum"@la ;
-    rico:hasResourceAssociatedWithSource <urn:clavis:bhl:2208> .
-
 inme:legenda_petri_ferrandi a lrmoo:F1_Work ;
     rdfs:label "Legenda Sancti Dominici"@la ;
     lrmoo:R1_is_logical_successor_of inme:libellus_principiis ;
@@ -863,6 +855,15 @@ inme:theme_raising_orsini a lrmoo:F1_Work,
     crm:P129_is_about inme:dominic_guzman,
         inme:napoleone_orsini ;
     crm:P67_refers_to inme:orsini_horse_fall .
+
+inme:toulouse_inquiry a crm:E31_Document,
+        rico:RecordPart ;
+    rdfs:label "Epistula inquisitorum Tolosanorum de virtutibus et miraculis"@la ;
+    dcterms:description "Covering letter drafted by the inquisitors of Toulouse and sent to Master Tancred in Bologna to authenticate the inquiry conducted in France."@en,
+        "Lettera di trasmissione redatta dagli inquisitori tolosani inviata a Maestro Tancredi a Bologna per autenticare l'inchiesta svolta in Francia"@it ;
+    dcterms:language "la" ;
+    dcterms:title "Epistula inquisitorum Tolosanorum de virtutibus et miraculis"@la ;
+    rico:hasResourceAssociatedWithSource <urn:clavis:bhl:2209> .
 
 inme:dominican_order a crm:E74_Group,
         rico:Group ;
@@ -936,6 +937,15 @@ inme:theme_reginald_stories a lrmoo:F1_Work,
     dcterms:description "Originating in the *Libellus* of Jordan of Saxony, the narrative describes the Virgin Mary appearing at the bedside of the renowned law professor—who was suffering from a severe fever in Rome, anointing his senses and presenting him with the Order's scapular. This episode was subsequently adopted and standardized by later hagiographical accounts (Peter Ferrandi, Constantine of Orvieto, Humbert of Romans). The hagiographical digression serves a specific political-institutional purpose: to legitimize the intellectual and academic vocation of the Preachers by celebrating the supernatural conversion of a highly celebrated master, thereby justifying and promoting the Order's recruitment efforts within the *studia* of Paris and Bologna."@en,
         "Originata nel Libellus di Giordano di Sassonia, la narrazione descrive la Vergine Maria che appare al capezzale del celebre docente di diritto malato di febbri acute a Roma, ungendone i sensi e presentandogli lo scapolare dell'Ordine. L'episodio è stato poi ereditato e normalizzato dalle legende liturgiche successive (Pietro Ferrandi, Costantino d'Orvieto, Umberto di Romans). La digressione agiografica assolve a una precisa funzione politico-istituzionale: legittimare la vocazione intellettuale e universitaria dei Predicatori celebrando la conversione soprannaturale di un famosissimo maestro, giustificando e promuovendo così il reclutamento dell'Ordine all'interno degli Studia di Parigi e Bologna."@it ;
     crm:P129_is_about inme:reginald_orleans .
+
+inme:bologna_inquiry a crm:E31_Document,
+        rico:RecordPart ;
+    rdfs:label "Dicta testium in inquisitione de vita et miraculis"@la ;
+    dcterms:description "It compiles the official records containing the direct testimonies of eyewitnesses (both the friars in Bologna and the witnesses in Toulouse)."@en,
+        "Raccoglie i verbali ufficiali con le deposizioni dirette dei testimoni oculari (sia i frati a Bologna sia i testimoni a Tolosa)"@it ;
+    dcterms:language "la" ;
+    dcterms:title "Dicta testium in inquisitione de vita et miraculis"@la ;
+    rico:hasResourceAssociatedWithSource <urn:clavis:bhl:2208> .
 
 inme:dominic_guzman a crm:E21_Person,
         rico:Person ;

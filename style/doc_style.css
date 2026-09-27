@@ -1,0 +1,322 @@
+:root {
+    /* Palette "Lo Scriptorium" */
+    --bg-color: #FDFBF7; /* Pergamena chiaro */
+    --text-color: #2D2926; /* Grigio antracite / inchiostro */
+    --accent-color: #9E1B1B; /* Rosso rubrica */
+    --border-color: #D4C5B0; /* Colore sabbia/oro per bordi */
+    
+    --dark-mode-bg: #2D2926;
+    /* Tipografia */
+    --font-headings: 'Merriweather', serif;
+    --font-body: 'Lora', serif;
+}
+
+body {
+    background-color: /*var(--bg-color)*/ var(--dark-mode-bg);
+    color: /*var(--text-color)*/ var(--bg-color);
+    font-family: var(--font-body);
+    /* Compensazione per la navbar fissa durante lo scroll verso le ancore */
+    padding-top: 76px; 
+    line-height: 1.8;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: var(--font-headings);
+    color: var(--text-color);
+}
+
+h2 {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #7A1515; /* Tonalità più scura per hover */
+    text-decoration: underline;
+}
+
+.navbar-scriptorium {
+    background-color: var(--accent-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-scriptorium .navbar-brand {
+    color: var(--bg-color) !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar-scriptorium .nav-link {
+    color: #FDFBF7 !important; /* Testo crema */
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+    font-family: var(--font-headings);
+    font-size: 0.9rem;
+}
+
+.navbar-scriptorium .nav-link:hover,
+.navbar-scriptorium .nav-link.active {
+    opacity: 1;
+    font-weight: bold;
+}
+
+.hero-section {
+    padding: 4rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 3rem;
+}
+
+.hero-section h1 {
+    color: var(--accent-color);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero-section .lead {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+.card-scriptorium {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 4px; /* Angoli leggermente arrotondati, non troppo moderni */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+}
+
+.card-scriptorium:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.card-scriptorium .card-title {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.btn-scriptorium {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    font-family: var(--font-headings);
+    font-size: 0.9rem;
+}
+
+.btn-scriptorium:hover {
+    background-color: #7A1515;
+    color: var(--bg-color);
+}
+
+/* Placeholder diagramma */
+.diagram-placeholder {
+    background-color: #FFFFFF;
+    border: 1px dashed var(--border-color);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #888;
+    border-radius: 4px;
+}
+
+.accordion-scriptorium .accordion-item {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-color);
+    margin-bottom: 0.5rem;
+    border-radius: 4px !important;
+}
+
+.accordion-scriptorium .accordion-button {
+    background-color: #FFFFFF;
+    color: var(--text-color);
+    font-family: var(--font-headings);
+    font-weight: bold;
+    box-shadow: none; /* Rimuove il focus ring di default */
+}
+
+.accordion-scriptorium .accordion-button:not(.collapsed) {
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+}
+
+.accordion-scriptorium .accordion-button:focus {
+    border-color: var(--border-color);
+    box-shadow: 0 0 0 0.25rem rgba(158, 27, 27, 0.25);
+}
+
+section {
+    padding-bottom: 4rem;
+}
+
+
+
+
+/*STYLING PER LE CARDS*/
+
+.text-purple-title { color: #d0bfff !important; }
+.purple-highlight { color: #e0aaff; }
+.quote {
+    border-color: #7b2cbf !important; 
+}
+.card-surface { 
+    background-color: #2b2b35; 
+    border: 1px solid #4a3b5c; 
+}
+.btn-purple {
+    background-color: #7b2cbf !important;
+    color: white !important;
+    transition: all 0.3s;
+}
+.btn-purple:hover {
+    background-color: #9d4edd;
+    color: white;
+}
+.btn-lang.active {
+    background-color: #d0bfff;
+    color: #2b2b35;
+    font-weight: bold;
+}
+
+/* SCROLLBAR PERSONALIZZATA */
+.custom-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+    background-color: #7b2cbf;
+    border-radius: 10px;
+}
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #d0bfff;
+}
+.custom-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #7b2cbf transparent;
+}
+
+/* LARGHEZZA CARD E EFFETTO FLIP */
+.card-width-custom {
+    width: 100%;
+    max-width: 420px;
+}
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    min-height: 480px; 
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+.is-flipped {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.flip-card-back {
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+/* STILI PER LE TAB UNDERLINE */
+.card-holder {
+    max-width: 1300px; /* Valore indicativo per 4 card */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important; /* Mantiene la responsività su schermi piccoli */
+}
+
+.nav-underline .nav-link.custom-tab {
+    color: #a89bb9; /* Viola spento per le tab inattive */
+    font-size: 1.1rem;
+    padding-bottom: 0.75rem;
+    margin: 0 0.5rem;
+    transition: all 0.3s;
+}
+.nav-underline .nav-link.custom-tab:hover {
+    color: #e0aaff;
+    border-bottom-color: rgba(123, 44, 191, 0.5); /* Sfumatura al passaggio del mouse */
+}
+.nav-underline .nav-link.custom-tab.active {
+    color: #d0bfff;
+    font-weight: bold;
+    border-bottom-color: #7b2cbf !important; /* Linea viola spessa per la tab attiva */
+}
+/* RISOLUZIONE BUG SPAZIO VUOTO TABS */
+.tab-content > .tab-pane:not(.active) {
+    display: none !important;
+}
+/*DIMENSIONI PER CARD PIU' PICCOLE*/
+.sm-card-width-custom {
+    width: 100%;
+    max-width: 280px; /* Ridotto da 420px: ora le card sono belle compatte */
+}
+.sm-flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    min-height: 340px; /* Ridotto da 480px: proporzionato alla nuova larghezza */
+}
+
+
+/* STILI PER LA TABELLA DELLE RELAZIONI */
+.custom-table-wrapper {
+    border: 1px solid #4a3b5c;
+    overflow: hidden; /* Mantiene i bordi arrotondati */
+}
+
+/* Colore di sfondo personalizzato per le righe (in tinta con le card) */
+.table-dark {
+    --bs-table-bg: #2b2b35; 
+    --bs-table-border-color: #4a3b5c;
+    --bs-table-hover-bg: #3a324b; /* Colore al passaggio del mouse */
+}
+
+/* Intestazione viola */
+.table-header-purple th {
+    background-color: #1e1e24 !important;
+    color: #d0bfff !important;
+    border-bottom: 2px solid #7b2cbf !important;
+}
+
+.text-entity{
+    cursor: help;
+}
+
+.note-size{
+    font-size: 0.75rem;
+}
+
+.card-dessc{
+    font-size: 0.95rem;
+}
+
+.card-id-size{
+    font-size: 0.85rem;
+}

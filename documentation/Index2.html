@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>San Domenico - Progetto Digital Humanities</title>
     
+    <link href="../style/doc_style.css" rel="stylesheet">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -13,170 +14,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            /* Palette "Lo Scriptorium" */
-            --bg-color: #FDFBF7; /* Pergamena chiaro */
-            --text-color: #2D2926; /* Grigio antracite / inchiostro */
-            --accent-color: #9E1B1B; /* Rosso rubrica */
-            --border-color: #D4C5B0; /* Colore sabbia/oro per bordi */
-            
-            --dark-mode-bg: #2D2926;
-            /* Tipografia */
-            --font-headings: 'Merriweather', serif;
-            --font-body: 'Lora', serif;
-        }
-
-        body {
-            background-color: /*var(--bg-color)*/ var(--dark-mode-bg);
-            color: /*var(--text-color)*/ var(--bg-color);
-            font-family: var(--font-body);
-            /* Compensazione per la navbar fissa durante lo scroll verso le ancore */
-            padding-top: 76px; 
-            line-height: 1.8;
-        }
-
-        h1, h2, h3, h4, h5, h6, .navbar-brand {
-            font-family: var(--font-headings);
-            color: var(--text-color);
-        }
-
-        h2 {
-            color: var(--accent-color);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #7A1515; /* Tonalità più scura per hover */
-            text-decoration: underline;
-        }
-
-        .navbar-scriptorium {
-            background-color: var(--accent-color);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .navbar-scriptorium .navbar-brand {
-            color: var(--bg-color) !important;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .navbar-scriptorium .nav-link {
-            color: #FDFBF7 !important; /* Testo crema */
-            opacity: 0.85;
-            transition: opacity 0.3s ease;
-            font-family: var(--font-headings);
-            font-size: 0.9rem;
-        }
-
-        .navbar-scriptorium .nav-link:hover,
-        .navbar-scriptorium .nav-link.active {
-            opacity: 1;
-            font-weight: bold;
-        }
-
-        .hero-section {
-            padding: 4rem 0;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 3rem;
-        }
-        
-        .hero-section h1 {
-            color: var(--accent-color);
-            font-size: 3rem;
-            font-weight: 700;
-        }
-
-        .hero-section .lead {
-            font-family: var(--font-body);
-            font-size: 1.25rem;
-            color: var(--text-color);
-            font-style: italic;
-        }
-
-        .card-scriptorium {
-            background-color: #FFFFFF;
-            border: 1px solid var(--border-color);
-            border-radius: 4px; /* Angoli leggermente arrotondati, non troppo moderni */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            height: 100%;
-        }
-
-        .card-scriptorium:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-        }
-
-        .card-scriptorium .card-title {
-            color: var(--accent-color);
-            font-weight: 700;
-        }
-
-        .btn-scriptorium {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-            border: none;
-            font-family: var(--font-headings);
-            font-size: 0.9rem;
-        }
-
-        .btn-scriptorium:hover {
-            background-color: #7A1515;
-            color: var(--bg-color);
-        }
-
-        /* Placeholder diagramma */
-        .diagram-placeholder {
-            background-color: #FFFFFF;
-            border: 1px dashed var(--border-color);
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
-            padding: 4rem 2rem;
-            text-align: center;
-            color: #888;
-            border-radius: 4px;
-        }
-
-        .accordion-scriptorium .accordion-item {
-            background-color: #FFFFFF;
-            border: 1px solid var(--border-color);
-            margin-bottom: 0.5rem;
-            border-radius: 4px !important;
-        }
-        
-        .accordion-scriptorium .accordion-button {
-            background-color: #FFFFFF;
-            color: var(--text-color);
-            font-family: var(--font-headings);
-            font-weight: bold;
-            box-shadow: none; /* Rimuove il focus ring di default */
-        }
-
-        .accordion-scriptorium .accordion-button:not(.collapsed) {
-            background-color: var(--bg-color);
-            color: var(--accent-color);
-        }
-
-        .accordion-scriptorium .accordion-button:focus {
-            border-color: var(--border-color);
-            box-shadow: 0 0 0 0.25rem rgba(158, 27, 27, 0.25);
-        }
-
-        section {
-            padding-bottom: 4rem;
-        }
-    </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar-main" tabindex="0">
 
@@ -245,9 +82,6 @@
                     <button class="nav-link custom-tab active" id="people-tab" data-bs-toggle="tab" data-bs-target="#people-pane" type="button" role="tab">People</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link custom-tab" id="places-tab" data-bs-toggle="tab" data-bs-target="#places-pane" type="button" role="tab">Places</button>
-                </li>
-                <li class="nav-item" role="presentation">
                     <button class="nav-link custom-tab" id="events-tab" data-bs-toggle="tab" data-bs-target="#events-pane" type="button" role="tab">Events</button>
                 </li>
                 <li class="nav-item" role="presentation">
@@ -277,43 +111,58 @@
                 <div class="tab-pane fade show active" id="people-pane" role="tabpanel" aria-labelledby="people-tab" tabindex="0">
                     <div class="row w-100 m-0 justify-content-center card-holder">
                         {% for item in people %}
-                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
-                            <div class="card h-100 shadow-sm border-0 bg-light">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title text-primary">{{ item.label.en }}</h5>
-                                    <h6 class="card-subtitle mb-3 text-muted small">ID: {{ item.id }}</h6>
-                                    <p class="card-text flex-grow-1">{{ item.description.en|truncate(150) }}</p>
-                                    {% if item.external_links %}
-                                        <a href="{{ item.external_links.wikidata }}" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See wikidata</a>
-                                        <a href="{{ item.external_links.viaf }}" class="btn btn-outline-primary btn-sm mt-auto" target="_blank">See viaf</a>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                        {% else %}
-                            <p class="text-center text-muted w-100 mt-4">Nessuna entità trovata in questa categoria.</p>
-                        {% endfor %}
-                    </div>
-                </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-5"> 
+                            <div class="sm-flip-card sm-card-width-custom">
+                                <div class="flip-card-inner" id="{{ item.id }}">
+                                    <div class="flip-card-front card-surface p-4">
+                                        <div class="card-body d-flex flex-column text-center">
+                                            <div class="my-auto">
+                                                {% if item.label.en %}
+                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
+                                                {% endif %}
+                                                {% if item.label.la %}
+                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
+                                                {% endif %}
 
-                <!-- TAB LUOGHI -->
-                <div class="tab-pane fade" id="places-pane" role="tabpanel" aria-labelledby="places-tab" tabindex="0">
-                    <div class="row w-100 m-0 justify-content-center card-holder">
-                        {% for item in places %}
-                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
-                            <div class="card h-100 shadow-sm border-0 bg-light">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title text-info">{{ item.name }}</h5>
-                                    <h6 class="card-subtitle mb-3 text-muted small">ID: {{ item.id }}</h6>
-                                    <p class="card-text flex-grow-1">{{ item.it_desc|truncate(150) }}</p>
-                                    {% if item.uri %}
-                                        <a href="{{ item.uri }}" class="btn btn-outline-info btn-sm mt-auto" target="_blank">See details</a>
-                                    {% endif %}
+                                                {% if item.external_links.wikidata %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">wikidata: </strong>
+                                                    <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
+                                                
+                                                </h6>
+                                                {% endif %}
+                                                {% if item.external_links.viaf %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">viaf: </strong>
+                                                    <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
+                                            </div>
+                                            <div class="text-center mb-3">
+                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                            </div>
+                                            <div class="mt-auto pt-4">
+                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back card-surface p-4 custom-scroll">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
+                                            <div class="btn-group btn-group-sm mb-3" role="group">
+                                                <button type="button" class="btn btn-outline-light btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-light btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                            </div>
+                                            <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
+                                            <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
+                                            <div class="mt-auto pt-3 text-center w-100">
+                                                <button class="btn btn-outline-light w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </div>                            
                         </div>
-                        {% else %}
-                            <p class="text-center text-muted w-100 mt-4">Nessuna entità trovata in questa categoria.</p>
                         {% endfor %}
                     </div>
                 </div>
@@ -322,21 +171,58 @@
                 <div class="tab-pane fade" id="events-pane" role="tabpanel" aria-labelledby="events-tab" tabindex="0">
                     <div class="row w-100 m-0 justify-content-center card-holder">
                         {% for item in events %}
-                        <!-- ... stesso blocco card ... (cambia il colore, es: text-success) -->
-                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
-                            <div class="card h-100 shadow-sm border-0 bg-light">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title text-success">{{ item.name }}</h5>
-                                    <h6 class="card-subtitle mb-3 text-muted small">ID: {{ item.id }}</h6>
-                                    <p class="card-text flex-grow-1">{{ item.it_desc|truncate(150) }}</p>
-                                    {% if item.uri %}
-                                        <a href="{{ item.uri }}" class="btn btn-outline-success btn-sm mt-auto" target="_blank">See details</a>
-                                    {% endif %}
+                        <div class="col-sm-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-5"> 
+                            <div class="sm-flip-card sm-card-width-custom">
+                                <div class="flip-card-inner" id="{{ item.id }}">
+                                    <div class="flip-card-front card-surface p-4">
+                                        <div class="card-body d-flex flex-column text-center">
+                                            <div class="my-auto">
+                                                {% if item.label.en %}
+                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
+                                                {% endif %}
+                                                {% if item.label.la %}
+                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
+                                                {% endif %}
+
+                                                {% if item.external_links.wikidata %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">wikidata: </strong>
+                                                    <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
+                                                
+                                                </h6>
+                                                {% endif %}
+                                                {% if item.external_links.viaf %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">viaf: </strong>
+                                                    <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
+                                            </div>
+                                            <div class="text-center mb-3">
+                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                            </div>
+                                            <div class="mt-auto pt-4">
+                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back card-surface p-4 custom-scroll">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
+                                            <div class="btn-group btn-group-sm mb-3" role="group">
+                                                <button type="button" class="btn btn-outline-light btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-light btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                            </div>
+                                            <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
+                                            <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
+                                            <div class="mt-auto pt-3 text-center w-100">
+                                                <button class="btn btn-outline-light w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </div>                            
                         </div>
-                        {% else %}
-                            <p class="text-center text-muted w-100 mt-4">Nessuna entità trovata in questa categoria.</p>
                         {% endfor %}
                     </div>
                 </div>
@@ -345,21 +231,58 @@
                 <div class="tab-pane fade" id="artworks-pane" role="tabpanel" aria-labelledby="artworks-tab" tabindex="0">
                     <div class="row w-100 m-0 justify-content-center card-holder">
                         {% for item in artworks %}
-                        <!-- ... stesso blocco card ... (cambia il colore, es: text-warning) -->
-                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
-                            <div class="card h-100 shadow-sm border-0 bg-light">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title text-warning">{{ item.name }}</h5>
-                                    <h6 class="card-subtitle mb-3 text-muted small">ID: {{ item.id }}</h6>
-                                    <p class="card-text flex-grow-1">{{ item.it_desc|truncate(150) }}</p>
-                                    {% if item.uri %}
-                                        <a href="{{ item.uri }}" class="btn btn-outline-warning btn-sm mt-auto" target="_blank">See details</a>
-                                    {% endif %}
+                        <div class="col-sm-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-5"> 
+                            <div class="sm-flip-card sm-card-width-custom">
+                                <div class="flip-card-inner" id="{{ item.id }}">
+                                    <div class="flip-card-front card-surface p-4">
+                                        <div class="card-body d-flex flex-column text-center">
+                                            <div class="my-auto">
+                                                {% if item.label.en %}
+                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
+                                                {% endif %}
+                                                {% if item.label.la %}
+                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
+                                                {% endif %}
+
+                                                {% if item.external_links.wikidata %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">wikidata: </strong>
+                                                    <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
+                                                
+                                                </h6>
+                                                {% endif %}
+                                                {% if item.external_links.viaf %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">viaf: </strong>
+                                                    <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
+                                            </div>
+                                            <div class="text-center mb-3">
+                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                            </div>
+                                            <div class="mt-auto pt-4">
+                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back card-surface p-4 custom-scroll">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
+                                            <div class="btn-group btn-group-sm mb-3" role="group">
+                                                <button type="button" class="btn btn-outline-light btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-light btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                            </div>
+                                            <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
+                                            <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
+                                            <div class="mt-auto pt-3 text-center w-100">
+                                                <button class="btn btn-outline-light w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </div>                            
                         </div>
-                        {% else %}
-                            <p class="text-center text-muted w-100 mt-4">Nessuna entità trovata in questa categoria.</p>
                         {% endfor %}
                     </div>
                 </div>
@@ -368,20 +291,57 @@
                 <div class="tab-pane fade" id="themes-pane" role="tabpanel" aria-labelledby="themes-tab" tabindex="0">
                     <div class="row w-100 m-0 justify-content-center card-holder">
                         {% for item in narrative_themes %}
-                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
-                            <div class="card h-100 shadow-sm border-0 bg-light">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title text-danger">{{ item.name }}</h5>
-                                    <h6 class="card-subtitle mb-3 text-muted small">ID: {{ item.id }}</h6>
-                                    <p class="card-text flex-grow-1">{{ item.it_desc|truncate(150) }}</p>
-                                    {% if item.uri %}
-                                        <a href="{{ item.uri }}" class="btn btn-outline-danger btn-sm mt-auto" target="_blank">See details</a>
-                                    {% endif %}
+                        <div class="col-sm-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-5"> 
+                            <div class="sm-flip-card sm-card-width-custom">
+                                <div class="flip-card-inner" id="{{ item.id }}">
+                                    <div class="flip-card-front card-surface p-4">
+                                        <div class="card-body d-flex flex-column text-center">
+                                            <div class="my-auto">
+                                                {% if item.label.en %}
+                                                <h3 class="card-title text-purple-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h3>
+                                                {% elif item.label.la %}
+                                                <h3 class="card-title text-purple-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h3>                                                
+                                                {% endif %}
+
+                                                {% if item.external_links.wikidata %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">wikidata: </strong>
+                                                    <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
+                                                
+                                                </h6>
+                                                {% endif %}
+                                                {% if item.external_links.viaf %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">viaf: </strong>
+                                                    <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
+                                            </div>
+                                            <div class="text-center mb-3">
+                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                            </div>
+                                            <div class="mt-auto pt-4">
+                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back card-surface p-4 custom-scroll">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
+                                            <div class="btn-group btn-group-sm mb-3" role="group">
+                                                <button type="button" class="btn btn-outline-light btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-light btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                            </div>
+                                            <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
+                                            <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
+                                            <div class="mt-auto pt-3 text-center w-100">
+                                                <button class="btn btn-outline-light w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </div>                            
                         </div>
-                        {% else %}
-                            <p class="text-center text-muted w-100 mt-4">Nessuna entità trovata in questa categoria.</p>
                         {% endfor %}
                     </div>
                 </div>
@@ -389,21 +349,59 @@
                 <!-- NUOVO TAB: LITERARY WORKS -->
                 <div class="tab-pane fade" id="literary-pane" role="tabpanel" aria-labelledby="literary-tab" tabindex="0">
                     <div class="row w-100 m-0 justify-content-center card-holder">
-                        {% for item in literary_work %} <!-- NOTA: il for item in ... deve usare il nome esatto della chiave nel tuo dizionario -->
-                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
-                            <div class="card h-100 shadow-sm border-0 bg-light">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title text-secondary">{{ item.name }}</h5>
-                                    <h6 class="card-subtitle mb-3 text-muted small">ID: {{ item.id }}</h6>
-                                    <p class="card-text flex-grow-1">{{ item.it_desc|truncate(150) }}</p>
-                                    {% if item.uri %}
-                                        <a href="{{ item.uri }}" class="btn btn-outline-secondary btn-sm mt-auto" target="_blank">See details</a>
-                                    {% endif %}
+                        {% for item in literary_works %}
+                        <div class="col-sm-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-5"> 
+                            <div class="sm-flip-card sm-card-width-custom">
+                                <div class="flip-card-inner" id="{{ item.id }}">
+                                    <div class="flip-card-front card-surface p-4">
+                                        <div class="card-body d-flex flex-column text-center">
+                                            <div class="my-auto">
+                                                {% if item.label.en %}
+                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
+                                                {% endif %}
+                                                {% if item.label.la %}
+                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
+                                                {% endif %}
+
+                                                {% if item.external_links.wikidata %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">wikidata: </strong>
+                                                    <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
+                                                
+                                                </h6>
+                                                {% endif %}
+                                                {% if item.external_links.viaf %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">viaf: </strong>
+                                                    <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
+                                            </div>
+                                            <div class="text-center mb-3">
+                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                            </div>
+                                            <div class="mt-auto pt-4">
+                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back card-surface p-4 custom-scroll">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
+                                            <div class="btn-group btn-group-sm mb-3" role="group">
+                                                <button type="button" class="btn btn-outline-light btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-light btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                            </div>
+                                            <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
+                                            <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
+                                            <div class="mt-auto pt-3 text-center w-100">
+                                                <button class="btn btn-outline-light w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </div>  
                         </div>
-                        {% else %}
-                            <p class="text-center text-muted w-100 mt-4">Nessuna entità trovata in questa categoria.</p>
                         {% endfor %}
                     </div>
                 </div>
@@ -412,20 +410,57 @@
                 <div class="tab-pane fade" id="visual-pane" role="tabpanel" aria-labelledby="visual-tab" tabindex="0">
                     <div class="row w-100 m-0 justify-content-center card-holder">
                         {% for item in visual_items %}
-                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
-                            <div class="card h-100 shadow-sm border-0 bg-light">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title" style="color: #6f42c1;">{{ item.name }}</h5> <!-- Esempio con un colore viola custom -->
-                                    <h6 class="card-subtitle mb-3 text-muted small">ID: {{ item.id }}</h6>
-                                    <p class="card-text flex-grow-1">{{ item.it_desc|truncate(150) }}</p>
-                                    {% if item.uri %}
-                                        <a href="{{ item.uri }}" class="btn btn-outline-dark btn-sm mt-auto" target="_blank" style="border-color: #6f42c1; color: #6f42c1;">See details</a>
-                                    {% endif %}
+                        <div class="col-sm-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-5"> 
+                            <div class="sm-flip-card sm-card-width-custom">
+                                <div class="flip-card-inner" id="{{ item.id }}">
+                                    <div class="flip-card-front card-surface p-4">
+                                        <div class="card-body d-flex flex-column text-center">
+                                            <div class="my-auto">
+                                                {% if item.label.en %}
+                                                <h3 class="card-title text-purple-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h3>
+                                                {% elif item.label.la %}
+                                                <h3 class="card-title text-purple-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h3>                                                
+                                                {% endif %}
+
+                                                {% if item.external_links.wikidata %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">wikidata: </strong>
+                                                    <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
+                                                
+                                                </h6>
+                                                {% endif %}
+                                                {% if item.external_links.viaf %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">viaf: </strong>
+                                                    <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
+                                            </div>
+                                            <div class="text-center mb-3">
+                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                            </div>
+                                            <div class="mt-auto pt-4">
+                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back card-surface p-4 custom-scroll">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
+                                            <div class="btn-group btn-group-sm mb-3" role="group">
+                                                <button type="button" class="btn btn-outline-light btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-light btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                            </div>
+                                            <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
+                                            <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
+                                            <div class="mt-auto pt-3 text-center w-100">
+                                                <button class="btn btn-outline-light w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        {% else %}
-                            <p class="text-center text-muted w-100 mt-4">Nessuna entità trovata in questa categoria.</p>
                         {% endfor %}
                     </div>
                 </div>
@@ -434,20 +469,59 @@
                 <div class="tab-pane fade" id="other-pane" role="tabpanel" aria-labelledby="other-tab" tabindex="0">
                     <div class="row w-100 m-0 justify-content-center card-holder">
                         {% for item in other %}
-                        <div class="col-12 col-md-4 col-lg-3 p-2"> 
-                            <div class="card h-100 shadow-sm border-0 bg-light">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title text-dark">{{ item.name }}</h5>
-                                    <h6 class="card-subtitle mb-3 text-muted small">ID: {{ item.id }}</h6>
-                                    <p class="card-text flex-grow-1">{{ item.it_desc|truncate(150) }}</p>
-                                    {% if item.uri %}
-                                        <a href="{{ item.uri }}" class="btn btn-outline-dark btn-sm mt-auto" target="_blank">See details</a>
-                                    {% endif %}
+                        <div class="col-sm-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-5"> 
+                            <div class="sm-flip-card sm-card-width-custom">
+                                <div class="flip-card-inner" id="{{ item.id }}">
+                                    <div class="flip-card-front card-surface p-4">
+                                        <div class="card-body d-flex flex-column text-center">
+                                            <div class="my-auto">
+                                                {% if item.label.en %}
+                                                <h3 class="card-title text-purple-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h3>
+                                                {% elif item.label.la %}
+                                                <h3 class="card-title text-purple-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h3>
+                                                
+                                                {% endif %}
+                                                
+
+                                                {% if item.external_links.wikidata %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">wikidata: </strong>
+                                                    <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
+                                                
+                                                </h6>
+                                                {% endif %}
+                                                {% if item.external_links.viaf %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">viaf: </strong>
+                                                    <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
+                                            </div>
+                                            <div class="text-center mb-3">
+                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                            </div>
+                                            <div class="mt-auto pt-4">
+                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back card-surface p-4 custom-scroll">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
+                                            <div class="btn-group btn-group-sm mb-3" role="group">
+                                                <button type="button" class="btn btn-outline-light btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-light btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                            </div>
+                                            <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
+                                            <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
+                                            <div class="mt-auto pt-3 text-center w-100">
+                                                <button class="btn btn-outline-light w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </div>       
                         </div>
-                        {% else %}
-                            <p class="text-center text-muted w-100 mt-4">Nessuna entità trovata in questa categoria.</p>
                         {% endfor %}
                     </div>
                 </div>
@@ -508,7 +582,7 @@
                 <div class="col-md-10 offset-md-1">
                     <div class="diagram-placeholder">
                         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-diagram-3 text-secondary mb-3" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5zM0 11.5A1.5 1.5 0 0 1 1.5 10h2A1.5 1.5 0 0 1 5 11.5v1A1.5 1.5 0 0 1 3.5 14h-2A1.5 1.5 0 0 1 0 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h2a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-2a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/>
+                            
                         </svg>
                         <h4>Mappa Concettuale (ER / UML)</h4>
                         <p class="mb-0"><em>Inserisci qui l'immagine del tuo modello concettuale o diagramma RDF.</em></p>

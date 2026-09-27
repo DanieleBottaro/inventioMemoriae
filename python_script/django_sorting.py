@@ -16,11 +16,13 @@ all_relations.extend(xml_relations)
 entity_type = {}
 for rel in all_relations:
     if rel[1] == "rdf:type":
-        entity_type[rel[0]] = rel[2].lower()
+        if rel[0] not in entity_type:
+            entity_type[rel[0]] = rel[2].lower()
+        else:
+            entity_type[rel[0]] += rel[2].lower()
 
 categorized_data = {
     "people": [],
-    "places": [],
     "events": [],
     "artworks": [],
     "narrative_themes": [],
@@ -38,13 +40,10 @@ for entity_id, entity_data in all_entities.items():
     if "person" in type_ent:
         categorized_data["people"].append(entity_data)
 
-    elif "place" in type_ent:
-        categorized_data["places"].append(entity_data)
-
     elif "event" in type_ent:
         categorized_data["events"].append(entity_data)
 
-    elif "human-made_object" in type_ent:
+    elif "human-made_object" in type_ent or "historicorartisticproperty" in type_ent:
         categorized_data["artworks"].append(entity_data)
 
     elif "propositional_object" in type_ent:

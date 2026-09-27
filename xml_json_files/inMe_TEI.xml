@@ -168,7 +168,7 @@
 
                         <relatedItem type="constituent">
                             <bibl xml:id="bologna_inquiry">
-                                <title level="a">Dicta testium in inquisitione de vita et miraculis</title>
+                                <title xml:lang="la">Dicta testium in inquisitione de vita et miraculis</title>
                                 <idno type="BHL">2208</idno> 
                                 <date when="1233">1233</date>
                                 <textLang mainLang="la">Latin</textLang>
@@ -179,7 +179,7 @@
 
                         <relatedItem type="constituent">
                             <bibl xml:id="toulouse_inquiry">
-                                <title level="a">Epistula inquisitorum Tolosanorum de virtutibus et miraculis</title>
+                                <title xml:lang="la">Epistula inquisitorum Tolosanorum de virtutibus et miraculis</title>
                                 <idno type="BHL">2209</idno> 
                                 <date when="1233">1233</date>
                                 <textLang mainLang="la">Latin</textLang>
@@ -476,6 +476,9 @@
                     <relation active="#napoleone_orsini" name="rdf:type" passive="crm:E21_Person"/>
                     <relation active="#napoleone_orsini" name="rdf:type" passive="rico:Person"/>
 
+                    <relation active="#sister_cecilia_contarini" name="rdf:type" passive="crm:E21_Person"/>
+                    <relation active="#sister_cecilia_contarini" name="rdf:type" passive="rico:Person"/>
+
                     <relation active="#saint_dominic_arca" name="rdf:type" passive="arco:HistoricOrArtisticProperty"/>
                     <relation active="#saint_dominic_arca" name="rdf:type" passive="arco:ComplexCulturalProperty"/>
 
@@ -504,6 +507,16 @@
                     <relation active="#libellus_principiis" name="rdf:type" passive="lrmoo:F1_Work"/>
                     <relation active="#acta_canonizationis" name="rdf:type" passive="crm:E31_Document"/>
                     <relation active="#acta_canonizationis" name="rdf:type" passive="rico:Record"/>
+
+                    <relation active="#toulouse_inquiry" name="rdf:type" passive="crm:E31_Document"/>
+                    <relation active="#toulouse_inquiry" name="rdf:type" passive="rico:RecordPart"/>
+                    <relation active="#acta_canonizationis" name="rico:hasDirectConstituent" passive="#toulouse_inquiry"/>
+                    <relation active="#acta_canonizationis" name="crm:P148_has_component" passive="#toulouse_inquiry"/>
+
+                    <relation active="#bologna_inquiry" name="rdf:type" passive="crm:E31_Document"/>
+                    <relation active="#bologna_inquiry" name="rdf:type" passive="rico:RecordPart"/>
+                    <relation active="#acta_canonizationis" name="rico:hasDirectConstituent" passive="#bologna_inquiry"/>
+                    <relation active="#acta_canonizationis" name="crm:P148_has_component" passive="#bologna_inquiry"/>
                     
                     <relation active="#dominican_order" name="rdf:type" passive="crm:E74_Group"/>
                     <relation active="#dominican_order" name="rdf:type" passive="rico:Group"/>
@@ -607,7 +620,7 @@
                     </place>
                         
                     <place type="building" xml:id="san_niccolo_church">                                                           
-                        <placeName>Chiesa di San Niccolò delle Vigne</placeName>
+                        <placeName>Church of San Niccolò delle Vigne</placeName>
                         <note xml:lang="it">Primitivo insediamento domenicano a Bologna (1219) dove Domenico morì e fu inumato "sotto i piedi dei frati". Fu il teatro originario del miracolo quotidiano e domestico della moltiplicazione dei pani riferito dai testimoni oculari Rodolfo di Faenza e Buonviso di Piacenza.</note>
                         <note xml:lang="en">The early Dominican settlement in Bologna (1219), where Dominic died and was buried "beneath the feet of the friars". It was the original setting for the daily, domestic miracle of the multiplication of the loaves, as recounted by eyewitnesses Rodolfo di Faenza and Buonviso di Piacenza.</note>
                     </place>
