@@ -73,7 +73,18 @@
 
         <section id="entities">
             <h2>Entities extraction and modeling</h2>
-            <p class="mb-4">Sono state identificate e modellate in totale 93 entities: 46 sono state estratte da stralci selezionati dai due testi presi in considerazione e le restanti 47 sono state definite nel file JSON. Di seguito </p>
+            <p class="mb-4">Sono state identificate e modellate in totale 93 entities: 46 sono state estratte da stralci selezionati dai due testi presi in considerazione e le restanti 47 sono state definite nel file JSON. Di seguito sono riportate suddivise in 7 macro-categorie:</p>
+            <ul>
+                <li>People</li>
+                <li>Events</li>
+                <li>Artworks</li>
+                <li>Narrative Themes</li>
+                <li>Literary works</li>
+                <li>Visual items</li>
+                <li>Others</li>
+            </ul>
+            <p>A ciascuna entity è assegnata una card, dalla quale è possibile vedere il "titolo" (la <code>rdfs:label</code>), gli authority controls se presenti (viaf, wikidata o GeoNames per i luoghi ), l'identificativo col quale è stata identificata all'interno del progetto. Sul retro è presente la descrizione (la <code>dcterms:description</code>) dell'entity sia in italiano che in inglese.</p>
+            <p>La tab sottostante è stata creata dinamicamente usando Jinja2, in modo tale che se si aggiungessero entities nel file XML/TEI oppure nel file JSON, queste verrebbero aggiunte ad essa solamente runnando il file <code>jinja_sorting.py</code></p>
             
             
             <!-- NAVIGAZIONE TAB -->
@@ -99,7 +110,7 @@
                     <button class="nav-link custom-tab" id="visual-tab" data-bs-toggle="tab" data-bs-target="#visual-pane" type="button" role="tab">Visual Items</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link custom-tab" id="other-tab" data-bs-toggle="tab" data-bs-target="#other-pane" type="button" role="tab">Other Concepts</button>
+                    <button class="nav-link custom-tab" id="other-tab" data-bs-toggle="tab" data-bs-target="#other-pane" type="button" role="tab">Others</button>
                 </li>
             </ul> 
 
@@ -118,10 +129,10 @@
                                         <div class="card-body d-flex flex-column text-center">
                                             <div class="my-auto">
                                                 {% if item.label.en %}
-                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
                                                 {% endif %}
                                                 {% if item.label.la %}
-                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
                                                 {% endif %}
 
                                                 {% if item.external_links.wikidata %}
@@ -150,13 +161,13 @@
                                         <div class="card-body d-flex flex-column align-items-center">
                                             <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
                                             <div class="btn-group btn-group-sm mb-3" role="group">
-                                                <button type="button" class="btn btn-outline-light btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
-                                                <button type="button" class="btn btn-outline-light btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
                                             </div>
                                             <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
                                             <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
                                             <div class="mt-auto pt-3 text-center w-100">
-                                                <button class="btn btn-outline-light w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                                <button class="btn btn-outline-dark w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
                                             </div>
                                         </div>
                                     </div>
@@ -178,10 +189,10 @@
                                         <div class="card-body d-flex flex-column text-center">
                                             <div class="my-auto">
                                                 {% if item.label.en %}
-                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
                                                 {% endif %}
                                                 {% if item.label.la %}
-                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
                                                 {% endif %}
 
                                                 {% if item.external_links.wikidata %}
@@ -210,13 +221,13 @@
                                         <div class="card-body d-flex flex-column align-items-center">
                                             <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
                                             <div class="btn-group btn-group-sm mb-3" role="group">
-                                                <button type="button" class="btn btn-outline-light btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
-                                                <button type="button" class="btn btn-outline-light btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
                                             </div>
                                             <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
                                             <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
                                             <div class="mt-auto pt-3 text-center w-100">
-                                                <button class="btn btn-outline-light w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                                <button class="btn btn-outline-dark w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
                                             </div>
                                         </div>
                                     </div>
@@ -238,10 +249,10 @@
                                         <div class="card-body d-flex flex-column text-center">
                                             <div class="my-auto">
                                                 {% if item.label.en %}
-                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
                                                 {% endif %}
                                                 {% if item.label.la %}
-                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
                                                 {% endif %}
 
                                                 {% if item.external_links.wikidata %}
@@ -270,13 +281,13 @@
                                         <div class="card-body d-flex flex-column align-items-center">
                                             <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
                                             <div class="btn-group btn-group-sm mb-3" role="group">
-                                                <button type="button" class="btn btn-outline-light btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
-                                                <button type="button" class="btn btn-outline-light btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
                                             </div>
                                             <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
                                             <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
                                             <div class="mt-auto pt-3 text-center w-100">
-                                                <button class="btn btn-outline-light w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                                <button class="btn btn-outline-dark w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
                                             </div>
                                         </div>
                                     </div>
@@ -298,9 +309,9 @@
                                         <div class="card-body d-flex flex-column text-center">
                                             <div class="my-auto">
                                                 {% if item.label.en %}
-                                                <h3 class="card-title text-purple-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h3>
+                                                <h4 class="card-title text-purple-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h3>
                                                 {% elif item.label.la %}
-                                                <h3 class="card-title text-purple-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h3>                                                
+                                                <h4 class="card-title text-purple-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h3>                                                
                                                 {% endif %}
 
                                                 {% if item.external_links.wikidata %}
@@ -329,13 +340,13 @@
                                         <div class="card-body d-flex flex-column align-items-center">
                                             <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
                                             <div class="btn-group btn-group-sm mb-3" role="group">
-                                                <button type="button" class="btn btn-outline-light btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
-                                                <button type="button" class="btn btn-outline-light btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
                                             </div>
                                             <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
                                             <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
                                             <div class="mt-auto pt-3 text-center w-100">
-                                                <button class="btn btn-outline-light w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                                <button class="btn btn-outline-dark w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
                                             </div>
                                         </div>
                                     </div>
@@ -357,10 +368,10 @@
                                         <div class="card-body d-flex flex-column text-center">
                                             <div class="my-auto">
                                                 {% if item.label.en %}
-                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
                                                 {% endif %}
                                                 {% if item.label.la %}
-                                                <h3 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
                                                 {% endif %}
 
                                                 {% if item.external_links.wikidata %}
@@ -389,13 +400,13 @@
                                         <div class="card-body d-flex flex-column align-items-center">
                                             <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
                                             <div class="btn-group btn-group-sm mb-3" role="group">
-                                                <button type="button" class="btn btn-outline-light btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
-                                                <button type="button" class="btn btn-outline-light btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
                                             </div>
                                             <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
                                             <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
                                             <div class="mt-auto pt-3 text-center w-100">
-                                                <button class="btn btn-outline-light w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                                <button class="btn btn-outline-dark w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
                                             </div>
                                         </div>
                                     </div>
@@ -417,9 +428,9 @@
                                         <div class="card-body d-flex flex-column text-center">
                                             <div class="my-auto">
                                                 {% if item.label.en %}
-                                                <h3 class="card-title text-purple-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h3>
+                                                <h4 class="card-title text-purple-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h3>
                                                 {% elif item.label.la %}
-                                                <h3 class="card-title text-purple-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h3>                                                
+                                                <h4 class="card-title text-purple-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h3>                                                
                                                 {% endif %}
 
                                                 {% if item.external_links.wikidata %}
@@ -448,13 +459,13 @@
                                         <div class="card-body d-flex flex-column align-items-center">
                                             <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
                                             <div class="btn-group btn-group-sm mb-3" role="group">
-                                                <button type="button" class="btn btn-outline-light btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
-                                                <button type="button" class="btn btn-outline-light btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
                                             </div>
                                             <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
                                             <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
                                             <div class="mt-auto pt-3 text-center w-100">
-                                                <button class="btn btn-outline-light w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                                <button class="btn btn-outline-dark w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
                                             </div>
                                         </div>
                                     </div>
@@ -476,9 +487,9 @@
                                         <div class="card-body d-flex flex-column text-center">
                                             <div class="my-auto">
                                                 {% if item.label.en %}
-                                                <h3 class="card-title text-purple-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h3>
+                                                <h4 class="card-title text-purple-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h3>
                                                 {% elif item.label.la %}
-                                                <h3 class="card-title text-purple-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h3>
+                                                <h4 class="card-title text-purple-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h3>
                                                 
                                                 {% endif %}
                                                 
@@ -496,6 +507,12 @@
                                                     <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
                                                 </h6>
                                                 {% endif %}
+                                                {% if item.external_links.GeoNames %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">geonames: </strong>
+                                                    <a href="{{ item.external_links.GeoNames }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.GeoNames.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
                                             </div>
                                             <div class="text-center mb-3">
                                                 <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
@@ -509,13 +526,13 @@
                                         <div class="card-body d-flex flex-column align-items-center">
                                             <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
                                             <div class="btn-group btn-group-sm mb-3" role="group">
-                                                <button type="button" class="btn btn-outline-light btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
-                                                <button type="button" class="btn btn-outline-light btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
                                             </div>
                                             <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
                                             <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
                                             <div class="mt-auto pt-3 text-center w-100">
-                                                <button class="btn btn-outline-light w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                                <button class="btn btn-outline-dark w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
                                             </div>
                                         </div>
                                     </div>
@@ -576,7 +593,7 @@
 
         <section id="knowledge-organization">
             <h2>Knowledge Organization</h2>
-            <p>Per strutturare l'informazione è stato sviluppato un modello concettuale che definisce le classi e le proprietà. Il modello collega documenti, persone, eventi storici e luoghi geografici.</p>
+            <p>Per strutturare l'informazione è stato sviluppato un modello teoretico che mappasse le relazioni che intercorrono tra le varie entità individuate. Il modello collega documenti, persone, eventi storici e luoghi geografici.</p>
             
             <div class="row mt-4">
                 <div class="col-md-10 offset-md-1">

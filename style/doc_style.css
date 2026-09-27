@@ -166,28 +166,51 @@ section {
 
 /*STYLING PER LE CARDS*/
 
-.text-purple-title { color: #d0bfff !important; }
-.purple-highlight { color: #e0aaff; }
+.text-purple-title { color: var(--text-color) !important; }
+.purple-highlight { color: var(--accent-color); }
 .quote {
     border-color: #7b2cbf !important; 
 }
+
+.card-body a{
+    color: var(--text-color);
+}
+
+.card-body a:hover{
+    color: var(--accent-color);
+}
+
 .card-surface { 
-    background-color: #2b2b35; 
-    border: 1px solid #4a3b5c; 
+    background-color: #F1EBE1; 
+    border: 2px solid var(--accent-color); 
 }
 .btn-purple {
-    background-color: #7b2cbf !important;
+    background-color: var(--accent-color) !important;
     color: white !important;
     transition: all 0.3s;
+    border: 1px solid var(--accent-color);
 }
+
 .btn-purple:hover {
-    background-color: #9d4edd;
-    color: white;
+    background-color: #F1EBE1 !important;
+    color: var(--accent-color) !important;
+    border: 1px solid var(--accent-color) !important;
 }
+
 .btn-lang.active {
-    background-color: #d0bfff;
-    color: #2b2b35;
+    background-color: var(--accent-color) !important;
+    color: #F1EBE1 !important;
     font-weight: bold;
+}
+
+.btn-lang{
+    background-color: transparent !important;
+    color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+}
+
+.card-body p{
+    color: var(--text-color) !important;
 }
 
 /* SCROLLBAR PERSONALIZZATA */
@@ -199,16 +222,13 @@ section {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.custom-scroll::-webkit-scrollbar-thumb {
-    background-color: #7b2cbf;
-    border-radius: 10px;
-}
+
 .custom-scroll::-webkit-scrollbar-thumb:hover {
     background-color: #d0bfff;
 }
 .custom-scroll {
     scrollbar-width: thin;
-    scrollbar-color: #7b2cbf transparent;
+    scrollbar-color: var(--accent-color) transparent;
 }
 
 /* LARGHEZZA CARD E EFFETTO FLIP */
@@ -254,20 +274,20 @@ section {
 }
 
 .nav-underline .nav-link.custom-tab {
-    color: #a89bb9; /* Viola spento per le tab inattive */
+    color: #c57676; /* Viola spento per le tab inattive */
     font-size: 1.1rem;
     padding-bottom: 0.75rem;
     margin: 0 0.5rem;
     transition: all 0.3s;
 }
 .nav-underline .nav-link.custom-tab:hover {
-    color: #e0aaff;
-    border-bottom-color: rgba(123, 44, 191, 0.5); /* Sfumatura al passaggio del mouse */
+    color: var(--accent-color);
+    border-bottom-color: #c57676; /* Sfumatura al passaggio del mouse */
 }
 .nav-underline .nav-link.custom-tab.active {
-    color: #d0bfff;
+    color: var(--accent-color);
     font-weight: bold;
-    border-bottom-color: #7b2cbf !important; /* Linea viola spessa per la tab attiva */
+    border-bottom-color: var(--accent-color) !important; /* Linea viola spessa per la tab attiva */
 }
 /* RISOLUZIONE BUG SPAZIO VUOTO TABS */
 .tab-content > .tab-pane:not(.active) {
