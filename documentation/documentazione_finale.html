@@ -83,7 +83,7 @@
                 <li>Visual items</li>
                 <li>Others</li>
             </ul>
-            <p>A ciascuna entity è assegnata una card, dalla quale è possibile vedere il "titolo" (la <code>rdfs:label</code>), gli authority controls se presenti (viaf o wikidata), l'identificativo col quale è stata identificata all'interno del progetto. Sul retro è presente la descrizione (la <code>dcterms:description</code>) dell'entity sia in italiano che in inglese.</p>
+            <p>A ciascuna entity è assegnata una card, dalla quale è possibile vedere il "titolo" (la <code>rdfs:label</code>), gli authority controls se presenti (viaf, wikidata o GeoNames per i luoghi ), l'identificativo col quale è stata identificata all'interno del progetto. Sul retro è presente la descrizione (la <code>dcterms:description</code>) dell'entity sia in italiano che in inglese.</p>
             <p>La tab sottostante è stata creata dinamicamente usando Jinja2, in modo tale che se si aggiungessero entities nel file XML/TEI oppure nel file JSON, queste verrebbero aggiunte ad essa solamente runnando il file <code>jinja_sorting.py</code></p>
             
             
@@ -4236,13 +4236,15 @@
         <section id="knowledge-organization">
             <h2>Knowledge Organization</h2>
             <p>Per strutturare l'informazione è stato sviluppato un modello teoretico che mappasse le relazioni che intercorrono tra le varie entità individuate. Il modello collega documenti, persone, eventi storici e luoghi geografici.</p>
-            
+            <img src="images/inme_rdf-viewer.svg"/>
             <div class="row mt-4">
                 <div class="col-md-10 offset-md-1">
                     <div class="diagram-placeholder">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-diagram-3 text-secondary mb-3" viewBox="0 0 16 16">
-                            
+                        <svg xmlns="" width="64" height="64" fill="currentColor" class="bi bi-diagram-3 text-secondary mb-3" viewBox="0 0 16 16">
+                        
                         </svg>
+                        
+                        <p>FAENJOFNEW</p>
                         <h4>Mappa Concettuale (ER / UML)</h4>
                         <p class="mb-0"><em>Inserisci qui l'immagine del tuo modello concettuale o diagramma RDF.</em></p>
                     </div>
