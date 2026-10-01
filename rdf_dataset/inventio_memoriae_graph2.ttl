@@ -170,7 +170,7 @@ inme:creation_dominic_sarcophagus_time a crm:E52_Time-Span ;
     crm:P82b_end_of_the_end "1267"^^xsd:gYear .
 
 inme:deposition_buonviso a crm:E31_Document,
-        rico:Record ;
+        rico:RecordPart ;
     rdfs:label "Deposition of Buonviso da Piacenza"@en,
         "Deposizione di Buonviso da Piacenza"@it ;
     dcterms:description "Sworn testimony from Dominic’s first companion and the founder of the Piacenza convent. Buonviso attests to the founder’s rigorous asceticism, exhausting nocturnal prayer vigils, and gift of tears. He recalls the austerity of their itinerant life on the road, describing Dominic’s habit of walking barefoot and fasting strictly. Together with Rodolfo, he also provides crucial, firsthand eyewitness testimony regarding the domestic miracle of the multiplication of loaves for the community of San Niccolò delle Vigne."@en,
@@ -179,7 +179,7 @@ inme:deposition_buonviso a crm:E31_Document,
     rico:isOrWasIncludedIn inme:bologna_inquiry .
 
 inme:deposition_rodolfo a crm:E31_Document,
-        rico:Record ;
+        rico:RecordPart ;
     rdfs:label "Deposition of Rodolfo da Faenza"@en,
         "Deposizione di Rodolfo da Faenza"@it ;
     dcterms:description "Sworn testimony by the procurator of the Bolognese convent of San Niccolò delle Vigne. Rodolfo offers one of the most intimate and realistic accounts of Dominic’s final hours and agony, describing how he physically supported the saint's head and wiped away his sweat—and records his famous wish to be buried 'beneath the friars' feet'. He also details the construction of the initial burial site, the arduous physical effort involved in opening the tomb by night, and the enduring miraculous fragrance observed during the translation of the remains in 1233. Finally, he provides the original account of the everyday, domestic miracle in Bologna: the multiplication of loaves in the convent refectory."@en,
@@ -861,9 +861,9 @@ inme:toulouse_inquiry a crm:E31_Document,
     rdfs:label "Epistula inquisitorum Tolosanorum de virtutibus et miraculis"@la ;
     dcterms:description "Covering letter drafted by the inquisitors of Toulouse and sent to Master Tancred in Bologna to authenticate the inquiry conducted in France."@en,
         "Lettera di trasmissione redatta dagli inquisitori tolosani inviata a Maestro Tancredi a Bologna per autenticare l'inchiesta svolta in Francia"@it ;
+    dcterms:identifier <urn:clavis:bhl:2209> ;
     dcterms:language "la" ;
-    dcterms:title "Epistula inquisitorum Tolosanorum de virtutibus et miraculis"@la ;
-    rico:hasResourceAssociatedWithSource <urn:clavis:bhl:2209> .
+    dcterms:title "Epistula inquisitorum Tolosanorum de virtutibus et miraculis"@la .
 
 inme:dominican_order a crm:E74_Group,
         rico:Group ;
@@ -943,9 +943,9 @@ inme:bologna_inquiry a crm:E31_Document,
     rdfs:label "Dicta testium in inquisitione de vita et miraculis"@la ;
     dcterms:description "It compiles the official records containing the direct testimonies of eyewitnesses (both the friars in Bologna and the witnesses in Toulouse)."@en,
         "Raccoglie i verbali ufficiali con le deposizioni dirette dei testimoni oculari (sia i frati a Bologna sia i testimoni a Tolosa)"@it ;
+    dcterms:identifier <urn:clavis:bhl:2208> ;
     dcterms:language "la" ;
-    dcterms:title "Dicta testium in inquisitione de vita et miraculis"@la ;
-    rico:hasResourceAssociatedWithSource <urn:clavis:bhl:2208> .
+    dcterms:title "Dicta testium in inquisitione de vita et miraculis"@la .
 
 inme:dominic_guzman a crm:E21_Person,
         rico:Person ;

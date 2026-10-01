@@ -673,7 +673,7 @@ def populate_graph(db_graph, entities_db, relations):
                         db_graph.add((subj_uri, OWL.sameAs, URIRef(aut_code)))
 
                     elif aut_code_type == "bhl":
-                        db_graph.add((subj_uri, RICO.hasResourceAssociatedWithSource, URIRef(aut_code)))
+                        db_graph.add((subj_uri, DCTERMS.identifier, URIRef(aut_code)))
 
                 if "constituents" in current_entity:
                     for constituent in current_entity["constituents"]:

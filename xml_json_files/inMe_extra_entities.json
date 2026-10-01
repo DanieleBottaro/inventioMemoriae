@@ -725,7 +725,7 @@
             },
             "ontological_classes": [
                 "crm:E31_Document",
-                "rico:Record"
+                "rico:RecordPart"
             ],
             "description": {
                 "it": "Testimonianza giurata del procuratore del convento bolognese di San Niccolò delle Vigne. Rodolfo offre uno dei resoconti più intimi e realistici sulle ultime ore e l'agonia di Domenico, descrivendo come ne sorresse fisicamente il capo e ne asciugò il sudore, e ne riporta la celebre volontà testamentaria di essere inumato 'sotto i piedi dei frati'. Descrive inoltre i dettagli costruttivi della prima sepoltura, la successiva fatica fisica per l'apertura notturna della tomba e la persistenza del miracoloso profumo durante la traslazione del 1233. Infine, fornisce la testimonianza originaria sul quotidiano e domestico miracolo bolognese della moltiplicazione dei pani nel refettorio del convento.",
@@ -742,7 +742,7 @@
             },
             "ontological_classes": [
                 "crm:E31_Document",
-                "rico:Record"
+                "rico:RecordPart"
             ],
             "description": {
                 "it": "Testimonianza giurata del primo compagno di Domenico e fondatore del convento di Piacenza. Buonviso attesta l'ascesi rigorosa, le estenuanti veglie di preghiera notturna e il dono delle lacrime del fondatore. Rievoca l'austerità della loro vita itinerante lungo la via, descrivendo l'abitudine di Domenico di camminare a piedi nudi e di digiunare rigorosamente. Offre inoltre, insieme a Rodolfo, la fondamentale testimonianza oculare e originaria sul miracolo domestico della moltiplicazione dei pani a favore della comunità di San Niccolò delle Vigne.",
