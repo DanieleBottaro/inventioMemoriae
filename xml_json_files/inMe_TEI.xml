@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="../xslt/inMe_XSLT.xsl"?>
+<!-- <?xml-stylesheet type="text/xsl" href="../xslt/inMe_XSLT.xslt"?> -->
 <?xml-model href="https://vault.tei-c.org/P5/current/xml/tei/custom/schema/relaxng/tei_all.rng" schematypens="http://relaxng.org/ns/structure/1.0" type="application/xml"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
@@ -238,8 +238,8 @@
                     <person xml:id="jordan_saxony">
                         <idno type="wikidata">Q60790</idno>
                         <idno type="viaf">84971788</idno>
-                        <persName xml:id="en">Jordan of Saxony</persName>
-                        <persName xml:id="it">Giordano di Sassonia</persName>
+                        <persName xml:lang="en">Jordan of Saxony</persName>
+                        <persName xml:lang="it">Giordano di Sassonia</persName>
                         <note xml:lang="it">Secondo maestro generale dell'Ordine e successore diretto di Domenico dal 1222; compose il Libellus de principiis, la prima opera storica e agiografica sulle origini domenicane, fu un formidabile reclutatore tra gli universitari, curò la traslazione dei resti del santo nel 1233 e morì in un naufragio nel 1237.</note>
                         <note xml:lang="en">He was the second Master General of the Order and the direct successor to Dominic from 1222; he composed the *Libellus de principiis*, the first historical and hagiographical work on the origins of the Dominican Order, was a formidable recruiter among university students, oversaw the translation of the saint's remains in 1233, and died in a shipwreck in 1237.</note>
                     </person>
@@ -270,8 +270,8 @@
                     <person xml:id="reginald_orleans">
                         <idno type="wikidata">Q3931864</idno>
                         <idno type="viaf">89368066</idno>
-                        <persName xml:id="en">Reginald of Orléans</persName>
-                        <persName xml:id="it">Reginaldo d'Orléans</persName>
+                        <persName xml:lang="en">Reginald of Orléans</persName>
+                        <persName xml:lang="it">Reginaldo d'Orléans</persName>
                         <note xml:lang="it">Celebre docente di diritto canonico a Parigi e decano di Saint-Aignan a Orléans; unitosi a san Domenico a Roma nel 1218 dopo essere stato miracolosamente risanato dalla Vergine Maria (che nell'occasione gli mostrò l'abito dell'Ordine), fu un formidabile predicatore a Bologna e a Parigi, dove favorì il decisivo reclutamento universitario dei primi frati prima della sua precoce scomparsa nel 1220.</note>
                         <note xml:lang="en">A renowned professor of canon law in Paris and Dean of Saint-Aignan in Orléans, he joined Saint Dominic in Rome in 1218 after being miraculously healed by the Virgin Mary (who, on that occasion, showed him the Order's habit); he was a formidable preacher in Bologna and Paris, where he facilitated the crucial recruitment of the first friars from university circles before his untimely death in 1220.</note>
                     </person>
@@ -764,7 +764,7 @@
                 <div type="snippet" xml:id="snippet_02" n="2">
                     <pb n="10"/>
                     <p>
-                        One of these impressive miracles is illustrated to the right of the Madonna, the <rs type="narrative_theme" ref="inme:theme_ordeal_fire">Burning of the Books</rs> (Figs. 23 and 24), which concerns the dispute between the Albigensians and the <rs ref="#dominican_order">Dominicans</rs>. After each group defended its respective causes before a panel of judges, seen seated above, with inconclusive results, a test of fire is proposed. In the <rs type="object" ref="#panel_burning_books">relief</rs>, while a young boy fans the flames with bellows, the book of the heretics is consumed, while that of <persName ref="#dominic_guzman">Dominic</persName> jumps out of the fire unscathed, the left  even, according to the story, after three separate attempts to burn it.
+                        One of these impressive miracles is illustrated to the right of the Madonna, the <rs type="narrative_theme" ref="inme:theme_ordeal_fire">Burning of the Books</rs> (Figs. 23 and 24), which concerns the dispute between the Albigensians and the <rs type="org" ref="#dominican_order">Dominicans</rs>. After each group defended its respective causes before a panel of judges, seen seated above, with inconclusive results, a test of fire is proposed. In the <rs type="object" ref="#panel_burning_books">relief</rs>, while a young boy fans the flames with bellows, the book of the heretics is consumed, while that of <persName ref="#dominic_guzman">Dominic</persName> jumps out of the fire unscathed, the left  even, according to the story, after three separate attempts to burn it.
                     </p>
                 </div>
 
@@ -818,14 +818,14 @@
                 <div type="snippet" xml:id="snippet_10" n="10">
                     <pb n="151-152"/>
                     <p>
-                        Per quanto riguarda i miracoli che <persName ref="#dominic_guzman">Domenico</persName> avrebbe compiuto durante la sua vita, si era già rilevata l'estrema sobrietà dei testimoni <placeName ref="#bologna">bolognesi</placeName>, peraltro assai larghi di particolari anche clamorosi nel descrivere i prodigi olfattivi verificatisi in occasione della <foreign xml:lang="la">translatio</foreign> <rs type="place" ref="#bologna">bolognese</rs> del maggio precedente<ptr type="footnote" n="115"/>. Solo i frati <persName ref="#buonviso">Buonviso di Piacenza</persName> e <persName ref="#rodolfo">Rodolfo di Faenza</persName><ptr type="footnote" n="116"/> avrebbero narrato, anche qui senz'apparente sollecitazione da parte dei commissari, un <rs type="narrative_theme" ref="inme:theme_miraculous_supper">episodio/motivo taumaturgico</rs> dai fortissimi connotati evangelici e cristo-mimetici<ptr type="footnote" n="118"/>, e di larga fortuna nell'agiografia monastica almeno a partire dai Dialogi gregoriani<ptr type="footnote" n="117"/>, non a caso rapidamente catturato e integrato - anche in nuove ambientazioni conventuali e con l'aggiunta rituale del vino - nelle successive ricognizioni 'legendarie' ed 'esemplari' della Vita del <rs type="person" ref="#dominic_guzman">fondatore</rs><ptr type="footnote" n="119"/>: è il celebre racconto di una miracolosa e, secondo <persName ref="#rodolfo">Rodolfo</persName>, reiterata <rs type="narrative_theme" ref="inme:theme_miraculous_supper">moltiplicazione dei pani</rs> a beneficio del convento <rs type="place" ref="#bologna">bolognese</rs>.
+                        Per quanto riguarda i miracoli che <persName ref="#dominic_guzman">Domenico</persName> avrebbe compiuto durante la sua vita, si era già rilevata l'estrema sobrietà dei testimoni <rs type="place" ref="#bologna">bolognesi</rs>, peraltro assai larghi di particolari anche clamorosi nel descrivere i prodigi olfattivi verificatisi in occasione della <foreign xml:lang="la">translatio</foreign> <rs type="place" ref="#bologna">bolognese</rs> del maggio precedente<ptr type="footnote" n="115"/>. Solo i frati <persName ref="#buonviso">Buonviso di Piacenza</persName> e <persName ref="#rodolfo">Rodolfo di Faenza</persName><ptr type="footnote" n="116"/> avrebbero narrato, anche qui senz'apparente sollecitazione da parte dei commissari, un <rs type="narrative_theme" ref="inme:theme_miraculous_supper">episodio/motivo taumaturgico</rs> dai fortissimi connotati evangelici e cristo-mimetici<ptr type="footnote" n="118"/>, e di larga fortuna nell'agiografia monastica almeno a partire dai Dialogi gregoriani<ptr type="footnote" n="117"/>, non a caso rapidamente catturato e integrato - anche in nuove ambientazioni conventuali e con l'aggiunta rituale del vino - nelle successive ricognizioni 'legendarie' ed 'esemplari' della Vita del <rs type="person" ref="#dominic_guzman">fondatore</rs><ptr type="footnote" n="119"/>: è il celebre racconto di una miracolosa e, secondo <persName ref="#rodolfo">Rodolfo</persName>, reiterata <rs type="narrative_theme" ref="inme:theme_miraculous_supper">moltiplicazione dei pani</rs> a beneficio del convento <rs type="place" ref="#bologna">bolognese</rs>.
                     </p>
                 </div>
 
                 <div type="snippet" xml:id="snippet_11" n="11">
                     <pb n="200"/>
                     <p>
-                        <note place="bottom" n="238"><gap reason="omitted"/> tra gli episodi ‘incerti’ omessi da <persName ref="#jordan_saxony">Giordano</persName> già si trovava, molto probabilmente, il celebre miracolo ‘evangelico’ e tipicamente agiografico-monastico <gap reason="omitted"/> della <rs type="ncarative_theme" ref="inme:theme_miraculous_supper">moltiplicazione dei pani</rs>, già testimoniato al <rs type="event" ref="#canonization_process">processo di canonizzazione</rs> da <persName ref="#buonviso"><roleName>fra’</roleName> <forename>Buonviso</forename></persName> e, addirittura come prassi taumaturgica abituale, da <persName ref="#rodolfo"><roleName>fra’</roleName> <forename>Rodolfo</forename></persName> <gap reason="omitted"/> e poi accolto in varie forme nelle biografia del <rs type="person" ref="#dominic_guzman">santo</rs> e nelle più importanti sillogi di <foreign xml:lang="la">exempla</foreign>.</note>
+                        <note place="bottom" n="238"><gap reason="omitted"/> tra gli episodi ‘incerti’ omessi da <persName ref="#jordan_saxony">Giordano</persName> già si trovava, molto probabilmente, il celebre miracolo ‘evangelico’ e tipicamente agiografico-monastico <gap reason="omitted"/> della <rs type="narrative_theme" ref="inme:theme_miraculous_supper">moltiplicazione dei pani</rs>, già testimoniato al <rs type="event" ref="#canonization_process">processo di canonizzazione</rs> da <persName ref="#buonviso">fra’ Buonviso</persName> e, addirittura come prassi taumaturgica abituale, da <persName ref="#rodolfo">fra’ Rodolfo</persName> <gap reason="omitted"/> e poi accolto in varie forme nelle biografia del <rs type="person" ref="#dominic_guzman">santo</rs> e nelle più importanti sillogi di <foreign xml:lang="la">exempla</foreign>.</note>
                     </p>
                 </div>
 
@@ -871,7 +871,7 @@
                     </p>
                 </div>
 
-                <div type="snippet" xml:id="snippet_16" n="16">
+                <div type="snippet" xml:id="snippet_18" n="18">
                     <pb n="29"/>
                     <p>
                         <note placement="bottom" n="27">La cappella di <placeName ref="#san_niccolo_church">San Niccolò delle Vigne</placeName>, soggetta al giuspatronato della famiglia patrizia dei Carbonesi (ramo dei Lovello), dopo un primitivo breve insediamento presso l'oratorio di S. Maria della Mascarella, fu la sede dei <rs type="org" ref="#dominican_order">Predicatori</rs> di <placeName ref="#bologna">Bologna</placeName> a partire dalla primavera del 1219: sin da subito i frati si impegnarono assiduamente nell'acquisto dei terreni e degli immobili circostanti <gap reason="omitted"/>.</note>

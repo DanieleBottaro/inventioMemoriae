@@ -340,3 +340,42 @@ section {
 .card-id-size{
     font-size: 0.85rem;
 }
+
+.scrollable-code {
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: auto; /* Abilita lo scroll orizzontale elegante */
+    white-space: pre; /* Mantiene esattamente i TUOI spazi e impedisce a capo brutti */
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+code:not(.scroll-code){
+    color: #715e45 !important;
+    background-color: #efdec7 !important;
+    border-radius: 3px !important;
+    padding: 1px 4px !important;
+}
+
+.example-card{
+    border: 1px solid var(--accent-color) !important;
+    background-color: #fff4e6 !important;
+}
+
+.scrollable-code{
+    background-color: #fff !important;
+}
+
+.doc-btn{
+    background-color: var(--accent-color) !important;
+    color: #fff !important;
+    border: 1.5px solid var(--accent-color) !important;
+    transition: all 0.3s;
+}
+
+.doc-btn:hover {
+    background-color: #fff !important;
+    text-decoration: none;
+    color: var(--accent-color) !important;
+    border: 1.5px solid var(--accent-color) !important;
+}
