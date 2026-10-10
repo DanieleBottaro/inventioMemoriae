@@ -728,15 +728,10 @@
                 <prefixDef ident="dcterms" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://purl.org/dc/terms/$1">
                     <p>dcterms</p>
                 </prefixDef>
-                <prefixDef ident="fabio" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://purl.org/spar/fabio/$1">
-                    <p>fabio</p>
-                </prefixDef>
                 <prefixDef ident="owl" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.w3.org/2002/07/owl#$1">
                     <p>OWL Vocabulary (Web Ontology Language)</p>
                 </prefixDef>
-                <prefixDef ident="icon" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.w3id.org/icon/ontology/$1">
-                    <p>ICON</p>
-                </prefixDef>
+
                 <prefixDef ident="lrmoo" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://iflastandards.info/ns/lrm/lrmoo/$1">
                     <p>LRMOO</p>
                 </prefixDef>

@@ -350,7 +350,7 @@ section {
     line-height: 1.5;
 }
 
-code:not(.scroll-code){
+code:not(.scroll-code):not(.accordion button code){
     color: #715e45 !important;
     background-color: #efdec7 !important;
     border-radius: 3px !important;

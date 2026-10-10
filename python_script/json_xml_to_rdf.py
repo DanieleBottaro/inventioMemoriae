@@ -8,8 +8,6 @@ CRM = Namespace("http://www.cidoc-crm.org/cidoc-crm/")
 ARCO = Namespace("https://w3id.org/arco/ontology/arco/")
 ARCO_CD = Namespace("https://w3id.org/arco/ontology/content-description/")
 DCTERMS = Namespace("http://purl.org/dc/terms/")
-FABIO = Namespace("http://purl.org/spar/fabio/")
-ICON = Namespace("http://www.w3id.org/icon/ontology/")
 LRMOO = Namespace("http://iflastandards.info/ns/lrm/lrmoo/")
 RICO = Namespace("http://www.ica.org/standards/RiC/ontology/")
 SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
@@ -18,7 +16,7 @@ INME = Namespace("http://example.org/inventio-memoriae/")
 
 #creating a dictionary that contains...............
 ns_dict = {
-    "crm": CRM, "arco": ARCO, "arco-cd": ARCO_CD, "dcterms": DCTERMS, "icon": ICON, "lrmoo": LRMOO, "rico": RICO, "inme": INME, "rdf": RDF
+    "crm": CRM, "arco": ARCO, "arco-cd": ARCO_CD, "dcterms": DCTERMS, "lrmoo": LRMOO, "rico": RICO, "inme": INME, "rdf": RDF
     }  
 
 #function used to normalize the URIs
@@ -105,10 +103,10 @@ def parse_json_data(json_filepath):
         json_relations.append([subject, predicate, object])
 
         if relation["object"]["source"] == "extra" and object not in json_entities_db:
-            print(f"ATTENTO: QUESTA {relation} NON E' SALVATA SUL JSON")
+            print(f"ATTENTION: THIS {relation} IS NOT SAVED IN THE JSON FILE")
             
         if relation["subject"]["source"] == "extra" and subject not in json_entities_db:
-            print(f"ATTENTO: QUESTA {relation} NON E' SALVATA SUL JSON")
+            print(f"ATTENTION: THIS {relation} IS NOT SAVED IN THE JSON FILE")
 
     return json_entities_db, json_relations
 
@@ -388,7 +386,7 @@ def parse_tei_xml(xml_filepath):
 
                     const_titles_dict = dict()
                     for const_title in inner_bibl.findall("tei:title", xml_ns):
-                        print(const_title.text)
+                        
                         language = const_title.get(check_lang)
             
                         if language:
@@ -612,8 +610,6 @@ def setup_rdf_graph():
     db_graph.bind("arco", ARCO)
     db_graph.bind("arco-cd", ARCO_CD)
     db_graph.bind("dcterms", DCTERMS)
-    db_graph.bind("fabio", FABIO)
-    db_graph.bind("icon", ICON)
     db_graph.bind("lrmoo", LRMOO)
     db_graph.bind("rico", RICO)
     db_graph.bind("inme", INME)
@@ -738,7 +734,7 @@ def main():
 
     json_filepath = "../xml_json_files/inMe_extra_entities.json"
     xml_filepath = "../xml_json_files/inMe_TEI.xml"
-    output_filepath = "../rdf_dataset/inventio_memoriae_graph2.ttl"
+    output_filepath = "../rdf_dataset/inventio_memoriae_graph.ttl"
 
     # 1. Estrazione JSON
     json_entities, json_relations = parse_json_data(json_filepath)
@@ -747,12 +743,9 @@ def main():
     xml_entities, xml_relations = parse_tei_xml(xml_filepath)
 
     
-    print(len(json_entities))
-    print(len(xml_entities))
     # 3. Unione dei dati
     all_entities_db = json_entities.copy()
     all_entities_db.update(xml_entities)
-    print(len(all_entities_db))
 
     all_relations = json_relations.copy()
     all_relations.extend(xml_relations)

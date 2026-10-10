@@ -69,8 +69,8 @@ template_dir = os.path.join(script_dir, '../documentation')
 env = Environment(loader=FileSystemLoader(template_dir))
 
 # 3. CARICAMENTO DEL TEMPLATE
-# Ora Jinja cercherà 'index2.html' dentro 'template_dir'
-template = env.get_template('index2.html')
+# Ora Jinja cercherà 'index.html' dentro 'template_dir'
+template = env.get_template('index.html')
 
 # 4. RENDERIZZAZIONE
 risultato_html = template.render(categorized_data)

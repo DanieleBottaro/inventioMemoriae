@@ -326,8 +326,8 @@
         {
             "id": "iconclass_49G231",
             "label": {
-                "it": "(guarigione mediante) imposizione delle mani ) (Iconclass 49G231)",
-                "en": "(healing by) imposition of hands) (Iconclass 49G231)"
+                "it": "(guarigione mediante) imposizione delle mani (Iconclass 49G231)",
+                "en": "(healing by) imposition of hands (Iconclass 49G231)"
             },
             "ontological_classes": [
                 "crm:E55_Type"
@@ -571,7 +571,6 @@
                 "en": "Narrative theme concerning the miracle of the resurrection of Napoleone Orsini through the intercession of Saint Dominic"
             },
             "ontological_classes": [
-                "icon:Story",
                 "crm:E89_Propositional_Object",
                 "lrmoo:F1_Work"
             ],
@@ -588,7 +587,6 @@
                 "en": "Narrative theme concerning the doctrinal dispute with the Cathars and the miracle of the ordeal by fire"
             },
             "ontological_classes": [
-                "icon:Story",
                 "crm:E89_Propositional_Object",
                 "lrmoo:F1_Work"
             ],
@@ -605,7 +603,6 @@
                 "en": "Narrative theme concerning the miracle of the multiplication of the loaves (miraculous supper) for the benefit of the community of friars"
             },
             "ontological_classes": [
-                "icon:Story",
                 "crm:E89_Propositional_Object",
                 "lrmoo:F1_Work"
             ],
@@ -622,7 +619,6 @@
                 "en": "Narrative theme concerning the miraculous healing and the revelation of the Dominican habit to Reginald of Orléans"
             },
             "ontological_classes": [
-                "icon:Story",
                 "crm:E89_Propositional_Object",
                 "lrmoo:F1_Work"
             ],
@@ -639,7 +635,6 @@
                 "en": "Narrative theme concerning Pope Innocent III's dream of the Lateran Basilica"
             },
             "ontological_classes": [
-                "icon:Story",
                 "crm:E89_Propositional_Object",
                 "lrmoo:F1_Work"
             ],
@@ -656,7 +651,6 @@
                 "en": "Narrative theme concerning the vision of Saints Peter and Paul"
             },
             "ontological_classes": [
-                "icon:Story",
                 "crm:E89_Propositional_Object",
                 "lrmoo:F1_Work"
             ],

@@ -514,7 +514,7 @@
         </xsl:call-template>
     </xsl:template>
 
-    <!--  TEMPLATE FOR ARTOWRKS ENTITIES -->
+    <!--  TEMPLATE FOR ARTOWORKS ENTITIES -->
     <xsl:template match="tei:object">
         <xsl:call-template name="tab-card">
             <xsl:with-param name="entity_id" select="@xml:id" />
