@@ -77,7 +77,7 @@ template = env.get_template('index_src.html')
 result_html = template.render(categorized_data)
 
 #defining the output path for the generated HTML file
-output_path = os.path.join(script_dir, '../html_files/index.html')
+output_path = os.path.join(script_dir, '../index.html')
 
 #writing the rendered HTML content to the specified output file
 with open(output_path, 'w', encoding='utf-8') as f:
