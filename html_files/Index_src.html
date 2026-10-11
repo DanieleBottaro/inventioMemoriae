@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,34 +12,61 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=open_in_new" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_upward,open_in_new,copyright" />
 
 </head>
+
 <body data-bs-spy="scroll" data-bs-target="#navbar-main" tabindex="0">
 
     <nav id="navbar-main" class="navbar navbar-expand-lg navbar-scriptorium fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Inventio Memoriae</a>
+            <a class="navbar-brand" href="#hero">Inventio Memoriae</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#hero">Home</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#domain-analysis">Domain Analysis</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#entities">Entities</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#knowledge-organization">Knowledge Organization</a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Knowledge Organization</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#theoretical-model">Theoretical Model</a></li>
+                            <li><a class="dropdown-item" href="#conceptual-model">Conceptual Model</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#ontologies">Ontologies & Vocabularies</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#ontologies">Ontologies</a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Data & Pipeline
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#xml-tei">XML/TEI source</a></li>
+                            <li><a class="dropdown-item" href="#json-dataset">JSON Dataset</a></li>
+                            <li><a class="dropdown-item" href="#xslt-conversion">XSLT Conversion</a></li>
+                            <li><a class="dropdown-item" href="#data-extraction">Semantic Data (RDF)</a></li>
+                        </ul>
+                    </li>                   
+                   
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Appendix
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#references">References</a></li>
+                        <li><a class="dropdown-item" href="#technologies">Technologies</a></li>                        
+                        <li><a class="dropdown-item" href="#future-works">Future Works</a></li>
+                    </ul>
                     </li>
                 </ul>
             </div>
@@ -72,8 +99,8 @@
             </div>
         </section>
 
-        <section id="entities">
-            <h2>Entities extraction and modeling</h2>
+        <section id="entities-extraction">
+            <h2 id="entities">Entities extraction and modeling</h2>
             <p>A total of <strong>93 entities</strong> were identified and formally modeled for this project. Among these, 46 were directly extracted from selected snippets of the two textual sources, while the remaining 47 contextual entities were defined within the supplementary JSON dataset. To facilitate exploration, the entities have been classified into seven macro-categories: <strong>People</strong>, <strong>Events</strong>, <strong>Artworks</strong>, <strong>Narrative Themes</strong>, <strong>Literary Works</strong>, <strong>Visual Items</strong>, and <strong>Others</strong>.</p>
 
             <p>Each entity is presented through an interactive flip card. The front of the card displays the primary metadata: the entity's title (<code>rdfs:label</code>), its project-specific local identifier, and any associated authority control links (such as VIAF, Wikidata, or GeoNames for spatial entities). The back of the card provides a comprehensive, bilingual description (<code>dcterms:description</code>) in both English and Italian.</p>
@@ -583,7 +610,7 @@
 
         <section id="knowledge-organization">
             <h2>Knowledge Organization</h2>
-            <h3 class="mt-5">Theoretical Model</h3>
+            <h3 class="mt-4" id="theoretical-model">Theoretical Model</h3>
             <p>A theoretical model was created in order to define the relationships between the entities. Here are some of the main categories that entities fall into:</p>
             <ul>
                 <li><strong>Artworks</strong>: the Sarcophagus of the Arca di san Domenico (the object we are investigating as the material culmination of the process of the “invention of memory”) and its breakdown into panels;</li>
@@ -602,212 +629,18 @@
             </div>
             
 
-            <h3 class="mt-5">Conceptual Model</h3>
+            <h3 class="mt-3" id="conceptual-model">Conceptual Model</h3>
             <p>A conceptual model was created in order to translate the theoretical abstractions into a formal, machine-readable architecture. To ensure data interoperability and alignment with Linked Open Data standards, the architecture relies on the reuse of existing vocabularies and ontologies (you can find more information about them <a href="#ontologies">below</a>).</p>
 
             <p><strong>Modeling Patterns:</strong> the conceptual architecture implements standard ontology design patterns to handle the historical and artistic domain. <em>Multiple instantiation</em> is used to align entities across different semantic frameworks: certain nodes are declared as instances of multiple classes simultaneously (for example, combining CIDOC-CRM with LRMOO or RiC-O) to ensure interoperability. Furthermore, <em>n-ary relations</em> are employed to avoid semantic shortcuts when modeling complex interactions: rather than using direct binary properties, intermediate nodes (such as <code>crm:E12_Production</code>, <code>lrmoo:F27_Work_Creation</code>, or <code>rico:CreationRelation</code>) act as connectors between actors, objects, and their temporal constraints (e.g., <code>crm:E52_Time-Span</code>).</p>
 
             <div class="container">
-                <iframe src="/html_files/zoom-page.html?img=../images/conceptual_model_def.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
+                <iframe src="./html_files/zoom-page.html?img=../images/conceptual_model_def.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
             </div>
 
             <p><em>Note:</em> Utility properties for lexical labels (RDFS, SKOS) and authority control links (OWL) are applied across all entities but are omitted from this diagram for readability.</p>
-            
-        </section>
 
-        <section id="XML/TEI">
-            <h2>XML/TEI file</h2>
-            <p>The textual sources were semantically enriched using the <strong>TEI (Text Encoding Initiative)</strong> guidelines. Rather than encoding the entire publications, the process focused on targeted excerpts (extracted from Luigi Canetti's <em>L'invenzione della memoria. Il culto e l'immagine di Domenico nella storia dei primi frati predicatori</em> and Anita F. Moskovits' <em>Nicola Pisano's Arca di S. Domenico and its legacy</em>) that act as the primary sources for the project's goal.</p>
-
-            <p>Within the body of the XML document, the text was marked up to identify the core categories. To ensure structural traceability, each extracted passage was assigned a unique <code>@xml:id</code> and sequentially numbered using an <code>@n</code> attribute. Furthermore, the physical layout of the original printed publications was carefully preserved: page boundaries were marked using <code>&lt;pb&gt;</code>, while any internal text omissions or authorial footnotes were systematically tracked using <code>&lt;gap reason="omitted"&gt;</code> and <code>&lt;ptr type="footnote" n="..."/&gt;</code> respectively. </p>
-            
-            <p>Explicit mentions of historical figures, literary works, visual item, or narrative theme was wrapped in its appropriate TEI element (e.g., <code>&lt;persName&gt;</code>, <code>&lt;title&gt;</code> or <code>&lt;placeName&gt;</code>). However, when the authors employed an indirect reference rather than an explicit name, the <code>&lt;rs&gt;</code> (referencing string) element was used, indicating its entity type (e.g., <code>&lt;rs type="person"&gt;</code>, <code>&lt;rs type="narrative_theme"&gt;</code>,<code>&lt;rs type="object"&gt;</code>, <code>&lt;rs type="org"&gt;</code>, <code>&lt;rs type="event"&gt;</code> or <code>&lt;rs type="place"&gt;</code>). Regardless of the specific tag used, each marked entity was equipped with a <code>ref</code> attribute pointing to a unique local identifier.</p>
-
-            <p>In order to establish true entities, all tagged elements were formally defined in dedicated lists (such as <code>&lt;listBibl&gt;</code>,<code>&lt;listPerson&gt;</code>, <code>&lt;listOrg&gt;</code>, <code>&lt;listObject&gt;</code>, <code>&lt;listPlace&gt;</code> or <code>&lt;listEvent&gt;</code>) within the TEI Header. These definitions provide the standard labels, descriptions, the authority control (if present) and the base URIs that are eventually parsed into the RDF graph. Both the standard labels and descriptions are provided in english and italian.</p>
-
-            <p>The final step was to establish the semantic links between the defined entities directly within the TEI file. The use of the TEI relation element (<code>&lt;relation active="..." name="..." passive="..."/&gt;</code>) served as the structural blueprint for the triples generated in the final LOD dataset.</p>
-            
-            <div class="row mt-5">
-                
-                <!-- PRIMA SEZIONE -->
-                <div class="col-md-6 mb-4">
-                    <div class="rounded p-3 h-100 d-flex flex-column example-card">
-                        <h5 class="text-center mb-3 fw-bold group-name">Example of inline tagging and Encoding</h5>
-                        <pre class="p-3 rounded scrollable-code flex-grow-1 border"><code class="scroll-code">&lt;div type="snippet" xml:id="snippet_11" n="11"&gt;
-    &lt;pb n="200"/&gt;
-    &lt;p&gt;
-        &lt;note place="bottom" n="238"&gt;&lt;gap reason="omitted"/&gt; tra gli episodi
-        ‘incerti’ omessi da &lt;persName ref="#jordan_saxony"&gt;Giordano &lt;/persName&gt;
-        già si trovava, molto probabilmente, il celebre miracolo ‘evangelico’ e tipicamente
-        agiografico-monastico &lt;gap reason="omitted"/&gt; della &lt;rs type="narrative_theme"
-        ref="inme:theme_miraculous_supper"&gt; moltiplicazione dei pani&lt;/rs&gt;, già
-        testimoniato al &lt;rs type="event" ref="#canonization_process"&gt;processo di
-        canonizzazione&lt;/rs&gt; da &lt;persName ref="#buonviso"&gt;fra’ Buonviso
-        &lt;/persName&gt; e, addirittura come prassi taumaturgica abituale, da &lt;persName
-        ref="#rodolfo"&gt;fra’ Rodolfo&lt;/persName&gt; &lt;gap reason="omitted"/&gt;
-        e poi accolto in varie forme nelle biografia del &lt;rs type="person"
-        ref="#dominic_guzman"&gt;santo&lt;/rs&gt; e nelle più importanti sillogi di
-        &lt;foreign xml:lang="la"&gt;exempla&lt;/foreign&gt;.&lt;/note&gt;
-    &lt;/p&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mb-4">
-                        <div class="rounded p-3 h-100 d-flex flex-column example-card">
-                            <h5 class="text-center mb-3 fw-bold group-name">Entity Definition in the TEI Header (Authority List)</h5>
-                            
-                            <pre class="p-3 rounded scrollable-code flex-grow-1 border"><code class="scroll-code">&lt;person xml:id="dominic_guzman"&gt;
-    &lt;idno type="wikidata"&gt;Q44091&lt;/idno&gt;
-    &lt;idno type="viaf"&gt;17240904&lt;/idno&gt;
-    &lt;persName xml:lang="en"&gt;Dominic de Guzmán&lt;/persName&gt; &lt;persName
-    xml:lang="it"&gt;Domenico di Guzmán&lt;/persName&gt; &lt;note xml:lang="it"&gt;
-    Canonico di Osma, predicatore antieretico in Linguadoca e fondatore dell'Ordine
-    dei Frati Predicatori (Domenicani), vissuto in rigorosa povertà evangelica e morto
-    a Bologna nel 1221.&lt;/note&gt;
-    &lt;note xml:lang="en"&gt;Canon of Osma, preacher against heresy in Languedoc,
-    and founder of the Order of Preachers (Dominicans); he lived in strict evangelical
-    poverty and died in Bologna in 1221.&lt;/note&gt;
-&lt;/person&gt;</code></pre>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="row text-center mt-3">
-                <h5>You can check the XML/TEI file here:</h5>
-                <div class="d-grid justify-content-center mt-3">
-                    <a href="../xml_json_files/inMe_TEI.xml" class="btn doc-btn" target="_blank">XML/TEI document <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
-                </div>
-            </div>
-            
-            
-
-        </section>
-
-        <section id="xml-json-rdf">
-            <h2>JSON Dataset</h2>
-            
-            <p>While the TEI-XML framework defines and captures the entities explicitly mentioned in the literary sources, the conceptual model requires a broader scope to fully map the intersemiotic translation. To bridge this gap, a supplementary <strong>JSON dataset</strong> was implemented to define these extra entities and establish their connections to the textual data.</p>
-
-            <p>The JSON file acts as an extended authority list. It formally defines all the entities that were considered worth defining but were not directly tagged in the XML snippets. This primarily includes the visual breakdown of the sarcophagus' panels (either in compositions or as individual details) and the narrative themes reified in marble. Each entry in the JSON object is assigned a unique identifier, two labels (in Italian and English), one or more RDF class types, two descriptions (in Italian and English), and, when possible, one or more external links (authority controls). The relations are structured as follows: the subject, the predicate (RDF property) and the object; subject and object are two dictionaries containing the identifier and whether the entity is defined in the XML or in the JSON dataset.</p>
-
-            <div class="row mt-5">
-                
-                <!-- PRIMA SEZIONE -->
-                <div class="col-md-6 mb-4">
-                    <div class="rounded p-3 h-100 d-flex flex-column example-card">
-                        <h5 class="text-center mb-3 fw-bold">Example of JSON Entity Definition</h5>
-                        <pre class="p-3 rounded scrollable-code flex-grow-1 border"><code class="scroll-code">{
-    "id": "vi_composition_stories_blessed_reginald",
-    "label": {
-        "it": "Composizione visiva del pannello delle Storie del beato Reginaldo",
-        "en": "Visual Composition of the Panel of the Stories of the Blessed Reginald"
-    },
-    "ontological_classes": [
-        "crm:E36_Visual_Item"
-    ],
-    "description": {
-        "it": "Questa risorsa immateriale rappresenta l'assetto compositivo e l'aspetto ottico-formale della scena che raffigura la vocazione, la malattia e la guarigione miracolosa di Reginaldo d'Orléans. La scena è articolata in una sequenza cronologica suddivisa in tre parti: la promessa di Reginaldo a Domenico di entrare nell'Ordine, l'improvvisa malattia e la preghiera di Domenico, e infine la guarigione miracolosa per opera della Vergine Maria e di due sante donne. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, prescindendo dalle caratteristiche fisiche del blocco di marmo.",
-        "en": "This immaterial resource represents the compositional and optical-formal appearance of the scene depicting the vocation, illness, and miraculous healing of Reginald of Orléans. The scene is structured as a three-part chronological sequence, showing Reginald's promise to Dominic to join the Order, his sudden illness and Dominic’s prayer, and his miraculous healing by the Virgin Mary and two holy women. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."
-    },
-    "external_links": {}
-}</code></pre>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mb-4">
-                        <div class="rounded p-3 h-100 d-flex flex-column example-card">
-                            <h5 class="text-center mb-3 fw-bold">Example of JSON Relationship Definition</h5>
-                            
-                            <pre class="p-3 rounded scrollable-code flex-grow-1 border"><code class="scroll-code">{
-    "subject": {
-        "id": "panel_saints_peter_paul",
-        "source": "core"
-    },
-    "predicate": "crm:P65_shows_visual_item",
-    "object": {
-        "id": "vi_composition_vision_saints_peter_paul",
-        "source": "extra"
-    }
-},
-{
-    "subject": {
-        "id": "sarcophagus",
-        "source": "core"
-    },
-    "predicate": "arco:hasCommission",
-    "object": {
-        "id": "sarcophagus_commission",
-        "source": "extra"
-    }
-}</code></pre>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="row text-center mt-3">
-                <h5>You can check the JSON file here:</h5>
-                <div class="d-grid justify-content-center mt-3">
-                    <a href="../xml_json_files/inMe_extra_entities.json" class="btn doc-btn" target="_blank">JSON dataset file <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
-                </div>
-            </div>            
-            
-        </section>
-
-        <section id="xml-html">
-            <h2>XML to HTML conversion: XSLT</h2>
-            <p>To facilitate the exploration of the TEI-XML file, a conversion process was implemented to transform the XML data into an HTML format through an <strong>XSLT (eXtensible Stylesheet Language Transformations) stylesheet</strong>. This conversion allows for a more user-friendly presentation of the content, enabling users to navigate through the textual sources and their associated entities with ease. The resulting HTML file includes metadata cards for the two sources, the snippets extracted and encoded, a tab with metadata cards for all the "core" entities extracted and a "relations table" showing their relationships as triples.</p>
-            <p>A dedicated Python script was also implemented to automate the conversion process.</p>
-
-            <div class="d-flex justify-content-evenly flex-wrap text-center mt-5">
-                <div class="d-flex flex-column align-items-center">
-                    <h5>You can check the HTML file here:</h5>
-                    <a href="./html_files/inMe_stylised_xml.html" class="btn doc-btn" target="_blank">HTML page <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
-                </div>
-
-                <div class="d-flex flex-column align-items-center mt-4 mt-md-0">
-                    <h5>You can check the XSLT file here:</h5>
-                    <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/xslt/inMe_XSLT.xslt" class="btn doc-btn" target="_blank">XSLT stylesheet <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
-                </div>
-
-                <div class="d-flex flex-column align-items-center mt-4 mt-xl-0">
-                    <h5>You can check the Python script here:</h5>
-                    <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/python_script/xml-html_transformation.py" class="btn doc-btn" target="_blank">Python conversion script <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
-                </div>
-                
-            </div> 
-
-        </section>
-
-        <section id="data-extraction" class="mt-3">
-            <h2>Semantic Data Extraction: RDF and Turtle Serialization</h2>
-            <p>The final step of the project involved the extraction of semantic data from the TEI-XML and JSON files, resulting in a comprehensive RDF dataset. While this project does not deploy a live graph database (Triplestore) with a SPARQL endpoint, the underlying data architecture is fully graph-based and can be easily imported into any RDF-compliant database for further exploration and querying. 
-            A dedicated Python script was implemented to automate the extraction process of the triples, maintaining interoperability with other Linked Open Data resources. These resulting triples were then serialized in Turtle format (<code>.ttl</code>). The dataset was finally fed into an <a href="https://giacomociti.github.io/rdf2dot/" target="_blank">RDF visualizer</a> in order to make the semantic network visually accessible, as illustrated below.</p>
-                
-            <div class="container">
-                <iframe src="./html_files/zoom-page.html?img=../images/inme_rdf-viewer.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
-            </div>
-
-            <div class="d-flex flex-column flex-lg-row justify-content-evenly flex-wrap text-center mt-5">
-                <div class="d-flex flex-column align-items-center">
-                    <h5>You can check the Python script here:</h5>
-                    <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/python_script/json_xml_to_rdf.py" class="btn doc-btn" target="_blank">Python script <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
-                </div>
-
-                <div class="d-flex flex-column align-items-center mt-4 mt-lg-0">
-                    <h5>You can check the Turtle file here:</h5>
-                    <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/rdf_dataset/inventio_memoriae_graph.ttl" class="btn doc-btn" target="_blank">Turtle file <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
-                </div>
-            </div>
-
-        </section>
-
-        <section id="ontologies">
-            <h2>Ontologies & Vocabularies</h2>
+            <h3 class="mt-4" id="ontologies">Ontologies & Vocabularies</h3>
             <p>To accurately represent the intersemiotic translation between narrative themes, historical events, hagiographic literature, visual elements, and physical artifacts, the conceptual model adopts a multi-layered modeling strategy when needed: the narrative themes are instantiated as <code>crm:E89_Propositional_Object</code> and <code>lrmoo:F1_Work</code>, historical events as <code>crm:E5_Event</code>, hagiographic literature as <code>lrmoo:F1_Work</code>, visual elements as <code>crm:E36_Visual_Item</code>, and physical panels as <code>crm:E22_Human-Made_object</code> (which compose the sarcophagus, itself instantiated as both <code>crm:E22_Human-Made_object</code> and <code>arco:HistoricOrArtisticProperty</code>).</p>
             <p>In order to harness this core mechanism into a more comprehensive framework, a broader network of standard ontologies and vocabularies was integrated. The specific rationale for selecting each of these models is detailed below.</p>
 
@@ -968,11 +801,196 @@
                 </div>
 
             </div>
+            
+        </section>
+
+        <section id="data-pipeline">
+            <h2>Data & Pipeline</h2>
+            <h3 id="xml-tei" class="mt-4">XML/TEI source file</h3>
+            <p>The textual sources were semantically enriched using the <strong>TEI (Text Encoding Initiative)</strong> guidelines. Rather than encoding the entire publications, the process focused on targeted excerpts (extracted from Luigi Canetti's <em>L'invenzione della memoria. Il culto e l'immagine di Domenico nella storia dei primi frati predicatori</em> and Anita F. Moskovits' <em>Nicola Pisano's Arca di S. Domenico and its legacy</em>) that act as the primary sources for the project's goal.</p>
+
+            <p>Within the body of the XML document, the text was marked up to identify the core categories. To ensure structural traceability, each extracted passage was assigned a unique <code>@xml:id</code> and sequentially numbered using an <code>@n</code> attribute. Furthermore, the physical layout of the original printed publications was carefully preserved: page boundaries were marked using <code>&lt;pb&gt;</code>, while any internal text omissions or authorial footnotes were systematically tracked using <code>&lt;gap reason="omitted"&gt;</code> and <code>&lt;ptr type="footnote" n="..."/&gt;</code> respectively. </p>
+            
+            <p>Explicit mentions of historical figures, literary works, visual item, or narrative theme was wrapped in its appropriate TEI element (e.g., <code>&lt;persName&gt;</code>, <code>&lt;title&gt;</code> or <code>&lt;placeName&gt;</code>). However, when the authors employed an indirect reference rather than an explicit name, the <code>&lt;rs&gt;</code> (referencing string) element was used, indicating its entity type (e.g., <code>&lt;rs type="person"&gt;</code>, <code>&lt;rs type="narrative_theme"&gt;</code>,<code>&lt;rs type="object"&gt;</code>, <code>&lt;rs type="org"&gt;</code>, <code>&lt;rs type="event"&gt;</code> or <code>&lt;rs type="place"&gt;</code>). Regardless of the specific tag used, each marked entity was equipped with a <code>ref</code> attribute pointing to a unique local identifier.</p>
+
+            <p>In order to establish true entities, all tagged elements were formally defined in dedicated lists (such as <code>&lt;listBibl&gt;</code>,<code>&lt;listPerson&gt;</code>, <code>&lt;listOrg&gt;</code>, <code>&lt;listObject&gt;</code>, <code>&lt;listPlace&gt;</code> or <code>&lt;listEvent&gt;</code>) within the TEI Header. These definitions provide the standard labels, descriptions, the authority control (if present) and the base URIs that are eventually parsed into the RDF graph. Both the standard labels and descriptions are provided in english and italian.</p>
+
+            <p>The final step was to establish the semantic links between the defined entities directly within the TEI file. The use of the TEI relation element (<code>&lt;relation active="..." name="..." passive="..."/&gt;</code>) served as the structural blueprint for the triples generated in the final LOD dataset.</p>
+            
+            <div class="row mt-5">
+                
+                <div class="col-md-6 mb-4">
+                    <div class="rounded p-3 h-100 d-flex flex-column example-card">
+                        <h5 class="text-center mb-3 fw-bold group-name">Example of inline tagging and Encoding</h5>
+                        <pre class="p-3 rounded scrollable-code flex-grow-1 border"><code class="scroll-code">&lt;div type="snippet" xml:id="snippet_11" n="11"&gt;
+    &lt;pb n="200"/&gt;
+    &lt;p&gt;
+        &lt;note place="bottom" n="238"&gt;&lt;gap reason="omitted"/&gt; tra gli episodi
+        ‘incerti’ omessi da &lt;persName ref="#jordan_saxony"&gt;Giordano &lt;/persName&gt;
+        già si trovava, molto probabilmente, il celebre miracolo ‘evangelico’ e tipicamente
+        agiografico-monastico &lt;gap reason="omitted"/&gt; della &lt;rs type="narrative_theme"
+        ref="inme:theme_miraculous_supper"&gt; moltiplicazione dei pani&lt;/rs&gt;, già
+        testimoniato al &lt;rs type="event" ref="#canonization_process"&gt;processo di
+        canonizzazione&lt;/rs&gt; da &lt;persName ref="#buonviso"&gt;fra’ Buonviso
+        &lt;/persName&gt; e, addirittura come prassi taumaturgica abituale, da &lt;persName
+        ref="#rodolfo"&gt;fra’ Rodolfo&lt;/persName&gt; &lt;gap reason="omitted"/&gt;
+        e poi accolto in varie forme nelle biografia del &lt;rs type="person"
+        ref="#dominic_guzman"&gt;santo&lt;/rs&gt; e nelle più importanti sillogi di
+        &lt;foreign xml:lang="la"&gt;exempla&lt;/foreign&gt;.&lt;/note&gt;
+    &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="rounded p-3 h-100 d-flex flex-column example-card">
+                            <h5 class="text-center mb-3 fw-bold group-name">Entity Definition in the TEI Header (Authority List)</h5>
+                            
+                            <pre class="p-3 rounded scrollable-code flex-grow-1 border"><code class="scroll-code">&lt;person xml:id="dominic_guzman"&gt;
+    &lt;idno type="wikidata"&gt;Q44091&lt;/idno&gt;
+    &lt;idno type="viaf"&gt;17240904&lt;/idno&gt;
+    &lt;persName xml:lang="en"&gt;Dominic de Guzmán&lt;/persName&gt; &lt;persName
+    xml:lang="it"&gt;Domenico di Guzmán&lt;/persName&gt; &lt;note xml:lang="it"&gt;
+    Canonico di Osma, predicatore antieretico in Linguadoca e fondatore dell'Ordine
+    dei Frati Predicatori (Domenicani), vissuto in rigorosa povertà evangelica e morto
+    a Bologna nel 1221.&lt;/note&gt;
+    &lt;note xml:lang="en"&gt;Canon of Osma, preacher against heresy in Languedoc,
+    and founder of the Order of Preachers (Dominicans); he lived in strict evangelical
+    poverty and died in Bologna in 1221.&lt;/note&gt;
+&lt;/person&gt;</code></pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row text-center mt-3">
+                <h5>You can check the XML/TEI file here:</h5>
+                <div class="d-grid justify-content-center mt-3">
+                    <a href="./xml_json_files/inMe_TEI.xml" class="btn doc-btn" target="_blank">XML/TEI document <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
+            </div>
+            
+            
+            <h3 id="json-dataset" class="mt-4">JSON Dataset</h3>
+            
+            <p>While the TEI-XML framework defines and captures the entities explicitly mentioned in the literary sources, the conceptual model requires a broader scope to fully map the intersemiotic translation. To bridge this gap, a supplementary <strong>JSON dataset</strong> was implemented to define these extra entities and establish their connections to the textual data.</p>
+
+            <p>The JSON file acts as an extended authority list. It formally defines all the entities that were considered worth defining but were not directly tagged in the XML snippets. This primarily includes the visual breakdown of the sarcophagus' panels (either in compositions or as individual details) and the narrative themes reified in marble. Each entry in the JSON object is assigned a unique identifier, two labels (in Italian and English), one or more RDF class types, two descriptions (in Italian and English), and, when possible, one or more external links (authority controls). The relations are structured as follows: the subject, the predicate (RDF property) and the object; subject and object are two dictionaries containing the identifier and whether the entity is defined in the XML or in the JSON dataset.</p>
+
+            <div class="row mt-5">
+                
+                <div class="col-md-6 mb-4">
+                    <div class="rounded p-3 h-100 d-flex flex-column example-card">
+                        <h5 class="text-center mb-3 fw-bold">Example of JSON Entity Definition</h5>
+                        <pre class="p-3 rounded scrollable-code flex-grow-1 border"><code class="scroll-code">{
+    "id": "vi_composition_stories_blessed_reginald",
+    "label": {
+        "it": "Composizione visiva del pannello delle Storie del beato Reginaldo",
+        "en": "Visual Composition of the Panel of the Stories of the Blessed Reginald"
+    },
+    "ontological_classes": [
+        "crm:E36_Visual_Item"
+    ],
+    "description": {
+        "it": "Questa risorsa immateriale rappresenta l'assetto compositivo e l'aspetto ottico-formale della scena che raffigura la vocazione, la malattia e la guarigione miracolosa di Reginaldo d'Orléans. La scena è articolata in una sequenza cronologica suddivisa in tre parti: la promessa di Reginaldo a Domenico di entrare nell'Ordine, l'improvvisa malattia e la preghiera di Domenico, e infine la guarigione miracolosa per opera della Vergine Maria e di due sante donne. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, prescindendo dalle caratteristiche fisiche del blocco di marmo.",
+        "en": "This immaterial resource represents the compositional and optical-formal appearance of the scene depicting the vocation, illness, and miraculous healing of Reginald of Orléans. The scene is structured as a three-part chronological sequence, showing Reginald's promise to Dominic to join the Order, his sudden illness and Dominic’s prayer, and his miraculous healing by the Virgin Mary and two holy women. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."
+    },
+    "external_links": {}
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="rounded p-3 h-100 d-flex flex-column example-card">
+                            <h5 class="text-center mb-3 fw-bold">Example of JSON Relationship Definition</h5>
+                            
+                            <pre class="p-3 rounded scrollable-code flex-grow-1 border"><code class="scroll-code">{
+    "subject": {
+        "id": "panel_saints_peter_paul",
+        "source": "core"
+    },
+    "predicate": "crm:P65_shows_visual_item",
+    "object": {
+        "id": "vi_composition_vision_saints_peter_paul",
+        "source": "extra"
+    }
+},
+{
+    "subject": {
+        "id": "sarcophagus",
+        "source": "core"
+    },
+    "predicate": "arco:hasCommission",
+    "object": {
+        "id": "sarcophagus_commission",
+        "source": "extra"
+    }
+}</code></pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row text-center mt-3">
+                <h5>You can check the JSON file here:</h5>
+                <div class="d-grid justify-content-center mt-3">
+                    <a href="./xml_json_files/inMe_extra_entities.json" class="btn doc-btn" target="_blank">JSON dataset file <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
+            </div>            
+            
+
+            <h3 id="xslt-conversion" class="mt-4">XSLT: XML to HTML conversion</h3>
+            <p>To facilitate the exploration of the TEI-XML file, a conversion process was implemented to transform the XML data into an HTML format through an <strong>XSLT (eXtensible Stylesheet Language Transformations) stylesheet</strong>. This conversion allows for a more user-friendly presentation of the content, enabling users to navigate through the textual sources and their associated entities with ease. The resulting HTML file includes metadata cards for the two sources, the snippets extracted and encoded, a tab with metadata cards for all the "core" entities extracted and a "relations table" showing their relationships as triples.</p>
+            <p>A dedicated Python script was also implemented to automate the conversion process.</p>
+
+            <div class="d-flex justify-content-evenly flex-wrap text-center mt-5">
+                <div class="d-flex flex-column align-items-center">
+                    <h5>You can check the HTML file here:</h5>
+                    <a href="./html_files/inMe_stylised_xml.html" class="btn doc-btn" target="_blank">HTML page <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center mt-4 mt-md-0">
+                    <h5>You can check the XSLT file here:</h5>
+                    <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/xslt/inMe_XSLT.xslt" class="btn doc-btn" target="_blank">XSLT stylesheet <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center mt-4 mt-xl-0">
+                    <h5>You can check the Python script here:</h5>
+                    <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/python_script/xml-html_transformation.py" class="btn doc-btn" target="_blank">Python conversion script <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
+                
+            </div> 
+
+
+            <h2 id="data-extraction" class="mt-4">Semantic Data Extraction: RDF and Turtle Serialization</h2>
+            <p>The final step of the project involved the extraction of semantic data from the TEI-XML and JSON files, resulting in a comprehensive RDF dataset. While this project does not deploy a live graph database (Triplestore) with a SPARQL endpoint, the underlying data architecture is fully graph-based and can be easily imported into any RDF-compliant database for further exploration and querying. 
+            A dedicated Python script was implemented to automate the extraction process of the triples, maintaining interoperability with other Linked Open Data resources. These resulting triples were then serialized in Turtle format (<code>.ttl</code>). The dataset was finally fed into an <a href="https://giacomociti.github.io/rdf2dot/" target="_blank">RDF visualizer</a> in order to make the semantic network visually accessible, as illustrated below.</p>
+                
+            <div class="container">
+                <iframe src="./html_files/zoom-page.html?img=../images/inme_rdf-viewer.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
+            </div>
+
+            <div class="d-flex flex-column flex-lg-row justify-content-evenly flex-wrap text-center mt-5">
+                <div class="d-flex flex-column align-items-center">
+                    <h5>You can check the Python script here:</h5>
+                    <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/python_script/json_xml_to_rdf.py" class="btn doc-btn" target="_blank">Python script <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center mt-4 mt-lg-0">
+                    <h5>You can check the Turtle file here:</h5>
+                    <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/rdf_dataset/inventio_memoriae_graph.ttl" class="btn doc-btn" target="_blank">Turtle file <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
+            </div>
+
         </section>
 
         <!-- References Section -->
-        <section id="references">
-            <h2>References</h2>
+        <section id="appendix">
+            <h2>Appendix</h2>
+
+            <h3 id="references" class="mt-4">References</h3>
             <p>
                 The theoretical framework and the data extraction process of this project rely on the following selected texts, standard guidelines, and semantic vocabularies.
             </p>
@@ -1025,10 +1043,8 @@
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section id="technologies">
-            <h2>Technologies and tools</h2>
+            <h3 id="technologies" class="mt-4">Technologies and tools</h3>
             <p>The project was developed using a combination of web technologies, programming languages, and libraries to ensure data persistence, scalability, and semantic interoperability. The following technologies were employed:</p>
 
             <div class="row mt-4">
@@ -1086,25 +1102,30 @@
                     </ul>
                 </div>
             </div>
+
+            <h3 id="future-works" class="mt-4">Future Works</h3>
         </section>
             
-
-        <p>Scrivi nei miglioramenti perchè non hai usato ICON</p>
-
     </main>
-                  
 
-    <footer class="text-center py-4 mt-5" style="border-top: 1px solid var(--border-color); background-color: #FFFFFF;">
+    <footer class="text-center py-4 mt-5">
         <div class="container">
-            <p class="mb-0" style="color: var(--text-color);"><small>Progetto di Information Science and CH &copy; 2024</small></p>
-            <p class="mb-0"><small><a href="#">Go back up ↑</a></small></p>
+
+            <p class="mb-3 fw-bold" style="color: var(--accent-color);">Inventio Memoriae <span class="material-symbols-outlined footer-icon">copyright</span> 2026</p>
+            
+            <p class="text-muted small mb-2">Developed by <strong>Daniele Bottaro</strong> as a final project for the <strong>Information Science and Cultural Heritage</strong> course at <strong>University of Bologna</strong>.</p>
+            
+            <p class="text-muted small mb-4">Data and documentation are released under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="text-decoration-none text-secondary text-decoration-underline">Creative Commons Attribution 4.0 (CC BY 4.0)</a> license.</p>
+
+            <div>
+                <a href="#hero" class="text-decoration-none text-secondary small fw-bold text-uppercase back-top">Back to top <span class="material-symbols-outlined footer-icon">arrow_upward</span>
+                </a>
+            </div>
         </div>
     </footer>
 
-    <!-- Bootstrap 5 Bundle JS (include Popper.js) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Script per gestire l'active state della navbar (Bootstrap scrollspy support) -->
     <script>
         // Lo scrollspy è gestito dagli attributi data-bs-spy sul body,
         // Questo mini script assicura un offset morbido se si clicca sui link della navbar

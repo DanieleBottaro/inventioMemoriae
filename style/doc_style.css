@@ -39,8 +39,8 @@ a {
     transition: color 0.3s ease;
 }
 
-a:hover {
-    color: #7A1515; /* Tonalità più scura per hover */
+a:hover:not(.navbar-brand):not(.dropdown-item) {
+    color: #7A1515;
     text-decoration: underline;
 }
 
@@ -56,7 +56,7 @@ a:hover {
 }
 
 .navbar-scriptorium .nav-link {
-    color: #FDFBF7 !important; /* Testo crema */
+    color: #FDFBF7 !important;
     opacity: 0.85;
     transition: opacity 0.3s ease;
     font-family: var(--font-headings);
@@ -67,6 +67,18 @@ a:hover {
 .navbar-scriptorium .nav-link.active {
     opacity: 1;
     font-weight: bold;
+    text-decoration: none !important;
+}
+
+.dropdown-item {
+    transition-property: background-color !important;
+    /* You can keep the duration as defined by Bootstrap or customize it */
+    transition-duration: 0.4s; 
+}
+
+.dropdown-item.active, .dropdown-item:focus, .dropdown-item:hover {
+    color: var(--bg-color) !important;
+    background-color: var(--accent-color) !important;
 }
 
 .hero-section {
@@ -375,11 +387,25 @@ code:not(.scroll-code):not(.accordion button code){
 
 .doc-btn:hover {
     background-color: #fff !important;
-    text-decoration: none;
+    text-decoration: none !important;
     color: var(--accent-color) !important;
     border: 1.5px solid var(--accent-color) !important;
 }
 
 .group-name{
+    color: var(--accent-color) !important;
+}
+
+footer{
+    border-top: 2px solid var(--border-color) !important;
+    background-color: var(--bg-color) !important;
+}
+
+.footer-icon{
+    font-size: 0.5em;
+    vertical-align: middle;
+}
+
+.back-top:hover{
     color: var(--accent-color) !important;
 }
