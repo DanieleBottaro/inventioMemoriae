@@ -4240,7 +4240,7 @@
             <p><em>Please note:</em> In the visual diagram representing this theoretical model, external linked resources (such as VIAF and Wikidata primarily used for people and works, or GeoNames for places) have been deliberately omitted for readability and to prevent visual cluttering. The only exceptions are the Iconclass codes, which are highlighted in the diagram with a purple background. For the same reason, we omitted from the diagram the detailed textual descriptions included for each entity and, where applicable, their chronological anchor.</p>
 
             <div class="container">
-                <iframe src="zoom-page.html?img=../images/theoretical_model.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
+                <iframe src="./html_files/zoom-page.html?img=../images/theoretical_model.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
             </div>
             
 
@@ -4250,7 +4250,7 @@
             <p><strong>Modeling Patterns:</strong> the conceptual architecture implements standard ontology design patterns to handle the historical and artistic domain. <em>Multiple instantiation</em> is used to align entities across different semantic frameworks: certain nodes are declared as instances of multiple classes simultaneously (for example, combining CIDOC-CRM with LRMOO or RiC-O) to ensure interoperability. Furthermore, <em>n-ary relations</em> are employed to avoid semantic shortcuts when modeling complex interactions: rather than using direct binary properties, intermediate nodes (such as <code>crm:E12_Production</code>, <code>lrmoo:F27_Work_Creation</code>, or <code>rico:CreationRelation</code>) act as connectors between actors, objects, and their temporal constraints (e.g., <code>crm:E52_Time-Span</code>).</p>
 
             <div class="container">
-                <iframe src="zoom-page.html?img=../images/conceptual_model_def.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
+                <iframe src="/html_files/zoom-page.html?img=../images/conceptual_model_def.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
             </div>
 
             <p><em>Note:</em> Utility properties for lexical labels (RDFS, SKOS) and authority control links (OWL) are applied across all entities but are omitted from this diagram for readability.</p>
@@ -4274,7 +4274,7 @@
                 <!-- PRIMA SEZIONE -->
                 <div class="col-md-6 mb-4">
                     <div class="rounded p-3 h-100 d-flex flex-column example-card">
-                        <h5 class="text-center mb-3 fw-bold">Example of inline tagging and Encoding</h5>
+                        <h5 class="text-center mb-3 fw-bold group-name">Example of inline tagging and Encoding</h5>
                         <pre class="p-3 rounded scrollable-code flex-grow-1 border"><code class="scroll-code">&lt;div type="snippet" xml:id="snippet_11" n="11"&gt;
     &lt;pb n="200"/&gt;
     &lt;p&gt;
@@ -4297,7 +4297,7 @@
 
                     <div class="col-md-6 mb-4">
                         <div class="rounded p-3 h-100 d-flex flex-column example-card">
-                            <h5 class="text-center mb-3 fw-bold">Entity Definition in the TEI Header (Authority List)</h5>
+                            <h5 class="text-center mb-3 fw-bold group-name">Entity Definition in the TEI Header (Authority List)</h5>
                             
                             <pre class="p-3 rounded scrollable-code flex-grow-1 border"><code class="scroll-code">&lt;person xml:id="dominic_guzman"&gt;
     &lt;idno type="wikidata"&gt;Q44091&lt;/idno&gt;
@@ -4408,7 +4408,7 @@
             <div class="d-flex justify-content-evenly flex-wrap text-center mt-5">
                 <div class="d-flex flex-column align-items-center">
                     <h5>You can check the HTML file here:</h5>
-                    <a href="../html_files/inMe_stylised_xml.html" class="btn doc-btn" target="_blank">HTML page <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                    <a href="./html_files/inMe_stylised_xml.html" class="btn doc-btn" target="_blank">HTML page <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
                 </div>
 
                 <div class="d-flex flex-column align-items-center mt-4 mt-md-0">
@@ -4431,7 +4431,7 @@
             A dedicated Python script was implemented to automate the extraction process of the triples, maintaining interoperability with other Linked Open Data resources. These resulting triples were then serialized in Turtle format (<code>.ttl</code>). The dataset was finally fed into an <a href="https://giacomociti.github.io/rdf2dot/" target="_blank">RDF visualizer</a> in order to make the semantic network visually accessible, as illustrated below.</p>
                 
             <div class="container">
-                <iframe src="zoom-page.html?img=../images/inme_rdf-viewer.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
+                <iframe src="./html_files/zoom-page.html?img=../images/inme_rdf-viewer.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
             </div>
 
             <div class="d-flex flex-column flex-lg-row justify-content-evenly flex-wrap text-center mt-5">
