@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventio Memoriae</title>
+    
+    <link href="../style/doc_style.css" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=open_in_new" />
+
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-main" tabindex="0">
+
+    <nav id="navbar-main" class="navbar navbar-expand-lg navbar-scriptorium fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Inventio Memoriae</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#domain-analysis">Domain Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#entities">Entities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#knowledge-organization">Knowledge Organization</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ontologies">Ontologies</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="hero-section container-fluid">
+        <div class="container">
+            <h1>Inventio Memoriae</h1>
+            <p class="lead mt-3">Mapping the construction of Memory: A Linked Open Data approach to Nicola Pisano’s Arca di San Domenico</p>
+            <p class="mt-4"><small>Created by: <strong>Daniele Bottaro</strong> <br> Course in Information Science & Cultural Heritage</small></p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="domain-analysis">
+            <h2>Domain Analysis</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>The project aims to model and represent in <strong>Linked Open Data (LOD)</strong> format the iconography chosen by the Dominicans to decorate the panels of the sarcophagus of the <strong><em>Arca di San Domenico</em></strong> by <strong>Nicola Pisano</strong>, as a visual consecration and monumental objectification of a process of "<strong>memory construction</strong>."</p>
+                    
+                    <p>The data architecture traces the trajectory of this complex process brilliantly brought to light by <strong>Luigi Canetti</strong> in <em>L'invenzione della memoria. Il culto e l'immagine di Domenico nella storia dei primi frati predicatori</em>: the transition leading from the actual historical event to its intentional reworking in hagiographic sources (particularly in the narration of miracles), ultimately culminating in its monumentalization between 1264 and 1267 in the sarcophagus of the Arca.
+                    </p>
+
+                    <p>To populate the network of relationships that makes up the project, the entities were extracted directly from two texts. The aforementioned essay by Canetti provided the ideal references to identify the web of historical figures, hagiographic texts, and events, as well as their correlations. However, since the author only touches upon the creation of the monument in passing, it was necessary to supplement this with an art-historical source in order to map its physical objectification. Therefore, <strong>Anita F. Moskovitz</strong>'s authoritative monograph on Nicola Pisano's work (<em>Nicola Pisano's arca di San Domenico and its legacy</em>) was chosen, which provided the textual basis necessary to extract and describe the entities closely linked to the sarcophagus and the individual narrative panels.</p>
+
+                    <p>Finally, to tie together this complex network of relationships and provide a broader historical and conceptual context, it was decided to integrate into the model several ad hoc entities created in an external <strong>JSON</strong> file, also with the aim of preserving the structural and semantic integrity of the <strong>ontologies</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="entities">
+            <h2>Entities extraction and modeling</h2>
+            <p>A total of <strong>93 entities</strong> were identified and formally modeled for this project. Among these, 46 were directly extracted from selected snippets of the two textual sources, while the remaining 47 contextual entities were defined within the supplementary JSON dataset. To facilitate exploration, the entities have been classified into seven macro-categories: <strong>People</strong>, <strong>Events</strong>, <strong>Artworks</strong>, <strong>Narrative Themes</strong>, <strong>Literary Works</strong>, <strong>Visual Items</strong>, and <strong>Others</strong>.</p>
+
+            <p>Each entity is presented through an interactive flip card. The front of the card displays the primary metadata: the entity's title (<code>rdfs:label</code>), its project-specific local identifier, and any associated authority control links (such as VIAF, Wikidata, or GeoNames for spatial entities). The back of the card provides a comprehensive, bilingual description (<code>dcterms:description</code>) in both English and Italian.</p>
+
+            <p>The entity gallery below was generated dynamically using the <strong>Jinja2</strong> templating engine. This data-driven approach ensures complete scalability: if new entities are added to either the TEI-XML or the JSON file in the future, they will automatically populate this web interface simply by re-running the <code>jinja_sorting.py</code> script (you can find it <a href="https://github.com/danielebottaro/inventioMemoriae/blob/main/python_script/jinja_sorting.py" target="_blank">here</a>).</p>
+            
+            
+            <!-- Navigation Tab -->
+            <ul class="nav nav-underline justify-content-center mb-5" id="entityTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link custom-tab active" id="people-tab" data-bs-toggle="tab" data-bs-target="#people-pane" type="button" role="tab">People</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link custom-tab" id="events-tab" data-bs-toggle="tab" data-bs-target="#events-pane" type="button" role="tab">Events</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link custom-tab" id="artworks-tab" data-bs-toggle="tab" data-bs-target="#artworks-pane" type="button" role="tab">Artworks</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link custom-tab" id="themes-tab" data-bs-toggle="tab" data-bs-target="#themes-pane" type="button" role="tab">Narrative Themes</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link custom-tab" id="literary-tab" data-bs-toggle="tab" data-bs-target="#literary-pane" type="button" role="tab">Literary Works</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link custom-tab" id="visual-tab" data-bs-toggle="tab" data-bs-target="#visual-pane" type="button" role="tab">Visual Items</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link custom-tab" id="other-tab" data-bs-toggle="tab" data-bs-target="#other-pane" type="button" role="tab">Others</button>
+                </li>
+            </ul> 
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="entityTabsContent">
+                
+                <!-- TAB PERSONE -->
+                <!-- active e show indicano il tab aperto di default -->
+                <div class="tab-pane fade show active" id="people-pane" role="tabpanel" aria-labelledby="people-tab" tabindex="0">
+                    <div class="row w-100 m-0 justify-content-center card-holder">
+                        {% for item in people %}
+                        <div class="col-sm-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-5"> 
+                            <div class="sm-flip-card sm-card-width-custom">
+                                <div class="flip-card-inner" id="{{ item.id }}">
+                                    <div class="flip-card-front card-surface p-4">
+                                        <div class="card-body d-flex flex-column text-center">
+                                            <div class="my-auto">
+                                                {% if item.label.en %}
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
+                                                {% endif %}
+                                                {% if item.label.la %}
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
+                                                {% endif %}
+
+                                                {% if item.external_links.wikidata %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">wikidata: </strong>
+                                                    <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
+                                                
+                                                </h6>
+                                                {% endif %}
+                                                {% if item.external_links.viaf %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">viaf: </strong>
+                                                    <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
+                                            </div>
+                                            <div class="text-center mb-3">
+                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                            </div>
+                                            <div class="mt-auto pt-4">
+                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back card-surface p-4 custom-scroll">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
+                                            <div class="btn-group btn-group-sm mb-3" role="group">
+                                                <button type="button" class="btn btn-outline-dark btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                            </div>
+                                            <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
+                                            <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
+                                            <div class="mt-auto pt-3 text-center w-100">
+                                                <button class="btn btn-outline-dark w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- TAB EVENTI -->
+                <div class="tab-pane fade" id="events-pane" role="tabpanel" aria-labelledby="events-tab" tabindex="0">
+                    <div class="row w-100 m-0 justify-content-center card-holder">
+                        {% for item in events %}
+                        <div class="col-sm-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-5"> 
+                            <div class="sm-flip-card sm-card-width-custom">
+                                <div class="flip-card-inner" id="{{ item.id }}">
+                                    <div class="flip-card-front card-surface p-4">
+                                        <div class="card-body d-flex flex-column text-center">
+                                            <div class="my-auto">
+                                                {% if item.label.en %}
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
+                                                {% endif %}
+                                                {% if item.label.la %}
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
+                                                {% endif %}
+
+                                                {% if item.external_links.wikidata %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">wikidata: </strong>
+                                                    <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
+                                                
+                                                </h6>
+                                                {% endif %}
+                                                {% if item.external_links.viaf %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">viaf: </strong>
+                                                    <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
+                                            </div>
+                                            <div class="text-center mb-3">
+                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                            </div>
+                                            <div class="mt-auto pt-4">
+                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back card-surface p-4 custom-scroll">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
+                                            <div class="btn-group btn-group-sm mb-3" role="group">
+                                                <button type="button" class="btn btn-outline-dark btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                            </div>
+                                            <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
+                                            <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
+                                            <div class="mt-auto pt-3 text-center w-100">
+                                                <button class="btn btn-outline-dark w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- TAB ARTWORKS -->
+                <div class="tab-pane fade" id="artworks-pane" role="tabpanel" aria-labelledby="artworks-tab" tabindex="0">
+                    <div class="row w-100 m-0 justify-content-center card-holder">
+                        {% for item in artworks %}
+                        <div class="col-sm-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-5"> 
+                            <div class="sm-flip-card sm-card-width-custom">
+                                <div class="flip-card-inner" id="{{ item.id }}">
+                                    <div class="flip-card-front card-surface p-4">
+                                        <div class="card-body d-flex flex-column text-center">
+                                            <div class="my-auto">
+                                                {% if item.label.en %}
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
+                                                {% endif %}
+                                                {% if item.label.la %}
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
+                                                {% endif %}
+
+                                                {% if item.external_links.wikidata %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">wikidata: </strong>
+                                                    <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
+                                                
+                                                </h6>
+                                                {% endif %}
+                                                {% if item.external_links.viaf %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">viaf: </strong>
+                                                    <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
+                                            </div>
+                                            <div class="text-center mb-3">
+                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                            </div>
+                                            <div class="mt-auto pt-4">
+                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back card-surface p-4 custom-scroll">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
+                                            <div class="btn-group btn-group-sm mb-3" role="group">
+                                                <button type="button" class="btn btn-outline-dark btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                            </div>
+                                            <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
+                                            <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
+                                            <div class="mt-auto pt-3 text-center w-100">
+                                                <button class="btn btn-outline-dark w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- NUOVO TAB: NARRATIVE THEMES -->
+                <div class="tab-pane fade" id="themes-pane" role="tabpanel" aria-labelledby="themes-tab" tabindex="0">
+                    <div class="row w-100 m-0 justify-content-center card-holder">
+                        {% for item in narrative_themes %}
+                        <div class="col-sm-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-5"> 
+                            <div class="sm-flip-card sm-card-width-custom">
+                                <div class="flip-card-inner" id="{{ item.id }}">
+                                    <div class="flip-card-front card-surface p-4">
+                                        <div class="card-body d-flex flex-column text-center">
+                                            <div class="my-auto">
+                                                {% if item.label.en %}
+                                                <h4 class="card-title text-purple-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h3>
+                                                {% elif item.label.la %}
+                                                <h4 class="card-title text-purple-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h3>                                                
+                                                {% endif %}
+
+                                                {% if item.external_links.wikidata %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">wikidata: </strong>
+                                                    <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
+                                                
+                                                </h6>
+                                                {% endif %}
+                                                {% if item.external_links.viaf %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">viaf: </strong>
+                                                    <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
+                                            </div>
+                                            <div class="text-center mb-3">
+                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                            </div>
+                                            <div class="mt-auto pt-4">
+                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back card-surface p-4 custom-scroll">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
+                                            <div class="btn-group btn-group-sm mb-3" role="group">
+                                                <button type="button" class="btn btn-outline-dark btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                            </div>
+                                            <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
+                                            <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
+                                            <div class="mt-auto pt-3 text-center w-100">
+                                                <button class="btn btn-outline-dark w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- NUOVO TAB: LITERARY WORKS -->
+                <div class="tab-pane fade" id="literary-pane" role="tabpanel" aria-labelledby="literary-tab" tabindex="0">
+                    <div class="row w-100 m-0 justify-content-center card-holder">
+                        {% for item in literary_works %}
+                        <div class="col-sm-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-5"> 
+                            <div class="sm-flip-card sm-card-width-custom">
+                                <div class="flip-card-inner" id="{{ item.id }}">
+                                    <div class="flip-card-front card-surface p-4">
+                                        <div class="card-body d-flex flex-column text-center">
+                                            <div class="my-auto">
+                                                {% if item.label.en %}
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.en }}</h3>
+                                                {% endif %}
+                                                {% if item.label.la %}
+                                                <h4 class="card-title text-purple-title mb-4">{{ item.label.la }}</h3>
+                                                {% endif %}
+
+                                                {% if item.external_links.wikidata %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">wikidata: </strong>
+                                                    <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
+                                                
+                                                </h6>
+                                                {% endif %}
+                                                {% if item.external_links.viaf %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">viaf: </strong>
+                                                    <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
+                                            </div>
+                                            <div class="text-center mb-3">
+                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                            </div>
+                                            <div class="mt-auto pt-4">
+                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back card-surface p-4 custom-scroll">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
+                                            <div class="btn-group btn-group-sm mb-3" role="group">
+                                                <button type="button" class="btn btn-outline-dark btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                            </div>
+                                            <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
+                                            <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
+                                            <div class="mt-auto pt-3 text-center w-100">
+                                                <button class="btn btn-outline-dark w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- NUOVO TAB: VISUAL ITEMS -->
+                <div class="tab-pane fade" id="visual-pane" role="tabpanel" aria-labelledby="visual-tab" tabindex="0">
+                    <div class="row w-100 m-0 justify-content-center card-holder">
+                        {% for item in visual_items %}
+                        <div class="col-sm-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-5"> 
+                            <div class="sm-flip-card sm-card-width-custom">
+                                <div class="flip-card-inner" id="{{ item.id }}">
+                                    <div class="flip-card-front card-surface p-4">
+                                        <div class="card-body d-flex flex-column text-center">
+                                            <div class="my-auto">
+                                                {% if item.label.en %}
+                                                <h4 class="card-title text-purple-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h3>
+                                                {% elif item.label.la %}
+                                                <h4 class="card-title text-purple-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h3>                                                
+                                                {% endif %}
+
+                                                {% if item.external_links.wikidata %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">wikidata: </strong>
+                                                    <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
+                                                
+                                                </h6>
+                                                {% endif %}
+                                                {% if item.external_links.viaf %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">viaf: </strong>
+                                                    <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
+                                            </div>
+                                            <div class="text-center mb-3">
+                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                            </div>
+                                            <div class="mt-auto pt-4">
+                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back card-surface p-4 custom-scroll">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
+                                            <div class="btn-group btn-group-sm mb-3" role="group">
+                                                <button type="button" class="btn btn-outline-dark btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                            </div>
+                                            <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
+                                            <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
+                                            <div class="mt-auto pt-3 text-center w-100">
+                                                <button class="btn btn-outline-dark w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- NUOVO TAB: OTHER -->
+                <div class="tab-pane fade" id="other-pane" role="tabpanel" aria-labelledby="other-tab" tabindex="0">
+                    <div class="row w-100 m-0 justify-content-center card-holder">
+                        {% for item in other %}
+                        <div class="col-sm-6 col-lg-4 col-xl-3 d-flex justify-content-center mb-5"> 
+                            <div class="sm-flip-card sm-card-width-custom">
+                                <div class="flip-card-inner" id="{{ item.id }}">
+                                    <div class="flip-card-front card-surface p-4">
+                                        <div class="card-body d-flex flex-column text-center">
+                                            <div class="my-auto">
+                                                {% if item.label.en %}
+                                                <h4 class="card-title text-purple-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h3>
+                                                {% elif item.label.la %}
+                                                <h4 class="card-title text-purple-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h3>
+                                                
+                                                {% endif %}
+                                                
+
+                                                {% if item.external_links.wikidata %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">wikidata: </strong>
+                                                    <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
+                                                
+                                                </h6>
+                                                {% endif %}
+                                                {% if item.external_links.viaf %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">viaf: </strong>
+                                                    <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
+                                                {% if item.external_links.GeoNames %}
+                                                <h6 class="mb-2 text-light">
+                                                    <strong class="purple-highlight">geonames: </strong>
+                                                    <a href="{{ item.external_links.GeoNames }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.GeoNames.split('/')[-1] }}</a>
+                                                </h6>
+                                                {% endif %}
+                                            </div>
+                                            <div class="text-center mb-3">
+                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                            </div>
+                                            <div class="mt-auto pt-4">
+                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back card-surface p-4 custom-scroll">
+                                        <div class="card-body d-flex flex-column align-items-center">
+                                            <h4 class="text-purple-title mb-2" id="title-{{ item.id }}">Description</h4>
+                                            <div class="btn-group btn-group-sm mb-3" role="group">
+                                                <button type="button" class="btn btn-outline-dark btn-lang active" onclick="switchLanguage('{{ item.id }}', 'en', this)">EN</button>
+                                                <button type="button" class="btn btn-outline-dark btn-lang" onclick="switchLanguage('{{ item.id }}', 'it', this)">IT</button>
+                                            </div>
+                                            <p id="text-en-{{ item.id }}" class="text-light w-100" style="font-size: 0.95rem">{{ item.description.en }}</p>
+                                            <p id="text-it-{{ item.id }}" class="text-light w-100 d-none" style="font-size: 0.95rem">{{ item.description.it }}</p>
+                                            <div class="mt-auto pt-3 text-center w-100">
+                                                <button class="btn btn-outline-dark w-100" onclick="flipCard('{{ item.id }}')">Back to details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>       
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+            <!--End Tab-->
+
+            <!--
+            <div class="row g-4">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card card-scriptorium">
+                        <img src="https://placehold.co/600x400/D4C5B0/2D2926?text=Documento+Storico" class="card-img-top" alt="Placeholder Bolla Papale">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Religioam vitam</h5>
+                            <p class="card-text">Bolla papale promulgata da Papa Onorio III nel 1216, con la quale si conferma la Regola di Sant'Agostino per i frati predicatori.</p>
+                            <a href="#" class="btn btn-scriptorium mt-auto w-100">Dettagli URI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card card-scriptorium">
+                        <img src="https://placehold.co/600x400/D4C5B0/2D2926?text=Persona" class="card-img-top" alt="Placeholder Persona">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">San Tommaso d'Aquino</h5>
+                            <p class="card-text">Frate domenicano e filosofo, autore della <em>Summa Theologiae</em>. Rappresenta la massima espressione dell'eredità intellettuale dell'ordine.</p>
+                            <a href="#" class="btn btn-scriptorium mt-auto w-100">Dettagli URI</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="card card-scriptorium">
+                        <img src="https://placehold.co/600x400/D4C5B0/2D2926?text=Luogo" class="card-img-top" alt="Placeholder Luogo">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Basilica di San Domenico (BO)</h5>
+                            <p class="card-text">Uno dei luoghi di culto più importanti di Bologna, che custodisce l'Arca di San Domenico contenente le spoglie del Santo.</p>
+                            <a href="#" class="btn btn-scriptorium mt-auto w-100">Dettagli URI</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+        </section>
+
+        <section id="knowledge-organization">
+            <h2>Knowledge Organization</h2>
+            <h3 class="mt-5">Theoretical Model</h3>
+            <p>A theoretical model was created in order to define the relationships between the entities. Here are some of the main categories that entities fall into:</p>
+            <ul>
+                <li><strong>Artworks</strong>: the Sarcophagus of the Arca di san Domenico (the object we are investigating as the material culmination of the process of the “invention of memory”) and its breakdown into panels;</li>
+                <li><strong>Literary works</strong>: the majority are hagiographic works, included because they are the source or vehicle for the transmission of the miraculous events depicted on the sarcophagus panels;</li>
+                <li><strong>People</strong>: they can be the authors of literary works, or the subjects/participants in the mapped miraculous events, or figures depicted on the narrative panels;</li>
+                <li><strong>Visual items</strong>: the panels depict visual elements (visual compositions) — often composed of other visual items (visual details) — which are represented by entities instantiating the Iconclass code that best represents them;</li>
+                <li><strong>Narrative themes</strong>: these are the principal miraculous themes or dramatized events depicted on the sarcophagus panels, linked (where applicable) to the actual events to which they refer.</li>
+            </ul>
+
+            <p>Together, these categories map the intersemiotic translation at the heart of the project: how a doctrinal concept moves from a <strong>Literary work</strong>, becomes a <strong>Narrative theme</strong>, and is ultimately carved as a <strong>Visual item</strong> on an <strong>Artwork</strong>. Alongside these core elements, the model incorporates additional entities whose primary purpose is to provide a richer historical and semantic context to this central narrative.</p>
+
+            <p><em>Please note:</em> In the visual diagram representing this theoretical model, external linked resources (such as VIAF and Wikidata primarily used for people and works, or GeoNames for places) have been deliberately omitted for readability and to prevent visual cluttering. The only exceptions are the Iconclass codes, which are highlighted in the diagram with a purple background. For the same reason, we omitted from the diagram the detailed textual descriptions included for each entity and, where applicable, their chronological anchor.</p>
+
+            <div class="container">
+                <iframe src="zoom-page.html?img=../images/theoretical_model.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
+            </div>
+            
+
+            <h3 class="mt-5">Conceptual Model</h3>
+            <p>A conceptual model was created in order to translate the theoretical abstractions into a formal, machine-readable architecture. To ensure data interoperability and alignment with Linked Open Data standards, the architecture relies on the reuse of existing vocabularies and ontologies (you can find more information about them <a href="#ontologies">below</a>).</p>
+
+            <p><strong>Modeling Patterns:</strong> the conceptual architecture implements standard ontology design patterns to handle the historical and artistic domain. <em>Multiple instantiation</em> is used to align entities across different semantic frameworks: certain nodes are declared as instances of multiple classes simultaneously (for example, combining CIDOC-CRM with LRMOO or RiC-O) to ensure interoperability. Furthermore, <em>n-ary relations</em> are employed to avoid semantic shortcuts when modeling complex interactions: rather than using direct binary properties, intermediate nodes (such as <code>crm:E12_Production</code>, <code>lrmoo:F27_Work_Creation</code>, or <code>rico:CreationRelation</code>) act as connectors between actors, objects, and their temporal constraints (e.g., <code>crm:E52_Time-Span</code>).</p>
+
+            <div class="container">
+                <iframe src="zoom-page.html?img=../images/conceptual_model_def.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
+            </div>
+
+            <p><em>Note:</em> Utility properties for lexical labels (RDFS, SKOS) and authority control links (OWL) are applied across all entities but are omitted from this diagram for readability.</p>
+            
+        </section>
+
+        <section id="XML/TEI">
+            <h2>XML/TEI file</h2>
+            <p>The textual sources were semantically enriched using the <strong>TEI (Text Encoding Initiative)</strong> guidelines. Rather than encoding the entire publications, the process focused on targeted excerpts (extracted from Luigi Canetti's <em>L'invenzione della memoria. Il culto e l'immagine di Domenico nella storia dei primi frati predicatori</em> and Anita F. Moskovits' <em>Nicola Pisano's Arca di S. Domenico and its legacy</em>) that act as the primary sources for the project's goal.</p>
+
+            <p>Within the body of the XML document, the text was marked up to identify the core categories. To ensure structural traceability, each extracted passage was assigned a unique <code>@xml:id</code> and sequentially numbered using an <code>@n</code> attribute. Furthermore, the physical layout of the original printed publications was carefully preserved: page boundaries were marked using <code>&lt;pb&gt;</code>, while any internal text omissions or authorial footnotes were systematically tracked using <code>&lt;gap reason="omitted"&gt;</code> and <code>&lt;ptr type="footnote" n="..."/&gt;</code> respectively. </p>
+            
+            <p>Explicit mentions of historical figures, literary works, visual item, or narrative theme was wrapped in its appropriate TEI element (e.g., <code>&lt;persName&gt;</code>, <code>&lt;title&gt;</code> or <code>&lt;placeName&gt;</code>). However, when the authors employed an indirect reference rather than an explicit name, the <code>&lt;rs&gt;</code> (referencing string) element was used, indicating its entity type (e.g., <code>&lt;rs type="person"&gt;</code>, <code>&lt;rs type="narrative_theme"&gt;</code>,<code>&lt;rs type="object"&gt;</code>, <code>&lt;rs type="org"&gt;</code>, <code>&lt;rs type="event"&gt;</code> or <code>&lt;rs type="place"&gt;</code>). Regardless of the specific tag used, each marked entity was equipped with a <code>ref</code> attribute pointing to a unique local identifier.</p>
+
+            <p>In order to establish true entities, all tagged elements were formally defined in dedicated lists (such as <code>&lt;listBibl&gt;</code>,<code>&lt;listPerson&gt;</code>, <code>&lt;listOrg&gt;</code>, <code>&lt;listObject&gt;</code>, <code>&lt;listPlace&gt;</code> or <code>&lt;listEvent&gt;</code>) within the TEI Header. These definitions provide the standard labels, descriptions, the authority control (if present) and the base URIs that are eventually parsed into the RDF graph. Both the standard labels and descriptions are provided in english and italian.</p>
+
+            <p>The final step was to establish the semantic links between the defined entities directly within the TEI file. The use of the TEI relation element (<code>&lt;relation active="..." name="..." passive="..."/&gt;</code>) served as the structural blueprint for the triples generated in the final LOD dataset.</p>
+            
+            <div class="row mt-5">
+                
+                <!-- PRIMA SEZIONE -->
+                <div class="col-md-6 mb-4">
+                    <div class="rounded p-3 h-100 d-flex flex-column example-card">
+                        <h5 class="text-center mb-3 fw-bold">Example of inline tagging and Encoding</h5>
+                        <pre class="p-3 rounded scrollable-code flex-grow-1 border"><code class="scroll-code">&lt;div type="snippet" xml:id="snippet_11" n="11"&gt;
+    &lt;pb n="200"/&gt;
+    &lt;p&gt;
+        &lt;note place="bottom" n="238"&gt;&lt;gap reason="omitted"/&gt; tra gli episodi
+        ‘incerti’ omessi da &lt;persName ref="#jordan_saxony"&gt;Giordano &lt;/persName&gt;
+        già si trovava, molto probabilmente, il celebre miracolo ‘evangelico’ e tipicamente
+        agiografico-monastico &lt;gap reason="omitted"/&gt; della &lt;rs type="narrative_theme"
+        ref="inme:theme_miraculous_supper"&gt; moltiplicazione dei pani&lt;/rs&gt;, già
+        testimoniato al &lt;rs type="event" ref="#canonization_process"&gt;processo di
+        canonizzazione&lt;/rs&gt; da &lt;persName ref="#buonviso"&gt;fra’ Buonviso
+        &lt;/persName&gt; e, addirittura come prassi taumaturgica abituale, da &lt;persName
+        ref="#rodolfo"&gt;fra’ Rodolfo&lt;/persName&gt; &lt;gap reason="omitted"/&gt;
+        e poi accolto in varie forme nelle biografia del &lt;rs type="person"
+        ref="#dominic_guzman"&gt;santo&lt;/rs&gt; e nelle più importanti sillogi di
+        &lt;foreign xml:lang="la"&gt;exempla&lt;/foreign&gt;.&lt;/note&gt;
+    &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="rounded p-3 h-100 d-flex flex-column example-card">
+                            <h5 class="text-center mb-3 fw-bold">Entity Definition in the TEI Header (Authority List)</h5>
+                            
+                            <pre class="p-3 rounded scrollable-code flex-grow-1 border"><code class="scroll-code">&lt;person xml:id="dominic_guzman"&gt;
+    &lt;idno type="wikidata"&gt;Q44091&lt;/idno&gt;
+    &lt;idno type="viaf"&gt;17240904&lt;/idno&gt;
+    &lt;persName xml:lang="en"&gt;Dominic de Guzmán&lt;/persName&gt; &lt;persName
+    xml:lang="it"&gt;Domenico di Guzmán&lt;/persName&gt; &lt;note xml:lang="it"&gt;
+    Canonico di Osma, predicatore antieretico in Linguadoca e fondatore dell'Ordine
+    dei Frati Predicatori (Domenicani), vissuto in rigorosa povertà evangelica e morto
+    a Bologna nel 1221.&lt;/note&gt;
+    &lt;note xml:lang="en"&gt;Canon of Osma, preacher against heresy in Languedoc,
+    and founder of the Order of Preachers (Dominicans); he lived in strict evangelical
+    poverty and died in Bologna in 1221.&lt;/note&gt;
+&lt;/person&gt;</code></pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row text-center mt-3">
+                <h5>You can check the XML/TEI file here:</h5>
+                <div class="d-grid justify-content-center mt-3">
+                    <a href="../xml_json_files/inMe_TEI.xml" class="btn doc-btn" target="_blank">XML/TEI document <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
+            </div>
+            
+            
+
+        </section>
+
+        <section id="xml-json-rdf">
+            <h2>JSON Dataset</h2>
+            
+            <p>While the TEI-XML framework defines and captures the entities explicitly mentioned in the literary sources, the conceptual model requires a broader scope to fully map the intersemiotic translation. To bridge this gap, a supplementary <strong>JSON dataset</strong> was implemented to define these extra entities and establish their connections to the textual data.</p>
+
+            <p>The JSON file acts as an extended authority list. It formally defines all the entities that were considered worth defining but were not directly tagged in the XML snippets. This primarily includes the visual breakdown of the sarcophagus' panels (either in compositions or as individual details) and the narrative themes reified in marble. Each entry in the JSON object is assigned a unique identifier, two labels (in Italian and English), one or more RDF class types, two descriptions (in Italian and English), and, when possible, one or more external links (authority controls). The relations are structured as follows: the subject, the predicate (RDF property) and the object; subject and object are two dictionaries containing the identifier and whether the entity is defined in the XML or in the JSON dataset.</p>
+
+            <div class="row mt-5">
+                
+                <!-- PRIMA SEZIONE -->
+                <div class="col-md-6 mb-4">
+                    <div class="rounded p-3 h-100 d-flex flex-column example-card">
+                        <h5 class="text-center mb-3 fw-bold">Example of JSON Entity Definition</h5>
+                        <pre class="p-3 rounded scrollable-code flex-grow-1 border"><code class="scroll-code">{
+    "id": "vi_composition_stories_blessed_reginald",
+    "label": {
+        "it": "Composizione visiva del pannello delle Storie del beato Reginaldo",
+        "en": "Visual Composition of the Panel of the Stories of the Blessed Reginald"
+    },
+    "ontological_classes": [
+        "crm:E36_Visual_Item"
+    ],
+    "description": {
+        "it": "Questa risorsa immateriale rappresenta l'assetto compositivo e l'aspetto ottico-formale della scena che raffigura la vocazione, la malattia e la guarigione miracolosa di Reginaldo d'Orléans. La scena è articolata in una sequenza cronologica suddivisa in tre parti: la promessa di Reginaldo a Domenico di entrare nell'Ordine, l'improvvisa malattia e la preghiera di Domenico, e infine la guarigione miracolosa per opera della Vergine Maria e di due sante donne. L'elemento visivo si concentra sull'organizzazione spaziale e visiva della scena, prescindendo dalle caratteristiche fisiche del blocco di marmo.",
+        "en": "This immaterial resource represents the compositional and optical-formal appearance of the scene depicting the vocation, illness, and miraculous healing of Reginald of Orléans. The scene is structured as a three-part chronological sequence, showing Reginald's promise to Dominic to join the Order, his sudden illness and Dominic’s prayer, and his miraculous healing by the Virgin Mary and two holy women. The Visual Item focuses on the spatial and visual organization of the scene, independently of the physical features of the marble block."
+    },
+    "external_links": {}
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="rounded p-3 h-100 d-flex flex-column example-card">
+                            <h5 class="text-center mb-3 fw-bold">Example of JSON Relationship Definition</h5>
+                            
+                            <pre class="p-3 rounded scrollable-code flex-grow-1 border"><code class="scroll-code">{
+    "subject": {
+        "id": "panel_saints_peter_paul",
+        "source": "core"
+    },
+    "predicate": "crm:P65_shows_visual_item",
+    "object": {
+        "id": "vi_composition_vision_saints_peter_paul",
+        "source": "extra"
+    }
+},
+{
+    "subject": {
+        "id": "sarcophagus",
+        "source": "core"
+    },
+    "predicate": "arco:hasCommission",
+    "object": {
+        "id": "sarcophagus_commission",
+        "source": "extra"
+    }
+}</code></pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row text-center mt-3">
+                <h5>You can check the JSON file here:</h5>
+                <div class="d-grid justify-content-center mt-3">
+                    <a href="../xml_json_files/inMe_extra_entities.json" class="btn doc-btn" target="_blank">JSON dataset file <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
+            </div>            
+            
+        </section>
+
+        <section id="xml-html">
+            <h2>XML to HTML conversion: XSLT</h2>
+            <p>To facilitate the exploration of the TEI-XML file, a conversion process was implemented to transform the XML data into an HTML format through an <strong>XSLT (eXtensible Stylesheet Language Transformations) stylesheet</strong>. This conversion allows for a more user-friendly presentation of the content, enabling users to navigate through the textual sources and their associated entities with ease. The resulting HTML file includes metadata cards for the two sources, the snippets extracted and encoded, a tab with metadata cards for all the "core" entities extracted and a "relations table" showing their relationships as triples.</p>
+            <p>A dedicated Python script was also implemented to automate the conversion process.</p>
+
+            <div class="d-flex justify-content-evenly flex-wrap text-center mt-5">
+                <div class="d-flex flex-column align-items-center">
+                    <h5>You can check the HTML file here:</h5>
+                    <a href="../html_files/inMe_stylised_xml.html" class="btn doc-btn" target="_blank">HTML page <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center mt-4 mt-md-0">
+                    <h5>You can check the XSLT file here:</h5>
+                    <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/xslt/inMe_XSLT.xslt" class="btn doc-btn" target="_blank">XSLT stylesheet <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center mt-4 mt-xl-0">
+                    <h5>You can check the Python script here:</h5>
+                    <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/python_script/xml-html_transformation.py" class="btn doc-btn" target="_blank">Python conversion script <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
+                
+            </div> 
+
+        </section>
+
+        <section id="data-extraction" class="mt-3">
+            <h2>Semantic Data Extraction: RDF and Turtle Serialization</h2>
+            <p>The final step of the project involved the extraction of semantic data from the TEI-XML and JSON files, resulting in a comprehensive RDF dataset. While this project does not deploy a live graph database (Triplestore) with a SPARQL endpoint, the underlying data architecture is fully graph-based and can be easily imported into any RDF-compliant database for further exploration and querying. 
+            A dedicated Python script was implemented to automate the extraction process of the triples, maintaining interoperability with other Linked Open Data resources. These resulting triples were then serialized in Turtle format (<code>.ttl</code>). The dataset was finally fed into an <a href="https://giacomociti.github.io/rdf2dot/" target="_blank">RDF visualizer</a> in order to make the semantic network visually accessible, as illustrated below.</p>
+                
+            <div class="container">
+                <iframe src="zoom-page.html?img=../images/inme_rdf-viewer.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
+            </div>
+
+            <div class="d-flex flex-column flex-lg-row justify-content-evenly flex-wrap text-center mt-5">
+                <div class="d-flex flex-column align-items-center">
+                    <h5>You can check the Python script here:</h5>
+                    <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/python_script/json_xml_to_rdf.py" class="btn doc-btn" target="_blank">Python script <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center mt-4 mt-lg-0">
+                    <h5>You can check the Turtle file here:</h5>
+                    <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/rdf_dataset/inventio_memoriae_graph.ttl" class="btn doc-btn" target="_blank">Turtle file <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="ontologies">
+            <h2>Ontologies & Vocabularies</h2>
+            <p>To accurately represent the intersemiotic translation between narrative themes, historical events, hagiographic literature, visual elements, and physical artifacts, the conceptual model adopts a multi-layered modeling strategy when needed: the narrative themes are instantiated as <code>crm:E89_Propositional_Object</code> and <code>lrmoo:F1_Work</code>, historical events as <code>crm:E5_Event</code>, hagiographic literature as <code>lrmoo:F1_Work</code>, visual elements as <code>crm:E36_Visual_Item</code>, and physical panels as <code>crm:E22_Human-Made_object</code> (which compose the sarcophagus, itself instantiated as both <code>crm:E22_Human-Made_object</code> and <code>arco:HistoricOrArtisticProperty</code>).</p>
+            <p>In order to harness this core mechanism into a more comprehensive framework, a broader network of standard ontologies and vocabularies was integrated. The specific rationale for selecting each of these models is detailed below.</p>
+
+            <div class="accordion accordion-scriptorium" id="ontologiesAccordion">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header m-0 border-0 p-0" id="headingOne">
+                        <button class="accordion-button collapsed d-flex flex-wrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            ArCo (Architettura della Conoscenza) Ontology (<code>arco:</code>) & ArCo Context Description Ontology (<code>arco-cd:</code>)
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#ontologiesAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Domain:</strong> Italian Cultural Heritage and contextual information</p>
+                            <p><strong>Usage rationale:</strong> ArCo (the italian standard ontology network for cultural heritage) was used to provide cataloguing information for the arca and the sarcophagus. Its application was divided into two main areas:</p>
+                            <ul>
+                                <li><strong>Cultural Property Classification:</strong> The main <code>arco</code> module was used to classify the physical artifacts according to national cataloguing standards. The monument as a whole (the Arca di San Domenico) was modeled as both an <code>arco:HistoricOrArtisticProperty</code> and a <code>arco:ComplexCulturalProperty</code> (reflecting its composite architectural nature). The sarcophagus itself is instantiated as an <code>arco:HistoricOrArtisticProperty</code>.</li>
+                                <li><strong>Contextual <em>n-ary</em> relations:</strong> The <code>arco-cd</code> module was used for modeling the patronage of the monument, linking the sarcophagus to the Dominican Order via an explicit <code>arco-cd:Commission</code> event node, connected through the <code>arco-cd:hasCommission</code> and <code>arco-cd:hasCommittent</code> properties.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header m-0 border-0 p-0" id="headingTwo">
+                        <button class="accordion-button collapsed d-flex flex-wrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            CIDOC CRM (<code>crm:</code>)
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#ontologiesAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Domain:</strong> Cultural Heritage, Physical Objects, and Historical Events.</p>
+                            <p><strong>Usage rationale:</strong> CIDOC CRM acts as the foundational ontology of the graph. Its application was divided into four conceptual macro-areas:</p>
+                            <ul>
+                                <li><strong>Materiality and Architecture:</strong> Used to model the physical artifacts such as the sarcophagus and its individual panels (<code>crm:E22_Human-Made_Object</code>). The architectural context was modeled by representing the original church (<code>crm:E24_Physical_Human-Made_Thing</code>) and its historical development (<code>crm:E81_Transformation</code>).</li>
+                                <li><strong>Actors and Historical Context:</strong> Used for mapping the human network and timeline. It connects historical individuals (<code>crm:E21_Person</code>) and collectives (<code>crm:E74_Group</code>) to actions (such as <code>crm:E12_Production</code>), events (<code>crm:E5_Event</code>), and their temporal relationships (<code>crm:E52_Time-Span</code>).</li>
+                                <li><strong>Semantics and Iconography:</strong> Used to map the formal visual aspects carved into the marble instantiating them as <code>crm:E36_Visual_Item</code>, while the abstract miracles and narrative themes they represent are modeled as <code>crm:E89_Propositional_Object</code>. The classification of these visual items is further formalized using <code>crm:E55_Type</code> to accommodate iconclass identifiers.</li>
+                                <li><strong>Textual sources:</strong> Applied to identify the historical, literary and archival sources (<code>crm:E31_Document</code>) which contain the original nuclei of the narrative themes handed down by Dominican hagiography.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header m-0 border-0 p-0" id="headingThree">
+                        <button class="accordion-button collapsed d-flex flex-wrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Dublin Core Metadata Terms (<code>dcterms:</code>)
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#ontologiesAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Domain:</strong> Standardized Metadata, Authorship, and Multilingual Descriptions</p>
+                            <p><strong>Usage rationale:</strong> Dublin Core was used mainly as vocabulary for assigning literal metadata to the entities. Its application was focused on:</p>
+                            <ul>
+                                <li><strong>Multilingual Entity Descriptions:</strong> Every entity in the graph is enriched with a descriptive text using the <code>dcterms:description</code> property. To ensure accessibility, these strings are typed with language tags (<code>@en</code> and <code>@it</code>).</li>
+                                <li><strong>Bibliographic Attributes:</strong> Used to attach essential metadata to the literary works and documents, such as identifying the authors (<code>dcterms:creator</code>) and binding the entities to <code>rdfs:Literal</code> values, specifically their titles (<code>dcterms:title</code>) and original languages (<code>dcterms:language</code>).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header m-0 border-0 p-0" id="headingFive">
+                        <button class="accordion-button collapsed d-flex flex-wrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            LRMoo (Library Reference Model Object Oriented) (<code>lrmoo:</code>)
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#ontologiesAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Domain:</strong> Bibliographic Genesis and Literary Evolution</p>
+                            <p><strong>Usage rationale:</strong> LRMoo was critical for modeling the textual sources, particularly the complex literary lineage of Saint Dominic's hagiographies. Its application was divided into two fundamental aspects:</p>
+                            <ul>
+                                <li><strong>Literary work Creation:</strong> The literary sources are modeled exclusively at the intellectual level (<code>lrmoo:F1_Work</code>), maintining focus on the narrative transmission of thematic contents.</li>
+                                <li><strong>Literary Succession and Inspirations:</strong> To map the subsequent choices of the official hagiographies, they are linked in a direct sequence using the <code>lrmoo:R1_is_logical_successor_of</code> property. Furthermore, the influence of one work on another are captured using the <code>lrmoo:R2_is_inspired_by</code> property.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header m-0 border-0 p-0" id="headingSix">
+                        <button class="accordion-button collapsed d-flex flex-wrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            RiC-o (Records in Contexts - Ontology) (<code>rico:</code>)
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#ontologiesAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Domain:</strong> Archival Description, Documentary Hierarchies, and Institutional Roles.</p>
+                            <p><strong>Usage rationale:</strong> While LRMoo was used to model the literary texts, Ric-o handles official archival documents and institutional structures. Its application focuses on the legal and historical context of the records, divided into three main areas:</p>
+                            <ul>
+                                <li><strong>Archival Hierarchies:</strong> Applied to the primary documentary entity, Saint Dominic's Canonization Process (the <em>Acta Canonizationis</em>). Rather than an intellectual work, this is modeled as an archival unit (<code>rico:Record</code>). Its internal structure is mapped using <code>rico:hasDirectConstituent</code> to devide the main document into its distinct sections (<code>rico:RecordPart</code>), specifically the canonical inquiries of Bologna and Toulouse.</li>
+                                <li><strong>N-ary Relations for Archival Documents:</strong> Two accurately model two friar's depositions, an <em>n-ary relation</em> (<code>rico:CreationRelation</code>) was employed: it connects the document (<code>rico:relationHasSource</code>) to the specific friar (<code>rico:Person</code> via <code>rico:relationHasTarget</code>), explicitly defining their role as witness using <code>rico:crationWithRole</code> linked to a <code>rico:RoleType</code>.</li>
+                                <li><strong>Institutional Structure:</strong> Ric-o was also used to map the administrative hirerarchy within the Dominican Order. The relationship between the Master Generals and the Order itself (<code>rico:Group</code>) is formalized through the <code>rico:isOrWasLeaderOf</code> property.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header m-0 border-0 p-0" id="headingSeven">
+                        <button class="accordion-button collapsed d-flex flex-wrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            Skos (Simple Knowledge Organization System)(<code>skos:</code>)
+                        </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#ontologiesAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Domain:</strong> Controlled Vocabularies, Authority Files, and Lexical Labels.</p>
+                            <p><strong>Usage rationale:</strong> SKOS was integrated to manage terminological alignments and lexical variations. Its application was focused on three distinct interoperability tasks:</p>
+                            <p><strong>Authority Control Alignment:</strong> Used to map entities to their corresponding records in the Virtual International Authority File (VIAF).</p>
+                            <p><strong>Vocabulary Integration:</strong> Employed to connect the  iconographic classes (<code>crm:E55_Type</code>) to the official Iconclass classification codes, ensuring interoperability with external art history databases.</p>
+                            <li><strong>Lexical Variations:</strong> The <code>skos:altLabel</code> property was utilized to handle alternative naming conventions for major entities (such as the Arca itself or the Dominican Order), tagged with <code>@en</code> and <code>@it</code> language identifiers to support multilingual queries.</li>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header m-0 border-0 p-0" id="headingEight">
+                        <button class="accordion-button collapsed d-flex flex-wrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            ICONCLASS
+                        </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#ontologiesAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Domain:</strong> Art History Iconographic Classification.</p>
+                            <p><strong>Usage rationale:</strong> ICONCLASS was utilized to provide a standardized system for categorizing and retrieving iconographic content, facilitating cross-institutional and cross-language searches within the art history domain. Its implementation includes a specific methodological adaptation:</p>
+                            <p><strong>Standard Classification:</strong> Employed to assign persistent URIs to recognized iconographic themes, linking the local visual items (<code>crm:E36_Visual_Item</code>) to global art history registries.</p>
+                            <p><strong>Custom Local Extension:</strong> While the majority of the themes were mapped to official Iconclass URIs, a custom identifier (<code>11H_REGINALD</code>) was deliberately minted for the iconographic representation of Reginald of Orléans. Since this specific historical figure lacked a granular official code, this local extension was created to rigorously connect the figure to the visual details in which he appears in the panel <code>#panel_story_reginald</code>, utilizing the <code>crm:P138_represents</code> property.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header m-0 border-0 p-0" id="headingNine">
+                        <button class="accordion-button collapsed d-flex flex-wrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                            OWL (Web Ontology Language) (<code>owl:</code>)
+                        </button>
+                    </h2>
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#ontologiesAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Domain:</strong> Semantic Web, Knowledge Representation, and Ontology Engineering.</p>
+                            <p><strong>Usage rationale:</strong> While OWL is a highly complex web ontology language, its implementation in this project it was used strictly for <strong>identity resolution</strong> across the Semantic Web. By utilizing the <code>owl:sameAs</code> property, the local entities were asserted to be absolutely identical to universal URIs from major global authority controls that model real-world entities, specifically <strong>GeoNames</strong> (for spatial coordinates) and <strong>Wikidata</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header m-0 border-0 p-0" id="headingTen">
+                        <button class="accordion-button collapsed d-flex flex-wrap" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                            Rdfs (Resource Description Framework Schema) (<code>rdfs:</code>)
+                        </button>
+                    </h2>
+                    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#ontologiesAccordion">
+                        <div class="accordion-body">
+                            <p><strong>Domain:</strong> Basic Semantic Structuring and Multilingual Labeling.</p>
+                            <p><strong>Usage rationale:</strong> While more complex descriptions were handled via Dublin Core, RDFS was strictly utilized for its fundamental and universally readable properties. Specifically, it was employed to assign basic human-readable labels (<code>rdfs:label</code>) to the entities. These labels were tagged with appropriate language identifiers (<code>@it</code>, <code>@en</code>, <code>@la</code>).</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- References Section -->
+        <section id="references">
+            <h2>References</h2>
+            <p>
+                The theoretical framework and the data extraction process of this project rely on the following selected texts, standard guidelines, and semantic vocabularies.
+            </p>
+            
+            <div class="row mt-4">
+                <!-- Texts & Standards -->
+                <div class="col-md-6 mb-4">
+                    <h5 class="fw-bold group-name border-bottom pb-2">Encoded Textual Sources</h5>
+                    <p class="small text-muted mb-3">
+                        The extraction of the core entities and their relationships was performed exclusively through the TEI-XML markup of excerpts extracted from the following critical essays:
+                    </p>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item px-0">
+                            <strong>Canetti, Luigi.</strong> <em>L'invenzione della memoria. Il culto e l'immagine di Domenico nella storia dei primi frati predicatori</em>, Centro italiano di studi sull'alto Medioevo, 1996. 
+                            <br><span class="text-muted small">Utilized as the primary source for extracting the hagiographic narratives, their origins, and the literary lineage of Saint Dominic.</span>
+                        </li>
+                        <li class="list-group-item px-0">
+                            <strong>Moskovitz, Anita Fiderer.</strong> <em>Nicola Pisano's arca di San Domenico and its legacy</em>, College art association, 1994.
+                            <br><span class="text-muted small">Utilized as the primary source for extracting the art historical entities concerning the sarcophagus and its panels.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Ontologies -->
+                <div class="col-md-6 mb-4">
+                    <h5 class="fw-bold group-name border-bottom pb-2">Official Documentation & Standards</h5>
+                    <p class="small text-muted mb-3">
+                        As detailed in the <em>Ontologies & Vocabularies</em> section <a href="#ontologies">above</a>, the conceptual model is built upon the following standard specifications:
+                    </p>
+                    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="https://cidoc-crm.org/" target="_blank" class="text-decoration-none">CIDOC-CRM (v. 7.1.3)</a></li>
+                                <li class="mb-2"><a href="https://iflastandards.info/ns/lrm/lrmoo/" target="_blank" class="text-decoration-none">LRMOO</a></li>
+                                <li class="mb-2"><a href="http://wit.istc.cnr.it/arco/" target="_blank" class="text-decoration-none">ArCo Network</a></li>
+                                <li class="mb-2"><a href="https://www.ica.org/standards/RiC/ontology" target="_blank" class="text-decoration-none">RiC-O</a></li>
+                                <li class="mb-2"><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" target="_blank" class="text-decoration-none">Dublin Core Metadata Terms</a></li>
+                                <li class="mb-2"><a href="http://iconclass.org/" target="_blank" class="text-decoration-none">Iconclass</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="https://tei-c.org/guidelines/" target="_blank" class="text-decoration-none">TEI P5 Guidelines</a></li>
+                                <li class="mb-2"><a href="https://www.w3.org/RDF/" target="_blank" class="text-decoration-none">W3C RDF</a></li>
+                                <li class="mb-2"><a href="https://www.w3.org/TR/owl2-overview/" target="_blank" class="text-decoration-none">W3C OWL</a></li>
+                                <li class="mb-2"><a href="https://www.w3.org/2004/02/skos/" target="_blank" class="text-decoration-none">W3C SKOS</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="technologies">
+            <h2>Technologies and tools</h2>
+            <p>The project was developed using a combination of web technologies, programming languages, and libraries to ensure data persistence, scalability, and semantic interoperability. The following technologies were employed:</p>
+
+            <div class="row mt-4">
+                <!-- Data Modeling -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold group-name border-bottom pb-2">Data Modeling</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-transparent px-0">
+                            <strong>TEI-XML:</strong> Employed for the structural markup of the source texts and to formally define the "core entities" and their relationships directly within the primary sources.
+                        </li>
+                        <li class="list-group-item bg-transparent px-0">
+                            <strong>JSON:</strong> Used as a supplementary dataset to create and manage extra contextual entities and their semantic relationships outside the textual flow.
+                        </li>
+                        <li class="list-group-item bg-transparent px-0">
+                            <strong>RDF:</strong> The underlying framework of the knowledge graph, ultimately serialized in Turtle (<code>.ttl</code>) format.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Processing & Automation -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold group-name border-bottom pb-2">Processing Pipeline</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-transparent px-0">
+                            <strong>Python:</strong> The core scripting language orchestrating data extraction and automation, utilizing:
+                            <ul class="mt-2 mb-0">
+                                <li><code>rdflib</code>: To extract triples from both XML and JSON, and serialize the final graph.</li>
+                                <li><code>lxml</code> & <code>xml.etree.ElementTree</code>: To parse the XML documents and apply the stylesheet transformations.</li>
+                                <li><code>BeautifulSoup4 (bs4)</code>: To format and pretty-print the generated HTML output.</li>
+                                <li><code>Jinja2</code>: To dynamically generate the interactive entities tab from the raw datasets.</li>                                
+                            </ul>
+                        </li>
+                        <li class="list-group-item bg-transparent px-0">
+                            <strong>XSLT:</strong> The stylesheet language explicitly used to define the transformation rules from the TEI-XML structure into readable HTML.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Web Interface & Visualization -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold group-name border-bottom pb-2">UI & Visualizations</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-transparent px-0">
+                            <strong>HTML5 & Bootstrap 5:</strong> Utilized to design the responsive documentation page and interactive UI components.
+                        </li>
+                        <li class="list-group-item bg-transparent px-0">
+                            <strong>yEd & Graffoo:</strong> Standard <em>yEd Graph Editor</em> was used to map the theoretical model, while its <em>Graffoo</em> (Graphical Framework for OWL Ontologies) extension was strictly employed to draw the conceptual model, ensuring a standardized visual representation of the RDF architecture.
+                        </li>
+                        <li class="list-group-item bg-transparent px-0">
+                            <strong>RDF Visualizer:</strong> Integrated to provide a graphical node-based rendering of the final <code>.ttl</code> graph.
+                        </li>
+                        <li class="list-group-item bg-transparent px-0">
+                            <strong>Custom SVG Viewer:</strong> A custom JavaScript tool implemented to enable interactive zooming and panning of the SVG models. It was adapted with permission from Alessandro Rocchi's <a href="https://github.com/Alessandro-Rocchi/project_InformationScienceandCH" target="_blank">GitHub repo</a>.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+            
+
+        <p>Scrivi nei miglioramenti perchè non hai usato ICON</p>
+
+    </main>
+                  
+
+    <footer class="text-center py-4 mt-5" style="border-top: 1px solid var(--border-color); background-color: #FFFFFF;">
+        <div class="container">
+            <p class="mb-0" style="color: var(--text-color);"><small>Progetto di Information Science and CH &copy; 2024</small></p>
+            <p class="mb-0"><small><a href="#">Go back up ↑</a></small></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS (include Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script per gestire l'active state della navbar (Bootstrap scrollspy support) -->
+    <script>
+        // Lo scrollspy è gestito dagli attributi data-bs-spy sul body,
+        // Questo mini script assicura un offset morbido se si clicca sui link della navbar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 76; // Altezza della navbar
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        //JAVASCRIPT PER LA TAB
+        function flipCard(cardId) {
+        const card = document.getElementById(cardId);
+        card.classList.toggle('is-flipped');
+        }
+
+        function switchLanguage(cardId, lang, clickedButton) {
+        const textIt = document.getElementById('text-it-' + cardId);
+        const textEn = document.getElementById('text-en-' + cardId);
+        const title = document.getElementById('title-' + cardId);
+
+        if (lang === 'it') {
+            textIt.classList.remove('d-none');
+            textEn.classList.add('d-none');
+            title.innerText = "Descrizione";
+        } else if (lang === 'en') {
+            textIt.classList.add('d-none');
+            textEn.classList.remove('d-none');
+            title.innerText = "Description";
+        }
+
+        // Gestione dello stile dei bottoni attivi
+        const buttonGroup = clickedButton.parentElement;
+        const allButtons = buttonGroup.querySelectorAll('.btn-lang');
+        allButtons.forEach(btn => btn.classList.remove('active'));
+        
+        clickedButton.classList.add('active');
+        }
+        
+           
+    </script>
+</body>
+</html>

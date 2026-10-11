@@ -6,7 +6,7 @@
         <fileDesc>
             <titleStmt>
                 <title type="main">Inventio Memoriae</title>
-                <title type="sub">Digital Hagiography and Semantic Modeling of the Arca di San Domenico</title>
+                <title type="sub">Mapping the construction of Memory: A Linked Open Data approach to Nicola Pisano’s Arca di San Domenico</title>
                 <author>Daniele Bottaro</author>
                 <respStmt>
                     <resp>Encoded and annotated by</resp>
@@ -22,7 +22,7 @@
                 </availability>
             </publicationStmt>
             <sourceDesc>
-                <!-- 1. THE TWO BOOKS USED AS SOURCES -->
+                <!-- Books used as sources -->
                 <listBibl type="sources">
                     <biblStruct xml:id="canetti_invenzione_memoria">
                         <monogr>
@@ -33,8 +33,7 @@
                                     <forename>Luigi</forename>
                                     <surname>Canetti</surname>
                                 </persName>
-                            </author>
-                            
+                            </author>                            
                             <textLang mainLang="it" otherLangs="la">Italian with some excerpts in Latin</textLang>
                             <imprint>
                                 <pubPlace>Spoleto</pubPlace>
@@ -57,8 +56,7 @@
                                     <surname>Moskovitz</surname>
                                 </persName>
                             </author>
-                            <textLang mainLang="en">English</textLang>
-                                                  
+                            <textLang mainLang="en">English</textLang>                                                  
                             <imprint>
                                 <pubPlace>Pennsylvania</pubPlace>
                                 <publisher>College art association</publisher>
@@ -72,97 +70,62 @@
                     </biblStruct>
                 </listBibl>
 
-                <!-- 2. THE HISTORICAL/HAGIOGRAPHIC TEXTS -->
+                <!-- Historical/hagiographic texts -->
                 <listBibl type="historical_works">
                     <bibl xml:id="historia_albigensis" type="chronicle">
                         <idno type="viaf">176177946</idno>
-                        <!-- 2. AUTORE -->
                         <author ref="#peter_vaux_cernay">Peter of Vaux-de-Cernay</author>
-                        <!-- 3. TITOLO e LINGUA -->
                         <title level="m" xml:lang="la">Historia Albigensis</title>
                         <textLang mainLang="la">Latin</textLang>
-                        
-                        <!-- 4. DATAZIONE DELLA STESURA (Cruciale!) -->
                         <date notBefore="1212" notAfter="1218">Between 1212 and 1218</date>
-                        
-                        <!-- 5. NOTA DESCRITTIVA (Per contestualizzare) -->
                         <note type="context" xml:lang="it">Cronaca cistercense che narra la crociata contro gli Albigesi; rappresenta l'unica testimonianza documentaria diretta dell'attività antiereticale di Domenico in Linguadoca, prima che la sua immagine venisse rielaborata dalla campagna di canonizzazione del 1233–1234. Fornisce un resoconto più "sobrio" dell'episodio miracoloso della prova del fuoco rispetto alle narrazioni iperboliche di Giordano di Sassonia e Pietro Ferrand. Proprio in virtù di tale rigore, fu utilizzata come fonte da Umberto di Romans per la stesura definitiva della *Legenda Sancti Dominici* liturgica ufficiale (1255–1260).</note>
                         <note type="context" xml:lang="en">Cistercian chronicle recounting the Albigensian Crusade; it represents the only direct documentary evidence of Dominic's anti-heretical activity in Languedoc before his image was reshaped by the canonization campaign of 1233–1234. It provides a more "sober" account of the miracle episode of the fire ordeal compared to the hyperbolic accounts of Jordan of Saxony and Peter Ferrand. Precisely because of this rigor, it was used as a source by Humbert of Romans for the definitive drafting of the official liturgical *Legenda Sancti Dominici* (1255–1260).</note>
                     </bibl>
 
                     <bibl xml:id="legenda_constantini" type="hagiography">
-                        <!-- 2. AUTORE (collegato alla tua anagrafica) -->
                         <author ref="#constantine_orvieto">Constantine of Orvieto</author>
-                        <!-- 3. TITOLO e LINGUA -->
                         <title level="m" xml:lang="la">Legenda Sancti Dominici</title>
                         <textLang mainLang="la">Latin</textLang>
-                        
-                        <!-- 4. DATAZIONE DELLA STESURA (Cruciale!) -->
                         <date notBefore="1246" notAfter="1247">Between 1246 and 1247</date>
-                        
-                        <!-- 5. NOTA DESCRITTIVA (Per contestualizzare) -->
                         <note type="context" xml:lang="it">Approvata nel 1248, la "Legenda Nova" di Costantino segna una svolta decisiva nella memoria domenicana, trasformando la vita del fondatore da cronaca storica a biografia sistematica di prodigi. Pur attingendo ampiamente a Pietro Ferrandi, Costantino omette molti dettagli locali per proiettare un'immagine di Domenico più universale e profetica. Si tratta della prima fonte ufficiale a fissare il "Miracolo dei pani" e a introdurre miti istituzionali fondamentali, come il sogno del Laterano e il mandato di Pietro e Paolo, che conferirono all'Ordine la sua definitiva legittimazione carismatica e la narrazione primaria per i suoi futuri programmi iconografici.</note>
                         <note type="context" xml:lang="en">Approved in 1248, Constantine's "Legenda Nova" marks a decisive shift in Dominican memory, transforming the founder’s life from a historical chronicle into a systematic biography of wonders. While drawing heavily on Peter Ferrandi, Constantine omits many local details to project a more universal and prophetic image of Dominic. It is the first official source to stabilize the "Miracle of the Loaves" and to introduce pivotal institutional myths such as the Dream of the Lateran and the mandate from Peter and Paul which provided the Order with its definitive charismatic legitimacy and the primary narrative for its future iconographic programs.</note>
                     </bibl>
 
                     <bibl xml:id="legenda_petri_ferrandi" type="hagiography">
                         <idno type="viaf">25145602481301361738</idno>
-                        <!-- 2. AUTORE -->
                         <author ref="#peter_ferrand">Peter Ferrand</author>
-                        <!-- 3. TITOLO e LINGUA -->
                         <title level="m" xml:lang="la">Legenda Sancti Dominici</title>
                         <textLang mainLang="la">Latin</textLang>
-                        
-                        <!-- 4. DATAZIONE DELLA STESURA -->
                         <date notBefore="1235" notAfter="1238">Between 1235 and 1238</date>
-                        
-                        <!-- 5. NOTA DESCRITTIVA (Per contestualizzare) -->
                         <note type="context" xml:lang="it">Approvata per l'uso liturgico nel 1238, l'opera di Pietro Ferrandi costituisce la *prior legenda* e la prima biografia ufficiale del fondatore. Sebbene si tratti in gran parte di una compilazione letterale del *Libellus* di Giordano di Sassonia, essa introduce motivi fondamentali che hanno plasmato l'autocoscienza domenicana: l'immagine escatologica di Domenico come *vespertinus sydus* (stella della sera), inviato alla fine dei tempi, e l'influente narrazione del "Testamento" del fondatore. Associando l'eredità della povertà volontaria a una severa maledizione contro chi avesse introdotto beni temporali, Ferrandi fornì il fondamento agiografico primario per la futura identità dell'Ordine e per la sua difesa della mendicità.</note>
                         <note type="context" xml:lang="en">Approved for liturgical use in 1238, Pietro Ferrandi’s work constitutes the "prior legenda" and the first official biography of the founder. While largely a literal compilation of Jordan of Saxony’s Libellus, it introduces pivotal motifs that shaped Dominican self-consciousness: the eschatological image of Dominic as the "vespertinus sydus" (evening star) sent at the world's end and the influential narrative of the founder’s "Testament". By pairing the legacy of voluntary poverty with a stern curse against those who would introduce temporal possessions, Ferrandi provided the primary hagiographical foundation for the Order's future identity and its defense of mendicancy.</note>
                     </bibl>
 
                     <bibl xml:id="legenda_humbertus" type="hagiography">
                         <idno type="viaf">211752959</idno>
-                        <!-- 2. AUTORE (collegato alla tua anagrafica) -->
                         <author ref="#humbert_romans">Humbert of Romans</author>
-                        <!-- 3. TITOLO e LINGUA -->
                         <title level="m" xml:lang="la">Legenda maior Sancti Dominici</title>
                         <textLang mainLang="la">Latin</textLang>
-                        
-                        <!-- 4. DATAZIONE DELLA STESURA -->
                         <date notBefore="1255" notAfter="1260">Between 1255 and 1260</date>
-
-                        <!-- 5. NOTA DESCRITTIVA -->
                         <note type="context" xml:lang="it">Approvata nel 1260, quest'opera segna la codificazione definitiva dell'immagine ufficiale di Domenico, concludendo la fase agiografica formativa dell'Ordine. Pur basandosi essenzialmente su una compilazione letterale dei testi di Pietro Ferrandi e Costantino di Orvieto, essa persegue una maggiore sobrietà e un più rigoroso ordine cronologico, adattando al contempo la narrazione a un uso esclusivamente liturgico e comunitario. Elemento cardine della più ampia riforma liturgica promossa da Umberto, il suo impiego fu reso obbligatorio dal Capitolo Generale di Strasburgo, soppiantando di fatto tutte le precedenti versioni agiografiche.</note>
                         <note type="context" xml:lang="en">Approved in 1260, this work marks the final codification of Dominic’s official image, ending the Order's formative hagiographical period. Primarily a literal compilation of Peter Ferrandi and Constantine of Orvieto, it seeks greater sobriety and chronological rigor while adapting the narrative for exclusive liturgical and communal use. As a pillar of Humbert’s broader liturgical reform, its use was strictly imposed by the General Chapter of Strasbourg, effectively supplanting all previous hagiographical versions.</note>
                     </bibl>
                     
                     <bibl xml:id="libellus_principiis" type="hagiography">
                         <idno type="viaf">7818165326352416290000</idno>
-                        <!-- 2. AUTORE (collegato alla tua anagrafica) -->
                         <author ref="#jordan_saxony">Jordan of Saxony</author>
-                        <!-- 3. TITOLO e LINGUA -->
                         <title level="m" xml:lang="la">Libellus de Principiis Ordinis Predicatorum</title>
                         <textLang mainLang="la">Latin</textLang>
-                        
-                        <!-- 4. DATAZIONE DELLA STESURA -->
                         <date notBefore="1231" notAfter="1234">Between 1231 and 1234</date>
-
-                        <!-- 5. NOTA DESCRITTIVA -->
                         <note type="context" xml:lang="it">Il *Libellus* di Giordano di Sassonia costituisce la più antica testimonianza storica e agiografica sulle origini dell'Ordine. Esso intreccia la cronaca dell'istituzione con la vita di Domenico e le biografie dei primi frati, configurandosi come un'«agiografia collettiva» in cui l'Ordine stesso è protagonista. L'opera delinea strategicamente l'identità dell'Ordine attorno alla sua missione escatologica e al reclutamento di matrice intellettuale e universitaria. Nonostante la sua struttura composita, il testo funse da prima *legenda* liturgica ufficiale dell'Ordine (a seguito di una revisione del 1235-1236) e rimase la fonte primaria per tutte le successive tradizioni agiografiche domenicane.</note>
                         <note type="context" xml:lang="en">Jordan of Saxony’s "Libellus" is the earliest historical and hagiographical record of the Order’s origins. It weaves a chronicle of the institution with the life of Dominic and the biographies of other early friars, functioning as a "collective hagiography" where the Order itself is a protagonist. It strategically frames the Order’s identity around its eschatological mission and its intellectual, university-based recruitment. Despite its composite structure, it served as the Order's first official liturgical "legenda" (following a 1235/36 revision) and remained the primary source for all subsequent Dominican hagiographical traditions</note>
                     </bibl>
 
                     <bibl xml:id="acta_canonizationis" type="official_record">
                         <title>Acta canonizationis sancti Dominici</title>
-                        <!-- 3. TITOLO e LINGUA -->
                         <title level="m" xml:lang="la">Acta canonizationis sancti Dominici</title>
                         <textLang mainLang="la">Latin</textLang>
-                        
-                        <!-- 4. DATAZIONE DELLA STESURA -->
                         <date when="1233">1233</date>
-
-                        <!-- 5. NOTA DESCRITTIVA -->
                         <note type="context" xml:lang="it">Si tratta della documentazione relativa alle inchieste ufficiali svolte a Bologna e Tolosa nel 1233. Tale documento segna un'importante svolta procedurale nella storia della canonizzazione, rappresentando uno dei primi casi di utilizzo di un elenco strutturato di *articuli interrogatorii* per orientare le deposizioni. Anziché concentrarsi sulla taumaturgia, gli *Acta* pongono l'accento sull'*amor regularitatis* (lo zelo per la Regola) e sullo *zelus animarum* del fondatore, delineando un modello di santità coerente con l'identità costituzionale dell'Ordine. Promosso strategicamente durante il movimento dell'«Alleluia», il processo conferì la legittimazione carismatica necessaria per i nuovi compiti inquisitoriali affidati all'Ordine e ne consolidò lo status istituzionale all'interno della Chiesa.</note>
                         <note type="context" xml:lang="en">The record of the official inquiries held in Bologna and Toulouse in 1233. This document marks a significant procedural shift in the history of canonization, being one of the first instances to utilize a structured list of "articuli interrogatorii" to guide testimonies. Rather than focusing on thaumaturgy, the Acta emphasize the founder's "amor regularitatis" (zeal for the Rule) and "zelus animarum," projecting a model of sanctity that aligns with the Order's established constitutional identity. Strategically promoted during the "Alleluia" movement, the process provided the charismatic legitimacy needed for the Order’s newly assigned inquisitorial duties and secured its institutional status within the Church.</note>
 
@@ -192,7 +155,8 @@
                
             </sourceDesc>
         </fileDesc>
-        
+
+        <!-- Historical people -->
         <profileDesc>
             <particDesc>
                 <listPerson type="historical">
@@ -325,24 +289,18 @@
                     <org xml:id="dominican_order" type="religiousOrder">
                         <orgName type="official" xml:lang="la">Ordo Praedicatorum</orgName>
                         <orgName type="standard" xml:lang="en">Order of Preachers</orgName>
-                        <orgName type="standard" xml:lang="it">Ordine dei Predicatori</orgName>
-                        
+                        <orgName type="standard" xml:lang="it">Ordine dei Predicatori</orgName>                        
                         <orgName type="alt" xml:lang="en">Dominican Order</orgName>
-                        <orgName type="alt" xml:lang="it">Ordine Domenicano</orgName>
-                        
-                        <orgName type="abbrev">OP</orgName>
-                        
+                        <orgName type="alt" xml:lang="it">Ordine Domenicano</orgName>                        
+                        <orgName type="abbrev">OP</orgName>                        
                         <idno type="wikidata">Q131479</idno>
                         <idno type="viaf">140291092</idno>
-
-
                         <note xml:lang="it">Ordine mendicante fondato a Tolosa da san Domenico nei primi anni del Duecento per contrastare la diffusione delle eresie catara e valdese attraverso la predicazione itinerante e l'esempio di una vita in povertà apostolica. Ottenne la conferma provvisoria da papa Innocenzo III nel 1215 e quella solenne da Onorio III nel 1216, adottando la regola di sant'Agostino. La sua straordinaria novità istituzionale risiedette nel diritto universale di predicazione dottrinale concesso a ciascun frate chierico (prerogativa precedentemente riservata ai soli vescovi), unito a un vigoroso orientamento intellettuale che favorì un massiccio reclutamento negli Studia universitari di Parigi e Bologna. Nel primo Capitolo Generale di Bologna (1220) l'Ordine abbracciò il principio della mendicità conventuale e della rinuncia totale alle proprietà, strutturandosi con una costituzione collegiale ed elastica incentrata sull'autorità dei Capitoli Generali e finalizzata *ex officio* allo studio, alla difesa dell'ortodossia e alla salvezza delle anime.</note>
                         <note xml:lang="en">A mendicant order founded in Toulouse by Saint Dominic in the early 13th century to counter the spread of the Cathar and Waldensian heresies through itinerant preaching and the example of a life of apostolic poverty. It received provisional approval from Pope Innocent III in 1215 and formal confirmation from Honorius III in 1216, adopting the Rule of Saint Augustine. Its extraordinary institutional innovation lay in the universal right to preach doctrine granted to every friar in holy orders (a prerogative previously reserved solely for bishops) combined with a strong intellectual orientation that fostered massive recruitment from the university *Studia* of Paris and Bologna. At the first General Chapter in Bologna (1220), the Order embraced the principle of mendicancy and the total renunciation of property, adopting a flexible, collegial constitution centered on the authority of General Chapters and dedicated *ex officio* to study, the defense of orthodoxy, and the salvation of souls.</note>
-
                     </org>
                 </listOrg>
 
-                <!-- LISTA DEGLI OGGETTI (L'Arca, sarcofago e pannelli) -->
+                <!-- OBJECTS' LIST (Arca, sarcophagus and panels) -->
                 
                 <listObject>
                     <object xml:id="saint_dominic_arca">
@@ -351,10 +309,8 @@
                             <objectName type="preferred" xml:lang="it">Arca di San Domenico</objectName>
                             <objectName type="variant" xml:lang="en">Ark of Saint Dominic</objectName>
                             <objectName type="variant" xml:lang="en">Shrine of Saint Dominic</objectName>
-                        </objectIdentifier>
-                        
+                        </objectIdentifier>                        
                         <idno type="wikidata">Q2417706</idno>
-
                         <note xml:lang="it">Monumento sepolcrale realizzato a Bologna che integra in un'unica e maestosa struttura elementi realizzati dal XIII al XVI secolo. L'insieme unisce il nucleo medievale originario progettato da Nicola Pisano (1267) alla grandiosa cimasa rinascimentale di Niccolò dell'Arca, arricchita dalle celebri sculture di Michelangelo e dai successivi interventi di Alfonso Lombardi. Questa complessa stratificazione artistica, oggi custodita nella cappella cinquecentesca della basilica, costituisce nella sua interezza monumentale il motore e il punto di riferimento per l'intera evoluzione dell'arte funeraria in Italia.</note>
                         <note xml:lang="en">A funerary monument created in Bologna that integrates elements dating from the 13th to the 16th century into a single, majestic structure. The ensemble combines the original medieval core designed by Nicola Pisano (1267) with the magnificent Renaissance crowning section by Niccolò dell'Arca, enriched by celebrated sculptures by Michelangelo and later additions by Alfonso Lombardi. Housed today in the basilica's 16th-century chapel, this complex artistic layering stands, in its monumental entirety, as the driving force and benchmark for the evolution of funerary art in Italy.</note>
                     </object>
@@ -364,9 +320,7 @@
                             <objectName xml:lang="en">Sarcophagus of the Arca di San Domenico</objectName> 
                             <objectName xml:lang="it">Sarcofago dell'Arca di San Domenico</objectName> 
                         </objectIdentifier>
-
                         <idno type="wikidata">Q126766539</idno>
-
                         <note xml:lang="it">L'unica porzione del monumento originario del 1267 a essersi conservata intatta all'interno della basilica di San Domenico a Bologna. Nella sua configurazione originale, la cassa marmorea non poggiava direttamente sul basamento ma era concepita come un sarcofago monumentale isolato (freestanding) sostenuto da un inedito e straordinario sistema figurato composto da cariatidi e telamoni, oggi rimossi dal complesso e parzialmente conservati in varie collezioni museali. Caratterizzato da una ricca trabeazione di gusto classico con fregi di acanto e uccelli, ospita i sei rilievi biografici della vita del santo intervallati ad altorilievo dalle figure della Madonna, del Redentore e dei quattro Dottori della Chiesa. Questi ultimi sono posizionati diagonalmente agli angoli del sarcofago per spezzare la rigidità geometrica del rettangolo e guidare fluidamente lo sguardo e il movimento dell'osservatore tutt'intorno alla struttura.</note>
                         <note xml:lang="en">This is the only part of the original 1267 monument that has survived intact within the Basilica of San Domenico in Bologna. In its original configuration, the marble chest did not rest directly on the base but was conceived as a freestanding monumental sarcophagus, supported by a novel and extraordinary figurative system of caryatids and telamones (elements removed from the complex and now partially preserved in various museum collections). Featuring a rich, classically inspired entablature adorned with acanthus and bird friezes, the sarcophagus displays six biographical reliefs depicting the saint's life, interspersed with high-relief figures of the Madonna, the Redeemer, and the four Doctors of the Church. The latter are positioned diagonally at the corners of the sarcophagus to break the rectangle's geometric rigidity and fluidly guide the viewer's gaze and movement around the entire structure.</note>
                     </object>
@@ -376,7 +330,6 @@
                             <objectName xml:lang="en">Panel of the Burning Books</objectName> 
                             <objectName xml:lang="it">Pannello della prova del fuoco</objectName>
                         </objectIdentifier>
-
                         <note xml:lang="it">Scena dell'ordalia del fuoco svoltasi durante lo scontro dottrinale contro l'eresia catara in Linguadoca. Mostra i giudici arbitri seduti in alto ad assistere alla prova, mentre in basso un giovane alimenta con un soffietto le fiamme che consumano i libri eretici, dalle quali il testo di Domenico balza miracolosamente indenne.</note>
                         <note xml:lang="en">A scene depicting the ordeal by fire that took place during the doctrinal clash with the Cathar heresy in Languedoc. It shows the adjudicators seated above, witnessing the trial, while below, a young man uses a pair of bellows to stoke the flames consuming the heretical books from which Dominic’s text miraculously emerges unscathed.</note>
                     </object>
@@ -386,7 +339,6 @@
                             <objectName xml:lang="en">Panel of the Miraculous Supper of Saint Dominic</objectName> 
                             <objectName xml:lang="it">Panel of the Miraculous Supper of Saint Dominic</objectName> 
                         </objectIdentifier>
-
                         <note xml:lang="it">Raffigurazione del miracolo della moltiplicazione dei pani nel refettorio del convento romano di San Sisto. Mostra san Domenico e la comunità dei frati disposti in posizioni simmetriche e domestiche attorno a una lunga tavola, mentre in primo piano due angeli visti di spalle distribuiscono pani segnati da croci.</note>
                         <note xml:lang="en">Depiction of the miracle of the multiplication of the loaves in the refectory of the Roman convent of San Sisto. It shows Saint Dominic and the community of friars arranged in symmetrical, informal poses around a long table, while in the foreground, two angels seen from behind distribute loaves marked with crosses.</note>
                     </object>
@@ -424,82 +376,59 @@
                     </object>
                 </listObject>
                 
-                <!-- 3. RELAZIONI (Mappatura Ontologica) -->
+                <!-- RELATIONS (Ontological mapping) -->
 
                 <listRelation>
-                    <!-- Definizione dei tipi (Classi) -->
+
+                    <!-- People definitions -->
                     <relation active="#dominic_guzman" name="rdf:type" passive="crm:E21_Person"/>
                     <relation active="#dominic_guzman" name="rdf:type" passive="rico:Person"/>
-
                     <relation active="#nicola_pisano" name="rdf:type" passive="crm:E21_Person"/>
                     <relation active="#nicola_pisano" name="rdf:type" passive="rico:Person"/>
-
                     <relation active="#pope_innocent_iii" name="rdf:type" passive="crm:E21_Person"/>
                     <relation active="#pope_innocent_iii" name="rdf:type" passive="rico:Person"/>
-
                     <relation active="#pope_gregory_ix" name="rdf:type" passive="crm:E21_Person"/>
                     <relation active="#pope_gregory_ix" name="rdf:type" passive="rico:Person"/>
-
                     <relation active="#pope_honorius_iii" name="rdf:type" passive="crm:E21_Person"/>
-                    <relation active="#pope_honorius_iii" name="rdf:type" passive="rico:Person"/>
-                    
+                    <relation active="#pope_honorius_iii" name="rdf:type" passive="rico:Person"/>                    
                     <relation active="#jordan_saxony" name="rdf:type" passive="crm:E21_Person"/>
                     <relation active="#jordan_saxony" name="rdf:type" passive="rico:Person"/>
-
                     <relation active="#peter_ferrand" name="rdf:type" passive="crm:E21_Person"/>
                     <relation active="#peter_ferrand" name="rdf:type" passive="rico:Person"/>
-
                     <relation active="#constantine_orvieto" name="rdf:type" passive="crm:E21_Person"/>
                     <relation active="#constantine_orvieto" name="rdf:type" passive="rico:Person"/>
-
                     <relation active="#humbert_romans" name="rdf:type" passive="crm:E21_Person"/>
-                    <relation active="#humbert_romans" name="rdf:type" passive="rico:Person"/>
-                    
+                    <relation active="#humbert_romans" name="rdf:type" passive="rico:Person"/>                    
                     <relation active="#reginald_orleans" name="rdf:type" passive="crm:E21_Person"/>
-                    <relation active="#reginald_orleans" name="rdf:type" passive="rico:Person"/>
-                    
+                    <relation active="#reginald_orleans" name="rdf:type" passive="rico:Person"/>                    
                     <relation active="#saint_paul" name="rdf:type" passive="crm:E21_Person"/>
                     <relation active="#saint_paul" name="rdf:type" passive="rico:Person"/>
-
                     <relation active="#saint_peter" name="rdf:type" passive="crm:E21_Person"/>
                     <relation active="#saint_peter" name="rdf:type" passive="rico:Person"/>
-
                     <relation active="#peter_vaux_cernay" name="rdf:type" passive="crm:E21_Person"/>
                     <relation active="#peter_vaux_cernay" name="rdf:type" passive="rico:Person"/>
-
                     <relation active="#buonviso" name="rdf:type" passive="crm:E21_Person"/>
                     <relation active="#buonviso" name="rdf:type" passive="rico:Person"/>
-
                     <relation active="#rodolfo" name="rdf:type" passive="crm:E21_Person"/>
                     <relation active="#rodolfo" name="rdf:type" passive="rico:Person"/>
-
                     <relation active="#napoleone_orsini" name="rdf:type" passive="crm:E21_Person"/>
                     <relation active="#napoleone_orsini" name="rdf:type" passive="rico:Person"/>
-
                     <relation active="#sister_cecilia_contarini" name="rdf:type" passive="crm:E21_Person"/>
                     <relation active="#sister_cecilia_contarini" name="rdf:type" passive="rico:Person"/>
 
+                    <!-- Historical and artistic properties -->
                     <relation active="#saint_dominic_arca" name="rdf:type" passive="arco:HistoricOrArtisticProperty"/>
                     <relation active="#saint_dominic_arca" name="rdf:type" passive="arco:ComplexCulturalProperty"/>
-
                     <relation active="#sarcophagus" name="rdf:type" passive="arco:HistoricOrArtisticProperty"/>
-                    <relation active="#sarcophagus" name="rdf:type" passive="crm:E22_Human-Made_Object"/>
-                    <relation active="#sarcophagus" name="rdf:type" passive="lrmoo:F5_Item"/>
-
-                    
+                    <relation active="#sarcophagus" name="rdf:type" passive="crm:E22_Human-Made_Object"/>                    
                     <relation active="#panel_burning_books" name="rdf:type" passive="crm:E22_Human-Made_Object"/>
-                    <relation active="#panel_burning_books" name="rdf:type" passive="lrmoo:F5_Item"/>
                     <relation active="#panel_miraculous_supper" name="rdf:type" passive="crm:E22_Human-Made_Object"/>
-                    <relation active="#panel_miraculous_supper" name="rdf:type" passive="lrmoo:F5_Item"/>
                     <relation active="#panel_raising_orsini" name="rdf:type" passive="crm:E22_Human-Made_Object"/>
-                    <relation active="#panel_raising_orsini" name="rdf:type" passive="lrmoo:F5_Item"/>
                     <relation active="#panel_saints_peter_paul" name="rdf:type" passive="crm:E22_Human-Made_Object"/>
-                    <relation active="#panel_saints_peter_paul" name="rdf:type" passive="lrmoo:F5_Item"/>
                     <relation active="#panel_story_reginald" name="rdf:type" passive="crm:E22_Human-Made_Object"/>
-                    <relation active="#panel_story_reginald" name="rdf:type" passive="lrmoo:F5_Item"/>
                     <relation active="#panel_approval_order" name="rdf:type" passive="crm:E22_Human-Made_Object"/>
-                    <relation active="#panel_approval_order" name="rdf:type" passive="lrmoo:F5_Item"/>
 
+                    <!-- Literary works & archival documents -->
                     <relation active="#historia_albigensis" name="rdf:type" passive="lrmoo:F1_Work"/>
                     <relation active="#legenda_constantini" name="rdf:type" passive="lrmoo:F1_Work"/>
                     <relation active="#legenda_petri_ferrandi" name="rdf:type" passive="lrmoo:F1_Work"/>
@@ -507,34 +436,29 @@
                     <relation active="#libellus_principiis" name="rdf:type" passive="lrmoo:F1_Work"/>
                     <relation active="#acta_canonizationis" name="rdf:type" passive="crm:E31_Document"/>
                     <relation active="#acta_canonizationis" name="rdf:type" passive="rico:Record"/>
-
                     <relation active="#toulouse_inquiry" name="rdf:type" passive="crm:E31_Document"/>
                     <relation active="#toulouse_inquiry" name="rdf:type" passive="rico:RecordPart"/>
                     <relation active="#acta_canonizationis" name="rico:hasDirectConstituent" passive="#toulouse_inquiry"/>
                     <relation active="#acta_canonizationis" name="crm:P148_has_component" passive="#toulouse_inquiry"/>
-
                     <relation active="#bologna_inquiry" name="rdf:type" passive="crm:E31_Document"/>
                     <relation active="#bologna_inquiry" name="rdf:type" passive="rico:RecordPart"/>
                     <relation active="#acta_canonizationis" name="rico:hasDirectConstituent" passive="#bologna_inquiry"/>
-                    <relation active="#acta_canonizationis" name="crm:P148_has_component" passive="#bologna_inquiry"/>
+                    <relation active="#acta_canonizationis" name="crm:P148_has_component" passive="#bologna_inquiry"/>                    
                     
-                    <relation active="#dominican_order" name="rdf:type" passive="crm:E74_Group"/>
-                    <relation active="#dominican_order" name="rdf:type" passive="rico:Group"/>
-
+                    <!-- Places -->
                     <relation active="#fanjeaux" name="rdf:type" passive="crm:E53_Place"/>
                     <relation active="#montreal" name="rdf:type" passive="crm:E53_Place"/>
                     <relation active="#bologna" name="rdf:type" passive="crm:E53_Place"/>
                     <relation active="#san_domenico_church" name="rdf:type" passive="crm:E53_Place"/>
-                    <relation active="#san_niccolo_church" name="rdf:type" passive="crm:E53_Place"/>
+                    <relation active="#san_niccolo_church" name="rdf:type" passive="crm:E53_Place"/>                
+                    <relation active="#san_domenico_church" name="crm:P89_falls_within" passive="#bologna"/>
+                    <relation active="#san_domenico_church" name="rdf:type" passive="crm:E24_Physical_human-made_thing"/>
+                    <relation active="#san_niccolo_church" name="crm:P89_falls_within" passive="#bologna"/>
+                    <relation active="#san_niccolo_church" name="rdf:type" passive="crm:E24_Physical_human-made_thing"/>      
 
-                    <!-- Eventi -->
-                    <relation active="#canonization_process" name="rdf:type" passive="crm:E5_Event"/>
-                    <relation active="#approval_order" name="rdf:type" passive="crm:E5_Event"/>
-                    <relation active="#orsini_horse_fall" name="rdf:type" passive="crm:E5_Event"/>
-                    <relation active="#fanjeaux_dispute" name="rdf:type" passive="crm:E5_Event"/>
-                    <relation active="#approval_order_request" name="rdf:type" passive="crm:E5_Event"/>
-
-                    <!-- Relazioni persone -->
+                    <!-- Dominican Order structure -->
+                    <relation active="#dominican_order" name="rdf:type" passive="crm:E74_Group"/>
+                    <relation active="#dominican_order" name="rdf:type" passive="rico:Group"/>
                     <relation active="#dominic_guzman" name="rico:isOrWasLeaderOf" passive="#dominican_order"/>
                     <relation active="#dominican_order" name="crm:P107_has_current_or_former_member" passive="#dominic_guzman"/>
                     <relation active="#dominican_order" name="crm:P107_has_current_or_former_member" passive="#buonviso"/>
@@ -549,22 +473,23 @@
                     <relation active="#dominican_order" name="crm:P107_has_current_or_former_member" passive="#sister_cecilia_contarini"/>
 
 
-                    <!-- Relazioni eventi-->
+                    <!-- Events-->
+                    <relation active="#canonization_process" name="rdf:type" passive="crm:E5_Event"/>
+                    <relation active="#approval_order" name="rdf:type" passive="crm:E5_Event"/>
+                    <relation active="#orsini_horse_fall" name="rdf:type" passive="crm:E5_Event"/>
+                    <relation active="#fanjeaux_dispute" name="rdf:type" passive="crm:E5_Event"/>
+                    <relation active="#approval_order_request" name="rdf:type" passive="crm:E5_Event"/>
                     <relation active="#historia_albigensis" name="crm:P129_is_about" passive="#fanjeaux_dispute"/>
-
                     <relation active="#orsini_horse_fall" name="crm:P11_had_participant" passive="#dominic_guzman"/>
                     <relation active="#orsini_horse_fall" name="crm:P11_had_participant" passive="#napoleone_orsini"/>
                     <relation active="#orsini_horse_fall" name="crm:P7_took_place_at" passive="#rome"/>
-
                     <relation active="#fanjeaux_dispute" name="crm:P11_had_participant" passive="#dominic_guzman"/>
-                    <relation active="#fanjeaux_dispute" name="crm:P7_took_place_at" passive="#montreal"/>
-                    
+                    <relation active="#fanjeaux_dispute" name="crm:P7_took_place_at" passive="#montreal"/>                    
                     <relation active="#approval_order" name="crm:P11_had_participant" passive="#dominic_guzman"/>
                     <relation active="#approval_order" name="crm:P11_had_participant" passive="#pope_honorius_iii"/>
                     <relation active="#approval_order_request" name="crm:P11_had_participant" passive="#dominic_guzman"/>
                     <relation active="#approval_order_request" name="crm:P11_had_participant" passive="#pope_innocent_iii"/>
                     <relation active="#approval_order_request" name="crm:P7_took_place_at" passive="#rome"/>
-
                     <relation active="#canonization_process" name="crm:P67_refers_to" passive="#dominic_guzman"/>
                     <relation active="#canonization_process" name="crm:P11_had_participant" passive="#pope_gregory_ix"/>
                     <relation active="#canonization_process" name="crm:P11_had_participant" passive="#rodolfo"/>
@@ -572,14 +497,8 @@
                     <relation active="#canonization_process" name="crm:P94_has_created" passive="#acta_canonizationis"/>
                     <relation active="#canonization_process" name="crm:P7_took_place_at" passive="#bologna"/>
                     <relation active="#canonization_process" name="crm:P7_took_place_at" passive="#toulouse"/>
-
-                    <relation active="#san_domenico_church" name="crm:P89_falls_within" passive="#bologna"/>
-                    <relation active="#san_domenico_church" name="rdf:type" passive="crm:E24_Physical_human-made_thing"/>
-                    <relation active="#san_niccolo_church" name="rdf:type" passive="crm:E24_Physical_human-made_thing"/>
-
-                    <relation active="#acta_canonizationis" name="crm:P129_is_about" passive="#dominic_guzman"/>
-                    
-                    
+                    <relation active="#acta_canonizationis" name="crm:P129_is_about" passive="#dominic_guzman"/>                               
+                                        
                     <!-- Relazioni composizionali dell'Arca -->
                     <relation active="#saint_dominic_arca" name="arco:hasCulturalPropertyComponent" passive="#sarcophagus"/>
                     <relation active="#sarcophagus" name="crm:P46_is_composed_of" passive="#panel_burning_books"/>
@@ -588,11 +507,11 @@
                     <relation active="#sarcophagus" name="crm:P46_is_composed_of" passive="#panel_saints_peter_paul"/>
                     <relation active="#sarcophagus" name="crm:P46_is_composed_of" passive="#panel_story_reginald"/>
                     <relation active="#sarcophagus" name="crm:P46_is_composed_of" passive="#panel_approval_order"/>
-
                     
                     <!-- Relazioni dell'Arca -->
                     <relation active="#saint_dominic_arca" name="crm:P53_hasFormerOrCurrentLocation" passive="#san_domenico_church"/>
                     <relation active="#sarcophagus" name="crm:P53_hasFormerOrCurrentLocation" passive="#san_niccolo_church"/>
+                    <relation active="#sarcophagus" name="crm:P53_hasFormerOrCurrentLocation" passive="#san_domenico_church"/>
                     
                     <!-- Relazioni opere letterarie -->
                     <relation active="#legenda_petri_ferrandi" name="lrmoo:R68_is_inspired_by" passive="#libellus_principiis"/>
@@ -708,35 +627,37 @@
         <encodingDesc>
             <listPrefixDef>
                 <prefixDef ident="crm" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.cidoc-crm.org/cidoc-crm/$1">
-                    <p>CIDOC CRM</p>
+                    <p>CIDOC Conceptual Reference Model</p>
                 </prefixDef>
                 <prefixDef ident="arco" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="https://w3id.org/arco/ontology/arco/$1">
-                    <p>ARCO Ontology</p>
+                    <p>ArCo Ontology</p>
                 </prefixDef>
                 <prefixDef ident="arco-cd" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="https://w3id.org/arco/ontology/content-description/$1">
-                    <p>ARCO-cd Ontology</p>
+                    <p>ArCo-cd Ontology</p>
                 </prefixDef>
-                <prefixDef ident="sdm" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.semanticweb.org/danie/ontologies/2026/7/mapping-saint-dominic-memory#$1">
-                    <p>La tua ontologia custom (Saint Dominic Memory)</p>
+                <prefixDef ident="inme" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://example.org/inventio-memoriae/$1">
+                    <p>Local namespace for Inventio Memoriae project entities</p>
                 </prefixDef>
                 <prefixDef ident="rdf" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.w3.org/1999/02/22-rdf-syntax-ns#$1">
-                    <p>RDF</p>
+                    <p>Resource Description Framework</p>
                 </prefixDef>
                 <prefixDef ident="rdfs" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.w3.org/2000/01/rdf-schema#$1">
-                    <p>RDF Schema Vocabulary</p>
+                    <p>RDF Schema</p>
                 </prefixDef>
                 <prefixDef ident="dcterms" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://purl.org/dc/terms/$1">
-                    <p>dcterms</p>
+                    <p>Dublin Core Metadata Terms</p>
                 </prefixDef>
                 <prefixDef ident="owl" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.w3.org/2002/07/owl#$1">
-                    <p>OWL Vocabulary (Web Ontology Language)</p>
+                    <p>OWL (Web Ontology Language)</p>
                 </prefixDef>
-
                 <prefixDef ident="lrmoo" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://iflastandards.info/ns/lrm/lrmoo/$1">
-                    <p>LRMOO</p>
+                    <p>LRMoo (Library Reference Model Object Oriented)</p>
                 </prefixDef>
                 <prefixDef ident="rico" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.ica.org/standards/RiC/ontology/$1">
-                    <p>Rico</p>
+                    <p>Records in Context Ontology</p>
+                </prefixDef>
+                <prefixDef ident="skos" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.w3.org/2004/02/skos/core#$1">
+                    <p>Simple Knowledge Organization System</p>
                 </prefixDef>
             </listPrefixDef>
         </encodingDesc>
@@ -745,9 +666,9 @@
     <text>
         <body>
 
-            <!-- SEZIONE 1: Snippet estratti dal primo Libro -->
+            <!-- Snippets extracted from Moskovitz's book -->
             <div type="excerpts" source="#moskovitz_arca_legacy" xml:lang="en">
-                <head>Extracted from: Nicola Pisano's arca di San Domenico and its legacy</head>
+                <head>Extracted from: Nicola Pisano's arca di San Domenico and its legacy (Moskovitz, 1994) </head>
                 
                 <div type="snippet" xml:id="snippet_01" n="1">
                     <pb n="15"/>
@@ -806,9 +727,9 @@
             </div>
 
              
-            <!-- SEZIONE 2: Snippet estratti da Canetti -->
+            <!-- Snippets extracted from Canetti's book -->
             <div type="excerpts" source="#canetti_invenzione_memoria" xml:lang="it">
-                <head>Extracted from: L'invenzione della memoria (Canetti)</head>
+                <head>Extracted from: L'invenzione della memoria (Canetti, 1996)</head>
                 
                 <div type="snippet" xml:id="snippet_10" n="10">
                     <pb n="151-152"/>

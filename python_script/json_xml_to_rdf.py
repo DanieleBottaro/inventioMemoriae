@@ -14,7 +14,7 @@ SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
 
 INME = Namespace("http://example.org/inventio-memoriae/")
 
-#creating a dictionary that contains...............
+#creating a dictionary that contains the namespaces and their respective prefixes to be used for normalizing the URIs
 ns_dict = {
     "crm": CRM, "arco": ARCO, "arco-cd": ARCO_CD, "dcterms": DCTERMS, "lrmoo": LRMOO, "rico": RICO, "inme": INME, "rdf": RDF
     }  
@@ -386,7 +386,7 @@ def parse_tei_xml(xml_filepath):
 
                     const_titles_dict = dict()
                     for const_title in inner_bibl.findall("tei:title", xml_ns):
-                        
+
                         language = const_title.get(check_lang)
             
                         if language:
@@ -736,27 +736,26 @@ def main():
     xml_filepath = "../xml_json_files/inMe_TEI.xml"
     output_filepath = "../rdf_dataset/inventio_memoriae_graph.ttl"
 
-    # 1. Estrazione JSON
+    #extracting the entities and relations from the json file
     json_entities, json_relations = parse_json_data(json_filepath)
 
-    # 2. Estrazione XML
+    #extracting the entities and relations from the xml/tei file
     xml_entities, xml_relations = parse_tei_xml(xml_filepath)
 
     
-    # 3. Unione dei dati
+    #merging the two dictionaries of entities and the two lists of relations into one dictionary and one list respectively
     all_entities_db = json_entities.copy()
     all_entities_db.update(xml_entities)
 
     all_relations = json_relations.copy()
     all_relations.extend(xml_relations)
 
-    # 4. Inizializzazione e popolamento Grafo
+    #initializing the RDF graph and populating it with the entities and relations extracted from the json and xml files
     db_graph, ns_dict = setup_rdf_graph()
     db_graph = populate_graph(db_graph, all_entities_db, all_relations)
 
-    # 5. Output
-    
-    db_graph.serialize(destination=output_filepath, format="turtle", encoding="utf-8") # Consigliato!
+    #serializing the graph into a turtle file    
+    db_graph.serialize(destination=output_filepath, format="turtle", encoding="utf-8")
 
 
 if __name__ == "__main__":

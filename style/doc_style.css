@@ -379,3 +379,7 @@ code:not(.scroll-code):not(.accordion button code){
     color: var(--accent-color) !important;
     border: 1.5px solid var(--accent-color) !important;
 }
+
+.group-name{
+    color: var(--accent-color) !important;
+}
