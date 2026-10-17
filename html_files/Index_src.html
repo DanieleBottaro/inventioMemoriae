@@ -12,7 +12,6 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://googleapis.com" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_upward,open_in_new,copyright" />
@@ -33,7 +32,7 @@
                         <a class="nav-link" href="#domain-analysis">Domain Analysis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#entities">Entities</a>
+                        <a class="nav-link" href="#entities-extraction">Entities</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -622,7 +621,7 @@
 
             <p>Together, these categories map the intersemiotic translation at the heart of the project: how a hagiographic account moves from a <strong>Literary work</strong>, becomes a <strong>Narrative theme</strong>, and is ultimately carved as a <strong>Visual item</strong> on an <strong>Artwork</strong>. Alongside these core elements, the model incorporates additional entities whose primary purpose is to provide a richer historical and semantic context to this central narrative.</p>
 
-            <div class="container theoretical-model">
+            <div class="container" id="theoretical-model-svg">
                 <iframe src="./html_files/zoom-page.html?img=../images/theoretical_model.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
             </div>
             
@@ -633,7 +632,7 @@
 
             <p><strong>Modeling Patterns:</strong> the conceptual architecture implements standard ontology design patterns to handle the historical and artistic domain. <em>Multiple instantiation</em> is used to align entities across different semantic frameworks: certain nodes are declared as instances of multiple classes simultaneously (for example, combining CIDOC-CRM with LRMOO or RiC-O) to ensure interoperability. Furthermore, <em>n-ary relations</em> are employed to avoid semantic shortcuts when modeling complex interactions: rather than using direct binary properties, intermediate nodes (such as <code>crm:E12_Production</code>, <code>lrmoo:F27_Work_Creation</code>, or <code>rico:CreationRelation</code>) act as connectors between actors, objects, and their temporal constraints (e.g., <code>crm:E52_Time-Span</code>).</p>
 
-            <div class="container">
+            <div class="container" id="conceptual-model-svg">
                 <iframe src="./html_files/zoom-page.html?img=../images/conceptual_model_def.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
             </div>
 
@@ -967,7 +966,7 @@
             <p>The final step of the project involved the extraction of semantic data from the TEI-XML and JSON files, resulting in a comprehensive RDF dataset. While this project does not deploy a live graph database (Triplestore) with a SPARQL endpoint, the underlying data architecture is fully graph-based and can be easily imported into any RDF-compliant database for further exploration and querying. 
             A dedicated Python script was implemented to automate the extraction process of the triples, maintaining interoperability with other Linked Open Data resources. These resulting triples were then serialized in Turtle format (<code>.ttl</code>). The dataset was finally fed into an <a href="https://giacomociti.github.io/rdf2dot/" target="_blank">RDF visualizer</a> in order to make the semantic network visually accessible, as illustrated below.</p>
                 
-            <div class="container">
+            <div class="container" id="rdf-viewer-svg">
                 <iframe src="./html_files/zoom-page.html?img=../images/inme_rdf-viewer.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
             </div>
 
@@ -1096,7 +1095,7 @@
                             <strong>RDF Visualizer:</strong> Integrated to provide a graphical node-based rendering of the final <code>.ttl</code> graph.
                         </li>
                         <li class="list-group-item bg-transparent px-0">
-                            <strong>Custom SVG Viewer:</strong> A custom JavaScript tool implemented to enable interactive zooming and panning of the SVG models. It was adapted with permission from Alessandro Rocchi's <a href="https://github.com/Alessandro-Rocchi/project_InformationScienceandCH" target="_blank">GitHub repo</a>.
+                            <strong>Interactive Diagram Viewer:</strong> A custom JavaScript tool implemented to enable interactive zooming and panning of the SVG models (<a href="#theoretical-model-svg" title="See above">Theoretical Model</a>, <a href="#theoretical-model-svg" title="See above">Conceptual Model</a>, and <a href="#rdf-viewer-svg" title="See above">RDF network</a>). Originally adapted with permission from Alessandro Rocchi's <a href="https://github.com/Alessandro-Rocchi/project_InformationScienceandCH" target="_blank">repository</a>, it was extended by integrating a custom full-screen mode.
                         </li>
                     </ul>
                 </div>
