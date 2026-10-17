@@ -27,7 +27,8 @@ body {
     font-weight: bold;
 }
 
-/* SCROLLBAR PERSONALIZZATA */
+/*custom scrollbar */
+
 .custom-scroll::-webkit-scrollbar {
     width: 6px;
 }
@@ -48,7 +49,7 @@ body {
     scrollbar-color: #7b2cbf transparent;
 }
 
-/* LARGHEZZA CARD E EFFETTO FLIP */
+/* cards styling and scrollbar */
 .card-width-custom {
     width: 100%;
     max-width: 420px;
@@ -82,16 +83,18 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
 }
-/* STILI PER LE TAB UNDERLINE */
+
 .card-holder {
-    max-width: 1300px; /* Valore indicativo per 4 card */
+    max-width: 1300px;
     margin-left: auto !important;
     margin-right: auto !important;
-    width: 100% !important; /* Mantiene la responsività su schermi piccoli */
+    width: 100% !important;
 }
 
+/* tab styling */
+
 .nav-underline .nav-link.custom-tab {
-    color: #a89bb9; /* Viola spento per le tab inattive */
+    color: #a89bb9;
     font-size: 1.1rem;
     padding-bottom: 0.75rem;
     margin: 0 0.5rem;
@@ -99,43 +102,42 @@ body {
 }
 .nav-underline .nav-link.custom-tab:hover {
     color: #e0aaff;
-    border-bottom-color: rgba(123, 44, 191, 0.5); /* Sfumatura al passaggio del mouse */
+    border-bottom-color: rgba(123, 44, 191, 0.5);
 }
 .nav-underline .nav-link.custom-tab.active {
     color: #d0bfff;
     font-weight: bold;
-    border-bottom-color: #7b2cbf !important; /* Linea viola spessa per la tab attiva */
+    border-bottom-color: #7b2cbf !important;
 }
-/* RISOLUZIONE BUG SPAZIO VUOTO TABS */
+
 .tab-content > .tab-pane:not(.active) {
     display: none !important;
 }
-/*DIMENSIONI PER CARD PIU' PICCOLE*/
+
+/*dimensions smaller cards*/
 .sm-card-width-custom {
     width: 100%;
-    max-width: 280px; /* Ridotto da 420px: ora le card sono belle compatte */
+    max-width: 280px;
 }
 .sm-flip-card {
     background-color: transparent;
     perspective: 1000px;
-    min-height: 340px; /* Ridotto da 480px: proporzionato alla nuova larghezza */
+    min-height: 340px;
 }
 
 
-/* STILI PER LA TABELLA DELLE RELAZIONI */
+/* relations table styling */
 .custom-table-wrapper {
     border: 1px solid #4a3b5c;
-    overflow: hidden; /* Mantiene i bordi arrotondati */
+    overflow: hidden;
 }
 
-/* Colore di sfondo personalizzato per le righe (in tinta con le card) */
 .table-dark {
     --bs-table-bg: #2b2b35; 
     --bs-table-border-color: #4a3b5c;
-    --bs-table-hover-bg: #3a324b; /* Colore al passaggio del mouse */
+    --bs-table-hover-bg: #3a324b;
 }
 
-/* Intestazione viola */
 .table-header-purple th {
     background-color: #1e1e24 !important;
     color: #d0bfff !important;

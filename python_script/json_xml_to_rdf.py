@@ -368,15 +368,21 @@ def parse_tei_xml(xml_filepath):
     # ========== LITERARY WORKS ==============
     for literary_work in root.findall('.//tei:bibl', xml_ns):
 
+        work_id = literary_work.get(id_node)
+        
+        core_entity = {"id": work_id}
+
+        #put a sort of label in order to recognize literary works when populating the graph
+        core_entity["type"] = "Literary work"
+
         #if present, extract the data of the constituent for official records
         if literary_work.get('type') == "official_record":
-        
+
             related_works = literary_work.findall('.//tei:relatedItem', xml_ns)
 
             constituents = []
             for item in related_works:
                 if item.get('type') == "constituent":
-
                     inner_bibl = item.find('.//tei:bibl', xml_ns)
                     constituent_data = {
                         "id": inner_bibl.get(id_node),
@@ -433,16 +439,9 @@ def parse_tei_xml(xml_filepath):
 
                     constituents.append(constituent_data)
                 
-                core_entity.update({"constituents":constituents})
-
-                core_entities_db[core_entity["id"]] = core_entity
-
-        work_id = literary_work.get(id_node)
-
-        core_entity = {"id": work_id}
-
-        #put a sort of label in order to recognize literary works when populating the graph
-        core_entity["type"] = "Literary work"
+            core_entity.update({"constituents":constituents})
+            
+            core_entities_db[core_entity["id"]] = core_entity
 
         work_titles_dict = dict()
         
@@ -676,6 +675,7 @@ def populate_graph(db_graph, entities_db, relations):
                         bibl_waiting_list.append(constituent)
 
                         constituent_uri = normalize_uri(constituent["id"])
+                        
                         db_graph.add((subj_uri, RICO.hasPart, constituent_uri))
 
         else:

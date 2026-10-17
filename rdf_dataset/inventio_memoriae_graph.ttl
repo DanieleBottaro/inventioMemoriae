@@ -363,49 +363,44 @@ inme:orsini_horse_fall a crm:E5_Event ;
         "Questo evento storico, avvenuto a Roma il 24 febbraio 1221, testimonia – secondo la più antica narrazione di Giordano di Sassonia – la ripresa di Napoleone Orsini, descritto come stordito o semivivo (*semivivum*) in seguito a una caduta da cavallo. Gli storici considerano la caratterizzazione dell'episodio come una \"resurrezione\" da parte di san Domenico alla stregua di un abbellimento leggendario e di una progressiva drammatizzazione derivanti dalla successiva tradizione agiografica."@it ;
     crm:P11_had_participant inme:dominic_guzman,
         inme:fanjeaux_dispute,
-        inme:napoleone_orsini ;
+        inme:napoleone_orsini,
+        inme:sister_cecilia_contarini ;
     crm:P7_took_place_at inme:rome .
 
-inme:panel_approval_order a lrmoo:F5_Item,
-        crm:E22_Human-Made_Object ;
+inme:panel_approval_order a crm:E22_Human-Made_Object ;
     rdfs:label "Pannello dell'approvazione dell'Ordine"@en ;
     dcterms:description "The relief focuses on the stages of the Order's legitimation and papal confirmation. On the left, Dominic presents the petition to Pope Innocent III; in the center, the sleeping pontiff dreams of the saint propping up the Lateran Basilica with his shoulder; on the right, some identify the pontiff as Innocent's successor, Honorius III, formally handing the book of the Rule to Dominic, while others maintain it is still Innocent III, supporting this view by pointing to the emphasis placed by the Order's own sources (which focus much more heavily on the initial phase of Innocent's approval)."@en,
         "Rilievo incentrato sulle tappe della legittimazione e della conferma pontificia dell'Ordine. A sinistra Domenico presenta la petizione a papa Innocenzo III; al centro il pontefice addormentato sogna il santo che sorregge con la spalla la basilica del Laterano; a destra alcuni identificano il pontefice con il successore Onorio III mentre consegna formalmente a Domenico il libro della Regola mentre altri riconoscono sempre lo stesso Innocenzo III supportando questa tesi con l'insistenza delle fonti interne dell'Ordine (le quali insistono assai più sulla prima fase dell'approvazione innocenziana)."@it ;
     crm:P65_shows_visual_item inme:vi_composition_approval_order .
 
-inme:panel_burning_books a lrmoo:F5_Item,
-        crm:E22_Human-Made_Object ;
+inme:panel_burning_books a crm:E22_Human-Made_Object ;
     rdfs:label "Panel of the Burning Books"@en,
         "Pannello della prova del fuoco"@it ;
     dcterms:description "A scene depicting the ordeal by fire that took place during the doctrinal clash with the Cathar heresy in Languedoc. It shows the adjudicators seated above, witnessing the trial, while below, a young man uses a pair of bellows to stoke the flames consuming the heretical books from which Dominic’s text miraculously emerges unscathed."@en,
         "Scena dell'ordalia del fuoco svoltasi durante lo scontro dottrinale contro l'eresia catara in Linguadoca. Mostra i giudici arbitri seduti in alto ad assistere alla prova, mentre in basso un giovane alimenta con un soffietto le fiamme che consumano i libri eretici, dalle quali il testo di Domenico balza miracolosamente indenne."@it ;
     crm:P65_shows_visual_item inme:vi_composition_burning_books .
 
-inme:panel_miraculous_supper a lrmoo:F5_Item,
-        crm:E22_Human-Made_Object ;
+inme:panel_miraculous_supper a crm:E22_Human-Made_Object ;
     rdfs:label "Panel of the Miraculous Supper of Saint Dominic"@en,
         "Panel of the Miraculous Supper of Saint Dominic"@it ;
     dcterms:description "Depiction of the miracle of the multiplication of the loaves in the refectory of the Roman convent of San Sisto. It shows Saint Dominic and the community of friars arranged in symmetrical, informal poses around a long table, while in the foreground, two angels seen from behind distribute loaves marked with crosses."@en,
         "Raffigurazione del miracolo della moltiplicazione dei pani nel refettorio del convento romano di San Sisto. Mostra san Domenico e la comunità dei frati disposti in posizioni simmetriche e domestiche attorno a una lunga tavola, mentre in primo piano due angeli visti di spalle distribuiscono pani segnati da croci."@it ;
     crm:P65_shows_visual_item inme:vi_composition_miraculous_supper .
 
-inme:panel_raising_orsini a lrmoo:F5_Item,
-        crm:E22_Human-Made_Object ;
+inme:panel_raising_orsini a crm:E22_Human-Made_Object ;
     rdfs:label "Panel of the Raising of Napoleone Orsini"@en,
         "Pannello della resurrezione di Napoleone Orsini"@it ;
     dcterms:description "A relief depicting the Roman miracle of the resurrection of the young Orsini, nephew of Cardinal Stefano di Fossanova. On the left, it shows the dramatic moment of the disastrous fall from his horse and Dominic’s prayer; on the right, the return of the resurrected youth to his mother."@en,
         "Rilievo che descrive il miracolo romano della resurrezione del giovane Orsini, nipote del cardinale Stefano di Fossanova. Presenta a sinistra il momento drammatico della rovinosa caduta da cavallo e la preghiera di Domenico, e a destra la riconsegna del giovane risorto alla madre."@it ;
     crm:P65_shows_visual_item inme:vi_composition_raising_orsini .
 
-inme:panel_saints_peter_paul a lrmoo:F5_Item,
-        crm:E22_Human-Made_Object ;
+inme:panel_saints_peter_paul a crm:E22_Human-Made_Object ;
     rdfs:label "Pannello dei santi Pietro e Paolo"@en ;
     dcterms:description "Depiction of the commissioning of Dominic with the mandate for universal preaching. The saint solemnly receives the pilgrim's staff from Saint Peter and the Book of Scriptures from Saint Paul, a prelude to the immediate and confident dispersal of the first missionary friars throughout the world."@en,
         "Rappresentazione del conferimento del mandato di predicazione universale a Domenico. Il santo riceve solennemente il bastone del cammino da san Pietro e il libro delle Scritture da san Paolo, preludio all'immediata e fiduciosa dispersione dei primi frati missionari nel mondo."@it ;
     crm:P65_shows_visual_item inme:vi_composition_vision_saints_peter_paul .
 
-inme:panel_story_reginald a lrmoo:F5_Item,
-        crm:E22_Human-Made_Object ;
+inme:panel_story_reginald a crm:E22_Human-Made_Object ;
     rdfs:label "Panel of the Story of Reginald"@en,
         "Pannello delle storie di Reginaldo"@it ;
     dcterms:description "Depiction of the miracle of the multiplication of the loaves in the refectory of the Roman convent of San Sisto. The scene is divided into three moments centering on the pivotal entry of Reginald of Orléans into the Order: on the left, the Parisian canon pledges obedience to Dominic in the presence of the Pope; in the center, he is suddenly taken ill and supported by a cleric; on the right, he receives a healing visit from the Virgin, who shows him the Dominican scapular."@en,
@@ -613,16 +608,9 @@ inme:acta_canonizationis a crm:E31_Document,
     crm:P148_has_component inme:bologna_inquiry,
         inme:toulouse_inquiry ;
     rico:hasDirectConstituent inme:bologna_inquiry,
+        inme:toulouse_inquiry ;
+    rico:hasPart inme:bologna_inquiry,
         inme:toulouse_inquiry .
-
-inme:bologna a crm:E53_Place ;
-    rdfs:label "Bologna"@en,
-        "Bologna"@it ;
-    dcterms:description "It is the driving force behind the Order's identity. It is the city where Saint Dominic died and was originally buried, as well as the site of the first historic General Chapters (1220, 1221) and the 1233 canonization inquiry. Through its prestigious university *Studium*, Bologna ensured the intellectual recruitment of the Order's early generations. Furthermore, in 1233, it was the epicenter of the \"Alleluia\" peace movement led by John of Vicenza, whose politico-religious success was closely intertwined with the translation and canonization of the founder."@en,
-        "È il centro propulsore dell'identità dell'Ordine. Si tratta della città in cui san Domenico morì e fu originariamente sepolto, nonché la sede dei primi storici Capitoli Generali (1220, 1221) e dell'inchiesta del processo di canonizzazione del 1233. Attraverso il suo prestigioso Studium universitario, Bologna garantì il reclutamento intellettuale delle prime generazioni dell'Ordine. Nel 1233 fu inoltre l'epicentro del movimento di pacificazione dell'Alleluia guidato da Giovanni da Vicenza, il cui successo politico-religioso fu strettamente intrecciato alla traslazione e alla canonizzazione del fondatore."@it ;
-    owl:sameAs <https://sws.geonames.org/3181928>,
-        <https://www.wikidata.org/wiki/Q1891> ;
-    skos:exactMatch <https://viaf.org/en/viaf/248053786> .
 
 inme:constantine_orvieto a crm:E21_Person,
         rico:Person ;
@@ -701,25 +689,15 @@ inme:saint_peter a crm:E21_Person,
     owl:sameAs <https://www.wikidata.org/wiki/Q33923> ;
     skos:exactMatch <https://viaf.org/en/viaf/13581141> .
 
-inme:san_domenico_church a crm:E24_Physical_human-made_thing,
-        crm:E53_Place ;
-    rdfs:label "Basilica of San Domenico"@en,
-        "Basilica of San Domenico"@it ;
-    dcterms:description "Solemnly consecrated in 1251, it stands on the site of the earlier church of San Niccolò delle Vigne. It is the Bolognese basilica designated to house and honor the new tomb containing the relics of Saint Dominic following their solemn translation in May 1233. It became a vital civic and religious landmark for the city, with its cloister and church serving as the burial place for distinguished figures from the academic, civil, and ecclesiastical spheres."@en,
-        "Consacrata solennemente nel 1251, sorge sul sito della primitiva chiesa di San Niccolò delle Vigne. È la basilica bolognese destinata a custodire ed esaltare la nuova tomba con le reliquie di san Domenico dopo la solenne traslazionedel maggio 1233. Divenne un importantissimo punto di riferimento civico e religioso per la città, ospitando nel suo chiostro e nella chiesa le sepolture di illustri esponenti accademici, civili ed ecclesiastici."@it ;
-    crm:P89_falls_within inme:bologna ;
-    owl:sameAs <https://www.wikidata.org/wiki/Q862602> ;
-    skos:exactMatch <https://viaf.org/en/viaf/316395384> .
-
 inme:san_niccolo_church a crm:E24_Physical_human-made_thing,
         crm:E53_Place ;
     rdfs:label "Church of San Niccolò delle Vigne"@en,
         "Church of San Niccolò delle Vigne"@it ;
     dcterms:description "The early Dominican settlement in Bologna (1219), where Dominic died and was buried \"beneath the feet of the friars\". It was the original setting for the daily, domestic miracle of the multiplication of the loaves, as recounted by eyewitnesses Rodolfo di Faenza and Buonviso di Piacenza."@en,
-        "Primitivo insediamento domenicano a Bologna (1219) dove Domenico morì e fu inumato \"sotto i piedi dei frati\". Fu il teatro originario del miracolo quotidiano e domestico della moltiplicazione dei pani riferito dai testimoni oculari Rodolfo di Faenza e Buonviso di Piacenza."@it .
+        "Primitivo insediamento domenicano a Bologna (1219) dove Domenico morì e fu inumato \"sotto i piedi dei frati\". Fu il teatro originario del miracolo quotidiano e domestico della moltiplicazione dei pani riferito dai testimoni oculari Rodolfo di Faenza e Buonviso di Piacenza."@it ;
+    crm:P89_falls_within inme:bologna .
 
-inme:sarcophagus a lrmoo:F5_Item,
-        crm:E22_Human-Made_Object,
+inme:sarcophagus a crm:E22_Human-Made_Object,
         arco:HistoricOrArtisticProperty ;
     rdfs:label "Sarcophagus of the Arca di San Domenico"@en,
         "Sarcofago dell'Arca di San Domenico"@it ;
@@ -731,16 +709,19 @@ inme:sarcophagus a lrmoo:F5_Item,
         inme:panel_raising_orsini,
         inme:panel_saints_peter_paul,
         inme:panel_story_reginald ;
-    crm:P53_hasFormerOrCurrentLocation inme:san_niccolo_church ;
+    crm:P53_hasFormerOrCurrentLocation inme:san_domenico_church,
+        inme:san_niccolo_church ;
     owl:sameAs <https://www.wikidata.org/wiki/Q126766539> ;
     arco:hasCommission inme:sarcophagus_commission .
 
-inme:sister_cecilia_contarini a crm:E21_Person,
-        rico:Person ;
-    rdfs:label "Suor Cecilia Contarini"@en,
-        "Suor Cecilia Contarini"@it ;
-    dcterms:description "A Dominican nun, she founded the convent of San Sisto in Rome and later resided at the convent of Sant'Agnese in Bologna during the years Nicola Pisano created the *Arca* (1264–1267). Having lived at San Sisto in 1221, Cecilia was a direct eyewitness to certain significant events involving Dominic in Rome—most notably the so-called resurrection of the young Napoleone Orsini. For this reason, some hypothesize that she may have been consulted regarding the sarcophagus's iconographic program; traditionally, she is identified as the figure sculpted in the upper-left section of the resurrection panel. Depicted with her back to the viewer yet gazing toward the miracle, this compositional choice isolates her from the crowd and, in her old age, establishes her as the eyewitness recounting the event."@en,
-        "Monaca domenicana, fondatrice del convento di San Sisto a Roma e successivamente residente presso il convento di Sant'Agnese a Bologna negli anni in cui Nicola Pisano realizzò l'Arca (1264-1267). Avendo vissuto a San Sisto nel 1221, Cecilia fu testimone oculare diretta di alcuni importanti eventi romani di Domenico, in particolare della cosiddetta resurrezione del giovane Napoleone Orsini. Per questo motivo alcuni ipotizzano possa esser stata consultata per l'apparato iconografico del sarcofago e tradizionalmente la identificano nella figura scolpita in alto a sinistra del pannello della resurrezione: ritratta di spalle rispetto allo spettatore ma con lo sguardo rivolto al miracolo, una scelta compositiva che la isola dalla folla e la consacra, nella sua vecchiaia, come testimone oculare narrante dell'evento."@it .
+inme:bologna a crm:E53_Place ;
+    rdfs:label "Bologna"@en,
+        "Bologna"@it ;
+    dcterms:description "It is the driving force behind the Order's identity. It is the city where Saint Dominic died and was originally buried, as well as the site of the first historic General Chapters (1220, 1221) and the 1233 canonization inquiry. Through its prestigious university *Studium*, Bologna ensured the intellectual recruitment of the Order's early generations. Furthermore, in 1233, it was the epicenter of the \"Alleluia\" peace movement led by John of Vicenza, whose politico-religious success was closely intertwined with the translation and canonization of the founder."@en,
+        "È il centro propulsore dell'identità dell'Ordine. Si tratta della città in cui san Domenico morì e fu originariamente sepolto, nonché la sede dei primi storici Capitoli Generali (1220, 1221) e dell'inchiesta del processo di canonizzazione del 1233. Attraverso il suo prestigioso Studium universitario, Bologna garantì il reclutamento intellettuale delle prime generazioni dell'Ordine. Nel 1233 fu inoltre l'epicentro del movimento di pacificazione dell'Alleluia guidato da Giovanni da Vicenza, il cui successo politico-religioso fu strettamente intrecciato alla traslazione e alla canonizzazione del fondatore."@it ;
+    owl:sameAs <https://sws.geonames.org/3181928>,
+        <https://www.wikidata.org/wiki/Q1891> ;
+    skos:exactMatch <https://viaf.org/en/viaf/248053786> .
 
 inme:buonviso a crm:E21_Person,
         rico:Person ;
@@ -800,6 +781,23 @@ inme:rodolfo a crm:E21_Person,
         "Rodolfo da Faenza"@it ;
     dcterms:description "Rector of San Niccolò delle Vigne and later procurator of the Bolognese convent; a key witness at the 1233 trial, he described the founder's final hours, his wish to be buried \"beneath the friars' feet,\" and the domestic miracle of the multiplication of the loaves."@en,
         "Rettore di San Niccolò delle Vigne e poi procuratore del convento bolognese; testimone chiave al processo del 1233, descrisse le ultime ore del fondatore, la sua volontà di essere sepolto \"sotto i piedi dei frati\" e il miracolo domestico della moltiplicazione dei pani."@it .
+
+inme:san_domenico_church a crm:E24_Physical_human-made_thing,
+        crm:E53_Place ;
+    rdfs:label "Basilica of San Domenico"@en,
+        "Basilica of San Domenico"@it ;
+    dcterms:description "Solemnly consecrated in 1251, it stands on the site of the earlier church of San Niccolò delle Vigne. It is the Bolognese basilica designated to house and honor the new tomb containing the relics of Saint Dominic following their solemn translation in May 1233. It became a vital civic and religious landmark for the city, with its cloister and church serving as the burial place for distinguished figures from the academic, civil, and ecclesiastical spheres."@en,
+        "Consacrata solennemente nel 1251, sorge sul sito della primitiva chiesa di San Niccolò delle Vigne. È la basilica bolognese destinata a custodire ed esaltare la nuova tomba con le reliquie di san Domenico dopo la solenne traslazionedel maggio 1233. Divenne un importantissimo punto di riferimento civico e religioso per la città, ospitando nel suo chiostro e nella chiesa le sepolture di illustri esponenti accademici, civili ed ecclesiastici."@it ;
+    crm:P89_falls_within inme:bologna ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q862602> ;
+    skos:exactMatch <https://viaf.org/en/viaf/316395384> .
+
+inme:sister_cecilia_contarini a crm:E21_Person,
+        rico:Person ;
+    rdfs:label "Suor Cecilia Contarini"@en,
+        "Suor Cecilia Contarini"@it ;
+    dcterms:description "A Dominican nun, she founded the convent of San Sisto in Rome and later resided at the convent of Sant'Agnese in Bologna during the years Nicola Pisano created the *Arca* (1264–1267). Having lived at San Sisto in 1221, Cecilia was a direct eyewitness to certain significant events involving Dominic in Rome—most notably the so-called resurrection of the young Napoleone Orsini. For this reason, some hypothesize that she may have been consulted regarding the sarcophagus's iconographic program; traditionally, she is identified as the figure sculpted in the upper-left section of the resurrection panel. Depicted with her back to the viewer yet gazing toward the miracle, this compositional choice isolates her from the crowd and, in her old age, establishes her as the eyewitness recounting the event."@en,
+        "Monaca domenicana, fondatrice del convento di San Sisto a Roma e successivamente residente presso il convento di Sant'Agnese a Bologna negli anni in cui Nicola Pisano realizzò l'Arca (1264-1267). Avendo vissuto a San Sisto nel 1221, Cecilia fu testimone oculare diretta di alcuni importanti eventi romani di Domenico, in particolare della cosiddetta resurrezione del giovane Napoleone Orsini. Per questo motivo alcuni ipotizzano possa esser stata consultata per l'apparato iconografico del sarcofago e tradizionalmente la identificano nella figura scolpita in alto a sinistra del pannello della resurrezione: ritratta di spalle rispetto allo spettatore ma con lo sguardo rivolto al miracolo, una scelta compositiva che la isola dalla folla e la consacra, nella sua vecchiaia, come testimone oculare narrante dell'evento."@it .
 
 inme:theme_lateran_dream a lrmoo:F1_Work,
         crm:E89_Propositional_Object ;
@@ -893,8 +891,6 @@ inme:libellus_principiis a lrmoo:F1_Work ;
     crm:P129_is_about inme:theme_ordeal_fire,
         inme:theme_raising_orsini,
         inme:theme_reginald_stories ;
-    rico:hasPart inme:bologna_inquiry,
-        inme:toulouse_inquiry ;
     skos:exactMatch <https://viaf.org/en/viaf/7818165326352416290000> .
 
 inme:reginald_orleans a crm:E21_Person,

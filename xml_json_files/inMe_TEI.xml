@@ -482,6 +482,7 @@
                     <relation active="#historia_albigensis" name="crm:P129_is_about" passive="#fanjeaux_dispute"/>
                     <relation active="#orsini_horse_fall" name="crm:P11_had_participant" passive="#dominic_guzman"/>
                     <relation active="#orsini_horse_fall" name="crm:P11_had_participant" passive="#napoleone_orsini"/>
+                    <relation active="#orsini_horse_fall" name="crm:P11_had_participant" passive="#sister_cecilia_contarini"/>
                     <relation active="#orsini_horse_fall" name="crm:P7_took_place_at" passive="#rome"/>
                     <relation active="#fanjeaux_dispute" name="crm:P11_had_participant" passive="#dominic_guzman"/>
                     <relation active="#fanjeaux_dispute" name="crm:P7_took_place_at" passive="#montreal"/>                    
