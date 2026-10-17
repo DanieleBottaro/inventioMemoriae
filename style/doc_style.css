@@ -179,14 +179,14 @@ section {
     background-color: #F1EBE1; 
     border: 2px solid var(--accent-color); 
 }
-.btn-purple {
+.btn-red {
     background-color: var(--accent-color) !important;
     color: white !important;
     transition: all 0.3s;
     border: 1px solid var(--accent-color);
 }
 
-.btn-purple:hover {
+.btn-red:hover {
     background-color: #F1EBE1 !important;
     color: var(--accent-color) !important;
     border: 1px solid var(--accent-color) !important;

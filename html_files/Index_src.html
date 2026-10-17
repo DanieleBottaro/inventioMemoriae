@@ -102,9 +102,9 @@
             <h2 id="entities">Entities extraction and modeling</h2>
             <p>A total of <strong>93 entities</strong> were identified and formally modeled for this project. Among these, 46 were directly extracted from selected snippets of the two textual sources, while the remaining 47 contextual entities were defined within the supplementary JSON dataset. To facilitate exploration, the entities have been classified into seven macro-categories: <strong>People</strong>, <strong>Events</strong>, <strong>Artworks</strong>, <strong>Narrative Themes</strong>, <strong>Literary Works</strong>, <strong>Visual Items</strong>, and <strong>Others</strong>.</p>
 
-            <p>Each entity is presented through an interactive flip card. The front of the card displays the primary metadata: the entity's title (<code>rdfs:label</code>), its project-specific local identifier, and any associated authority control links (such as VIAF, Wikidata, or GeoNames for spatial entities). The back of the card provides a comprehensive, bilingual description (<code>dcterms:description</code>) in both English and Italian.</p>
+            <p>Each entity is presented through an interactive flip card. The front of the card displays the primary metadata: the entity's title (<code>rdfs:label</code>), its project-specific local identifier, and any associated authority control links (such as VIAF, Wikidata, or GeoNames for spatial entities). Moreover, the front displays a badge that indicates whether the entity is originally described in the XML file (labelled as "core") or in the JSON file (labelled as "extra"). The back of the card provides a comprehensive, bilingual description (<code>dcterms:description</code>) in both English and Italian.</p>
 
-            <p>The entity gallery below was generated dynamically using the <strong>Jinja2</strong> templating engine. This data-driven approach ensures complete scalability: if new entities are added to either the TEI-XML or the JSON file in the future, they will automatically populate this web interface simply by re-running the <code>jinja_sorting.py</code> script (you can find it <a href="https://github.com/danielebottaro/inventioMemoriae/blob/main/python_script/jinja_sorting.py" target="_blank">here</a>).</p>
+            <p>The entity gallery below was generated dynamically using the <strong>Jinja2</strong> templating engine. This data-driven approach ensures complete scalability: if new entities are added to either the TEI-XML or the JSON file in the future, they will automatically populate this web interface simply by re-running the <code>jinja_template.py</code> script (you can find it <a href="https://github.com/danielebottaro/inventioMemoriae/blob/main/python_script/jinja_template.py" target="_blank" title="See Jinja2 template">here</a>).</p>
             
             
             <!-- Navigation Tab -->
@@ -154,24 +154,30 @@
                                                 {% endif %}
 
                                                 {% if item.external_links.wikidata %}
-                                                <h6 class="mb-2 text-light">
+                                                <h6 class="mb-2">
                                                     <strong class="red-highlight">wikidata: </strong>
                                                     <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
                                                 
                                                 </h6>
                                                 {% endif %}
                                                 {% if item.external_links.viaf %}
-                                                <h6 class="mb-2 text-light">
+                                                <h6 class="mb-2">
                                                     <strong class="red-highlight">viaf: </strong>
                                                     <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
                                                 </h6>
                                                 {% endif %}
                                             </div>
                                             <div class="text-center mb-3">
-                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                                <code class="px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+
+                                                {% if item.source == 'core' %}
+                                                    <span class="position-absolute top-0 end-0 m-3 badge rounded-pill" style="font-size: 0.65rem; background-color: var(--accent-color); color: #F1EBE1">CORE</span>
+                                                {% else %}
+                                                    <span class="position-absolute top-0 end-0 m-3 badge rounded-pill" style="background-color: var(--accent-color); font-size: 0.65rem; color: #F1EBE1">EXTRA</span>
+                                                {% endif %}
                                             </div>
                                             <div class="mt-auto pt-4">
-                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                                <button class="btn btn-red w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
                                             </div>
                                         </div>
                                     </div>
@@ -207,31 +213,37 @@
                                         <div class="card-body d-flex flex-column text-center">
                                             <div class="my-auto">
                                                 {% if item.label.en %}
-                                                <h4 class="card-title text-red-title mb-4">{{ item.label.en }}</h3>
+                                                <h4 class="card-title text-red-title mb-4">{{ item.label.en }}</h4>
                                                 {% endif %}
                                                 {% if item.label.la %}
-                                                <h4 class="card-title text-red-title mb-4">{{ item.label.la }}</h3>
+                                                <h4 class="card-title text-red-title mb-4">{{ item.label.la }}</h4>
                                                 {% endif %}
 
                                                 {% if item.external_links.wikidata %}
-                                                <h6 class="mb-2 text-light">
+                                                <h6 class="mb-2">
                                                     <strong class="red-highlight">wikidata: </strong>
                                                     <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
                                                 
                                                 </h6>
                                                 {% endif %}
                                                 {% if item.external_links.viaf %}
-                                                <h6 class="mb-2 text-light">
+                                                <h6 class="mb-2">
                                                     <strong class="red-highlight">viaf: </strong>
                                                     <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
                                                 </h6>
                                                 {% endif %}
                                             </div>
                                             <div class="text-center mb-3">
-                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                                <code class="px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+
+                                                {% if item.source == 'core' %}
+                                                    <span class="position-absolute top-0 end-0 m-3 badge rounded-pill" style="font-size: 0.65rem; background-color: var(--accent-color); color: #F1EBE1">CORE</span>
+                                                {% else %}
+                                                    <span class="position-absolute top-0 end-0 m-3 badge rounded-pill" style="background-color: var(--accent-color); font-size: 0.65rem; color: #F1EBE1">EXTRA</span>
+                                                {% endif %}
                                             </div>
                                             <div class="mt-auto pt-4">
-                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                                <button class="btn btn-red w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
                                             </div>
                                         </div>
                                     </div>
@@ -267,31 +279,37 @@
                                         <div class="card-body d-flex flex-column text-center">
                                             <div class="my-auto">
                                                 {% if item.label.en %}
-                                                <h4 class="card-title text-red-title mb-4">{{ item.label.en }}</h3>
+                                                <h4 class="card-title text-red-title mb-4">{{ item.label.en }}</h4>
                                                 {% endif %}
                                                 {% if item.label.la %}
-                                                <h4 class="card-title text-red-title mb-4">{{ item.label.la }}</h3>
+                                                <h4 class="card-title text-red-title mb-4">{{ item.label.la }}</h4>
                                                 {% endif %}
 
                                                 {% if item.external_links.wikidata %}
-                                                <h6 class="mb-2 text-light">
+                                                <h6 class="mb-2">
                                                     <strong class="red-highlight">wikidata: </strong>
                                                     <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
                                                 
                                                 </h6>
                                                 {% endif %}
                                                 {% if item.external_links.viaf %}
-                                                <h6 class="mb-2 text-light">
+                                                <h6 class="mb-2">
                                                     <strong class="red-highlight">viaf: </strong>
                                                     <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
                                                 </h6>
                                                 {% endif %}
                                             </div>
                                             <div class="text-center mb-3">
-                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                                <code class="px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+
+                                                {% if item.source == 'core' %}
+                                                    <span class="position-absolute top-0 end-0 m-3 badge rounded-pill" style="font-size: 0.65rem; background-color: var(--accent-color); color: #F1EBE1">CORE</span>
+                                                {% else %}
+                                                    <span class="position-absolute top-0 end-0 m-3 badge rounded-pill" style="background-color: var(--accent-color); font-size: 0.65rem; color: #F1EBE1">EXTRA</span>
+                                                {% endif %}
                                             </div>
                                             <div class="mt-auto pt-4">
-                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                                <button class="btn btn-red w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
                                             </div>
                                         </div>
                                     </div>
@@ -327,30 +345,36 @@
                                         <div class="card-body d-flex flex-column text-center">
                                             <div class="my-auto">
                                                 {% if item.label.en %}
-                                                <h4 class="card-title text-red-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h3>
+                                                <h4 class="card-title text-red-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h4>
                                                 {% elif item.label.la %}
-                                                <h4 class="card-title text-red-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h3>                                                
+                                                <h4 class="card-title text-red-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h4>                                                
                                                 {% endif %}
 
                                                 {% if item.external_links.wikidata %}
-                                                <h6 class="mb-2 text-light">
+                                                <h6 class="mb-2">
                                                     <strong class="red-highlight">wikidata: </strong>
                                                     <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
                                                 
                                                 </h6>
                                                 {% endif %}
                                                 {% if item.external_links.viaf %}
-                                                <h6 class="mb-2 text-light">
+                                                <h6 class="mb-2">
                                                     <strong class="red-highlight">viaf: </strong>
                                                     <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
                                                 </h6>
                                                 {% endif %}
                                             </div>
                                             <div class="text-center mb-3">
-                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                                <code class="px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+
+                                                {% if item.source == 'core' %}
+                                                    <span class="position-absolute top-0 end-0 m-3 badge rounded-pill" style="font-size: 0.65rem; background-color: var(--accent-color); color: #F1EBE1">CORE</span>
+                                                {% else %}
+                                                    <span class="position-absolute top-0 end-0 m-3 badge rounded-pill" style="background-color: var(--accent-color); font-size: 0.65rem; color: #F1EBE1">EXTRA</span>
+                                                {% endif %}
                                             </div>
                                             <div class="mt-auto pt-4">
-                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                                <button class="btn btn-red w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
                                             </div>
                                         </div>
                                     </div>
@@ -386,31 +410,37 @@
                                         <div class="card-body d-flex flex-column text-center">
                                             <div class="my-auto">
                                                 {% if item.label.en %}
-                                                <h4 class="card-title text-red-title mb-4">{{ item.label.en }}</h3>
+                                                <h4 class="card-title text-red-title mb-4">{{ item.label.en }}</h4>
                                                 {% endif %}
                                                 {% if item.label.la %}
-                                                <h4 class="card-title text-red-title mb-4">{{ item.label.la }}</h3>
+                                                <h4 class="card-title text-red-title mb-4">{{ item.label.la }}</h4>
                                                 {% endif %}
 
                                                 {% if item.external_links.wikidata %}
-                                                <h6 class="mb-2 text-light">
+                                                <h6 class="mb-2">
                                                     <strong class="red-highlight">wikidata: </strong>
                                                     <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
                                                 
                                                 </h6>
                                                 {% endif %}
                                                 {% if item.external_links.viaf %}
-                                                <h6 class="mb-2 text-light">
+                                                <h6 class="mb-2">
                                                     <strong class="red-highlight">viaf: </strong>
                                                     <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
                                                 </h6>
                                                 {% endif %}
                                             </div>
                                             <div class="text-center mb-3">
-                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                                <code class="px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+
+                                                {% if item.source == 'core' %}
+                                                    <span class="position-absolute top-0 end-0 m-3 badge rounded-pill" style="font-size: 0.65rem; background-color: var(--accent-color); color: #F1EBE1">CORE</span>
+                                                {% else %}
+                                                    <span class="position-absolute top-0 end-0 m-3 badge rounded-pill" style="background-color: var(--accent-color); font-size: 0.65rem; color: #F1EBE1">EXTRA</span>
+                                                {% endif %}
                                             </div>
                                             <div class="mt-auto pt-4">
-                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                                <button class="btn btn-red w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
                                             </div>
                                         </div>
                                     </div>
@@ -446,30 +476,36 @@
                                         <div class="card-body d-flex flex-column text-center">
                                             <div class="my-auto">
                                                 {% if item.label.en %}
-                                                <h4 class="card-title text-red-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h3>
+                                                <h4 class="card-title text-red-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h4>
                                                 {% elif item.label.la %}
-                                                <h4 class="card-title text-red-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h3>                                                
+                                                <h4 class="card-title text-red-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h4>                                                
                                                 {% endif %}
 
                                                 {% if item.external_links.wikidata %}
-                                                <h6 class="mb-2 text-light">
+                                                <h6 class="mb-2">
                                                     <strong class="red-highlight">wikidata: </strong>
                                                     <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
                                                 
                                                 </h6>
                                                 {% endif %}
                                                 {% if item.external_links.viaf %}
-                                                <h6 class="mb-2 text-light">
+                                                <h6 class="mb-2">
                                                     <strong class="red-highlight">viaf: </strong>
                                                     <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
                                                 </h6>
                                                 {% endif %}
                                             </div>
                                             <div class="text-center mb-3">
-                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                                <code class="px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+
+                                                {% if item.source == 'core' %}
+                                                    <span class="position-absolute top-0 end-0 m-3 badge rounded-pill" style="font-size: 0.65rem; background-color: var(--accent-color); color: #F1EBE1">CORE</span>
+                                                {% else %}
+                                                    <span class="position-absolute top-0 end-0 m-3 badge rounded-pill" style="background-color: var(--accent-color); font-size: 0.65rem; color: #F1EBE1">EXTRA</span>
+                                                {% endif %}
                                             </div>
                                             <div class="mt-auto pt-4">
-                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                                <button class="btn btn-red w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
                                             </div>
                                         </div>
                                     </div>
@@ -505,38 +541,44 @@
                                         <div class="card-body d-flex flex-column text-center">
                                             <div class="my-auto">
                                                 {% if item.label.en %}
-                                                <h4 class="card-title text-red-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h3>
+                                                <h4 class="card-title text-red-title mb-4" title="{{ item.label.en }}">{{ item.label.en | truncate(50, true, "...") }}</h4>
                                                 {% elif item.label.la %}
-                                                <h4 class="card-title text-red-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h3>
+                                                <h4 class="card-title text-red-title mb-4" title="{{ item.label.la }}">{{ item.label.la | truncate(50, true, "...") }}</h4>
                                                 
                                                 {% endif %}
                                                 
 
                                                 {% if item.external_links.wikidata %}
-                                                <h6 class="mb-2 text-light">
+                                                <h6 class="mb-2">
                                                     <strong class="red-highlight">wikidata: </strong>
                                                     <a href="{{ item.external_links.wikidata }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.wikidata.split('/')[-1] }}</a>
                                                 
                                                 </h6>
                                                 {% endif %}
                                                 {% if item.external_links.viaf %}
-                                                <h6 class="mb-2 text-light">
+                                                <h6 class="mb-2">
                                                     <strong class="red-highlight">viaf: </strong>
                                                     <a href="{{ item.external_links.viaf }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.viaf.split('/')[-1] }}</a>
                                                 </h6>
                                                 {% endif %}
                                                 {% if item.external_links.GeoNames %}
-                                                <h6 class="mb-2 text-light">
+                                                <h6 class="mb-2">
                                                     <strong class="red-highlight">geonames: </strong>
                                                     <a href="{{ item.external_links.GeoNames }}" target="_blank" class="text-decoration-none me-2">{{ item.external_links.GeoNames.split('/')[-1] }}</a>
                                                 </h6>
                                                 {% endif %}
                                             </div>
                                             <div class="text-center mb-3">
-                                                <code class="text-light bg-dark px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+                                                <code class="px-2 py-1 rounded card-id-size">#{{ item.id }}</code>
+
+                                                {% if item.source == 'core' %}
+                                                    <span class="position-absolute top-0 end-0 m-3 badge rounded-pill" style="font-size: 0.65rem; background-color: var(--accent-color); color: #F1EBE1">CORE</span>
+                                                {% else %}
+                                                    <span class="position-absolute top-0 end-0 m-3 badge rounded-pill" style="background-color: var(--accent-color); font-size: 0.65rem; color: #F1EBE1">EXTRA</span>
+                                                {% endif %}
                                             </div>
                                             <div class="mt-auto pt-4">
-                                                <button class="btn btn-purple w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
+                                                <button class="btn btn-red w-100" onclick="flipCard('{{ item.id }}')">Read description</button>
                                             </div>
                                         </div>
                                     </div>

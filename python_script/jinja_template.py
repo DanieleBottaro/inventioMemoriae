@@ -6,6 +6,12 @@ from json_xml_to_rdf import parse_tei_xml, parse_json_data
 json_entities, json_relations = parse_json_data("../xml_json_files/inMe_extra_entities.json")
 xml_entities, xml_relations = parse_tei_xml("../xml_json_files/inMe_TEI.xml")
 
+#labeling the entities according to their provenance
+for entity in json_entities.values():
+    entity['source'] = 'extra'
+for entity in xml_entities.values():
+    entity['source'] = 'core'
+
 #merging entities and relations from both sources
 all_entities = json_entities.copy()
 all_entities.update(xml_entities)
