@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventio Memoriae</title>
     
-    <link href="../style/doc_style.css" rel="stylesheet">
+    <link href="style/doc_style.css" rel="stylesheet">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -85,7 +85,7 @@
             <h2>Project Overview</h2>
             <div class="row">
                 <div class="col-md-12">
-                    <p>The project aims to model and represent in <strong>Linked Open Data (LOD)</strong> format the iconography chosen by the Dominicans to decorate the panels of the sarcophagus of the <strong><em>Arca di San Domenico</em></strong> by <strong>Nicola Pisano</strong>, as a visual consecration and monumental objectification of a process of "<strong>memory construction</strong>."</p>
+                    <p>The project aims to model and represent in <strong>Linked Open Data (LOD)</strong> format the iconography chosen by the Dominicans to decorate the panels of the sarcophagus of the <strong><em>Arca di San Domenico</em></strong> by <strong>Nicola Pisano</strong> in Bologna, as a visual consecration and monumental objectification of a process of "<strong>memory construction</strong>".</p>
                     
                     <p>The data architecture traces the trajectory of this complex process brilliantly brought to light by <strong>Luigi Canetti</strong> in <em>L'invenzione della memoria. Il culto e l'immagine di Domenico nella storia dei primi frati predicatori</em>: the transition leading from the actual historical event to its intentional reworking in hagiographic sources (particularly in the narration of miracles), ultimately culminating in its monumentalization between 1264 and 1267 in the sarcophagus of the Arca.
                     </p>
@@ -674,7 +674,7 @@
             <p><strong>Modeling Patterns:</strong> the conceptual architecture implements standard ontology design patterns to handle the historical and artistic domain. <em>Multiple instantiation</em> is used to align entities across different semantic frameworks: certain nodes are declared as instances of multiple classes simultaneously (for example, combining CIDOC-CRM with LRMOO or RiC-O) to ensure interoperability. Furthermore, <em>n-ary relations</em> are employed to avoid semantic shortcuts when modeling complex interactions: rather than using direct binary properties, intermediate nodes (such as <code>crm:E12_Production</code>, <code>lrmoo:F27_Work_Creation</code>, or <code>rico:CreationRelation</code>) act as connectors between actors, objects, and their temporal constraints (e.g., <code>crm:E52_Time-Span</code>).</p>
 
             <div class="container" id="conceptual-model-svg">
-                <iframe src="./html_files/zoom-page.html?img=../images/conceptual_model_def.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
+                <iframe src="./html_files/zoom-page.html?img=../images/conceptual_model.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
             </div>
 
             <p><em>Note:</em> Utility properties for lexical labels (RDFS, SKOS) and authority control links (OWL) are applied across all entities but are omitted from this diagram for readability.</p>

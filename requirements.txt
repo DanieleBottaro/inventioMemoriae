@@ -1,0 +1,4 @@
+rdflib
+lxml
+beautifulsoup4
+jinja2
