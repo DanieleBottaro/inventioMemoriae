@@ -31,16 +31,17 @@ h2 {
     margin-top: 2rem;
 }
 
-a {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
+a:not(.nav-item a) {
+    color: var(--accent-color) ;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
 }
 
-a:hover:not(.navbar-brand):not(.dropdown-item) {
-    color: #7A1515;
-    text-decoration: underline;
+a:hover:not(.nav-item a) {
+    color: #7A1515 !important;
+    text-decoration: underline !important;
 }
+
 
 .navbar-scriptorium {
     background-color: var(--accent-color);
