@@ -82,7 +82,7 @@
     <main class="container">
         
         <section id="project-overview">
-            <h2>Project Overview</h2>
+            <h2 class="text-center mb-3">Project Overview</h2>
             <div class="row">
                 <div class="col-md-12">
                     <p>The project aims to model and represent in <strong>Linked Open Data (LOD)</strong> format the iconography chosen by the Dominicans to decorate the panels of the sarcophagus of the <strong><em>Arca di San Domenico</em></strong> by <strong>Nicola Pisano</strong> in Bologna, as a visual consecration and monumental objectification of a process of "<strong>memory construction</strong>".</p>
@@ -98,7 +98,7 @@
         </section>
 
         <section id="entities-extraction">
-            <h2 id="entities">Entities extraction and modeling</h2>
+            <h2 id="entities" class="text-center mb-3">Entities extraction and modeling</h2>
             <p>A total of <strong>93 entities</strong> were identified and formally modeled for this project. Among these, 46 were directly extracted from selected snippets of the two textual sources, while the remaining 47 contextual entities were defined within the supplementary JSON dataset. To facilitate exploration, the entities have been classified into seven macro-categories: <strong>People</strong>, <strong>Events</strong>, <strong>Artworks</strong>, <strong>Narrative Themes</strong>, <strong>Literary Works</strong>, <strong>Visual Items</strong>, and <strong>Others</strong>.</p>
 
             <p>Each entity is presented through an interactive flip card. The front of the card displays the primary metadata: the entity's title (<code>rdfs:label</code>), its project-specific local identifier, and any associated authority control links (such as VIAF, Wikidata, or GeoNames for spatial entities). Moreover, the front displays a badge that indicates whether the entity is originally described in the XML file (labelled as "core") or in the JSON file (labelled as "extra"). The back of the card provides a comprehensive, bilingual description (<code>dcterms:description</code>) in both English and Italian.</p>
@@ -4621,35 +4621,39 @@
         </section>
 
         <section id="knowledge-organization">
-            <h2>Knowledge Organization</h2>
+            <h2 class="text-center mb-3">Knowledge Organization</h2>
             <h3 class="mt-4" id="theoretical-model">Theoretical Model</h3>
-            <p>A theoretical model was created in order to define the relationships between the entities. Here are some of the main categories that entities fall into:</p>
-            <ul>
-                <li><strong>Artworks</strong>: the Sarcophagus of the Arca di san Domenico (the object we are investigating as the material culmination of the process of the “invention of memory”) and its breakdown into panels;</li>
-                <li><strong>Literary works</strong>: the majority are hagiographic works, included because they are the source or vehicle for the transmission of the miraculous events depicted on the sarcophagus panels;</li>
-                <li><strong>People</strong>: they can be the authors of literary works, or the subjects/participants in the mapped miraculous events, or figures depicted on the narrative panels;</li>
-                <li><strong>Visual items</strong>: the panels depict visual elements (visual compositions) — often composed of other visual items (visual details) — which are represented by entities instantiating the Iconclass code that best represents them;</li>
-                <li><strong>Narrative themes</strong>: these are the principal miraculous themes or dramatized events depicted on the sarcophagus panels, linked (where applicable) to the actual events to which they refer.</li>
-            </ul>
+            <div class="mb-4">
+                <p>A theoretical model was created in order to define the relationships between the entities. Here are some of the main categories that entities fall into:</p>
+                <ul>
+                    <li><strong>Artworks</strong>: the Sarcophagus of the Arca di san Domenico (the object we are investigating as the material culmination of the process of the “invention of memory”) and its breakdown into panels;</li>
+                    <li><strong>Literary works</strong>: the majority are hagiographic works, included because they are the source or vehicle for the transmission of the miraculous events depicted on the sarcophagus panels;</li>
+                    <li><strong>People</strong>: they can be the authors of literary works, or the subjects/participants in the mapped miraculous events, or figures depicted on the narrative panels;</li>
+                    <li><strong>Visual items</strong>: the panels depict visual elements (visual compositions) — often composed of other visual items (visual details) — which are represented by entities instantiating the Iconclass code that best represents them;</li>
+                    <li><strong>Narrative themes</strong>: these are the principal miraculous themes or dramatized events depicted on the sarcophagus panels, linked (where applicable) to the actual events to which they refer.</li>
+                </ul>
 
-            <p>Together, these categories map the intersemiotic translation at the heart of the project: how a hagiographic account moves from a <strong>Literary work</strong>, becomes a <strong>Narrative theme</strong>, and is ultimately carved as a <strong>Visual item</strong> on an <strong>Artwork</strong>. Alongside these core elements, the model incorporates additional entities whose primary purpose is to provide a richer historical and semantic context to this central narrative.</p>
+                <p>Together, these categories map the intersemiotic translation at the heart of the project: how a hagiographic account moves from a <strong>Literary work</strong>, becomes a <strong>Narrative theme</strong>, and is ultimately carved as a <strong>Visual item</strong> on an <strong>Artwork</strong>. Alongside these core elements, the model incorporates additional entities whose primary purpose is to provide a richer historical and semantic context to this central narrative.</p>
 
-            <div class="container" id="theoretical-model-svg">
-                <iframe src="./html_files/zoom-page.html?img=../images/theoretical_model.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
+                <div class="container" id="theoretical-model-svg">
+                    <iframe src="./html_files/zoom-page.html?img=../images/theoretical_model.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
+                </div>
+                
+                <p><em>Note:</em> In the visual diagram representing this theoretical model, external linked resources (such as VIAF and Wikidata primarily used for people and works, or GeoNames for places) have been deliberately omitted for readability and to prevent visual cluttering. The only exceptions are the Iconclass codes, which are highlighted in the diagram with a purple background. For the same reason, we omitted from the diagram the detailed textual descriptions included for each entity and, where applicable, their chronological anchor.</p>
             </div>
-            
-            <p><em>Note:</em> In the visual diagram representing this theoretical model, external linked resources (such as VIAF and Wikidata primarily used for people and works, or GeoNames for places) have been deliberately omitted for readability and to prevent visual cluttering. The only exceptions are the Iconclass codes, which are highlighted in the diagram with a purple background. For the same reason, we omitted from the diagram the detailed textual descriptions included for each entity and, where applicable, their chronological anchor.</p>
 
             <h3 class="mt-3" id="conceptual-model">Conceptual Model</h3>
-            <p>A conceptual model was created in order to translate the theoretical abstractions into a formal, machine-readable architecture. To ensure data interoperability and alignment with Linked Open Data standards, the architecture relies on the reuse of existing vocabularies and ontologies (you can find more information about them <a href="#ontologies">below</a>).</p>
+            <div class="mb-4">
+                <p>A conceptual model was created in order to translate the theoretical abstractions into a formal, machine-readable architecture. To ensure data interoperability and alignment with Linked Open Data standards, the architecture relies on the reuse of existing vocabularies and ontologies (you can find more information about them <a href="#ontologies">below</a>).</p>
 
-            <p><strong>Modeling Patterns:</strong> the conceptual architecture implements standard ontology design patterns to handle the historical and artistic domain. <em>Multiple instantiation</em> is used to align entities across different semantic frameworks: certain nodes are declared as instances of multiple classes simultaneously (for example, combining CIDOC-CRM with LRMOO or RiC-O) to ensure interoperability. Furthermore, <em>n-ary relations</em> are employed to avoid semantic shortcuts when modeling complex interactions: rather than using direct binary properties, intermediate nodes (such as <code>crm:E12_Production</code>, <code>lrmoo:F27_Work_Creation</code>, or <code>rico:CreationRelation</code>) act as connectors between actors, objects, and their temporal constraints (e.g., <code>crm:E52_Time-Span</code>).</p>
+                <p><strong>Modeling Patterns:</strong> the conceptual architecture implements standard ontology design patterns to handle the historical and artistic domain. <em>Multiple instantiation</em> is used to align entities across different semantic frameworks: certain nodes are declared as instances of multiple classes simultaneously (for example, combining CIDOC-CRM with LRMOO or RiC-O) to ensure interoperability. Furthermore, <em>n-ary relations</em> are employed to avoid semantic shortcuts when modeling complex interactions: rather than using direct binary properties, intermediate nodes (such as <code>crm:E12_Production</code>, <code>lrmoo:F27_Work_Creation</code>, or <code>rico:CreationRelation</code>) act as connectors between actors, objects, and their temporal constraints (e.g., <code>crm:E52_Time-Span</code>).</p>
 
-            <div class="container" id="conceptual-model-svg">
-                <iframe src="./html_files/zoom-page.html?img=../images/conceptual_model.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
+                <div class="container" id="conceptual-model-svg">
+                    <iframe src="./html_files/zoom-page.html?img=../images/conceptual_model.svg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid var(--accent-color); border-radius: 6px;"></iframe>
+                </div>
+
+                <p><em>Note:</em> Utility properties for lexical labels (RDFS, SKOS) and authority control links (OWL) are applied across all entities but are omitted from this diagram for readability.</p>
             </div>
-
-            <p><em>Note:</em> Utility properties for lexical labels (RDFS, SKOS) and authority control links (OWL) are applied across all entities but are omitted from this diagram for readability.</p>
 
             <h3 class="mt-4" id="ontologies">Ontologies & Vocabularies</h3>
             <p>To accurately represent the intersemiotic translation between narrative themes, historical events, hagiographic literature, visual elements, and physical artifacts, the conceptual model adopts a multi-layered modeling strategy when needed: the narrative themes are instantiated as <code>crm:E89_Propositional_Object</code> and <code>lrmoo:F1_Work</code>, historical events as <code>crm:E5_Event</code>, hagiographic literature as <code>lrmoo:F1_Work</code>, visual elements as <code>crm:E36_Visual_Item</code>, and physical panels as <code>crm:E22_Human-Made_object</code> (which compose the sarcophagus, itself instantiated as both <code>crm:E22_Human-Made_object</code> and <code>arco:HistoricOrArtisticProperty</code>).</p>
@@ -4816,7 +4820,8 @@
         </section>
 
         <section id="data-pipeline">
-            <h2>Data & Pipeline</h2>
+            <h2 class="text-center mb-3">Data & Pipeline</h2>
+
             <h3 id="xml-tei" class="mt-4">XML/TEI source file</h3>
             <p>The textual sources were semantically enriched using the <strong>TEI (Text Encoding Initiative)</strong> guidelines. Rather than encoding the entire publications, the process focused on targeted excerpts (extracted from Luigi Canetti's <em>L'invenzione della memoria. Il culto e l'immagine di Domenico nella storia dei primi frati predicatori</em> and Anita F. Moskovits' <em>Nicola Pisano's Arca di S. Domenico and its legacy</em>) that act as the primary sources for the project's goal.</p>
 
@@ -4875,13 +4880,12 @@
                 </div>
             </div>
 
-            <div class="row text-center mt-3">
+            <div class="row text-center mt-3 mb-5">
                 <h5>You can check the XML/TEI file here:</h5>
                 <div class="d-grid justify-content-center mt-3">
                     <a href="./xml_json_files/inMe_TEI.xml" class="btn doc-btn" target="_blank">XML/TEI document <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
                 </div>
             </div>
-            
             
             <h3 id="json-dataset" class="mt-4">JSON Dataset</h3>
             
@@ -4944,7 +4948,7 @@
                 </div>
             </div>
 
-            <div class="row text-center mt-3">
+            <div class="row text-center mt-3 mb-5">
                 <h5>You can check the JSON file here:</h5>
                 <div class="d-grid justify-content-center mt-3">
                     <a href="./xml_json_files/inMe_extra_entities.json" class="btn doc-btn" target="_blank">JSON dataset file <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
@@ -4956,7 +4960,7 @@
             <p>To facilitate the exploration of the TEI-XML file, a conversion process was implemented to transform the XML data into an HTML format through an <strong>XSLT (eXtensible Stylesheet Language Transformations) stylesheet</strong>. This conversion allows for a more user-friendly presentation of the content, enabling users to navigate through the textual sources and their associated entities with ease. The resulting HTML file includes metadata cards for the two sources, the snippets extracted and encoded, a tab with metadata cards for all the "core" entities extracted and a "relations table" showing their relationships as triples.</p>
             <p>A dedicated Python script was also implemented to automate the conversion process.</p>
 
-            <div class="d-flex justify-content-evenly flex-wrap text-center mt-5">
+            <div class="d-flex justify-content-evenly flex-wrap text-center mt-5 mb-5">
                 <div class="d-flex flex-column align-items-center">
                     <h5>You can check the HTML file here:</h5>
                     <a href="./html_files/inMe_stylised_xml.html" class="btn doc-btn" target="_blank">HTML page <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
@@ -4999,7 +5003,7 @@
 
         <!-- References Section -->
         <section id="appendix">
-            <h2>Appendix</h2>
+            <h2 class="text-center mb-3">Appendix</h2>
 
             <h3 id="references" class="mt-4">References</h3>
             <p>
@@ -5025,30 +5029,29 @@
                     </ul>
                 </div>
 
-                <!-- Ontologies -->
                 <div class="col-md-6 mb-4">
                     <h5 class="fw-bold group-name border-bottom pb-2">Official Documentation & Standards</h5>
                     <p class="small text-muted mb-3">
                         As detailed in the <em>Ontologies & Vocabularies</em> section <a href="#ontologies">above</a>, the conceptual model is built upon the following standard specifications:
                     </p>
                     
-                    <div class="row">
+                    <div class="row standards">
                         <div class="col-sm-6">
                             <ul class="list-unstyled">
-                                <li class="mb-2"><a href="https://cidoc-crm.org/" target="_blank" class="text-decoration-none" title="See documentation">CIDOC-CRM (v. 7.1.3)</a></li>
-                                <li class="mb-2"><a href="https://cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.1.1.html" target="_blank" class="text-decoration-none" title="See documentation">LRMOO</a></li>
-                                <li class="mb-2"><a href="https://dati.beniculturali.it/arco/index.php?lang=en" target="_blank" class="text-decoration-none" title="See documentation">ArCo Network</a></li>
-                                <li class="mb-2"><a href="https://www.ica.org/standards/RiC/ontology" target="_blank" class="text-decoration-none" title="See documentation">RiC-O</a></li>
-                                <li class="mb-2"><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" target="_blank" class="text-decoration-none" title="See documentation">Dublin Core Metadata Terms</a></li>
-                                <li class="mb-2"><a href="http://iconclass.org/" target="_blank" class="text-decoration-none" title="See documentation">Iconclass</a></li>
+                                <li class="mb-2 primary"><a href="https://cidoc-crm.org/" target="_blank" class="text-decoration-none" title="See documentation">CIDOC-CRM (v. 7.1.3)</a></li>
+                                <li class="mb-2 primary"><a href="https://cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.1.1.html" target="_blank" class="text-decoration-none" title="See documentation">LRMOO</a></li>
+                                <li class="mb-2 primary"><a href="https://dati.beniculturali.it/arco/index.php?lang=en" target="_blank" class="text-decoration-none" title="See documentation">ArCo Network</a></li>
+                                <li class="mb-2 primary"><a href="https://www.ica.org/standards/RiC/ontology" target="_blank" class="text-decoration-none" title="See documentation">RiC-O</a></li>
+                                <li class="mb-2 primary"><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" target="_blank" class="text-decoration-none" title="See documentation">Dublin Core Metadata Terms</a></li>
+                                <li class="mb-2 primary"><a href="http://iconclass.org/" target="_blank" class="text-decoration-none" title="See documentation">Iconclass</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-6">
                             <ul class="list-unstyled">
-                                <li class="mb-2"><a href="https://tei-c.org/guidelines/p5/" target="_blank" class="text-decoration-none" title="See documentation">TEI P5 Guidelines</a></li>
-                                <li class="mb-2"><a href="https://www.w3.org/RDF/" target="_blank" class="text-decoration-none" title="See documentation">W3C RDF</a></li>
-                                <li class="mb-2"><a href="https://www.w3.org/TR/owl2-overview/" target="_blank" class="text-decoration-none" title="See documentation">W3C OWL</a></li>
-                                <li class="mb-2"><a href="https://www.w3.org/TR/skos-reference/" target="_blank" class="text-decoration-none" title="See documentation">W3C SKOS</a></li>
+                                <li class="mb-2 primary"><a href="https://tei-c.org/guidelines/p5/" target="_blank" class="text-decoration-none" title="See documentation">TEI P5 Guidelines</a></li>
+                                <li class="mb-2 primary"><a href="https://www.w3.org/RDF/" target="_blank" class="text-decoration-none" title="See documentation">W3C RDF</a></li>
+                                <li class="mb-2 primary"><a href="https://www.w3.org/TR/owl2-overview/" target="_blank" class="text-decoration-none" title="See documentation">W3C OWL</a></li>
+                                <li class="mb-2 primary"><a href="https://www.w3.org/TR/skos-reference/" target="_blank" class="text-decoration-none" title="See documentation">W3C SKOS</a></li>
                             </ul>
                         </div>
                     </div>
@@ -5118,7 +5121,7 @@
             
     </main>
 
-    <footer class="text-center py-4 mt-5">
+    <footer class="text-center py-4">
         <div class="container">
 
             <p class="mb-3 fw-bold" style="color: var(--accent-color);">Inventio Memoriae <span class="material-symbols-outlined footer-icon">copyright</span> 2026</p>

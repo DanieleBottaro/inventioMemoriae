@@ -4,6 +4,7 @@
 *InventioMemoriae* aims to model and represent in Linked Open Data (LOD) format the iconography chosen by the Dominicans to decorate the panels of the sarcophagus of the *Arca di San Domenico* by Nicola Pisano in Bologna, as a visual consecration and monumental objectification of a process of "memory construction".
 The project bridges the gap between hagiographic textual narratives and sculptural visual representations by employing a Semantic Web architecture. It extracts entities from critical TEI-XML encoded texts and a supplementary JSON dataset, structuring them into a Linked Open Data knowledge graph .
 
+```text
 ├── html_files/
 │   ├── Index_src.html
 │   ├── inMe_stylised_xml.html
@@ -32,6 +33,7 @@ The project bridges the gap between hagiographic textual narratives and sculptur
 ├── index.html
 ├── requirements.txt
 └── README.md
+```
 
 ## Technical Architecture
 

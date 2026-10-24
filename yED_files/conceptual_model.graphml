@@ -175,48 +175,145 @@ rico:Group</y:NodeLabel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n14" yfiles.foldertype="group">
+    <node id="n14">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="45.0" width="161.97190116777887" x="1509.7023155192178" y="961.9026368255066"/>
+          <y:Fill color="#FFFF00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="149.8125" x="6.079700583889462" xml:space="preserve" y="10.69921875">arco-cd:Commission</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n15">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="43.0" width="129.68871821071713" x="2564.473121212291" y="1281.6681565223448"/>
+          <y:Fill color="#FFFF00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="108.0390625" x="10.824827855358762" xml:space="preserve" y="9.69921875">crm:E55_Type</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n16">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="44.0" width="129.68871821071735" x="2006.8582112273182" y="1475.613863322177"/>
+          <y:Fill color="#FFFF00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="113.3515625" x="8.168577855358762" xml:space="preserve" y="10.19921875">lrmoo:F1_Work</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n17">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="45.0" width="195.51449576671365" x="2339.8388934015898" y="780.4015649813332"/>
+          <y:Fill color="#FFFF00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="180.0625" x="7.72599788335674" xml:space="preserve" y="10.69921875">crm:E81_Transformation</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n18">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="45.0" width="177.75806066764306" x="1982.8235399988553" y="1114.143877058942"/>
+          <y:Fill color="#FFFF00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="150.71875" x="13.519655333821447" xml:space="preserve" y="10.69921875">crm:E52_Time-Span</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n19">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="52.82763671875" width="126.0949682107173" x="2289.478635320429" y="980.2228435543677"/>
+          <y:Fill color="#CCFFCC" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="43.203125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="76.0390625" x="25.027952855358762" xml:space="preserve" y="4.812255859375">xsd:date
+xsd:gYear</y:NodeLabel>
+          <y:Shape type="parallelogram"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n20">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="45.0" width="206.4714718151842" x="1132.3026208586145" y="1297.73857344262"/>
+          <y:Fill color="#FFFF00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="191.625" x="7.423235907592016" xml:space="preserve" y="10.69921875">lrmoo:F27_Work_Creation</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n21">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="43.0" width="126.0949682107173" x="1493.1401917758212" y="1580.3877192418981"/>
+          <y:Fill color="#CCFFCC" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="78.6953125" x="23.699827855358762" xml:space="preserve" y="9.69921875">rdfs:Literal</y:NodeLabel>
+          <y:Shape type="parallelogram"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n22">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="43.0" width="126.0949682107173" x="1618.5211063225613" y="580.4778906661608"/>
+          <y:Fill color="#CCFFCC" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="78.6953125" x="23.699827855358535" xml:space="preserve" y="9.69921875">rdfs:Literal</y:NodeLabel>
+          <y:Shape type="parallelogram"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n23">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="49.681648891803206" width="155.54375288438388" x="1440.2644693972366" y="1277.2216755540958"/>
+          <y:Fill color="#FFFF00" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="43.203125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="145.390625" x="4.0" xml:space="preserve" y="2.4785238918032064">rico:RecordPart
+crm:E31_Document</y:NodeLabel>
+          <y:Shape type="roundrectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n24" yfiles.foldertype="group">
       <data key="d4" xml:space="preserve"/>
       <data key="d6">
         <y:ProxyAutoBoundsNode>
           <y:Realizers active="0">
             <y:GroupNode>
-              <y:Geometry height="287.6131659334801" width="421.3294768605245" x="1733.1985634780278" y="1742.8125241177604"/>
+              <y:Geometry height="215.31281797842507" width="384.3561022475213" x="1852.3295594149083" y="1725.6704145925899"/>
               <y:Fill color="#FFFFFF" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#B7B69E" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="bold" hasLineColor="false" height="22.37646484375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="421.3294768605245" x="0.0" xml:space="preserve" y="0.0">Prefixes   </y:NodeLabel>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="217.4453125" x="18.01640115581563" xml:space="preserve" y="42.167892015880625">arco: https://w3id.org/arco/ontology/arco<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="-0.5" labelRatioY="-0.5" nodeRatioX="-0.4572391628279554" nodeRatioY="-0.3533867812378476" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="311.48828125" x="18.01640115581563" xml:space="preserve" y="60.077555310482694">arco-cd:https://w3id.org/arco/ontology/context-description/<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="-0.5" nodeRatioX="-0.08758987603818486" nodeRatioY="-0.29111681095858594" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="176.72265625" x="18.01640115581563" xml:space="preserve" y="93.08116875725068">dcterms: http://purl.org/dc/terms/<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="-0.5" labelRatioY="-0.5" nodeRatioX="-0.4572391628279554" nodeRatioY="-0.17636680172430413" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="18.01640115581563" y="117.85528108257336">
+              <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#B7B69E" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="bold" hasLineColor="false" height="22.37646484375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="384.3561022475213" x="0.0" xml:space="preserve" y="0.0">Prefixes   </y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="217.4453125" x="23.242401208157844" xml:space="preserve" y="31.585559635028403">arco: https://w3id.org/arco/ontology/arco<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="-0.5" labelRatioY="-0.5" nodeRatioX="-0.43952899128634104" nodeRatioY="-0.3533038583973511" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="75.47795735495856" y="133.52322841177443">
                 <y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
                 <y:ModelParameter>
-                  <y:SmartNodeLabelModelParameter labelRatioX="-0.5" labelRatioY="0.0" nodeRatioX="-0.4572391628279554" nodeRatioY="-0.08327609692842186" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+                  <y:SmartNodeLabelModelParameter labelRatioX="-0.5" labelRatioY="0.0" nodeRatioX="-0.30362492773341854" nodeRatioY="0.1294248047292479" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
                 </y:ModelParameter>
               </y:NodeLabel>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="18.01640115581563" y="117.85528108257336">
-                <y:LabelModel>
-                  <y:SmartNodeLabelModel distance="4.0"/>
-                </y:LabelModel>
-                <y:ModelParameter>
-                  <y:SmartNodeLabelModelParameter labelRatioX="-0.5" labelRatioY="0.0" nodeRatioX="-0.4572391628279554" nodeRatioY="-0.08327609692842186" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-                </y:ModelParameter>
-              </y:NodeLabel>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="234.0859375" x="22.36112771831563" xml:space="preserve" y="110.50469514507336">lrmoo: http://iflastandards.info/ns/lrm/lrmoo/<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="-0.5" labelRatioY="0.0" nodeRatioX="-0.4469272174239117" nodeRatioY="-0.08327609692842158" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="259.439453125" x="18.01640115581563" xml:space="preserve" y="147.37244219388322">rico: https://www.ica.org/standards/RiC/ontology<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="-0.5" labelRatioY="0.0" nodeRatioX="-0.4572391628279554" nodeRatioY="0.04490908864593013" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="233.44140625" x="18.01640115581563" xml:space="preserve" y="186.9962999023121">xsd: http://www.w3.org/2001/XMLSchema#<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="-0.5" labelRatioY="0.5" nodeRatioX="-0.4572391628279554" nodeRatioY="0.2151879543125167" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="242.775390625" x="18.01640115581563" xml:space="preserve" y="166.17848952958207">rdfs: http://www.w3.org/2000/01/rdf-schema#<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="-0.5" labelRatioY="0.0" nodeRatioX="-0.4572391628279554" nodeRatioY="0.11029568968925063" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="4.0" x="167.5709917315255" y="80.28123735732447">
-                <y:LabelModel>
-                  <y:SmartNodeLabelModel distance="4.0"/>
-                </y:LabelModel>
-                <y:ModelParameter>
-                  <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="-0.5" nodeRatioX="-0.0975335193847362" nodeRatioY="-0.22087078455966092" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-                </y:ModelParameter>
-              </y:NodeLabel>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="221.359375" x="18.01640115581563" xml:space="preserve" y="76.3587194487277">crm: http://www.cidoc-crm.org/cidoc-crm/<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="-0.5" labelRatioY="-0.5" nodeRatioX="-0.4572391628279554" nodeRatioY="-0.23450895684522238" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="311.48828125" x="23.242401208157844" xml:space="preserve" y="52.549555507061314">arco-cd:https://w3id.org/arco/ontology/context-description/<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="-0.5" nodeRatioX="-0.03432106115517741" nodeRatioY="-0.2559385641762993" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="221.359375" x="23.242401208157844" xml:space="preserve" y="71.90093631201512">crm: http://www.cidoc-crm.org/cidoc-crm/<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="-0.5" labelRatioY="0.0" nodeRatioX="-0.43952899128634104" nodeRatioY="-0.12263499678102424" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="176.72265625" x="23.242401208157844" xml:space="preserve" y="90.4460095834288">dcterms: http://purl.org/dc/terms/<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="-0.5" labelRatioY="0.0" nodeRatioX="-0.43952899128634104" nodeRatioY="-0.03650415958547848" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="234.0859375" x="23.242401208157844" xml:space="preserve" y="109.79739038838215">lrmoo: http://iflastandards.info/ns/lrm/lrmoo/<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="-0.13501198722268354" nodeRatioY="0.05337149661856788" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="259.439453125" x="23.242401208157844" xml:space="preserve" y="126.17264247427443">rico: https://www.ica.org/standards/RiC/ontology<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.5" nodeRatioX="-0.1020301827492468" nodeRatioY="0.17285271592047613" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="242.775390625" x="23.242401208157844" xml:space="preserve" y="146.8875369312102">rdfs: http://www.w3.org/2000/01/rdf-schema#<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.5" nodeRatioX="-0.12370807780874626" nodeRatioY="0.2690610822008871" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="238.779296875" x="23.242401208157844" xml:space="preserve" y="165.43261020262412">skos: http://www.w3.org/2004/02/skos/core#<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.5" nodeRatioX="-0.12890650412048277" nodeRatioY="0.3551919193964329" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="233.44140625" x="23.242401208157844" xml:space="preserve" y="185.59029854111736">xsd: http://www.w3.org/2001/XMLSchema#<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.5" nodeRatioX="-0.13585044307941524" nodeRatioY="0.44881239460898203" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
               <y:Shape type="rectangle"/>
               <y:DropShadow color="#D2D2D2" offsetX="4" offsetY="4"/>
               <y:State closed="false" closedHeight="74.509765625" closedWidth="387.8295898437501" innerGraphDisplayEnabled="false"/>
@@ -224,7 +321,7 @@ rico:Group</y:NodeLabel>
               <y:BorderInsets bottom="0" bottomF="0.0" left="4" leftF="4.467610677083542" right="0" rightF="0.0" top="0" topF="0.0"/>
             </y:GroupNode>
             <y:GroupNode>
-              <y:Geometry height="50.0" width="50.0" x="1083.1442754253378" y="2398.6148105568795"/>
+              <y:Geometry height="50.0" width="50.0" x="2309.8057371754867" y="1713.575801589494"/>
               <y:Fill color="#F2F0D8" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#B7B69E" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="59.02685546875" x="-4.513427734375" xml:space="preserve" y="0.0">Folder 2</y:NodeLabel>
@@ -237,119 +334,7 @@ rico:Group</y:NodeLabel>
           </y:Realizers>
         </y:ProxyAutoBoundsNode>
       </data>
-      <graph edgedefault="directed" id="n14:"/>
-    </node>
-    <node id="n15">
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="45.0" width="161.97190116777887" x="1509.7023155192178" y="961.9026368255066"/>
-          <y:Fill color="#FFFF00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="149.8125" x="6.079700583889462" xml:space="preserve" y="10.69921875">arco-cd:Commission</y:NodeLabel>
-          <y:Shape type="roundrectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n16">
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="43.0" width="129.68871821071713" x="2564.473121212291" y="1281.6681565223448"/>
-          <y:Fill color="#FFFF00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="108.0390625" x="10.824827855358762" xml:space="preserve" y="9.69921875">crm:E55_Type</y:NodeLabel>
-          <y:Shape type="roundrectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n17">
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="44.0" width="129.68871821071735" x="2006.8582112273182" y="1475.613863322177"/>
-          <y:Fill color="#FFFF00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="113.3515625" x="8.168577855358762" xml:space="preserve" y="10.19921875">lrmoo:F1_Work</y:NodeLabel>
-          <y:Shape type="roundrectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n18">
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="45.0" width="195.51449576671365" x="2339.8388934015898" y="780.4015649813332"/>
-          <y:Fill color="#FFFF00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="180.0625" x="7.72599788335674" xml:space="preserve" y="10.69921875">crm:E81_Transformation</y:NodeLabel>
-          <y:Shape type="roundrectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n19">
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="45.0" width="177.75806066764306" x="1982.8235399988553" y="1114.143877058942"/>
-          <y:Fill color="#FFFF00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="150.71875" x="13.519655333821447" xml:space="preserve" y="10.69921875">crm:E52_Time-Span</y:NodeLabel>
-          <y:Shape type="roundrectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n20">
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="52.82763671875" width="126.0949682107173" x="2289.478635320429" y="980.2228435543677"/>
-          <y:Fill color="#CCFFCC" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="43.203125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="76.0390625" x="25.027952855358762" xml:space="preserve" y="4.812255859375">xsd:date
-xsd:gYear</y:NodeLabel>
-          <y:Shape type="parallelogram"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n21">
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="45.0" width="206.4714718151842" x="1132.3026208586145" y="1297.73857344262"/>
-          <y:Fill color="#FFFF00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="191.625" x="7.423235907592016" xml:space="preserve" y="10.69921875">lrmoo:F27_Work_Creation</y:NodeLabel>
-          <y:Shape type="roundrectangle"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n22">
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="43.0" width="126.0949682107173" x="1493.1401917758212" y="1580.3877192418981"/>
-          <y:Fill color="#CCFFCC" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="78.6953125" x="23.699827855358762" xml:space="preserve" y="9.69921875">rdfs:Literal</y:NodeLabel>
-          <y:Shape type="parallelogram"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n23">
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="43.0" width="126.0949682107173" x="1618.5211063225613" y="580.4778906661608"/>
-          <y:Fill color="#CCFFCC" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="78.6953125" x="23.699827855358535" xml:space="preserve" y="9.69921875">rdfs:Literal</y:NodeLabel>
-          <y:Shape type="parallelogram"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n24">
-      <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="49.681648891803206" width="155.54375288438388" x="1440.2644693972366" y="1277.2216755540958"/>
-          <y:Fill color="#FFFF00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="43.203125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="bl" textColor="#000000" verticalTextPosition="bottom" visible="true" width="145.390625" x="4.0" xml:space="preserve" y="2.4785238918032064">rico:RecordPart
-crm:E31_Document</y:NodeLabel>
-          <y:Shape type="roundrectangle"/>
-        </y:ShapeNode>
-      </data>
+      <graph edgedefault="directed" id="n24:"/>
     </node>
     <edge id="e0" source="n0" target="n1">
       <data key="d10">
@@ -494,7 +479,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e11" source="n1" target="n15">
+    <edge id="e11" source="n1" target="n14">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-24.838271561815947" sy="-32.929449114497515" tx="0.0" ty="0.0">
@@ -508,7 +493,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e12" source="n15" target="n10">
+    <edge id="e12" source="n14" target="n10">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="29.108917475784438" ty="5.948569108450556"/>
@@ -577,7 +562,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e17" source="n11" target="n16">
+    <edge id="e17" source="n11" target="n15">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-46.77268769383636" sy="2.777829856492531" tx="0.0" ty="0.0">
@@ -604,7 +589,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e19" source="n7" target="n24">
+    <edge id="e19" source="n7" target="n23">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="26.040234588760086" sy="9.81687386067938" tx="77.76190011229733" ty="-16.015555990336225">
@@ -617,7 +602,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e20" source="n12" target="n24">
+    <edge id="e20" source="n12" target="n23">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="57.613660368599994" ty="24.82218682878579">
@@ -710,7 +695,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e26" source="n17" target="n4">
+    <edge id="e26" source="n16" target="n4">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="38.342723303879666" sy="-2.8649069930659152" tx="26.52290939759223" ty="9.106067034608031">
@@ -724,7 +709,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e27" source="n17" target="n6">
+    <edge id="e27" source="n16" target="n6">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="34.70746659646511" ty="-3.857648489748499">
@@ -738,7 +723,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e28" source="n17" target="n2">
+    <edge id="e28" source="n16" target="n2">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-64.82342714701417" sy="-10.232982738308692" tx="-41.60417898738274" ty="-14.638569557623782">
@@ -765,7 +750,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e30" source="n18" target="n9">
+    <edge id="e30" source="n17" target="n9">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="124.64351238210656" ty="26.44719864722798">
@@ -778,7 +763,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e31" source="n18" target="n9">
+    <edge id="e31" source="n17" target="n9">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-123.6079427983359" ty="10.974051501200643">
@@ -806,7 +791,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e33" source="n6" target="n19">
+    <edge id="e33" source="n6" target="n18">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-23.834395026848142" sy="-0.16065488300091602" tx="0.0" ty="0.0">
@@ -820,7 +805,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e34" source="n19" target="n20">
+    <edge id="e34" source="n18" target="n19">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-59.02776937041085" sy="-22.51017722855522" tx="0.0" ty="0.0">
@@ -834,7 +819,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e35" source="n19" target="n20">
+    <edge id="e35" source="n18" target="n19">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-35.66109337884154" sy="-12.475938434748741" tx="0.0" ty="0.0">
@@ -847,7 +832,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e36" source="n19" target="n20">
+    <edge id="e36" source="n18" target="n19">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-10.71349671363123" sy="-22.488079344067273" tx="0.0" ty="0.0">
@@ -861,7 +846,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e37" source="n21" target="n7">
+    <edge id="e37" source="n20" target="n7">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="39.52667499989312" sy="-0.4107622518686185" tx="0.0" ty="0.0">
@@ -875,7 +860,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e38" source="n21" target="n17">
+    <edge id="e38" source="n20" target="n16">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -891,7 +876,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e39" source="n21" target="n19">
+    <edge id="e39" source="n20" target="n18">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-70.65856660227314" sy="-14.584548908919487" tx="-65.05187228756404" ty="13.871213114754255">
@@ -922,7 +907,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e41" source="n8" target="n19">
+    <edge id="e41" source="n8" target="n18">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -935,7 +920,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e42" source="n17" target="n22">
+    <edge id="e42" source="n16" target="n21">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-50.47370077469486" sy="12.83059605349149" tx="44.50476795003124" ty="-14.552669210491786">
@@ -949,7 +934,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e43" source="n7" target="n22">
+    <edge id="e43" source="n7" target="n21">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-43.751759303282824" sy="22.004081571076313" tx="13.857953724883373" ty="-3.450732053771844">
@@ -963,7 +948,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e44" source="n7" target="n22">
+    <edge id="e44" source="n7" target="n21">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-23.882871921665128" sy="22.004020462275093" tx="38.81380736422784" ty="-6.791848772458252">
@@ -977,7 +962,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e45" source="n17" target="n22">
+    <edge id="e45" source="n16" target="n21">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-34.03608846867883" sy="0.9454227748030917" tx="53.804570779722326" ty="9.97569991332216">
@@ -990,7 +975,7 @@ crm:E31_Document</y:NodeLabel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e46" source="n17" target="n17">
+    <edge id="e46" source="n16" target="n16">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="44.960516457224" sy="6.416839344262371" tx="64.86754756445953" ty="0.0">
@@ -1004,7 +989,7 @@ lrmoo:R1_is_logical_successor_of<y:LabelModel><y:SmartEdgeLabelModel autoRotatio
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e47" source="n15" target="n19">
+    <edge id="e47" source="n14" target="n18">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-76.10338583785801" ty="-9.516746303601394">
@@ -1017,7 +1002,7 @@ lrmoo:R1_is_logical_successor_of<y:LabelModel><y:SmartEdgeLabelModel autoRotatio
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e48" source="n10" target="n23">
+    <edge id="e48" source="n10" target="n22">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -1030,7 +1015,7 @@ lrmoo:R1_is_logical_successor_of<y:LabelModel><y:SmartEdgeLabelModel autoRotatio
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e49" source="n0" target="n23">
+    <edge id="e49" source="n0" target="n22">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-40.782861129282665" sy="1.0790574593509064" tx="0.0" ty="0.0">
@@ -1043,7 +1028,7 @@ lrmoo:R1_is_logical_successor_of<y:LabelModel><y:SmartEdgeLabelModel autoRotatio
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e50" source="n7" target="n24">
+    <edge id="e50" source="n7" target="n23">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="20.63568219286367" ty="10.860529551410082">
@@ -1056,7 +1041,7 @@ lrmoo:R1_is_logical_successor_of<y:LabelModel><y:SmartEdgeLabelModel autoRotatio
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e51" source="n24" target="n22">
+    <edge id="e51" source="n23" target="n21">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="38.15133004175141" sy="24.885481944852017" tx="0.0" ty="0.0">
@@ -1071,7 +1056,7 @@ lrmoo:R1_is_logical_successor_of<y:LabelModel><y:SmartEdgeLabelModel autoRotatio
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e52" source="n24" target="n22">
+    <edge id="e52" source="n23" target="n21">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-39.15035738987194" ty="14.441221719343957">
@@ -1086,7 +1071,7 @@ lrmoo:R1_is_logical_successor_of<y:LabelModel><y:SmartEdgeLabelModel autoRotatio
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e53" source="n24" target="n24">
+    <edge id="e53" source="n23" target="n23">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -1099,7 +1084,7 @@ lrmoo:R1_is_logical_successor_of<y:LabelModel><y:SmartEdgeLabelModel autoRotatio
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e54" source="n24" target="n24">
+    <edge id="e54" source="n23" target="n23">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-50.33256092139686" sy="0.0" tx="-61.182932068937816" ty="0.0">
