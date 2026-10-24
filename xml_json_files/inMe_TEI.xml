@@ -194,8 +194,8 @@
                     <person xml:id="pope_honorius_iii">
                         <idno type="wikidata">Q160182</idno>
                         <idno type="viaf">41848773</idno>
-                        <persName xml:id="en">Pope Honorius III</persName>
-                        <persName xml:id="it">Papa Onorio III</persName>
+                        <persName xml:lang="en">Pope Honorius III</persName>
+                        <persName xml:lang="it">Papa Onorio III</persName>
                         <note xml:lang="it">Successore di Innocenzo III, promulgò la bolla di conferma solenne dell'Ordine dei Predicatori nel 1216 (*Religiosam vitam*), emanò varie bolle di raccomandazione per i frati e impose l'incorporazione delle comunità femminili romane di San Sisto e bolognesi di Sant'Agnese sotto la cura spirituale dell'Ordine.</note>
                         <note xml:lang="en">As the successor to Innocent III, he promulgated the bull solemnly confirming the Order of Preachers in 1216 (*Religiosam vitam*), issued various bulls recommending the friars, and mandated that the female communities of San Sisto in Rome and Sant'Agnese in Bologna be placed under the spiritual care of the Order.</note>
                     </person>
@@ -279,7 +279,8 @@
                         <note xml:lang="en">A young Roman count and nephew of Cardinal Stefano di Fossanova; he died in Rome following a disastrous fall from his horse in 1221 and was miraculously restored to life by Saint Dominic, an event carved onto the side of the Arca.</note>
                     </person>
                     <person xml:id="sister_cecilia_contarini">
-                        <persName>Suor Cecilia Contarini</persName>
+                        <persName xml:lang="en">Sister Cecilia Contarini</persName>
+                        <persName xml:lang="it">Suor Cecilia Contarini</persName>
                         <note xml:lang="it">Monaca domenicana, fondatrice del convento di San Sisto a Roma e successivamente residente presso il convento di Sant'Agnese a Bologna negli anni in cui Nicola Pisano realizzò l'Arca (1264-1267). Avendo vissuto a San Sisto nel 1221, Cecilia fu testimone oculare diretta di alcuni importanti eventi romani di Domenico, in particolare della cosiddetta resurrezione del giovane Napoleone Orsini. Per questo motivo alcuni ipotizzano possa esser stata consultata per l'apparato iconografico del sarcofago e tradizionalmente la identificano nella figura scolpita in alto a sinistra del pannello della resurrezione: ritratta di spalle rispetto allo spettatore ma con lo sguardo rivolto al miracolo, una scelta compositiva che la isola dalla folla e la consacra, nella sua vecchiaia, come testimone oculare narrante dell'evento.</note>
                         <note xml:lang="en">A Dominican nun, she founded the convent of San Sisto in Rome and later resided at the convent of Sant'Agnese in Bologna during the years Nicola Pisano created the *Arca* (1264–1267). Having lived at San Sisto in 1221, Cecilia was a direct eyewitness to certain significant events involving Dominic in Rome—most notably the so-called resurrection of the young Napoleone Orsini. For this reason, some hypothesize that she may have been consulted regarding the sarcophagus's iconographic program; traditionally, she is identified as the figure sculpted in the upper-left section of the resurrection panel. Depicted with her back to the viewer yet gazing toward the miracle, this compositional choice isolates her from the crowd and, in her old age, establishes her as the eyewitness recounting the event.</note>
                     </person>

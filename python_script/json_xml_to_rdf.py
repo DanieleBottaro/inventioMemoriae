@@ -6,10 +6,10 @@ from rdflib.namespace import RDF, RDFS, OWL, XSD
 
 CRM = Namespace("http://www.cidoc-crm.org/cidoc-crm/")
 ARCO = Namespace("https://w3id.org/arco/ontology/arco/")
-ARCO_CD = Namespace("https://w3id.org/arco/ontology/content-description/")
+ARCO_CD = Namespace("https://w3id.org/arco/ontology/context-description/")
 DCTERMS = Namespace("http://purl.org/dc/terms/")
 LRMOO = Namespace("http://iflastandards.info/ns/lrm/lrmoo/")
-RICO = Namespace("http://www.ica.org/standards/RiC/ontology/")
+RICO = Namespace("https://www.ica.org/standards/RiC/ontology#")
 SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
 
 INME = Namespace("http://example.org/inventio-memoriae/")

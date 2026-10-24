@@ -1,12 +1,12 @@
 @prefix arco: <https://w3id.org/arco/ontology/arco/> .
-@prefix arco-cd: <https://w3id.org/arco/ontology/content-description/> .
+@prefix arco-cd: <https://w3id.org/arco/ontology/context-description/> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix inme: <http://example.org/inventio-memoriae/> .
 @prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rico: <http://www.ica.org/standards/RiC/ontology/> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -104,9 +104,9 @@ inme:nicola_pisano a crm:E21_Person,
         "Nicola Pisano"@it ;
     dcterms:description "A renowned Tuscan sculptor who, together with his industrious workshop in Pisa (which included assistants such as Fra Guglielmo, Arnolfo di Cambio, and Lapo), designed and carved the monumental marble sarcophagus of the Shrine of Saint Dominic in Bologna between approximately 1264 and 1267."@en,
         "Celebre scultore toscano che, insieme alla sua operosa bottega di Pisa (in cui figuravano assistenti come fra Guglielmo, Arnolfo di Cambio e Lapo), progettò e scolpì intorno al 1264-1267 il monumentale sarcofago marmoreo dell'Arca di San Domenico a Bologna."@it ;
-    rico:isOrWasLeaderOf inme:nicola_workshop ;
     owl:sameAs <https://www.wikidata.org/wiki/Q364413> ;
-    skos:exactMatch <https://viaf.org/en/viaf/95710492> .
+    skos:exactMatch <https://viaf.org/en/viaf/95710492> ;
+    rico:isOrWasLeaderOf inme:nicola_workshop .
 
 inme:saint_dominic_arca a arco:ComplexCulturalProperty,
         arco:HistoricOrArtisticProperty ;
@@ -427,7 +427,7 @@ inme:pope_gregory_ix a crm:E21_Person,
 
 inme:pope_honorius_iii a crm:E21_Person,
         rico:Person ;
-    rdfs:label "Papa Onorio III"@en,
+    rdfs:label "Pope Honorius III"@en,
         "Papa Onorio III"@it ;
     dcterms:description "As the successor to Innocent III, he promulgated the bull solemnly confirming the Order of Preachers in 1216 (*Religiosam vitam*), issued various bulls recommending the friars, and mandated that the female communities of San Sisto in Rome and Sant'Agnese in Bologna be placed under the spiritual care of the Order."@en,
         "Successore di Innocenzo III, promulgò la bolla di conferma solenne dell'Ordine dei Predicatori nel 1216 (*Religiosam vitam*), emanò varie bolle di raccomandazione per i frati e impose l'incorporazione delle comunità femminili romane di San Sisto e bolognesi di Sant'Agnese sotto la cura spirituale dell'Ordine."@it ;
@@ -627,9 +627,9 @@ inme:humbert_romans a crm:E21_Person,
         "Umberto di Romans"@it ;
     dcterms:description "Fifth Master General of the Order (1254–1263); he reorganized and unified the Dominican liturgy by compiling the liturgical \"Prototype\" (1256–1260), promoted the writing of the *Vitae fratrum* by Gerard of Frachet, and signed off on the definitive, standardized version of the liturgical *Legenda* of Saint Dominic."@en,
         "Quinto maestro generale dell'Ordine (1254-1263); riordinò e unificò la liturgia domenicana redigendo il \"Prototipo\" liturgico (1256-1260), promosse la stesura delle *Vitae fratrum* di Gerardo di Frachet e firmò la redazione definitiva e normalizzata della Legenda liturgica di san Domenico."@it ;
-    rico:isOrWasLeaderOf inme:dominican_order ;
     owl:sameAs <https://www.wikidata.org/wiki/Q2623954> ;
-    skos:exactMatch <https://viaf.org/en/viaf/122038877> .
+    skos:exactMatch <https://viaf.org/en/viaf/122038877> ;
+    rico:isOrWasLeaderOf inme:dominican_order .
 
 inme:jordan_saxony a crm:E21_Person,
         rico:Person ;
@@ -637,9 +637,9 @@ inme:jordan_saxony a crm:E21_Person,
         "Giordano di Sassonia"@it ;
     dcterms:description "He was the second Master General of the Order and the direct successor to Dominic from 1222; he composed the *Libellus de principiis*, the first historical and hagiographical work on the origins of the Dominican Order, was a formidable recruiter among university students, oversaw the translation of the saint's remains in 1233, and died in a shipwreck in 1237."@en,
         "Secondo maestro generale dell'Ordine e successore diretto di Domenico dal 1222; compose il Libellus de principiis, la prima opera storica e agiografica sulle origini domenicane, fu un formidabile reclutatore tra gli universitari, curò la traslazione dei resti del santo nel 1233 e morì in un naufragio nel 1237."@it ;
-    rico:isOrWasLeaderOf inme:dominican_order ;
     owl:sameAs <https://www.wikidata.org/wiki/Q60790> ;
-    skos:exactMatch <https://viaf.org/en/viaf/84971788> .
+    skos:exactMatch <https://viaf.org/en/viaf/84971788> ;
+    rico:isOrWasLeaderOf inme:dominican_order .
 
 inme:nicola_workshop a crm:E74_Group,
         rico:Group ;
@@ -757,8 +757,8 @@ inme:legenda_constantini a lrmoo:F1_Work ;
     lrmoo:R68_is_inspired_by inme:legenda_petri_ferrandi,
         inme:libellus_principiis ;
     dcterms:creator inme:constantine_orvieto ;
-    dcterms:description "Approved in 1248, Constantine's \"Legenda Nova\" marks a decisive shift in Dominican memory, transforming the founder’s life from a historical chronicle into a systematic biography of wonders. While drawing heavily on Peter Ferrandi, Constantine omits many local details to project a more universal and prophetic image of Dominic. It is the first official source to stabilize the \"Miracle of the Loaves\" and to introduce pivotal institutional myths such as the Dream of the Lateran and the mandate from Peter and Paul which provided the Order with its definitive charismatic legitimacy and the primary narrative for its future iconographic programs."@en,
-        "Approvata nel 1248, la \"Legenda Nova\" di Costantino segna una svolta decisiva nella memoria domenicana, trasformando la vita del fondatore da cronaca storica a biografia sistematica di prodigi. Pur attingendo ampiamente a Pietro Ferrandi, Costantino omette molti dettagli locali per proiettare un'immagine di Domenico più universale e profetica. Si tratta della prima fonte ufficiale a fissare il \"Miracolo dei pani\" e a introdurre miti istituzionali fondamentali, come il sogno del Laterano e il mandato di Pietro e Paolo, che conferirono all'Ordine la sua definitiva legittimazione carismatica e la narrazione primaria per i suoi futuri programmi iconografici."@it ;
+    dcterms:description "Approved in 1248, Constantine of Orvieto's \"Legenda Nova\" marks a decisive shift in Dominican memory, transforming the founder’s life from a historical chronicle into a systematic biography of wonders. While drawing heavily on Peter Ferrandi, Constantine omits many local details to project a more universal and prophetic image of Dominic. It is the first official source to stabilize the \"Miracle of the Loaves\" and to introduce pivotal institutional myths such as the Dream of the Lateran and the mandate from Peter and Paul which provided the Order with its definitive charismatic legitimacy and the primary narrative for its future iconographic programs."@en,
+        "Approvata nel 1248, la \"Legenda Nova\" di Costantino di Orvieto segna una svolta decisiva nella memoria domenicana, trasformando la vita del fondatore da cronaca storica a biografia sistematica di prodigi. Pur attingendo ampiamente a Pietro Ferrandi, Costantino omette molti dettagli locali per proiettare un'immagine di Domenico più universale e profetica. Si tratta della prima fonte ufficiale a fissare il \"Miracolo dei pani\" e a introdurre miti istituzionali fondamentali, come il sogno del Laterano e il mandato di Pietro e Paolo, che conferirono all'Ordine la sua definitiva legittimazione carismatica e la narrazione primaria per i suoi futuri programmi iconografici."@it ;
     dcterms:language "la" ;
     dcterms:title "Legenda Sancti Dominici"@la ;
     crm:P129_is_about inme:theme_lateran_dream,
@@ -794,7 +794,7 @@ inme:san_domenico_church a crm:E24_Physical_human-made_thing,
 
 inme:sister_cecilia_contarini a crm:E21_Person,
         rico:Person ;
-    rdfs:label "Suor Cecilia Contarini"@en,
+    rdfs:label "Sister Cecilia Contarini"@en,
         "Suor Cecilia Contarini"@it ;
     dcterms:description "A Dominican nun, she founded the convent of San Sisto in Rome and later resided at the convent of Sant'Agnese in Bologna during the years Nicola Pisano created the *Arca* (1264–1267). Having lived at San Sisto in 1221, Cecilia was a direct eyewitness to certain significant events involving Dominic in Rome—most notably the so-called resurrection of the young Napoleone Orsini. For this reason, some hypothesize that she may have been consulted regarding the sarcophagus's iconographic program; traditionally, she is identified as the figure sculpted in the upper-left section of the resurrection panel. Depicted with her back to the viewer yet gazing toward the miracle, this compositional choice isolates her from the crowd and, in her old age, establishes her as the eyewitness recounting the event."@en,
         "Monaca domenicana, fondatrice del convento di San Sisto a Roma e successivamente residente presso il convento di Sant'Agnese a Bologna negli anni in cui Nicola Pisano realizzò l'Arca (1264-1267). Avendo vissuto a San Sisto nel 1221, Cecilia fu testimone oculare diretta di alcuni importanti eventi romani di Domenico, in particolare della cosiddetta resurrezione del giovane Napoleone Orsini. Per questo motivo alcuni ipotizzano possa esser stata consultata per l'apparato iconografico del sarcofago e tradizionalmente la identificano nella figura scolpita in alto a sinistra del pannello della resurrezione: ritratta di spalle rispetto allo spettatore ma con lo sguardo rivolto al miracolo, una scelta compositiva che la isola dalla folla e la consacra, nella sua vecchiaia, come testimone oculare narrante dell'evento."@it .
@@ -942,7 +942,7 @@ inme:dominic_guzman a crm:E21_Person,
         "Domenico di Guzmán"@it ;
     dcterms:description "Canon of Osma, preacher against heresy in Languedoc, and founder of the Order of Preachers (Dominicans); he lived in strict evangelical poverty and died in Bologna in 1221."@en,
         "Canonico di Osma, predicatore antieretico in Linguadoca e fondatore dell'Ordine dei Frati Predicatori (Domenicani), vissuto in rigorosa povertà evangelica e morto a Bologna nel 1221."@it ;
-    rico:isOrWasLeaderOf inme:dominican_order ;
     owl:sameAs <https://www.wikidata.org/wiki/Q44091> ;
-    skos:exactMatch <https://viaf.org/en/viaf/17240904> .
+    skos:exactMatch <https://viaf.org/en/viaf/17240904> ;
+    rico:isOrWasLeaderOf inme:dominican_order .
 

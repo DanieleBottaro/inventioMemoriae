@@ -19,7 +19,10 @@ body {
 }
 
 
-
+h1{
+    font-family: var(--font-headings);
+    font-size: 4rem !important;
+}
 h3 {
     font-family: var(--font-headings);
     color: var(--accent-color) !important;
