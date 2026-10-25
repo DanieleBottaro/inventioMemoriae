@@ -734,7 +734,7 @@ def main():
 
     json_filepath = "../xml_json_files/inMe_extra_entities.json"
     xml_filepath = "../xml_json_files/inMe_TEI.xml"
-    output_filepath = "../rdf_dataset/inventio_memoriae_graph.ttl"
+    output_filepath = "../rdf_dataset/inme_graph.ttl"
 
     #extracting the entities and relations from the json file
     json_entities, json_relations = parse_json_data(json_filepath)

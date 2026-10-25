@@ -6,33 +6,36 @@ The project bridges the gap between hagiographic textual narratives and sculptur
 
 ```text
 ├── html_files/
-│   ├── Index_src.html
-│   ├── inMe_stylised_xml.html
-│   └── zoom-page.html
+│   ├── Index_src.html                 # Jinja2 source template for the project documentation
+│   ├── inMe_stylised_xml.html         # Human-readable reading view of the TEI-XML sources
+│   └── zoom-page.html                 # Interactive pan/zoom and fullscreen viewport for SVGs
 ├── images/
-│   ├── conceptual_model.svg
-│   ├── inme_rdf-viewer.svg
-│   └── theoretical_model.svg
+│   ├── conceptual_model.svg           # Graffoo-based diagram of the conceptual ontology model
+│   ├── inme_rdf-viewer.svg            # Node-link graph visualization of the RDF dataset
+│   └── theoretical_model.svg          # Visual diagram of the theoretical domain model
 ├── python_script/
-│   ├── jinja_template.py
-│   ├── json_xml_to_rdf.py
-│   └── xml-html_transformation.py
+│   ├── graph_reasoning_expansion.py   # Injects OWL axioms and property definitions for Protégé
+│   ├── jinja_template.py              # Populates Index_src.html with categorized entities
+│   ├── json_xml_to_rdf.py             # Extracts XML/JSON data and serializes the base RDF graph
+│   └── xml-html_transformation.py     # Applies XSLT to convert TEI-XML into HTML
 ├── rdf_dataset/
-│   └── inventio_memoriae_graph.ttl
+│   ├── inme_graph.ttl                 # Base RDF graph extracted from TEI and JSON
+│   ├── inme_pre_reasoning.ttl         # Graph enriched with OWL axioms ready for the reasoner
+│   └── inme_inferred_graph.ttl        # Enriched graph with materialized inferences from Protégé
 ├── style/
-│   ├── doc_style.css
-│   └── xsl_style.css
+│   ├── doc_style.css                  # Custom styling for index.html and zoom view
+│   └── xsl_style.css                  # Stylesheet for the XSLT-generated reading view
 ├── xml_json_files/
-│   ├── inMe_extra_entities.json
-│   └── inMe_TEI.xml
+│   ├── inMe_extra_entities.json       # Supplementary JSON dataset with ad-hoc entities/relations
+│   └── inMe_TEI.xml                   # TEI-XML document with encoded hagiographical text snippets
 ├── xslt/
-│   └── inMe_XSLT.xslt
+│   └── inMe_XSLT.xslt                 # XSLT transformation rules for TEI-to-HTML conversion
 ├── yED_files/
-│   ├── conceptual_model_def.graphml
-│   └── theoretical_model_def.graphml
-├── index.html
-├── requirements.txt
-└── README.md
+│   ├── conceptual_model.graphml       # Source Graffoo file for the conceptual model (yEd)
+│   └── theoretical_model.graphml      # Source diagram file for the theoretical model (yEd)
+├── index.html                         # Main entry point: project documentation website
+├── requirements.txt                   # Python library dependencies
+└── README.md                          # Project overview and pipeline documentation
 ```
 
 ## Technical Architecture
@@ -61,12 +64,26 @@ Navigate to the scripts folder. The three scripts operate independently and hand
     * ```xml-html_transformation.py``` XSLT-based generation of the html file from the XML file
     * ```jinja_template.py``` populate dynamically the Entities tab in the documentation
 
-### 3. View the Output
-Open ```index.html``` in the root folder to explore the documentation, ora navigate to the ```html_files/inMe_stylised_xml.html``` to view the generated XSLT textual view
+### 3. View the Output & Query the Data
+Open ```index.html``` in the root folder to explore the documentation, or navigate to the ```html_files/inMe_stylised_xml.html``` to view the generated XSLT textual view
+
+To explore the dataset, you can perform custom SPARQL queries using a local RDF graph database such as Blazegraph. You can query two distinct versions of the dataset provided in this repository:
+* **The Base Graph** (```inme_graph.ttl```): Contains the explicit historical and art-historical assertions extracted directly from the textual sources and the custom ones that have been defined in the JSON file (```inMe_extra_entities.json```)
+* **The Inferred Graph** (```inme_inferred_graph.ttl```): Contains the extended, reasoner-processed dataset.
+
+**Quick Blazegraph setup:**
+1. Download the latest blazegraph.jar release;
+
+2. Run the server locally via terminal: java -server -Xmx4g -jar blazegraph.jar;
+
+3. Open the web interface at http://localhost:9999/blazegraph/;
+
+4. Go to the Update tab and upload either the base or the inferred .ttl file;
+
+5. Navigate to the Query tab to run the examples below.
 
 ## Authors & License
 
 * **Author**: Daniele Bottaro
 * **Context**: Developed as a final project for the 2025-2026 Information Science and Cultural Heritage course at University of Bologna
 * **License**: Data and documentation are released under a Creative Commons Attribution 4.0 (CC BY 4.0) license.
-

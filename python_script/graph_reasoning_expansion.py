@@ -77,6 +77,6 @@ for data_prop_str in data_prop_list:
 
     db_graph.add((data_prop_uri, RDF.type, OWL.DatatypeProperty))
 
-db_graph.serialize(destination="../rdf_dataset/inventio_memoriae_graph_expanded.ttl", format="turtle")
+db_graph.serialize(destination="../rdf_dataset/inme_pre_reasoning.ttl", format="turtle")
 
-print("Ontology enriched successfully! New file ready for Protégé!!")
+print("New file ready for Protégé!!")
