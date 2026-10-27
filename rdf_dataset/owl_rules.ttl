@@ -1,11 +1,10 @@
-@base <http://example.org/inventio-memoriae/>.
+@base <https://danielebottaro.github.io/inventioMemoriae/>.
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix xml: <http://www.w3.org/XML/1998/namespace>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix arco: <https://w3id.org/arco/ontology/arco/>.
-@prefix inme: <http://example.org/inventio-memoriae/>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix rico: <https://www.ica.org/standards/RiC/ontology#>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
