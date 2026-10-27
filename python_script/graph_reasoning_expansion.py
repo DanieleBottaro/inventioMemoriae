@@ -2,7 +2,7 @@ from rdflib import Graph, Namespace, URIRef
 from rdflib.namespace import RDF, OWL
 
 db_graph = Graph()
-db_graph.parse("../rdf_dataset/inventio_memoriae_graph.ttl", format="turtle")
+db_graph.parse("../rdf_dataset/inme_graph.ttl", format="turtle")
 
 namespaces = {
     "crm": Namespace("http://www.cidoc-crm.org/cidoc-crm/"),

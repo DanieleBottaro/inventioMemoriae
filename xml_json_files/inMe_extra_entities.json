@@ -1,6 +1,6 @@
 {
     "context": {
-        "base_uri": "http://example.org/inventio-memoriae/",
+        "base_uri": "https://danielebottaro.github.io/inventioMemoriae/",
         "namespaces": {
             "crm": "http://www.cidoc-crm.org/cidoc-crm/",
             "lrmoo": "http://www.cidoc-crm.org/lrmoo/",
@@ -879,7 +879,7 @@
                 "id": "sarcophagus",
                 "source": "core"
             },
-            "predicate": "arco:hasCommission",
+            "predicate": "arco-cd:hasCommission",
             "object": {
                 "id": "sarcophagus_commission",
                 "source": "extra"

@@ -264,12 +264,14 @@
                         <note xml:lang="en">A Cistercian monk and author of the *Historia Albigensis* (c. 1215); he recorded the earliest and most sober contemporary account of Dominic’s preaching in Languedoc and the miracle of the books rejected unharmed by the flames at Montréal.</note>
                     </person>
                     <person xml:id="buonviso">
-                        <persName>Buonviso da Piacenza</persName>
+                        <persName xml:lang="it">Buonviso da Piacenza</persName>
+                        <persName xml:lang="en">Buonviso of Piacenza</persName>
                         <note xml:lang="it">Primo compagno di Domenico e fondatore del convento di Piacenza; depose come testimone al processo di canonizzazione bolognese del 1233 riferendo dell'ascesi e della preghiera di Domenico e testimoniando direttamente il miracolo bolognese della moltiplicazione dei pani.</note>
                         <note xml:lang="en">An early companion of Dominic and founder of the convent in Piacenza; he testified at the 1233 canonization proceedings in Bologna, recounting Dominic’s asceticism and prayer and personally witnessing the miracle of the multiplication of the loaves in Bologna.</note>
                     </person>
                     <person xml:id="rodolfo">
-                        <persName>Rodolfo da Faenza</persName>
+                        <persName xml:lang="it">Rodolfo da Faenza</persName>
+                        <persName xml:lang="en">Rodolfo of Faenza</persName>
                         <note xml:lang="it">Rettore di San Niccolò delle Vigne e poi procuratore del convento bolognese; testimone chiave al processo del 1233, descrisse le ultime ore del fondatore, la sua volontà di essere sepolto "sotto i piedi dei frati" e il miracolo domestico della moltiplicazione dei pani.</note>
                         <note xml:lang="en">Rector of San Niccolò delle Vigne and later procurator of the Bolognese convent; a key witness at the 1233 trial, he described the founder's final hours, his wish to be buried "beneath the friars' feet," and the domestic miracle of the multiplication of the loaves.</note>
                     </person>
@@ -637,7 +639,7 @@
                 <prefixDef ident="arco-cd" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="https://w3id.org/arco/ontology/content-description/$1">
                     <p>ArCo-cd Ontology</p>
                 </prefixDef>
-                <prefixDef ident="inme" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://example.org/inventio-memoriae/$1">
+                <prefixDef ident="inme" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="https://danielebottaro.github.io/inventioMemoriae/$1">
                     <p>Local namespace for Inventio Memoriae project entities</p>
                 </prefixDef>
                 <prefixDef ident="rdf" matchPattern="([A-Za-z0-9_-]+)" replacementPattern="http://www.w3.org/1999/02/22-rdf-syntax-ns#$1">

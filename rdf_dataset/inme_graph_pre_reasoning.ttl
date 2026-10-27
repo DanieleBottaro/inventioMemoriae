@@ -2,13 +2,89 @@
 @prefix arco-cd: <https://w3id.org/arco/ontology/context-description/> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix inme: <http://example.org/inventio-memoriae/> .
+@prefix inme: <https://danielebottaro.github.io/inventioMemoriae/> .
 @prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+lrmoo:R16_created a owl:ObjectProperty ;
+    owl:inverseOf lrmoo:R16i_was_created_by .
+
+lrmoo:R1_is_logical_successor_of a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    owl:inverseOf lrmoo:R1i_has_successor .
+
+lrmoo:R68_is_inspired_by a owl:ObjectProperty ;
+    owl:inverseOf lrmoo:R68i_is_inspiration_for .
+
+dcterms:creator a owl:ObjectProperty ;
+    owl:inverseOf arco-cd:isAuthorOf .
+
+dcterms:description a owl:AnnotationProperty .
+
+dcterms:identifier a owl:AnnotationProperty .
+
+dcterms:language a owl:DatatypeProperty .
+
+dcterms:title a owl:DatatypeProperty .
+
+crm:P106_is_composed_of a owl:AnnotationProperty .
+
+crm:P107_has_current_or_former_member a owl:ObjectProperty ;
+    owl:inverseOf crm:P107i_is_current_or_former_member_of .
+
+crm:P108_has_produced a owl:AnnotationProperty .
+
+crm:P123_resulted_in a owl:ObjectProperty ;
+    owl:inverseOf crm:P123i_resulted_from .
+
+crm:P124_transformed a owl:ObjectProperty ;
+    owl:inverseOf crm:P124i_was_transformed_by .
+
+crm:P129_is_about a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    owl:inverseOf crm:P129i_is_subject_of .
+
+crm:P148_has_component a owl:ObjectProperty ;
+    owl:inverseOf crm:P148i_is_component_of .
+
+crm:P4_has_time-span a owl:ObjectProperty ;
+    owl:inverseOf crm:P4i_is_time-span_of .
+
+crm:P53_hasFormerOrCurrentLocation a owl:AnnotationProperty .
+
+crm:P53_has_former_or_current_location a owl:ObjectProperty ;
+    owl:inverseOf crm:P53i_is_former_or_current_location_of .
+
+crm:P67_refers_to a owl:ObjectProperty ;
+    owl:inverseOf crm:P67i_is_referred_to_by .
+
+crm:P7_took_place_at a owl:ObjectProperty ;
+    owl:inverseOf crm:P7i_witnessed .
+
+crm:P82_at_some_time_within a owl:DatatypeProperty .
+
+crm:P82a_begin_of_the_begin a owl:DatatypeProperty .
+
+crm:P82b_end_of_the_end a owl:DatatypeProperty .
+
+crm:P89_falls_within a owl:ObjectProperty ;
+    owl:inverseOf crm:P89i_contains .
+
+crm:P94_has_created a owl:ObjectProperty ;
+    owl:inverseOf crm:P94i_was_created_by .
+
+xsd:date a rdfs:Datatype .
+
+xsd:gYear a rdfs:Datatype .
+
+skos:altLabel a owl:DatatypeProperty .
+
+skos:exactMatch a owl:AnnotationProperty .
 
 inme:Niccolo_to_Domenico_church_transformation a crm:E81_Transformation ;
     rdfs:label "Transformation of the Church of San Niccolò delle Vigne into the Basilica of San Domenico"@en,
@@ -124,17 +200,83 @@ inme:toulouse_inquiry_creation a lrmoo:F27_Work_Creation ;
     lrmoo:R16_created inme:toulouse_inquiry ;
     crm:P4_has_time-span inme:toulouse_inquiry_time .
 
-dcterms:language a owl:DatatypeProperty .
+arco:hasCommission a owl:AnnotationProperty .
 
-dcterms:title a owl:DatatypeProperty .
+arco:hasCulturalPropertyComponent a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P46_is_composed_of ;
+    owl:inverseOf arco:isCulturalPropertyComponentOf .
 
-crm:P82_at_some_time_within a owl:DatatypeProperty .
+arco-cd:hasCommission a owl:ObjectProperty ;
+    owl:inverseOf arco-cd:isCommissionOf .
 
-crm:P82a_begin_of_the_begin a owl:DatatypeProperty .
+arco-cd:hasCommittent a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P14_carried_out_by ;
+    owl:inverseOf arco-cd:isCommittentIn .
 
-crm:P82b_end_of_the_end a owl:DatatypeProperty .
+rico:creationWithRole a owl:ObjectProperty ;
+    owl:inverseOf rico:roleIsContextOfCreationRelation .
 
-skos:altLabel a owl:DatatypeProperty .
+rico:hasDirectConstituent a owl:ObjectProperty ;
+    owl:inverseOf rico:isDirectConstituentOf .
+
+rico:hasOrHadLeader a owl:ObjectProperty ;
+    owl:inverseOf rico:isOrWasLeaderOf .
+
+rico:hasPart a owl:AnnotationProperty .
+
+rico:isOrWasIncludedIn a owl:AnnotationProperty .
+
+rico:relationHasSource a owl:ObjectProperty ;
+    owl:inverseOf rico:thingIsSourceOfRelation .
+
+rico:relationHasTarget a owl:ObjectProperty ;
+    owl:inverseOf rico:thingIsTargetOfRelation .
+
+lrmoo:R16i_was_created_by a owl:ObjectProperty .
+
+lrmoo:R1i_has_successor a owl:ObjectProperty,
+        owl:TransitiveProperty .
+
+lrmoo:R68i_is_inspiration_for a owl:ObjectProperty .
+
+crm:E12_Production a owl:Class .
+
+crm:E81_Transformation a owl:Class .
+
+crm:P11_had_participant a owl:ObjectProperty ;
+    owl:inverseOf crm:P11i_participated_in .
+
+crm:P123i_resulted_from a owl:ObjectProperty .
+
+crm:P124i_was_transformed_by a owl:ObjectProperty .
+
+crm:P129i_is_subject_of a owl:ObjectProperty,
+        owl:TransitiveProperty .
+
+crm:P138_represents a owl:ObjectProperty ;
+    owl:inverseOf crm:P138i_has_representation ;
+    owl:propertyChainAxiom ( crm:P46_is_composed_of crm:P65_shows_visual_item crm:P138_represents ) .
+
+crm:P148i_is_component_of a owl:ObjectProperty .
+
+crm:P14_carried_out_by a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P11_had_participant ;
+    owl:inverseOf crm:P14i_performed .
+
+crm:P4i_is_time-span_of a owl:ObjectProperty .
+
+crm:P53i_is_former_or_current_location_of a owl:ObjectProperty .
+
+crm:P65_shows_visual_item a owl:ObjectProperty ;
+    owl:inverseOf crm:P65i_is_shown_by .
+
+crm:P67i_is_referred_to_by a owl:ObjectProperty .
+
+crm:P7i_witnessed a owl:ObjectProperty .
+
+crm:P89i_contains a owl:ObjectProperty .
+
+crm:P94i_was_created_by a owl:ObjectProperty .
 
 inme:Niccolo_to_Domenico_church_transformation_time a crm:E52_Time-Span ;
     crm:P82a_begin_of_the_begin "1228"^^xsd:gYear ;
@@ -609,173 +751,54 @@ inme:vi_detail_vision_saints_peter_paul a crm:E36_Visual_Item ;
         inme:saint_peter,
         inme:theme_vision_saints_peter_paul .
 
-lrmoo:R16_created a owl:ObjectProperty ;
-    owl:inverseOf lrmoo:R16i_was_created_by .
-
-lrmoo:R16i_was_created_by a owl:ObjectProperty ;
-    owl:inverseOf lrmoo:R16_created .
-
-lrmoo:R1_is_logical_successor_of a owl:ObjectProperty ;
-    owl:inverseOf lrmoo:R1i_has_successor .
-
-lrmoo:R1i_has_successor a owl:ObjectProperty ;
-    owl:inverseOf lrmoo:R1_is_logical_successor_of .
-
-lrmoo:R68_is_inspired_by a owl:ObjectProperty ;
-    owl:inverseOf lrmoo:R68i_is_inspiration_for .
-
-lrmoo:R68i_is_inspiration_for a owl:ObjectProperty ;
-    owl:inverseOf lrmoo:R68_is_inspired_by .
-
-dcterms:creator a owl:ObjectProperty ;
-    owl:inverseOf arco-cd:isAuthorOf .
-
-crm:P107_has_current_or_former_member a owl:ObjectProperty ;
-    owl:inverseOf crm:P107i_is_current_or_former_member_of .
-
-crm:P107i_is_current_or_former_member_of a owl:ObjectProperty ;
-    owl:inverseOf crm:P107_has_current_or_former_member .
-
-crm:P11_had_participant a owl:ObjectProperty ;
-    owl:inverseOf crm:P11i_participated_in .
-
-crm:P11i_participated_in a owl:ObjectProperty ;
-    owl:inverseOf crm:P11_had_participant .
-
-crm:P123_resulted_in a owl:ObjectProperty ;
-    owl:inverseOf crm:P123i_resulted_from .
-
-crm:P123i_resulted_from a owl:ObjectProperty ;
-    owl:inverseOf crm:P123_resulted_in .
-
-crm:P124_transformed a owl:ObjectProperty ;
-    owl:inverseOf crm:P124i_was_transformed_by .
-
-crm:P124i_was_transformed_by a owl:ObjectProperty ;
-    owl:inverseOf crm:P124_transformed .
-
-crm:P129_is_about a owl:ObjectProperty ;
-    owl:inverseOf crm:P129i_is_subject_of .
-
-crm:P129i_is_subject_of a owl:ObjectProperty ;
-    owl:inverseOf crm:P129_is_about .
-
-crm:P138_represents a owl:ObjectProperty ;
-    owl:inverseOf crm:P138i_has_representation .
-
-crm:P138i_has_representation a owl:ObjectProperty ;
-    owl:inverseOf crm:P138_represents .
-
-crm:P148_has_component a owl:ObjectProperty ;
-    owl:inverseOf crm:P148i_is_component_of .
-
-crm:P148i_is_component_of a owl:ObjectProperty ;
-    owl:inverseOf crm:P148_has_component .
-
-crm:P14_carried_out_by a owl:ObjectProperty ;
-    owl:inverseOf crm:P14i_performed .
-
-crm:P14i_performed a owl:ObjectProperty ;
-    owl:inverseOf crm:P14_carried_out_by .
-
-crm:P46_is_composed_of a owl:ObjectProperty ;
-    owl:inverseOf crm:P46i_forms_part_of .
-
-crm:P46i_forms_part_of a owl:ObjectProperty ;
-    owl:inverseOf crm:P46_is_composed_of .
-
-crm:P4_has_time-span a owl:ObjectProperty ;
-    owl:inverseOf crm:P4i_is_time-span_of .
-
-crm:P4i_is_time-span_of a owl:ObjectProperty ;
-    owl:inverseOf crm:P4_has_time-span .
-
-crm:P53_has_former_or_current_location a owl:ObjectProperty ;
-    owl:inverseOf crm:P53i_is_former_or_current_location_of .
-
-crm:P53i_is_former_or_current_location_of a owl:ObjectProperty ;
-    owl:inverseOf crm:P53_has_former_or_current_location .
-
-crm:P65_shows_visual_item a owl:ObjectProperty ;
-    owl:inverseOf crm:P65i_is_shown_by .
-
-crm:P65i_is_shown_by a owl:ObjectProperty ;
-    owl:inverseOf crm:P65_shows_visual_item .
-
-crm:P67_refers_to a owl:ObjectProperty ;
-    owl:inverseOf crm:P67i_is_referred_to_by .
-
-crm:P67i_is_referred_to_by a owl:ObjectProperty ;
-    owl:inverseOf crm:P67_refers_to .
-
-crm:P7_took_place_at a owl:ObjectProperty ;
-    owl:inverseOf crm:P7i_witnessed .
-
-crm:P7i_witnessed a owl:ObjectProperty ;
-    owl:inverseOf crm:P7_took_place_at .
-
-crm:P89_falls_within a owl:ObjectProperty ;
-    owl:inverseOf crm:P89i_contains .
-
-crm:P89i_contains a owl:ObjectProperty ;
-    owl:inverseOf crm:P89_falls_within .
-
-crm:P94_has_created a owl:ObjectProperty ;
-    owl:inverseOf crm:P94i_was_created_by .
-
-crm:P94i_was_created_by a owl:ObjectProperty ;
-    owl:inverseOf crm:P94_has_created .
-
-arco:hasCulturalPropertyComponent a owl:ObjectProperty ;
-    owl:inverseOf arco:isCulturalPropertyComponentOf .
+arco:ComplexCulturalProperty a owl:Class .
 
 arco:isCulturalPropertyComponentOf a owl:ObjectProperty ;
-    owl:inverseOf arco:hasCulturalPropertyComponent .
+    rdfs:subPropertyOf crm:P46i_forms_part_of .
 
-arco-cd:hasCommission a owl:ObjectProperty ;
-    owl:inverseOf arco-cd:isCommissionOf .
+arco-cd:Commission a owl:Class .
 
-arco-cd:hasCommittent a owl:ObjectProperty ;
-    owl:inverseOf arco-cd:isCommittentIn .
+arco-cd:isAuthorOf a owl:ObjectProperty .
 
-arco-cd:isAuthorOf a owl:ObjectProperty ;
-    owl:inverseOf dcterms:creator .
-
-arco-cd:isCommissionOf a owl:ObjectProperty ;
-    owl:inverseOf arco-cd:hasCommission .
+arco-cd:isCommissionOf a owl:ObjectProperty .
 
 arco-cd:isCommittentIn a owl:ObjectProperty ;
-    owl:inverseOf arco-cd:hasCommittent .
+    rdfs:subPropertyOf crm:P14i_performed .
 
-rico:creationWithRole a owl:ObjectProperty ;
-    owl:inverseOf rico:roleIsContextOfCreationRelation .
+rico:Record a owl:Class .
 
-rico:hasDirectConstituent a owl:ObjectProperty ;
-    owl:inverseOf rico:isDirectConstituentOf .
+rico:RoleType a owl:Class .
 
-rico:hasOrHadLeader a owl:ObjectProperty ;
-    owl:inverseOf rico:isOrWasLeaderOf .
-
-rico:isDirectConstituentOf a owl:ObjectProperty ;
-    owl:inverseOf rico:hasDirectConstituent .
+rico:isDirectConstituentOf a owl:ObjectProperty .
 
 rico:isOrWasLeaderOf a owl:ObjectProperty ;
-    owl:inverseOf rico:hasOrHadLeader .
+    rdfs:subPropertyOf crm:P107i_is_current_or_former_member_of .
 
-rico:relationHasSource a owl:ObjectProperty ;
-    owl:inverseOf rico:thingIsSourceOfRelation .
+rico:roleIsContextOfCreationRelation a owl:ObjectProperty .
 
-rico:relationHasTarget a owl:ObjectProperty ;
-    owl:inverseOf rico:thingIsTargetOfRelation .
+rico:thingIsSourceOfRelation a owl:ObjectProperty .
 
-rico:roleIsContextOfCreationRelation a owl:ObjectProperty ;
-    owl:inverseOf rico:creationWithRole .
+rico:thingIsTargetOfRelation a owl:ObjectProperty .
 
-rico:thingIsSourceOfRelation a owl:ObjectProperty ;
-    owl:inverseOf rico:relationHasSource .
+crm:E24_Physical_human-made_thing a owl:Class .
 
-rico:thingIsTargetOfRelation a owl:ObjectProperty ;
-    owl:inverseOf rico:relationHasTarget .
+crm:E74_Group a owl:Class .
+
+crm:P107i_is_current_or_former_member_of a owl:ObjectProperty .
+
+crm:P11i_participated_in a owl:ObjectProperty .
+
+crm:P138i_has_representation a owl:ObjectProperty ;
+    owl:propertyChainAxiom ( crm:P138i_has_representation crm:P65i_is_shown_by crm:P46i_forms_part_of ) .
+
+crm:P14i_performed a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P11i_participated_in .
+
+crm:P46_is_composed_of a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    owl:inverseOf crm:P46i_forms_part_of .
+
+crm:P65i_is_shown_by a owl:ObjectProperty .
 
 inme:acta_canonizationis a crm:E31_Document,
         rico:Record ;
@@ -892,7 +915,16 @@ inme:sarcophagus a crm:E22_Human-Made_Object,
     crm:P53_hasFormerOrCurrentLocation inme:san_domenico_church,
         inme:san_niccolo_church ;
     owl:sameAs <https://www.wikidata.org/wiki/Q126766539> ;
-    arco:hasCommission inme:sarcophagus_commission .
+    arco-cd:hasCommission inme:sarcophagus_commission .
+
+arco:HistoricOrArtisticProperty a owl:Class .
+
+rico:CreationRelation a owl:Class .
+
+rico:Group a owl:Class .
+
+crm:P46i_forms_part_of a owl:ObjectProperty,
+        owl:TransitiveProperty .
 
 inme:bologna a crm:E53_Place ;
     rdfs:label "Bologna"@en,
@@ -905,7 +937,7 @@ inme:bologna a crm:E53_Place ;
 
 inme:buonviso a crm:E21_Person,
         rico:Person ;
-    rdfs:label "Buonviso da Piacenza"@en,
+    rdfs:label "Buonviso of Piacenza"@en,
         "Buonviso da Piacenza"@it ;
     dcterms:description "An early companion of Dominic and founder of the convent in Piacenza; he testified at the 1233 canonization proceedings in Bologna, recounting Dominic’s asceticism and prayer and personally witnessing the miracle of the multiplication of the loaves in Bologna."@en,
         "Primo compagno di Domenico e fondatore del convento di Piacenza; depose come testimone al processo di canonizzazione bolognese del 1233 riferendo dell'ascesi e della preghiera di Domenico e testimoniando direttamente il miracolo bolognese della moltiplicazione dei pani."@it .
@@ -957,7 +989,7 @@ inme:napoleone_orsini a crm:E21_Person,
 
 inme:rodolfo a crm:E21_Person,
         rico:Person ;
-    rdfs:label "Rodolfo da Faenza"@en,
+    rdfs:label "Rodolfo of Faenza"@en,
         "Rodolfo da Faenza"@it ;
     dcterms:description "Rector of San Niccolò delle Vigne and later procurator of the Bolognese convent; a key witness at the 1233 trial, he described the founder's final hours, his wish to be buried \"beneath the friars' feet,\" and the domestic miracle of the multiplication of the loaves."@en,
         "Rettore di San Niccolò delle Vigne e poi procuratore del convento bolognese; testimone chiave al processo del 1233, descrisse le ultime ore del fondatore, la sua volontà di essere sepolto \"sotto i piedi dei frati\" e il miracolo domestico della moltiplicazione dei pani."@it .
@@ -1039,6 +1071,14 @@ inme:toulouse_inquiry a crm:E31_Document,
     dcterms:language "la" ;
     dcterms:title "Epistula inquisitorum Tolosanorum de virtutibus et miraculis"@la .
 
+rico:RecordPart a owl:Class .
+
+crm:E31_Document a owl:Class .
+
+crm:E53_Place a owl:Class .
+
+crm:E5_Event a owl:Class .
+
 inme:dominican_order a crm:E74_Group,
         rico:Group ;
     rdfs:label "Order of Preachers"@en,
@@ -1107,6 +1147,8 @@ inme:theme_reginald_stories a lrmoo:F1_Work,
         "Originata nel Libellus di Giordano di Sassonia, la narrazione descrive la Vergine Maria che appare al capezzale del celebre docente di diritto malato di febbri acute a Roma, ungendone i sensi e presentandogli lo scapolare dell'Ordine. L'episodio è stato poi ereditato e normalizzato dalle legende liturgiche successive (Pietro Ferrandi, Costantino d'Orvieto, Umberto di Romans). La digressione agiografica assolve a una precisa funzione politico-istituzionale: legittimare la vocazione intellettuale e universitaria dei Predicatori celebrando la conversione soprannaturale di un famosissimo maestro, giustificando e promuovendo così il reclutamento dell'Ordine all'interno degli Studia di Parigi e Bologna."@it ;
     crm:P129_is_about inme:reginald_orleans .
 
+crm:E89_Propositional_Object a owl:Class .
+
 inme:bologna_inquiry a crm:E31_Document,
         rico:RecordPart ;
     rdfs:label "Dicta testium in inquisitione de vita et miraculis"@la ;
@@ -1115,6 +1157,22 @@ inme:bologna_inquiry a crm:E31_Document,
     dcterms:identifier <urn:clavis:bhl:2208> ;
     dcterms:language "la" ;
     dcterms:title "Dicta testium in inquisitione de vita et miraculis"@la .
+
+crm:E22_Human-Made_Object a owl:Class .
+
+lrmoo:F27_Work_Creation a owl:Class .
+
+lrmoo:F1_Work a owl:Class .
+
+crm:E36_Visual_Item a owl:Class .
+
+crm:E52_Time-Span a owl:Class .
+
+crm:E21_Person a owl:Class .
+
+rico:Person a owl:Class .
+
+crm:E55_Type a owl:Class .
 
 inme:dominic_guzman a crm:E21_Person,
         rico:Person ;
@@ -1125,4 +1183,6 @@ inme:dominic_guzman a crm:E21_Person,
     owl:sameAs <https://www.wikidata.org/wiki/Q44091> ;
     skos:exactMatch <https://viaf.org/en/viaf/17240904> ;
     rico:isOrWasLeaderOf inme:dominican_order .
+
+[] a owl:Ontology .
 

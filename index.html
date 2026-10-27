@@ -54,6 +54,7 @@
                             <li><a class="dropdown-item" href="#json-dataset">JSON Dataset</a></li>
                             <li><a class="dropdown-item" href="#xslt-conversion">XSLT Conversion</a></li>
                             <li><a class="dropdown-item" href="#data-extraction">Semantic Data (RDF)</a></li>
+                            <li><a class="dropdown-item" href="#reasoning">Reasoning & Logic</a></li>
                         </ul>
                     </li>                   
                    
@@ -861,7 +862,7 @@
                                         <div class="card-body d-flex flex-column text-center">
                                             <div class="my-auto">
                                                 
-                                                <h4 class="card-title text-red-title mb-4">Buonviso da Piacenza</h3>
+                                                <h4 class="card-title text-red-title mb-4">Buonviso of Piacenza</h3>
                                                 
                                                 
 
@@ -905,7 +906,7 @@
                                         <div class="card-body d-flex flex-column text-center">
                                             <div class="my-auto">
                                                 
-                                                <h4 class="card-title text-red-title mb-4">Rodolfo da Faenza</h3>
+                                                <h4 class="card-title text-red-title mb-4">Rodolfo of Faenza</h3>
                                                 
                                                 
 
@@ -4957,19 +4958,26 @@
             </div>
 
             <h3 id="reasoning">Automated Reasoning & Inferential Logic</h3>
-            <p>To push the project beyond the descriptive LOD dataset, a layer of automated reasoning was implemented to extract implicit knowledge from the graph. In order to achieve this, the workflow was structured into a programmatic preparation phase and a logical modeling phase. First, a supplementary Python script (<code>graph_reasoning_expansion.py</code>) was developed to define formal OWL constraints (you can check it <a href="python_script/graph_reasoning_expansion.py" target="_blank">here</a>). <br> This script processes the base dataset to declare explicit <code>owl:ObjectProperty</code> axioms and maps bi-directional relationships, outputting an intermediate schema-enriched file (<code>inme_pre_reasoning.ttl</code>) that you can check <a href="rdf_dataset/inme_pre_reasoning.ttl" target="_blank">here</a>. <br> Second, this intermediate file is imported into Protégé, where specific property hierarchies and property chains are modeled. By defining these hierarchical rules and executing a semantic reasoner (such as HermiT or Pellet), the model autonomously generates new factual connections that were never explicitly hardcoded, also enabling the user to query the dataset both ways (with the direct object properties and their respective <code>owl:InverseOf</code> properties). The fully materialized graph is then exported as the definitive dataset (<code>inme_inferred_graph.ttl</code>). Examples of these inferences include:
+            <p>To push the project beyond the descriptive LOD dataset, a layer of automated reasoning was implemented to extract implicit knowledge from the graph. The full OWL axiom set comprising inverse property declarations, transitivity constraints, sub-property hierarchies, and property chain axioms was authored in a dedicated standalone file (<code>owl_rules.ttl</code>), keeping the logical schema decoupled from the instance data.</p>
+            <p>A dedicated Python script (<code>apply_owl_rules.py</code>, available <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/python_script/apply_owl_rules.py" target="_blank">here</a>) was then used to programmatically merge the base data graph with these OWL rules, producing a unified file ready to be loaded into Protégé. By running the HermiT reasoner on this combined dataset, the model autonomously generates new factual connections that were never explicitly hardcoded — also enabling the user to query the graph both ways, with direct object properties and their respective <code>owl:inverseOf</code> counterparts. The resulting file (<code>inme_graph_pre_reasoning.ttl</code>) was then uploaded on Protégé and the HermiT reasoner run. The fully materialized graph was finally exported as the definitive inferred dataset (<code>inme_inferred_graph.ttl</code>).<br>Examples of these inferences include:
+                <ul>
+                    <li><strong>Structural Inference (Transitivity):</strong>For example, <code>arco:hasCulturalPropertyComponent</code> was defined as a sub-property of <code>crm:P46_is_composed_of</code>, which was then assigned an <code>owl:TransitiveProperty</code> axiom. As a result, the reasoner automatically deduces that a relief panel attached to the sarcophagus is also a direct architectural component of the entire <em>Arca di San Domenico</em>.</li>
+                    <li><strong>Property Chains:</strong>An inferential path was modeled to traverse three distinct hierarchical levels: <code>crm:P46_is_composed_of</code>, <code>crm:P65_shows_visual_item</code> and <code>crm:P138_represents</code>. This allows the reasoner to bypass the structural granularity of the sarcophagus and automatically deduce that if the Arca contains a component showcasing a relief that represents a specific narrative theme, the overarching monument itself directly represents that very same theme.</li>
+                    <li><strong>Hierarchical Role Entailment:</strong> By establishing <code>rico:isOrWasLeaderOf</code> as a sub-property of <code>crm:P107i_is_current_or_former_member_of</code>, the system logically infers that any historical figure leading an organization (e.g., Jordan of Saxony or Humber of Romans) is intrinsically one of its members.</li>
+                </ul>
             </p>
-
-            <ul>
-                <li><strong>Structural Inference (Transitivity):</strong>To computationally map the physical complexity of the monument, <code>arco:hasCulturalPropertyComponent</code> was defined as a sub-property of <code>crm:P46_is_composed_of</code>, which was then assigned an <code>owl:TransitiveProperty</code> axiom. As a result, the reasoner automatically deduces that a relief panel attached to the sarcophagus is also a direct architectural component of the entire <em>Arca di San Domenico</em>.</li>
-                <li><strong>Property Chains:</strong>An inferential path was modeled to traverse three distinct hierarchical levels: <code>crm:P46_is_composed_of</code>, <code>crm:P65_shows_visual_item</code> and <code>crm:P138_represents</code>. This allows the reasoner to bypass the structural granularity of the sarcophagus and automatically deduce that if the Arca contains a component showcasing a relief that represents a specific narrative theme, the overarching monument itself directly represents that very same theme.</li>
-                <li><strong>Hierarchical Role Entailment:</strong> By establishing <code>rico:isOrWasLeaderOf</code> as a sub-property of <code>crm:P107i_is_current_or_former_member_of</code>, the system logically infers that any historical figure leading an organization (e.g., Jordan of Saxony or Humber of Romans) is intrinsically one of its members.</li>
-            </ul>
             <p>Currently, this inferential layer serves as a foundational proof-of-concept. Designed as an open-ended framework, the reasoning rule set is a work in progress that can be easily expanded in future iterations to computationally surface even deeper latent structural ties between the entities.</p>
             
-            <div class="d-flex flex-column align-items-center mt-4 mt-lg-0">
-                <h5>You can check the Turtle file here:</h5>
-                <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/rdf_dataset/inme_inferred_graph.ttl" class="btn doc-btn" target="_blank">Turtle file <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+            <div class="d-flex flex-column flex-lg-row justify-content-evenly flex-wrap text-center mt-5 mb-5">
+                <div class="d-flex flex-column align-items-center">
+                    <h5>You can check the OWL rules here:</h5>
+                    <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/rdf_dataset/owl_rules.ttl" class="btn doc-btn" target="_blank">Turtle file <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center mt-4 mt-lg-0">
+                    <h5>You can check the inferred graph here:</h5>
+                    <a href="https://github.com/DanieleBottaro/inventioMemoriae/blob/main/python_script/json_xml_to_rdf.py" class="btn doc-btn" target="_blank">Turtle file <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span></a>
+                </div>
             </div>
         </section>
 

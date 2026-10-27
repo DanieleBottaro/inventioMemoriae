@@ -12,7 +12,7 @@ LRMOO = Namespace("http://iflastandards.info/ns/lrm/lrmoo/")
 RICO = Namespace("https://www.ica.org/standards/RiC/ontology#")
 SKOS = Namespace("http://www.w3.org/2004/02/skos/core#")
 
-INME = Namespace("http://example.org/inventio-memoriae/")
+INME = Namespace("https://danielebottaro.github.io/inventioMemoriae/")
 
 #creating a dictionary that contains the namespaces and their respective prefixes to be used for normalizing the URIs
 ns_dict = {
@@ -756,6 +756,8 @@ def main():
 
     #serializing the graph into a turtle file    
     db_graph.serialize(destination=output_filepath, format="turtle", encoding="utf-8")
+    
+    print(f"The turtle file of the graph has been created here {output_filepath}!")
 
 
 if __name__ == "__main__":

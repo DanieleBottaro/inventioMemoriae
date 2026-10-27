@@ -1,0 +1,371 @@
+@base <http://example.org/inventio-memoriae/>.
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix arco: <https://w3id.org/arco/ontology/arco/>.
+@prefix inme: <http://example.org/inventio-memoriae/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/>.
+@prefix arco-cd: <https://w3id.org/arco/ontology/context-description/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+
+[ rdf:type owl:Ontology ].
+#################################################################
+#    Annotation properties
+#################################################################
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty.
+
+###  http://purl.org/dc/terms/identifier
+dcterms:identifier rdf:type owl:AnnotationProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P106_is_composed_of
+crm:P106_is_composed_of rdf:type owl:AnnotationProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P108_has_produced
+crm:P108_has_produced rdf:type owl:AnnotationProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P53_hasFormerOrCurrentLocation
+crm:P53_hasFormerOrCurrentLocation rdf:type owl:AnnotationProperty.
+
+###  http://www.w3.org/2004/02/skos/core#exactMatch
+skos:exactMatch rdf:type owl:AnnotationProperty.
+
+###  https://w3id.org/arco/ontology/arco/hasCommission
+arco:hasCommission rdf:type owl:AnnotationProperty.
+
+###  https://www.ica.org/standards/RiC/ontology#hasPart
+rico:hasPart rdf:type owl:AnnotationProperty.
+
+###  https://www.ica.org/standards/RiC/ontology#isOrWasIncludedIn
+rico:isOrWasIncludedIn rdf:type owl:AnnotationProperty.
+
+#################################################################
+#    Datatypes
+#################################################################
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype.
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype.
+
+#################################################################
+#    Object Properties
+#################################################################
+###  http://iflastandards.info/ns/lrm/lrmoo/R16_created
+lrmoo:R16_created rdf:type owl:ObjectProperty;
+  owl:inverseOf lrmoo:R16i_was_created_by.
+
+###  http://iflastandards.info/ns/lrm/lrmoo/R16i_was_created_by
+lrmoo:R16i_was_created_by rdf:type owl:ObjectProperty.
+
+###  http://iflastandards.info/ns/lrm/lrmoo/R1_is_logical_successor_of
+lrmoo:R1_is_logical_successor_of rdf:type owl:ObjectProperty;
+  owl:inverseOf lrmoo:R1i_has_successor;
+  rdf:type owl:TransitiveProperty.
+
+###  http://iflastandards.info/ns/lrm/lrmoo/R1i_has_successor
+lrmoo:R1i_has_successor rdf:type owl:ObjectProperty, owl:TransitiveProperty.
+
+###  http://iflastandards.info/ns/lrm/lrmoo/R68_is_inspired_by
+lrmoo:R68_is_inspired_by rdf:type owl:ObjectProperty;
+  owl:inverseOf lrmoo:R68i_is_inspiration_for.
+
+###  http://iflastandards.info/ns/lrm/lrmoo/R68i_is_inspiration_for
+lrmoo:R68i_is_inspiration_for rdf:type owl:ObjectProperty.
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:ObjectProperty;
+  owl:inverseOf arco-cd:isAuthorOf.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P107_has_current_or_former_member
+crm:P107_has_current_or_former_member rdf:type owl:ObjectProperty;
+  owl:inverseOf crm:P107i_is_current_or_former_member_of.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P107i_is_current_or_former_member_of
+crm:P107i_is_current_or_former_member_of rdf:type owl:ObjectProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P11_had_participant
+crm:P11_had_participant rdf:type owl:ObjectProperty;
+  owl:inverseOf crm:P11i_participated_in.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P11i_participated_in
+crm:P11i_participated_in rdf:type owl:ObjectProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P123_resulted_in
+crm:P123_resulted_in rdf:type owl:ObjectProperty;
+  owl:inverseOf crm:P123i_resulted_from.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P123i_resulted_from
+crm:P123i_resulted_from rdf:type owl:ObjectProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P124_transformed
+crm:P124_transformed rdf:type owl:ObjectProperty;
+  owl:inverseOf crm:P124i_was_transformed_by.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P124i_was_transformed_by
+crm:P124i_was_transformed_by rdf:type owl:ObjectProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P129_is_about
+crm:P129_is_about rdf:type owl:ObjectProperty;
+  owl:inverseOf crm:P129i_is_subject_of;
+  rdf:type owl:TransitiveProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P129i_is_subject_of
+crm:P129i_is_subject_of rdf:type owl:ObjectProperty, owl:TransitiveProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P138_represents
+crm:P138_represents rdf:type owl:ObjectProperty;
+  owl:inverseOf crm:P138i_has_representation;
+  owl:propertyChainAxiom (
+    crm:P46_is_composed_of
+    crm:P65_shows_visual_item
+    crm:P138_represents
+  ).
+
+###  http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation
+crm:P138i_has_representation rdf:type owl:ObjectProperty;
+  owl:propertyChainAxiom (
+    crm:P138i_has_representation
+    crm:P65i_is_shown_by
+    crm:P46i_forms_part_of
+  ).
+
+###  http://www.cidoc-crm.org/cidoc-crm/P148_has_component
+crm:P148_has_component rdf:type owl:ObjectProperty;
+  owl:inverseOf crm:P148i_is_component_of.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P148i_is_component_of
+crm:P148i_is_component_of rdf:type owl:ObjectProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by
+crm:P14_carried_out_by rdf:type owl:ObjectProperty;
+  rdfs:subPropertyOf crm:P11_had_participant;
+  owl:inverseOf crm:P14i_performed.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P14i_performed
+crm:P14i_performed rdf:type owl:ObjectProperty;
+  rdfs:subPropertyOf crm:P11i_participated_in.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of
+crm:P46_is_composed_of rdf:type owl:ObjectProperty;
+  owl:inverseOf crm:P46i_forms_part_of;
+  rdf:type owl:TransitiveProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P46i_forms_part_of
+crm:P46i_forms_part_of rdf:type owl:ObjectProperty, owl:TransitiveProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span
+crm:P4_has_time-span rdf:type owl:ObjectProperty;
+  owl:inverseOf crm:P4i_is_time-span_of.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P4i_is_time-span_of
+crm:P4i_is_time-span_of rdf:type owl:ObjectProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P53_has_former_or_current_location
+crm:P53_has_former_or_current_location rdf:type owl:ObjectProperty;
+  owl:inverseOf crm:P53i_is_former_or_current_location_of.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P53i_is_former_or_current_location_of
+crm:P53i_is_former_or_current_location_of rdf:type owl:ObjectProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P65_shows_visual_item
+crm:P65_shows_visual_item rdf:type owl:ObjectProperty;
+  owl:inverseOf crm:P65i_is_shown_by.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P65i_is_shown_by
+crm:P65i_is_shown_by rdf:type owl:ObjectProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P67_refers_to
+crm:P67_refers_to rdf:type owl:ObjectProperty;
+  owl:inverseOf crm:P67i_is_referred_to_by.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by
+crm:P67i_is_referred_to_by rdf:type owl:ObjectProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P7_took_place_at
+crm:P7_took_place_at rdf:type owl:ObjectProperty;
+  owl:inverseOf crm:P7i_witnessed.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P7i_witnessed
+crm:P7i_witnessed rdf:type owl:ObjectProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P89_falls_within
+crm:P89_falls_within rdf:type owl:ObjectProperty;
+  owl:inverseOf crm:P89i_contains.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P89i_contains
+crm:P89i_contains rdf:type owl:ObjectProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P94_has_created
+crm:P94_has_created rdf:type owl:ObjectProperty;
+  owl:inverseOf crm:P94i_was_created_by.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P94i_was_created_by
+crm:P94i_was_created_by rdf:type owl:ObjectProperty.
+
+###  https://w3id.org/arco/ontology/arco/hasCulturalPropertyComponent
+arco:hasCulturalPropertyComponent rdf:type owl:ObjectProperty;
+  rdfs:subPropertyOf crm:P46_is_composed_of;
+  owl:inverseOf arco:isCulturalPropertyComponentOf.
+
+###  https://w3id.org/arco/ontology/arco/isCulturalPropertyComponentOf
+arco:isCulturalPropertyComponentOf rdf:type owl:ObjectProperty;
+  rdfs:subPropertyOf crm:P46i_forms_part_of.
+
+###  https://w3id.org/arco/ontology/context-description/hasCommission
+arco-cd:hasCommission rdf:type owl:ObjectProperty;
+  owl:inverseOf arco-cd:isCommissionOf.
+
+###  https://w3id.org/arco/ontology/context-description/hasCommittent
+arco-cd:hasCommittent rdf:type owl:ObjectProperty;
+  rdfs:subPropertyOf crm:P14_carried_out_by;
+  owl:inverseOf arco-cd:isCommittentIn.
+
+###  https://w3id.org/arco/ontology/context-description/isAuthorOf
+arco-cd:isAuthorOf rdf:type owl:ObjectProperty.
+
+###  https://w3id.org/arco/ontology/context-description/isCommissionOf
+arco-cd:isCommissionOf rdf:type owl:ObjectProperty.
+
+###  https://w3id.org/arco/ontology/context-description/isCommittentIn
+arco-cd:isCommittentIn rdf:type owl:ObjectProperty;
+  rdfs:subPropertyOf crm:P14i_performed.
+
+###  https://www.ica.org/standards/RiC/ontology#creationWithRole
+rico:creationWithRole rdf:type owl:ObjectProperty;
+  owl:inverseOf rico:roleIsContextOfCreationRelation.
+
+###  https://www.ica.org/standards/RiC/ontology#hasDirectConstituent
+rico:hasDirectConstituent rdf:type owl:ObjectProperty;
+  owl:inverseOf rico:isDirectConstituentOf.
+
+###  https://www.ica.org/standards/RiC/ontology#hasOrHadLeader
+rico:hasOrHadLeader rdf:type owl:ObjectProperty;
+  owl:inverseOf rico:isOrWasLeaderOf.
+
+###  https://www.ica.org/standards/RiC/ontology#isDirectConstituentOf
+rico:isDirectConstituentOf rdf:type owl:ObjectProperty.
+
+###  https://www.ica.org/standards/RiC/ontology#isOrWasLeaderOf
+rico:isOrWasLeaderOf rdf:type owl:ObjectProperty;
+  rdfs:subPropertyOf crm:P107i_is_current_or_former_member_of.
+
+###  https://www.ica.org/standards/RiC/ontology#relationHasSource
+rico:relationHasSource rdf:type owl:ObjectProperty;
+  owl:inverseOf rico:thingIsSourceOfRelation.
+
+###  https://www.ica.org/standards/RiC/ontology#relationHasTarget
+rico:relationHasTarget rdf:type owl:ObjectProperty;
+  owl:inverseOf rico:thingIsTargetOfRelation.
+
+###  https://www.ica.org/standards/RiC/ontology#roleIsContextOfCreationRelation
+rico:roleIsContextOfCreationRelation rdf:type owl:ObjectProperty.
+
+###  https://www.ica.org/standards/RiC/ontology#thingIsSourceOfRelation
+rico:thingIsSourceOfRelation rdf:type owl:ObjectProperty.
+
+###  https://www.ica.org/standards/RiC/ontology#thingIsTargetOfRelation
+rico:thingIsTargetOfRelation rdf:type owl:ObjectProperty.
+
+#################################################################
+#    Data properties
+#################################################################
+###  http://purl.org/dc/terms/language
+dcterms:language rdf:type owl:DatatypeProperty.
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:DatatypeProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P82_at_some_time_within
+crm:P82_at_some_time_within rdf:type owl:DatatypeProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P82a_begin_of_the_begin
+crm:P82a_begin_of_the_begin rdf:type owl:DatatypeProperty.
+
+###  http://www.cidoc-crm.org/cidoc-crm/P82b_end_of_the_end
+crm:P82b_end_of_the_end rdf:type owl:DatatypeProperty.
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:DatatypeProperty.
+
+#################################################################
+#    Classes
+#################################################################
+###  http://iflastandards.info/ns/lrm/lrmoo/F1_Work
+lrmoo:F1_Work rdf:type owl:Class.
+
+###  http://iflastandards.info/ns/lrm/lrmoo/F27_Work_Creation
+lrmoo:F27_Work_Creation rdf:type owl:Class.
+
+###  http://www.cidoc-crm.org/cidoc-crm/E12_Production
+crm:E12_Production rdf:type owl:Class.
+
+###  http://www.cidoc-crm.org/cidoc-crm/E21_Person
+crm:E21_Person rdf:type owl:Class.
+
+###  http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object
+crm:E22_Human-Made_Object rdf:type owl:Class.
+
+###  http://www.cidoc-crm.org/cidoc-crm/E24_Physical_human-made_thing
+crm:E24_Physical_human-made_thing rdf:type owl:Class.
+
+###  http://www.cidoc-crm.org/cidoc-crm/E31_Document
+crm:E31_Document rdf:type owl:Class.
+
+###  http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item
+crm:E36_Visual_Item rdf:type owl:Class.
+
+###  http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span
+crm:E52_Time-Span rdf:type owl:Class.
+
+###  http://www.cidoc-crm.org/cidoc-crm/E53_Place
+crm:E53_Place rdf:type owl:Class.
+
+###  http://www.cidoc-crm.org/cidoc-crm/E55_Type
+crm:E55_Type rdf:type owl:Class.
+
+###  http://www.cidoc-crm.org/cidoc-crm/E5_Event
+crm:E5_Event rdf:type owl:Class.
+
+###  http://www.cidoc-crm.org/cidoc-crm/E74_Group
+crm:E74_Group rdf:type owl:Class.
+
+###  http://www.cidoc-crm.org/cidoc-crm/E81_Transformation
+crm:E81_Transformation rdf:type owl:Class.
+
+###  http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object
+crm:E89_Propositional_Object rdf:type owl:Class.
+
+###  https://w3id.org/arco/ontology/arco/ComplexCulturalProperty
+arco:ComplexCulturalProperty rdf:type owl:Class.
+
+###  https://w3id.org/arco/ontology/arco/HistoricOrArtisticProperty
+arco:HistoricOrArtisticProperty rdf:type owl:Class.
+
+###  https://w3id.org/arco/ontology/context-description/Commission
+arco-cd:Commission rdf:type owl:Class.
+
+###  https://www.ica.org/standards/RiC/ontology#CreationRelation
+rico:CreationRelation rdf:type owl:Class.
+
+###  https://www.ica.org/standards/RiC/ontology#Group
+rico:Group rdf:type owl:Class.
+
+###  https://www.ica.org/standards/RiC/ontology#Person
+rico:Person rdf:type owl:Class.
+
+###  https://www.ica.org/standards/RiC/ontology#Record
+rico:Record rdf:type owl:Class.
+
+###  https://www.ica.org/standards/RiC/ontology#RecordPart
+rico:RecordPart rdf:type owl:Class.
+
+###  https://www.ica.org/standards/RiC/ontology#RoleType
+rico:RoleType rdf:type owl:Class.
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

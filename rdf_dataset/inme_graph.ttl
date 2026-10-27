@@ -2,7 +2,7 @@
 @prefix arco-cd: <https://w3id.org/arco/ontology/context-description/> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix inme: <http://example.org/inventio-memoriae/> .
+@prefix inme: <https://danielebottaro.github.io/inventioMemoriae/> .
 @prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -712,7 +712,7 @@ inme:sarcophagus a crm:E22_Human-Made_Object,
     crm:P53_hasFormerOrCurrentLocation inme:san_domenico_church,
         inme:san_niccolo_church ;
     owl:sameAs <https://www.wikidata.org/wiki/Q126766539> ;
-    arco:hasCommission inme:sarcophagus_commission .
+    arco-cd:hasCommission inme:sarcophagus_commission .
 
 inme:bologna a crm:E53_Place ;
     rdfs:label "Bologna"@en,
@@ -725,7 +725,7 @@ inme:bologna a crm:E53_Place ;
 
 inme:buonviso a crm:E21_Person,
         rico:Person ;
-    rdfs:label "Buonviso da Piacenza"@en,
+    rdfs:label "Buonviso of Piacenza"@en,
         "Buonviso da Piacenza"@it ;
     dcterms:description "An early companion of Dominic and founder of the convent in Piacenza; he testified at the 1233 canonization proceedings in Bologna, recounting Dominic’s asceticism and prayer and personally witnessing the miracle of the multiplication of the loaves in Bologna."@en,
         "Primo compagno di Domenico e fondatore del convento di Piacenza; depose come testimone al processo di canonizzazione bolognese del 1233 riferendo dell'ascesi e della preghiera di Domenico e testimoniando direttamente il miracolo bolognese della moltiplicazione dei pani."@it .
@@ -777,7 +777,7 @@ inme:napoleone_orsini a crm:E21_Person,
 
 inme:rodolfo a crm:E21_Person,
         rico:Person ;
-    rdfs:label "Rodolfo da Faenza"@en,
+    rdfs:label "Rodolfo of Faenza"@en,
         "Rodolfo da Faenza"@it ;
     dcterms:description "Rector of San Niccolò delle Vigne and later procurator of the Bolognese convent; a key witness at the 1233 trial, he described the founder's final hours, his wish to be buried \"beneath the friars' feet,\" and the domestic miracle of the multiplication of the loaves."@en,
         "Rettore di San Niccolò delle Vigne e poi procuratore del convento bolognese; testimone chiave al processo del 1233, descrisse le ultime ore del fondatore, la sua volontà di essere sepolto \"sotto i piedi dei frati\" e il miracolo domestico della moltiplicazione dei pani."@it .

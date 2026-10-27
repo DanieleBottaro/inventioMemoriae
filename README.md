@@ -14,14 +14,14 @@ The project bridges the gap between hagiographic textual narratives and sculptur
 │   ├── inme_rdf-viewer.svg            # Node-link graph visualization of the RDF dataset
 │   └── theoretical_model.svg          # Visual diagram of the theoretical domain model
 ├── python_script/
-│   ├── graph_reasoning_expansion.py   # Injects OWL axioms and property definitions for Protégé
+│   ├── apply_owl_rules.py             # Applies OWL axioms defined in Protégé to the base graph
 │   ├── jinja_template.py              # Populates Index_src.html with categorized entities
 │   ├── json_xml_to_rdf.py             # Extracts XML/JSON data and serializes the base RDF graph
 │   └── xml-html_transformation.py     # Applies XSLT to convert TEI-XML into HTML
 ├── rdf_dataset/
 │   ├── inme_graph.ttl                 # Base RDF graph extracted from TEI and JSON
-│   ├── inme_pre_reasoning.ttl         # Graph enriched with OWL axioms ready for the reasoner
-│   └── inme_inferred_graph.ttl        # Enriched graph with materialized inferences from Protégé
+│   ├── inme_inferred_graph.ttl        # Enriched graph with materialized inferences from Protégé
+|   └── owl_rules.ttl                  # Custom OWL rules to apply to the base RDF graph for inferences
 ├── style/
 │   ├── doc_style.css                  # Custom styling for index.html and zoom view
 │   └── xsl_style.css                  # Stylesheet for the XSLT-generated reading view
@@ -60,9 +60,9 @@ pip install -r requirements.txt
 
 ### 2. Execute the Pipeline
 Navigate to the scripts folder. The three scripts operate independently and handle different aspects of the output generation:
-    *  ```json_xml_to_rdf.py``` parses the data from the XML and the JSON file and generates the RDF graph;
-    * ```xml-html_transformation.py``` XSLT-based generation of the html file from the XML file
-    * ```jinja_template.py``` populate dynamically the Entities tab in the documentation
+*  ```json_xml_to_rdf.py``` parses the data from the XML and the JSON file and generates the RDF graph;
+* ```xml-html_transformation.py``` XSLT-based generation of the html file from the XML file
+* ```jinja_template.py``` populate dynamically the Entities tab in the documentation
 
 ### 3. View the Output & Query the Data
 Open ```index.html``` in the root folder to explore the documentation, or navigate to the ```html_files/inMe_stylised_xml.html``` to view the generated XSLT textual view
